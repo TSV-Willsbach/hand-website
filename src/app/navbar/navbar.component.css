@@ -1,0 +1,22 @@
+header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+    max-height: 3rem;
+}
+
+a:hover {
+    color: #23893b !important;
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu {
+    border-top: 0.25rem solid #23893b;
+}
