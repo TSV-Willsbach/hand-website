@@ -9,6 +9,7 @@ import { ImgCarouselComponent } from './img-carousel/img-carousel.component';
 import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
