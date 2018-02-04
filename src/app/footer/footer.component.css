@@ -23,16 +23,20 @@ h5 {
 
 .fa-facebook-square:hover {
     color: #3B5998;
+    text-decoration: none;
 }
 
 .fa-instagram:hover {
     color: #833ab4;
+    text-decoration: none;
 }
 
 .fa-twitter:hover {
     color: #55ACEE;
+    text-decoration: none;
 }
 
 .fa-youtube:hover {
     color: #bb0000;
+    text-decoration: none;
 }
