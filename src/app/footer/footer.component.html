@@ -12,7 +12,7 @@
         <h5>{{node.title}}</h5>
         <ul class="list-unstyled text-small">
           <li *ngFor="let item of node.children">
-            <a class="text-muted" [href]="item.url" [title]="item.tooltip || item.title">{{ item.title }}</a>
+            <a class="text-muted"  [title]="item.tooltip || item.title" [routerLink]="item.url">{{ item.title }}</a>
           </li>
         </ul>
       </div>

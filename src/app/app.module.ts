@@ -13,6 +13,8 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HomeComponent } from './home/home.component';
 import { NavigationService } from './navigation/navigation.service';
+import { ReportComponent } from './report/report.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { NavigationService } from './navigation/navigation.service';
     NewsComponent,
     FooterComponent,
     SponsorsComponent,
-    HomeComponent
+    HomeComponent,
+    ReportComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
