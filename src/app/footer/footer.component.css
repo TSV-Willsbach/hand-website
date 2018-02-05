@@ -17,12 +17,26 @@ h5 {
     background-color: #23893b;
 }
 
-.facebook {
-    overflow: hidden;
-    text-indent: 4.4rem;
-    background-size: 200%;
-    display: block;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-image: url("../../assets/images/facebook.png");
+.gray {
+    color: gray;
+}
+
+.fa-facebook-square:hover {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+.fa-instagram:hover {
+    color: #833ab4;
+    text-decoration: none;
+}
+
+.fa-twitter:hover {
+    color: #55ACEE;
+    text-decoration: none;
+}
+
+.fa-youtube:hover {
+    color: #bb0000;
+    text-decoration: none;
 }

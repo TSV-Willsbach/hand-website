@@ -1,0 +1,58 @@
+{
+    "TopBar": [],
+    "Footer": [
+        {
+            "title": "Verein",
+            "children": [
+                {
+                    "url": "about",
+                    "title": "Chronik",
+                    "tooltip": "Angular contributors."
+                },
+                {
+                    "url": "resources",
+                    "title": "Trainingszeiten",
+                    "tooltip": "Angular tools, training, and blogs from around the web."
+                },
+                {
+                    "url": "presskit",
+                    "title": "Schiedsrichter",
+                    "tooltip": "Press contacts, logos, and branding."
+                },
+                {
+                    "url": "https://blog.angular.io/",
+                    "title": "Download",
+                    "tooltip": "Angular Blog"
+                }
+            ]
+        },
+        {
+            "title": "Formales",
+            "children": [
+                {
+                    "url": "https://stackoverflow.com/questions/tagged/angular",
+                    "title": "Impressum",
+                    "tooltip": "Stack Overflow: where the community answers your technical Angular questions."
+                },
+                {
+                    "url": "https://gitter.im/angular/angular",
+                    "title": "Sponsoren",
+                    "tooltip": "Chat about Angular with other birds of a feather."
+                },
+                {
+                    "url": "https://github.com/angular/angular/issues",
+                    "title": "Kontakt",
+                    "tooltip": "Post issues and suggestions on github."
+                },
+                {
+                    "url": "https://github.com/angular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md",
+                    "title": "Förderverein",
+                    "tooltip": "Treating each other with respect."
+                }
+            ]
+        }
+    ],
+    "__versionInfo": {
+        "full": "5"
+    }
+}

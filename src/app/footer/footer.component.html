@@ -7,39 +7,12 @@
 
         <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
       </div>
-      <div class="col-6 col-md">
-        <h5>Verein</h5>
-        <ul class="list-unstyled text-small">
-          <li>
-            <a class="text-muted" href="#">Chronik</a>
-          </li>
-          <li>
-            <a class="text-muted" href="#">Trainingszeiten</a>
-          </li>
-          <li>
-            <a class="text-muted" href="#">Schiedsrichter</a>
-          </li>
-          <li>
-            <a class="text-muted" href="#">Download</a>
-          </li>
-        </ul>
-      </div>
 
-
-      <div class="col-6 col-md">
-        <h5>Formales</h5>
+      <div class="col-6 col-md" *ngFor="let node of nodes">
+        <h5>{{node.title}}</h5>
         <ul class="list-unstyled text-small">
-          <li>
-            <a class="text-muted" href="#">Impressum</a>
-          </li>
-          <li>
-            <a class="text-muted" href="#">Sponsoren</a>
-          </li>
-          <li>
-            <a class="text-muted" href="#">Kontakt</a>
-          </li>
-          <li>
-            <a class="text-muted" href="#">Förderverein</a>
+          <li *ngFor="let item of node.children">
+            <a class="text-muted" [href]="item.url" [title]="item.tooltip || item.title">{{ item.title }}</a>
           </li>
         </ul>
       </div>
@@ -47,22 +20,21 @@
       <div class="col-6 col-md">
         <h5>Social Media</h5>
         <ul class="list-unstyled text-small social-grid">
-<!--           <li>
-            <a class="text-muted block" href="#">Youtube</a>
-          </li> -->
-          <li> 
-            <a class="text-muted facebook" href="#">Facebook</a>
-          </li>
-       <!--    <li>
-            <a class="text-muted block" href="#">Instagram</a>
+          <li>
+            <a class="fa fa-youtube gray fa-3x" href="https://www.youtube.com/channel/UCJeUqnTrFeGtNk5OW1ipZXw" target="_blank"></a>
           </li>
           <li>
-            <a class="text-muted block" href="#">Twitter</a>
-          </li> -->
+            <a class="fa fa-facebook-square gray fa-3x" href="https://www.facebook.com/tsvwillsbachhandball" target="_blank"></a>
+          </li>
+          <li>
+            <a class="fa fa-instagram gray fa-3x" href="https://www.instagram.com/tsvwillsbachhandball/" target="_blank"></a>
+          </li>
+          <li>
+            <a class="fa fa-twitter gray fa-3x" href="https://twitter.com/willsbach_hndbl" target="_blank"></a>
+          </li>
         </ul>
       </div>
-
-
     </div>
+    <p> Version {{versionInfo?.full}}. </p>
   </div>
 </footer>
