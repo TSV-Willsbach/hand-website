@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { NavigationService } from './navigation/navigation.service';
 import { ReportComponent } from './report/report.component';
 import { AboutComponent } from './about/about.component';
+import { DownloadsComponent } from './downloads/downloads.component';
+import { ResultsComponent } from './results/results.component';
+import { ChronicleComponent } from './chronicle/chronicle.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { AboutComponent } from './about/about.component';
     SponsorsComponent,
     HomeComponent,
     ReportComponent,
-    AboutComponent
+    AboutComponent,
+    DownloadsComponent,
+    ResultsComponent,
+    ChronicleComponent
   ],
   imports: [
     BrowserModule,
