@@ -5,24 +5,24 @@
             "title": "Verein",
             "children": [
                 {
-                    "url": "about",
+                    "router": "chronicle",
                     "title": "Chronik",
-                    "tooltip": "Angular contributors."
+                    "tooltip": "Chronik"
                 },
                 {
-                    "url": "resources",
+                    "router": "resources",
                     "title": "Trainingszeiten",
-                    "tooltip": "Angular tools, training, and blogs from around the web."
+                    "tooltip": "Trainingszeiten"
                 },
                 {
-                    "url": "presskit",
+                    "router": "presskit",
                     "title": "Schiedsrichter",
-                    "tooltip": "Press contacts, logos, and branding."
+                    "tooltip": "Schiedsrichter"
                 },
                 {
-                    "url": "https://blog.angular.io/",
+                    "router": "downloads",
                     "title": "Download",
-                    "tooltip": "Angular Blog"
+                    "tooltip": "Downloads"
                 }
             ]
         },
@@ -30,24 +30,24 @@
             "title": "Formales",
             "children": [
                 {
-                    "url": "https://stackoverflow.com/questions/tagged/angular",
+                    "router": "about",
                     "title": "Impressum",
                     "tooltip": "Stack Overflow: where the community answers your technical Angular questions."
                 },
                 {
-                    "url": "https://gitter.im/angular/angular",
+                    "router": "sponsors",
                     "title": "Sponsoren",
                     "tooltip": "Chat about Angular with other birds of a feather."
                 },
                 {
-                    "url": "https://github.com/angular/angular/issues",
+                    "router": "contact",
                     "title": "Kontakt",
-                    "tooltip": "Post issues and suggestions on github."
+                    "tooltip": "Kontakt"
                 },
                 {
-                    "url": "https://github.com/angular/code-of-conduct/blob/master/CODE_OF_CONDUCT.md",
+                    "router": "aidAssociation",
                     "title": "Förderverein",
-                    "tooltip": "Treating each other with respect."
+                    "tooltip": "Förderverein"
                 }
             ]
         }
