@@ -1,5 +1,36 @@
 {
-    "TopBar": [],
+    "TopBar": [
+        {
+            "title": "Aktuell",
+            "router": "news"
+        },
+        {
+            "title": "Spielberichte",
+            "router": "reports",
+            "children": []
+        },
+        {
+            "title": "Mannschaften",
+            "router": "team",
+            "children": [
+                {
+                    "router": "herren",
+                    "title": "Herren",
+                    "tooltip": ""
+                },
+                {
+                    "router": "damen",
+                    "title": "Damen",
+                    "tooltip": ""
+                }
+            ]
+        },
+        {
+            "title": "Ergebnisse",
+            "router": "results",
+            "children": []
+        }
+    ],
     "Footer": [
         {
             "title": "Verein",
