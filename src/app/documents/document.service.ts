@@ -43,13 +43,11 @@ export class DocumentService {
     private http: HttpClient,
     location: LocationService
   ) {
-    console.log("I'm called")
     // Whenever the URL changes we try to get the appropriate doc
-    this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
+  //  this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
   }
 
   private getDocument(url: string) {
-    console.log("getDocument " + url);
     const id = url || 'index';
     //   this.logger.log('getting document', id);
     if (!this.cache.has(id)) {
@@ -73,7 +71,7 @@ export class DocumentService {
         }
       })
       .catch((error: HttpErrorResponse) => {
-        return error.status === 404 ? this.getFileNotFoundDoc(id) : this.getErrorDoc(id, error);
+        return error.status === 404 ? this.getFileNotFoundDoc(id) : null//this.getErrorDoc(id, error);
       })
       .subscribe(subject);
 
@@ -93,12 +91,12 @@ export class DocumentService {
     }
   }
 
-  private getErrorDoc(id: string, error: HttpErrorResponse): Observable<DocumentContents> {
+/*   private getErrorDoc(id: string, error: HttpErrorResponse): Observable<DocumentContents> {
     //   this.logger.error('Error fetching document', error);
     this.cache.delete(id);
-    return Observable.of({
+     return Observable.of({
       id: FETCHING_ERROR_ID,
       contents: FETCHING_ERROR_CONTENTS
-    });
-  }
+    }); 
+  } */
 }

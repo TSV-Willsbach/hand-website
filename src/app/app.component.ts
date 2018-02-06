@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     // prematurely).
     // On the first document, though, (when we know there is no previous document), we want to
     // ensure the styles are applied as soon as possible to avoid flicker.
-    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
+//    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
 
 /*     this.locationService.currentPath.subscribe(path => {
       // Redirect to docs if we are in archive mode and are not hitting a docs page
