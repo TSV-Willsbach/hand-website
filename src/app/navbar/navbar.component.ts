@@ -17,9 +17,4 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(): void {
-    this.enabled = !this.enabled;
-
-  }
-
 }
