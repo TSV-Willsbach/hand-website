@@ -2,7 +2,8 @@
     "TopBar": [
         {
             "title": "Aktuell",
-            "router": "news"
+            "router": "news",
+            "children": []
         },
         {
             "title": "Spielberichte",
@@ -21,6 +22,11 @@
                 {
                     "router": "damen",
                     "title": "Damen",
+                    "tooltip": ""
+                },
+                {
+                    "router": "majugend",
+                    "title": "A Jugend (m)",
                     "tooltip": ""
                 }
             ]
