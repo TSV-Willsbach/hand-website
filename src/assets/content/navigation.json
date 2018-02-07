@@ -2,7 +2,7 @@
     "TopBar": [
         {
             "title": "Aktuell",
-            "router": "news",
+            "router": "",
             "children": []
         },
         {
