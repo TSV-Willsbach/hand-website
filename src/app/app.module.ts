@@ -13,6 +13,8 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HomeComponent } from './home/home.component';
 import { NavigationService } from './navigation/navigation.service';
+import { DocumentService } from './documents/document.service';
+import { LocationService } from './shared/location.service';
 import { ReportComponent } from './report/report.component';
 import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
@@ -42,7 +44,9 @@ import { ChronicleComponent } from './chronicle/chronicle.component';
     HttpClientModule
   ],
   providers: [
-    NavigationService
+    NavigationService,
+    DocumentService,
+    LocationService
   ],
   bootstrap: [AppComponent]
 })
