@@ -1,5 +1,42 @@
 {
-    "TopBar": [],
+    "TopBar": [
+        {
+            "title": "Aktuell",
+            "router": "",
+            "children": []
+        },
+        {
+            "title": "Spielberichte",
+            "router": "reports",
+            "children": []
+        },
+        {
+            "title": "Mannschaften",
+            "router": "team",
+            "children": [
+                {
+                    "router": "herren",
+                    "title": "Herren",
+                    "tooltip": ""
+                },
+                {
+                    "router": "damen",
+                    "title": "Damen",
+                    "tooltip": ""
+                },
+                {
+                    "router": "majugend",
+                    "title": "A Jugend (m)",
+                    "tooltip": ""
+                }
+            ]
+        },
+        {
+            "title": "Ergebnisse",
+            "router": "results",
+            "children": []
+        }
+    ],
     "Footer": [
         {
             "title": "Verein",
