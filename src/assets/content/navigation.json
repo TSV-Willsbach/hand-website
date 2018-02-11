@@ -67,7 +67,7 @@
             "title": "Formales",
             "children": [
                 {
-                    "router": "about",
+                    "router": "imprint",
                     "title": "Impressum",
                     "tooltip": "Impressum"
                 },

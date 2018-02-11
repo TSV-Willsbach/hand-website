@@ -40,6 +40,10 @@ const routes: Routes = [
   }, {
     path: 'referee',
     component: DocViewerComponent
+  },
+  {
+    path: 'imprint',
+    component: DocViewerComponent
   }
 ];
 
