@@ -44,10 +44,10 @@ export class DocumentService {
     location: LocationService
   ) {
     // Whenever the URL changes we try to get the appropriate doc
-  //  this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
+   this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
   }
 
-  private getDocument(url: string) {
+  public getDocument(url: string) {
     const id = url || 'index';
     //   this.logger.log('getting document', id);
     if (!this.cache.has(id)) {
@@ -64,7 +64,7 @@ export class DocumentService {
     this.http
       .get<DocumentContents>(requestPath, { responseType: 'json' })
       .do(data => {
-        console.log("fetched document " + data);
+      //  console.log("fetched document " + data);
         if (!data || typeof data !== 'object') {
           //  this.logger.log('received invalid data:', data);
           throw Error('Invalid data');

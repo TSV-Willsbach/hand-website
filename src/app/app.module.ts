@@ -20,6 +20,7 @@ import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { ResultsComponent } from './results/results.component';
 import { ChronicleComponent } from './chronicle/chronicle.component';
+import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ChronicleComponent } from './chronicle/chronicle.component';
     AboutComponent,
     DownloadsComponent,
     ResultsComponent,
-    ChronicleComponent
+    ChronicleComponent,
+    DocViewerComponent
   ],
   imports: [
     BrowserModule,

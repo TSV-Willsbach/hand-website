@@ -7,8 +7,8 @@ h5 {
     color: #23893b;
 }
 
-.social-grid {
-    columns: 4;
+ul {
+    list-style-type: none;
 }
 
 .block {

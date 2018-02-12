@@ -52,7 +52,7 @@
                     "tooltip": "Trainingszeiten"
                 },
                 {
-                    "router": "presskit",
+                    "router": "referee",
                     "title": "Schiedsrichter",
                     "tooltip": "Schiedsrichter"
                 },
@@ -67,14 +67,14 @@
             "title": "Formales",
             "children": [
                 {
-                    "router": "about",
+                    "router": "imprint",
                     "title": "Impressum",
-                    "tooltip": "Stack Overflow: where the community answers your technical Angular questions."
+                    "tooltip": "Impressum"
                 },
                 {
                     "router": "sponsors",
                     "title": "Sponsoren",
-                    "tooltip": "Chat about Angular with other birds of a feather."
+                    "tooltip": "Unsere Sponsoren"
                 },
                 {
                     "router": "contact",

@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   footerNodes: NavigationNode[];
   topMenuNodes: NavigationNode[];
   currentDocument: DocumentContents;
+  isStaticContent = false;
 
   constructor(
     private navigationService: NavigationService,
@@ -36,7 +37,9 @@ export class AppComponent implements OnInit {
       this.topMenuNodes = views['TopBar'] || [];
     });
 
-    this.documentService.currentDocument.subscribe(doc => this.currentDocument = doc);
+    this.documentService.currentDocument.subscribe(doc => {
+      this.currentDocument = doc
+    });
     // Generally, we want to delay updating the host classes for the new document, until after the
     // leaving document has been removed (to avoid having the styles for the new document applied
     // prematurely).
@@ -44,10 +47,11 @@ export class AppComponent implements OnInit {
     // ensure the styles are applied as soon as possible to avoid flicker.
 //    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
 
-/*     this.locationService.currentPath.subscribe(path => {
+    this.locationService.currentPath.subscribe(path => {
+      console.log(path)
       // Redirect to docs if we are in archive mode and are not hitting a docs page
       // (i.e. we have arrived at a marketing page)
-      if (this.deployment.mode === 'archive' && !/^(docs$|api|guide|tutorial)/.test(path)) {
+/*       if (this.deployment.mode === 'archive' && !/^(docs$|api|guide|tutorial)/.test(path)) {
         this.locationService.replace('docs');
       }
       if (path === this.currentPath) {
@@ -60,8 +64,8 @@ export class AppComponent implements OnInit {
         // Start progress bar if doc not rendered within brief time
         clearTimeout(this.isFetchingTimeout);
         this.isFetchingTimeout = setTimeout(() => this.isFetching = true, 200);
-      }
-    }); */
+      } */
+    });
 
   }
 
