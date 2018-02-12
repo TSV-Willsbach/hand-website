@@ -10,6 +10,7 @@
         "assets": [
           "assets",
           "content",
+          "generated",
           "favicon.ico"
         ],
         "index": "index.html",

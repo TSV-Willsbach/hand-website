@@ -1,55 +1,3 @@
-<!-- <header class="blog-header py-5">
-
-  <nav class="navbar fixed-top navbar-light bg-white pt-3 pb-3"> -->
-<!-- <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-4 pt-1">
-        <a class="text-muted" href="#">Subscribe</a>
-      </div>
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Large</a>
-      </div>
-      <div class="col-4 d-flex justify-content-end align-items-center">
-        <a class="text-muted" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" class="mx-3">
-            <circle cx="10.5" cy="10.5" r="7.5"></circle>
-            <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
-          </svg>
-        </a>
-        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-      </div>
-    </div>
- </header> -->
-<!--
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <img src="assets/images/tsv_willsbach.png" class="logo" />
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Aktuell</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="p-2 text-muted" href="#">Mannschaften</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="p-2 text-muted" href="#">Spielberichte</a>
-        </li>
-
-
-        <li class="nav-item active">
-          <a class="p-2 text-muted" href="#">Ergebnisse</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="p-2 text-muted" href="#">Verein</a>
-        </li>
-      </ul>
-    </div>
-  </nav> -->
-<!-- </header> -->
-
 <header class="py-5">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
@@ -60,36 +8,22 @@
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link px-5" routerLink="/home" routerLinkActive="active">Aktuell
-              <span class="sr-only">(current)</span>
+          <li *ngFor="let node of nodes" [ngClass]="node.children.length > 0 ? 'nav-item dropdown active' : 'nav-item active'" (mouseenter)="selectedItem = node.title">
+            <a [ngClass]="node.children.length > 0 ? 'nav-link dropdown-toggle px-5' : 'nav-link  px-5'" [href]="node.router" [routerLink]="node.router"
+              routerLinkActive="active">{{node.title}}
             </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link  px-5" routerLink="report">Spielberichte</a>
-          </li>
-          <li class="nav-item dropdown active" (click)="onSelect()">
-            <a class="nav-link dropdown-toggle px-5" id="navbarDropdown" href="javascript:void(0);" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Mannschaften
-            </a>
-            <div [ngClass]="{ 'dropdown-menu': true, 'show' : enabled }" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Herren</a>
-              <a class="dropdown-item" href="#">Damen</a>
-              <div class="dropdown-divider">Jugend</div>
-              <a class="dropdown-item" href="#">männliche A Jugend</a>
+
+
+            <div [ngClass]="{ 'dropdown-menu': true, 'show' : selectedItem === node.title }" aria-labelledby="navbarDropdown" *ngIf="node.children.length > 0" (mouseleave)="selectedItem = ''">
+              <a class="dropdown-item" href="#" *ngFor="let item of node.children" (click)="selectedItem = item.title">{{item.title}}</a>
             </div>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link px-5" routerLink="results">Ergebnisse</a>
-          </li>
+
         </ul>
         <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
       </div>
     </div>
-
   </nav>
 </header>
