@@ -34,13 +34,17 @@ const routes: Routes = [
   }, {
     path: 'referee',
     component: DocViewerComponent
-  },
-  {
+  }, {
     path: 'imprint',
     component: DocViewerComponent
-  },
-  {
+  }, {
     path: 'training',
+    component: DocViewerComponent
+  }, {
+    path: 'contact',
+    component: DocViewerComponent
+  }, {
+    path: 'aidAssociation',
     component: DocViewerComponent
   }
 ];
