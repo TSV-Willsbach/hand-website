@@ -1,0 +1,28 @@
+{
+    "Slides": [{
+            "Name": "Herren",
+            "Img": "../../assets/images/teams/herren.JPG",
+            "Season": "Saison 17/18"
+        },
+        {
+            "Name": "Damen",
+            "Img": "../../assets/images/teams/damen.JPG",
+            "Season": "Saison 17/18"
+        },
+        {
+            "Name": "männliche A-Jugend",
+            "Img": "../../assets/images/teams/mA.JPG",
+            "Season": "Saison 17/18"
+        },
+        {
+            "Name": "männliche B-Jugend",
+            "Img": "../../assets/images/teams/mB.JPG",
+            "Season": "Saison 17/18"
+        },
+        {
+            "Name": "männliche C-Jugend",
+            "Img": "../../assets/images/teams/mC.jpeg",
+            "Season": "Saison 17/18"
+        }
+    ]
+}
