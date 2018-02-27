@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { AboutComponent } from './about/about.component';
-import { ChronicleComponent } from './chronicle/chronicle.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './report/report.component';
@@ -23,9 +20,6 @@ const routes: Routes = [
     path: 'report',
     component: ReportComponent
   }, {
-    path: 'about',
-    component: AboutComponent
-  }, {
     path: 'downloads',
     component: DownloadsComponent
   }, {
@@ -43,6 +37,10 @@ const routes: Routes = [
   },
   {
     path: 'imprint',
+    component: DocViewerComponent
+  },
+  {
+    path: 'training',
     component: DocViewerComponent
   }
 ];
