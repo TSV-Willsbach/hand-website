@@ -1,13 +1,15 @@
 <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
   <div class="carousel-inner">
-    <div [ngClass]="activeCarousel === 1 ? 'carousel-item active' : 'carousel-item'">
+
+    <!-- activeCarousel === 1 ? 'carousel-item active' : 'carousel-item' -->
+    <div [ngClass]="itemClasses[0]">
       <img class="d-block w-100" src="../../assets/images/teams/herren.JPG" alt="Herren">
       <div class="carousel-caption d-none d-md-block">
         <h5>Herren</h5>
         <p>Saison 17/18</p>
       </div>
     </div>
-    <div [ngClass]="activeCarousel === 2 ? 'carousel-item active' : 'carousel-item'">
+    <div [ngClass]="itemClasses[1]">
       <img class="d-block w-100" src="../../assets/images/teams/damen.JPG" alt="Damen">
       <div class="carousel-caption d-none d-md-block">
         <h5>Damen</h5>

@@ -21,6 +21,7 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { ResultsComponent } from './results/results.component';
 import { ChronicleComponent } from './chronicle/chronicle.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
+import { CarouselService } from './shared/carousel.service';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
   providers: [
     NavigationService,
     DocumentService,
-    LocationService
+    LocationService,
+    CarouselService
   ],
   bootstrap: [AppComponent]
 })
