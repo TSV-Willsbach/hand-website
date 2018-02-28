@@ -1,13 +1,13 @@
 <div id="carouselExampleControls" class="carousel slide mb-3" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div [ngClass]="activeCarousel === 1 ? 'carousel-item active' : 'carousel-item'">
       <img class="d-block w-100" src="../../assets/images/teams/herren.JPG" alt="Herren">
       <div class="carousel-caption d-none d-md-block">
         <h5>Herren</h5>
         <p>Saison 17/18</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div [ngClass]="activeCarousel === 2 ? 'carousel-item active' : 'carousel-item'">
       <img class="d-block w-100" src="../../assets/images/teams/damen.JPG" alt="Damen">
       <div class="carousel-caption d-none d-md-block">
         <h5>Damen</h5>
@@ -15,11 +15,11 @@
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" role="button" data-slide="prev">
+  <a class="carousel-control-prev" role="button" data-slide="prev" (click)="onPrevPress()">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" role="button" data-slide="next">
+  <a class="carousel-control-next" role="button" data-slide="next" (click)="onNextPress()">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
