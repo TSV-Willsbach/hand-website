@@ -20,6 +20,7 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { ResultsComponent } from './results/results.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
+import { NewsService } from './shared/news.service';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { CarouselService } from './shared/carousel.service';
     NavigationService,
     DocumentService,
     LocationService,
-    CarouselService
+    CarouselService,
+    NewsService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,6 @@
 .tag {
     display: inline-block;
-    background: gray;
+    background: rgba(255, 255, 255, 0.8);
+    color: #23893b;
+    font-weight: bold;
 }
