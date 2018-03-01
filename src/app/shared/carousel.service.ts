@@ -36,7 +36,7 @@ carousel-item-next carousel-item-left
 
     this.transitionClasses = timer(2000, 5000)
       .pipe(switchMap(() =>
-        interval(100)
+        interval(500)
           .pipe(take(3))
                 .map(val =>{ return { tick: val, class: transitionLeft[val]}})
       )
