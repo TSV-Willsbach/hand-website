@@ -1,6 +1,5 @@
 {
-    "TopBar": [
-        {
+    "TopBar": [{
             "title": "Aktuell",
             "router": "",
             "children": []
@@ -13,8 +12,7 @@
         {
             "title": "Mannschaften",
             "router": "team",
-            "children": [
-                {
+            "children": [{
                     "router": "herren",
                     "title": "Herren",
                     "tooltip": ""
@@ -37,17 +35,15 @@
             "children": []
         }
     ],
-    "Footer": [
-        {
+    "Footer": [{
             "title": "Verein",
-            "children": [
-                {
+            "children": [{
                     "router": "chronicle",
                     "title": "Chronik",
                     "tooltip": "Chronik"
                 },
                 {
-                    "router": "resources",
+                    "router": "training",
                     "title": "Trainingszeiten",
                     "tooltip": "Trainingszeiten"
                 },
@@ -65,8 +61,7 @@
         },
         {
             "title": "Formales",
-            "children": [
-                {
+            "children": [{
                     "router": "imprint",
                     "title": "Impressum",
                     "tooltip": "Impressum"

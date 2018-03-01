@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,10 +16,8 @@ import { NavigationService } from './navigation/navigation.service';
 import { DocumentService } from './documents/document.service';
 import { LocationService } from './shared/location.service';
 import { ReportComponent } from './report/report.component';
-import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { ResultsComponent } from './results/results.component';
-import { ChronicleComponent } from './chronicle/chronicle.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
 
@@ -34,10 +32,8 @@ import { CarouselService } from './shared/carousel.service';
     SponsorsComponent,
     HomeComponent,
     ReportComponent,
-    AboutComponent,
     DownloadsComponent,
     ResultsComponent,
-    ChronicleComponent,
     DocViewerComponent
   ],
   imports: [
