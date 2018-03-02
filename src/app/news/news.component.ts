@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../shared/news.service';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-news',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  posts: Post[];
+
+  constructor(private news: NewsService) {
+
+    this.news.fetchNews()
+      .subscribe(posts => this.posts = posts);
+  }
 
   ngOnInit() {
   }
