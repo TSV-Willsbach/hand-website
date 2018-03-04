@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService } from '../shared/carousel.service';
+import { Team } from '../teams';
 
-const slidesPath = 'assets/content/slides.json';
 const active = "carousel-item active";
 const inactive = "carousel-item";
 const transitionLeft = "carousel-item-left active";
@@ -21,8 +21,12 @@ export class ImgCarouselComponent implements OnInit {
   public secondItem = "carousel-item";
   public itemClasses = ["carousel-item active", "carousel-item"];
   private idx = 0;
+  teams: Team[];
 
   constructor(private transitionService: CarouselService) {
+
+    this.transitionService.fetchTeams().subscribe(team => this.teams = team);
+
     this.transitionService.transitionClasses.subscribe(val => {
       switch (val.tick) {
         case 0:
