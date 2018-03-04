@@ -23,3 +23,19 @@
     padding-top: 0%;
     padding-left: 0%;
 }
+
+.heading {
+    font-size: 3.375rem;
+    color: #23893b;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: -.125rem;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.card-title {
+    color: #23893b;
+    border-bottom: 1px solid #CCCCCC;
+}
