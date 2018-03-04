@@ -4,11 +4,11 @@
     <div class="container">
 
       <img src="assets/images/tsv_willsbach.png" class="logo" />
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation" (click)="onHamburgerButtonClick()">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div [ngClass]="navbar" [ngStyle]="style" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li *ngFor="let node of nodes" [ngClass]="node.children.length > 0 ? 'nav-item dropdown active' : 'nav-item active'" (mouseenter)="selectedItem = node.title">
             <a [ngClass]="node.children.length > 0 ? 'nav-link dropdown-toggle px-5' : 'nav-link  px-5'" [href]="node.router" [routerLink]="node.router"
@@ -16,7 +16,8 @@
             </a>
 
 
-            <div [ngClass]="{ 'dropdown-menu': true, 'show' : selectedItem === node.title }" aria-labelledby="navbarDropdown" *ngIf="node.children.length > 0" (mouseleave)="selectedItem = ''">
+            <div [ngClass]="{ 'dropdown-menu': true, 'show' : selectedItem === node.title }" aria-labelledby="navbarDropdown" *ngIf="node.children.length > 0"
+              (mouseleave)="selectedItem = ''">
               <a class="dropdown-item" href="#" *ngFor="let item of node.children" (click)="selectedItem = item.title">{{item.title}}</a>
             </div>
           </li>
