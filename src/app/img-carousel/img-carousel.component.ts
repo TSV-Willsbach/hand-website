@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService } from '../shared/carousel.service';
 import { Team } from '../teams';
-
-const active = "carousel-item active";
-const inactive = "carousel-item";
-const transitionLeft = "carousel-item-left active";
-const transitionLeftNext = "carousel-item-next carousel-item-left";
-
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-img-carousel',
@@ -15,50 +10,14 @@ const transitionLeftNext = "carousel-item-next carousel-item-left";
 })
 
 export class ImgCarouselComponent implements OnInit {
-
-
-  public firstItem = "carousel-item active";
-  public secondItem = "carousel-item";
-  public itemClasses = ["carousel-item active", "carousel-item"];
-  private idx = 0;
   teams: Team[];
 
-  constructor(private transitionService: CarouselService) {
+  constructor(private transitionService: CarouselService, carouselConfig: NgbCarouselConfig) {
 
     this.transitionService.fetchTeams().subscribe(team => this.teams = team);
-
-    this.transitionService.transitionClasses.subscribe(val => {
-      switch (val.tick) {
-        case 0:
-          this.itemClasses[this.idx] = val.class;
-          break;
-        case 1:
-          this.itemClasses[this.next(this.idx)] = val.class;
-          break;
-        default:
-          this.itemClasses[this.next(this.idx)] = val.class;
-          this.itemClasses[this.idx] = inactive;
-          this.idx = this.next(this.idx);
-          break;
-      }
-    })
-  }
-
-  next(idx) {
-    return idx === 0 ? 1 : 0;
+    carouselConfig.interval = 5000;
   }
 
   ngOnInit() {
   }
-
-  /*   onPrevPress() {
-      this.activeCarousel = this.activeCarousel > 1 ? this.activeCarousel - 1 : 2;
-      console.log(this.activeCarousel)
-    }
-  
-    onNextPress() {
-      this.activeCarousel = this.activeCarousel < 2 ? this.activeCarousel + 1 : 1;
-      console.log(this.activeCarousel)
-    } */
-
 }
