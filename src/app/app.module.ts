@@ -21,6 +21,7 @@ import { ResultsComponent } from './results/results.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
 import { NewsService } from './shared/news.service';
+import { SponsorsService } from './shared/sponsors.service';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { NewsService } from './shared/news.service';
     DocumentService,
     LocationService,
     CarouselService,
-    NewsService
+    NewsService,
+    SponsorsService
   ],
   bootstrap: [AppComponent]
 })
