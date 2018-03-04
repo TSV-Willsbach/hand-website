@@ -11,7 +11,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 app.use(methodOverride());
 
 app.get('*', function (req, res) {
-    res.sendfile('./dist/index.html')
+    res.sendfile(__dirname + '/dist/index.html')
 })
 
 app.listen(8080);
