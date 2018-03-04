@@ -11,7 +11,7 @@ import { switchMap, take, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../post';
 
-const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed";
+const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
 
 @Injectable()
 export class NewsService {

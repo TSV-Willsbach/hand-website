@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +22,7 @@ import { ResultsComponent } from './results/results.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
 import { NewsService } from './shared/news.service';
+import { SponsorsService } from './shared/sponsors.service';
 
 
 @NgModule({
@@ -41,14 +43,16 @@ import { NewsService } from './shared/news.service';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [
     NavigationService,
     DocumentService,
     LocationService,
     CarouselService,
-    NewsService
+    NewsService,
+    SponsorsService
   ],
   bootstrap: [AppComponent]
 })
