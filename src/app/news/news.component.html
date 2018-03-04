@@ -8,11 +8,9 @@
         </div>
       </div>
       <div class="card-body">
+        <small class="card-subtitle mb-2 text-muted">{{post.date_gmt | date: 'dd.MM.yyyy'}}</small>
         <p class="card-text">{{post.excerpt.rendered}}</p>
       </div>
-      <p class="card-text">
-        <small class="text-muted">{{post.date_gmt | date: 'dd/MM/yyyy'}}</small>
-      </p>
     </div>
   </div>
 </div>
