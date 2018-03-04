@@ -1,18 +1,7 @@
-<div class="container">
-  <div class="row premium">
-    <div class="">
-      Sponsor 1 premium
-    </div>
-    <div class="">
-      Sponsor 2 premium
-    </div>
-  </div>
-  <div class="row normal">
-    <div class="">
-      Sponsor 3
-    </div>
-    <div class="">
-      Sponsor 4
-    </div>
+<div class="row mb-2">
+  <div class="col-md-4 mb-3" *ngFor="let sponsor of sponsors">
+    <a href="{{sponsor.acf.sponsorUrl}}" target="_blank">
+      <img src="{{sponsor.thumbnail}}" alt="{{sponsor.alt_text}}">
+    </a>
   </div>
 </div>

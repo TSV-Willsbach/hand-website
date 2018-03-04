@@ -17,12 +17,12 @@ import { NavigationService } from './navigation/navigation.service';
 import { DocumentService } from './documents/document.service';
 import { LocationService } from './shared/location.service';
 import { ReportComponent } from './report/report.component';
-import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { ResultsComponent } from './results/results.component';
-import { ChronicleComponent } from './chronicle/chronicle.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
+import { NewsService } from './shared/news.service';
+import { SponsorsService } from './shared/sponsors.service';
 
 
 @NgModule({
@@ -35,10 +35,8 @@ import { CarouselService } from './shared/carousel.service';
     SponsorsComponent,
     HomeComponent,
     ReportComponent,
-    AboutComponent,
     DownloadsComponent,
     ResultsComponent,
-    ChronicleComponent,
     DocViewerComponent
   ],
   imports: [
@@ -52,7 +50,9 @@ import { CarouselService } from './shared/carousel.service';
     NavigationService,
     DocumentService,
     LocationService,
-    CarouselService
+    CarouselService,
+    NewsService,
+    SponsorsService
   ],
   bootstrap: [AppComponent]
 })

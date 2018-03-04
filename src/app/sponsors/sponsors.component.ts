@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Sponsors } from '../sponsors';
+import { SponsorsService } from '../shared/sponsors.service';
 
 @Component({
   selector: 'app-sponsors',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorsComponent implements OnInit {
 
-  constructor() { }
+
+  sponsors: Sponsors[];
+
+  constructor(private sponsorsS: SponsorsService) {
+    this.sponsorsS.fetchSponsors().subscribe(sponsors => this.sponsors = sponsors);
+  }
 
   ngOnInit() {
   }
