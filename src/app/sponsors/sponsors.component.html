@@ -1,7 +1,11 @@
-<div class="row mb-2">
-  <div class="col-md-4 mb-3" *ngFor="let sponsor of sponsors">
-    <a href="{{sponsor.acf.sponsorUrl}}" target="_blank">
-      <img src="{{sponsor.thumbnail}}" alt="{{sponsor.alt_text}}">
-    </a>
+<div style="background-color: #23893b">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3" *ngFor="let sponsor of sponsors">
+        <a href="{{sponsor.acf.sponsorUrl}}" target="_blank">
+          <img src="{{sponsor.source_url}}" alt="{{sponsor.alt_text}}" width="{{sponsor.media_details.width}}" height="{{sponsor.media_details.height}}">
+        </a>
+      </div>
+    </div>
   </div>
 </div>
