@@ -17,7 +17,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   }, {
-    path: 'report',
+    path: 'reports',
     component: ReportComponent
   }, {
     path: 'downloads',
