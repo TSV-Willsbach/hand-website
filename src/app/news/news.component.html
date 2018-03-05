@@ -5,7 +5,10 @@
       <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{post.title.rendered}}</h5>
-        <small class="card-subtitle mb-2 text-muted">{{post.date_gmt | date: 'dd.MM.yyyy'}}</small>
+        <small class="card-subtitle mb-2 text-muted">
+          <i class="fa fa-calendar-o"></i> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
+        <small class="card-subtitle mb-2 text-muted">
+          <i class="fa fa-user"></i> {{post.author}}</small>
         <p class="card-text">{{post.excerpt.rendered}}</p>
       </div>
     </div>

@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { Post } from '../post';
 
 const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
+const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?tags=11&_embed";
 
 @Injectable()
 export class NewsService {
@@ -22,7 +23,7 @@ export class NewsService {
     return this.http.get<Post[]>(apiPosts)
       .map(posts => {
         return posts.map(post => {
-          post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+          this.mapFields(post);
           return post;
         });
       });
@@ -34,4 +35,19 @@ export class NewsService {
 
   }
 
+  fetchReports(): Observable<Post[]> {
+    return this.http.get<Post[]>(apiReports)
+      .map(posts => {
+        return posts.map(post => {
+          this.mapFields(post);
+          return post;
+        });
+      });
+  }
+
+
+  private mapFields(post: Post) {
+    post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+    post.author = post._embedded['author'][0].name;
+  }
 }
