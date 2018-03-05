@@ -25,6 +25,6 @@
 }
 
 .card-title {
-    color: #23893b;
+    color: var( --clubColor);
     border-bottom: 1px solid #CCCCCC;
 }
