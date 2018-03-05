@@ -8,6 +8,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma')
@@ -27,7 +28,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    //browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered 
+      // (useful if karma exits without killing phantom)
+      exitOnResourceError: true // Could require proxy if tests access images without /base path
+    },
     singleRun: false
   });
 };
