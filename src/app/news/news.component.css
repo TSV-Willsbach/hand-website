@@ -6,7 +6,7 @@
 }
 
 .card {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     border: none;
     border-radius: 0%;
 }
@@ -16,7 +16,7 @@
 }
 
 .card:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card-img-overlay {
@@ -24,18 +24,7 @@
     padding-left: 0%;
 }
 
-.heading {
-    font-size: 3.375rem;
-    color: #23893b;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
-    text-transform: uppercase;
-    font-weight: lighter;
-    letter-spacing: -.125rem;
-    border-bottom: 1px solid #CCCCCC;
-}
-
 .card-title {
-    color: #23893b;
+    color: var( --clubColor);
     border-bottom: 1px solid #CCCCCC;
 }
