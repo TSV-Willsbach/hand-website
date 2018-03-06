@@ -60,7 +60,13 @@ export class NewsService {
   try{
     post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
     }
+    catch(e) {
+    /* Fallback smaller picture */
+     try{
+    post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
+   } 
     catch(e){ console.log('Error:', e); } 
+   } 
     
     try{
     post.author = post._embedded['author'][0].name;
