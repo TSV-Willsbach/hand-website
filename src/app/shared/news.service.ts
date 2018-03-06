@@ -57,7 +57,14 @@ export class NewsService {
   }
 
   private mapFields(post: Post) {
+  try{
     post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+    }
+    catch(e){ console.log('Error:', e); } 
+    
+    try{
     post.author = post._embedded['author'][0].name;
+ } 
+    catch(e){ console.log('Error:', e); } 
   }
 }
