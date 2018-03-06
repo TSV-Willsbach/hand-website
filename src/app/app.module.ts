@@ -23,6 +23,7 @@ import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
 import { NewsService } from './shared/news.service';
 import { SponsorsService } from './shared/sponsors.service';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { SponsorsService } from './shared/sponsors.service';
     ReportComponent,
     DownloadsComponent,
     ResultsComponent,
-    DocViewerComponent
+    DocViewerComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,

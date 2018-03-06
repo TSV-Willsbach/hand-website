@@ -1,0 +1,21 @@
+<h2 class="heading">{{post.title.rendered}}</h2>
+<div class="postImage">
+  <img src="{{post.thumbnail}}" alt="{{post.slug}}">
+</div>
+<br />
+<br />
+
+<div [innerHTML]="post.content.rendered"></div>
+<br />
+<div class="postEnd">
+  <small class="mb-2 text-muted">
+    <ul>
+      <li>
+        <i class="fa fa-calendar-o"></i> {{post.date_gmt | date: 'dd.MM.yyyy'}}
+      </li>
+      <li>
+        <i class="fa fa-user-o"></i> {{post.author}}
+      </li>
+    </ul>
+  </small>
+</div>
