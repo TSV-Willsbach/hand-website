@@ -8,4 +8,5 @@ export class Post {
     media_details: Object;
     _embedded: Object;
     thumbnail: string;
+    author: string;
 }
