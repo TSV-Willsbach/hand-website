@@ -13,6 +13,8 @@ import { Post } from '../post';
 
 const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
 const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?tags=11&_embed";
+const apiPost = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts/";
+const embed = "?_embed";
 
 @Injectable()
 export class NewsService {
@@ -45,6 +47,14 @@ export class NewsService {
       });
   }
 
+  fetchSinglePost(id: number): Observable<any> {
+    var link = apiPost + id + embed;
+    console.log("My Link:" + link);
+    return this.http.get<Post>(link).map(post => {
+      this.mapFields(post);
+      return post;
+    });
+  }
 
   private mapFields(post: Post) {
     post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;

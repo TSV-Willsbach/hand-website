@@ -25,6 +25,10 @@
     color: var( --clubColor);
 }
 
+.card a {
+    color: var( --clubColor);
+}
+
 .card-img-top {
     border-radius: 0%;
 }

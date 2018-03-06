@@ -7,6 +7,7 @@ import { ReportComponent } from './report/report.component';
 import { ResultsComponent } from './results/results.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   }, {
     path: 'aidAssociation',
     component: DocViewerComponent
+  },
+  {
+    path: 'postDetail/:id',
+    component: PostDetailComponent
   }
 ];
 
