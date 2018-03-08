@@ -15,9 +15,3 @@
 .postEnd li {
     display: inline;
 }
-
-.SocialShare {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

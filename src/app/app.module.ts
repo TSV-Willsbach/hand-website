@@ -29,7 +29,7 @@ import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsOptions } from '@ngx-share/core';
 
 const options: ShareButtonsOptions = {
-  include: ['facebook', 'twitter', 'google', 'whatsapp', 'email', 'copy', 'print'],
+  include: ['facebook', 'whatsapp', 'copy', 'twitter', 'google', 'email', 'print'],
   tags: 'tsvWillsbach',
   twitterAccount: 'willsbach_hndbl'
 }
