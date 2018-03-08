@@ -49,7 +49,6 @@ export class NewsService {
 
   fetchSinglePost(id: number): Observable<any> {
     var link = apiPost + id + embed;
-    console.log("My Link:" + link);
     return this.http.get<Post>(link).map(post => {
       this.mapFields(post);
       return post;
@@ -57,20 +56,25 @@ export class NewsService {
   }
 
   private mapFields(post: Post) {
-  try{
-    post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+    try {
+      post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
     }
-    catch(e) {
-    /* Fallback smaller picture */
-     try{
-    post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
-   } 
-    catch(e){ console.log('Error:', e); } 
-   } 
-    
-    try{
-    post.author = post._embedded['author'][0].name;
- } 
-    catch(e){ console.log('Error:', e); } 
+    catch (e) {
+      /* Fallback smaller picture */
+      try {
+        post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+      }
+      catch (e) {
+        try {
+          post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
+        }
+        catch (e) { post.thumbnail = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
+      }
+    }
+
+    try {
+      post.author = post._embedded['author'][0].name;
+    }
+    catch (e) { console.log('Error:', e); }
   }
 }
