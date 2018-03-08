@@ -24,6 +24,15 @@ import { CarouselService } from './shared/carousel.service';
 import { NewsService } from './shared/news.service';
 import { SponsorsService } from './shared/sponsors.service';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { ShareButtonModule } from '@ngx-share/button';
+import { ShareButtonsModule } from '@ngx-share/buttons';
+import { ShareButtonsOptions } from '@ngx-share/core';
+
+const options: ShareButtonsOptions = {
+  include: ['facebook', 'twitter', 'google', 'whatsapp', 'email', 'copy', 'print'],
+  tags: 'tsvWillsbach',
+  twitterAccount: 'willsbach_hndbl'
+}
 
 
 @NgModule({
@@ -46,7 +55,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     AppRoutingModule,
     AngularFontAwesomeModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ShareButtonsModule.forRoot({ options: options })
   ],
   providers: [
     NavigationService,
