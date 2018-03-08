@@ -19,3 +19,9 @@
     </ul>
   </small>
 </div>
+
+<div class="SocialShare">
+  <share-buttons [include]="['facebook','whatsapp','copy','email','twitter','google','print']" [showText]="true" [showCount]="true"
+    [size]="4" [show]="3" [title]="post.title.rendered" [description]="post.excerpt.rendered" [image]="post.thumbnail" [tags]="'tsvWillsbachHandball'"></share-buttons>
+</div>
+<br />
