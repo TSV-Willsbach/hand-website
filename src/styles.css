@@ -13,6 +13,14 @@
     font-weight: lighter;
     letter-spacing: -.125rem;
     border-bottom: 1px solid #CCCCCC;
+    /* Umbruch wenn Text zu lang ist. */
+    -ms-word-break: break-all;
+    word-break: break-all;
+    /* Non standard for WebKit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
 }
 
 .card {
