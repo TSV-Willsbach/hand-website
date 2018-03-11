@@ -23,7 +23,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.href = this.router.url;
+    this.href = "https://willsbach-handball.de" + this.router.url;
   }
 
   ngOnDestroy() {
