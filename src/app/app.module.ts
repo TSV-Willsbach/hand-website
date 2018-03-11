@@ -23,6 +23,17 @@ import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { CarouselService } from './shared/carousel.service';
 import { NewsService } from './shared/news.service';
 import { SponsorsService } from './shared/sponsors.service';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { ShareButtonModule } from '@ngx-share/button';
+import { ShareButtonsModule } from '@ngx-share/buttons';
+import { ShareButtonsOptions } from '@ngx-share/core';
+import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
+
+const options: ShareButtonsOptions = {
+  include: ['facebook', 'whatsapp', 'copy', 'twitter', 'google', 'email', 'print'],
+  tags: 'tsvWillsbach',
+  twitterAccount: 'willsbach_hndbl'
+}
 
 
 @NgModule({
@@ -37,14 +48,17 @@ import { SponsorsService } from './shared/sponsors.service';
     ReportComponent,
     DownloadsComponent,
     ResultsComponent,
-    DocViewerComponent
+    DocViewerComponent,
+    PostDetailComponent,
+    SponsorsDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ShareButtonsModule.forRoot({ options: options })
   ],
   providers: [
     NavigationService,

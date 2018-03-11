@@ -1,0 +1,33 @@
+<h2 class="heading">{{post.title.rendered}}</h2>
+<div class="postImage">
+  <img src="{{post.thumbnail}}" class="img-fluid" alt="{{post.slug}}">
+</div>
+<br />
+<br />
+
+<div [innerHTML]="post.content.rendered"></div>
+<br />
+<div class="postEnd">
+  <small class="mb-2 text-muted">
+    <ul>
+      <li>
+        <i class="fa fa-calendar-o"></i> {{post.date_gmt | date: 'dd.MM.yyyy'}}
+      </li>
+      <li>
+        <i class="fa fa-user-o"></i> {{post.author}}
+      </li>
+    </ul>
+  </small>
+</div>
+
+<div class="SocialShare">
+  <!-- <share-buttons [include]="['facebook','whatsapp','copy','email','twitter','google','print']" [showText]="true" [showCount]="true"
+    [size]="4" [show]="3" [title]="post.title.rendered" [description]="href" [image]="post.thumbnail" [tags]="'tsvWillsbachHandball'"></share-buttons> -->
+  <share-button [button]="'facebook'" [showCount]="true" [title]="post.title.rendered" [image]="post.thumbnail"></share-button>
+  <share-button [button]="'whatsapp'" [title]="post.title.rendered" [description]="href" [image]="post.thumbnail"></share-button>
+  <share-button [button]="'twitter'" [title]="post.title.rendered" [image]="post.thumbnail" [tags]="'tsvwillsbachhandball'"></share-button>
+  <share-button [button]="'copy'"></share-button>
+  <share-button [button]="'print'"></share-button>
+  <share-button [button]="'email'" [title]="post.title.rendered" [description]="href"></share-button>
+</div>
+<br />
