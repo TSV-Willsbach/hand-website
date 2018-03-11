@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NewsService } from '../shared/news.service';
 import { Post } from '../post';
 import { Meta, Title } from '@angular/platform-browser'
@@ -11,17 +11,19 @@ import { Meta, Title } from '@angular/platform-browser'
 })
 export class PostDetailComponent implements OnInit, OnDestroy {
 
+  public href: string = "";
   id: number;
   post: Post;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private news: NewsService, meta: Meta, title: Title) {
+  constructor(private route: ActivatedRoute, private router: Router, private news: NewsService, meta: Meta, title: Title) {
     this.getPostData();
 
     this.changeMetas(title, meta);
   }
 
   ngOnInit() {
+    this.href = this.router.url;
   }
 
   ngOnDestroy() {
