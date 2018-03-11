@@ -8,6 +8,7 @@ import { ResultsComponent } from './results/results.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,7 @@ const routes: Routes = [
     component: DocViewerComponent
   }, {
     path: 'sponsors',
-    component: SponsorsComponent
+    component: SponsorsDetailComponent
   }, {
     path: 'referee',
     component: DocViewerComponent
