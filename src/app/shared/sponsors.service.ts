@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Sponsors } from '../sponsors';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Sponsors } from '@wh-objects/sponsors';
 
 const apiSponsorImages = "https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&search=sponsors";
 

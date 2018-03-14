@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../shared/news.service';
-import { Post } from '../post';
+import { NewsService } from '@wh-share/news.service';
+import { Post } from '@wh-objects/post';
 
 @Component({
   selector: 'app-news',

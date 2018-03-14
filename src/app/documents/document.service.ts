@@ -8,10 +8,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/switchMap';
 
 import { DocumentContents } from './document-contents';
+import { LocationService } from '@wh-share/location.service';
 export { DocumentContents } from './document-contents';
-
-import { LocationService } from '../shared/location.service';
-// import { Logger } from 'app/shared/logger.service';
 
 export const FILE_NOT_FOUND_ID = 'file-not-found';
 export const FETCHING_ERROR_ID = 'fetching-error';
@@ -44,7 +42,7 @@ export class DocumentService {
     location: LocationService
   ) {
     // Whenever the URL changes we try to get the appropriate doc
-   this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
+    this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
   }
 
   public getDocument(url: string) {
@@ -64,7 +62,7 @@ export class DocumentService {
     this.http
       .get<DocumentContents>(requestPath, { responseType: 'json' })
       .do(data => {
-      //  console.log("fetched document " + data);
+        //  console.log("fetched document " + data);
         if (!data || typeof data !== 'object') {
           //  this.logger.log('received invalid data:', data);
           throw Error('Invalid data');
@@ -91,12 +89,12 @@ export class DocumentService {
     }
   }
 
-/*   private getErrorDoc(id: string, error: HttpErrorResponse): Observable<DocumentContents> {
-    //   this.logger.error('Error fetching document', error);
-    this.cache.delete(id);
-     return Observable.of({
-      id: FETCHING_ERROR_ID,
-      contents: FETCHING_ERROR_CONTENTS
-    }); 
-  } */
+  /*   private getErrorDoc(id: string, error: HttpErrorResponse): Observable<DocumentContents> {
+      //   this.logger.error('Error fetching document', error);
+      this.cache.delete(id);
+       return Observable.of({
+        id: FETCHING_ERROR_ID,
+        contents: FETCHING_ERROR_CONTENTS
+      }); 
+    } */
 }
