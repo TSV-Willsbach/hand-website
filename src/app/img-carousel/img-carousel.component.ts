@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CarouselService } from '../shared/carousel.service';
-import { Team } from '../teams';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselService } from '@wh-share/carousel.service';
+import { Team } from '@wh-objects/teams';
 
 @Component({
   selector: 'app-img-carousel',

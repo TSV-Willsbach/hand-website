@@ -14,6 +14,13 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "@wh-share/*": ["app/shared/*"],
+      "@wh-enviroments/*": ["environments/*"],
+      "@wh-content/*": ["assets/content/*"],
+      "@wh-objects/*": ["app/objects/*"]
+    }
   }
 }

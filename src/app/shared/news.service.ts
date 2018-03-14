@@ -9,7 +9,7 @@ import 'rxjs/add/operator/publishReplay';
 import { timer } from 'rxjs/observable/timer';
 import { switchMap, take, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../post';
+import { Post } from '@wh-objects/post';
 
 const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
 const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6&_embed";
@@ -49,7 +49,6 @@ export class NewsService {
 
   fetchSinglePost(id: number): Observable<any> {
     var link = apiPost + id + embed;
-    console.log("My Link:" + link);
     return this.http.get<Post>(link).map(post => {
       this.mapFields(post);
       return post;
@@ -57,7 +56,25 @@ export class NewsService {
   }
 
   private mapFields(post: Post) {
-    post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
-    post.author = post._embedded['author'][0].name;
+    try {
+      post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
+    }
+    catch (e) {
+      /* Fallback smaller picture */
+      try {
+        post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+      }
+      catch (e) {
+        try {
+          post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
+        }
+        catch (e) { post.thumbnail = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
+      }
+    }
+
+    try {
+      post.author = post._embedded['author'][0].name;
+    }
+    catch (e) { console.log('Error:', e); }
   }
 }

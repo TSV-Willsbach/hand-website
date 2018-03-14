@@ -3,12 +3,11 @@ import { SponsorsService } from '@wh-share/sponsors.service';
 import { Sponsors } from '@wh-objects/sponsors';
 
 @Component({
-  selector: 'app-sponsors',
-  templateUrl: './sponsors.component.html',
-  styleUrls: ['./sponsors.component.css']
+  selector: 'app-sponsors-detail',
+  templateUrl: './sponsors-detail.component.html',
+  styleUrls: ['./sponsors-detail.component.css']
 })
-export class SponsorsComponent implements OnInit {
-
+export class SponsorsDetailComponent implements OnInit {
 
   sponsors: Sponsors[];
 
