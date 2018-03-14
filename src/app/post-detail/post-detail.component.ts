@@ -18,12 +18,18 @@ export class PostDetailComponent implements OnInit, OnDestroy {
 
   constructor(private route: ActivatedRoute, private router: Router, private news: NewsService, private seo: SeoService) {
     this.post = new Post();
-    console.log(this.post);
     this.getPostData();
   }
 
   ngOnInit() {
     this.href = "https://willsbach-handball.de" + this.router.url;
+
+    this.seo.generateTags({
+      title: this.post.title.rendered,
+      description: this.post.excerpt.rendered,
+      image: this.post.thumbnail,
+      slug: this.router.url
+    });
   }
 
   ngOnDestroy() {
