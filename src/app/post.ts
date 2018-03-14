@@ -3,10 +3,15 @@ export class Post {
     date: Date;
     date_gmt: Date;
     guid: Object;
-    title: Object;
-    content: Object;
+    title: {
+        rendered: string;
+    };
+    content: {
+        rendered: string;
+    };
     media_details: Object;
     _embedded: Object;
     thumbnail: string;
     author: string;
+    slug: string;
 }

@@ -10,7 +10,8 @@
       "assets",
       "content",
       "generated",
-      "favicon.ico"
+      "favicon.ico",
+      "manifest.json"
     ],
     "index": "index.html",
     "main": "main.ts",
