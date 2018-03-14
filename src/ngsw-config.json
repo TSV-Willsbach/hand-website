@@ -23,7 +23,8 @@
                 "/assets/**"
             ]
         }
-    }, {
+    }],
+    "dataGroups": [{
         "name": "api-performance",
         "urls": [
             "/",
