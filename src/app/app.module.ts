@@ -62,7 +62,7 @@ const options: ShareButtonsOptions = {
     HttpClientModule,
     NgbModule.forRoot(),
     ShareButtonsModule.forRoot({ options: options }),
-    environment.production ? ServiceWorkerModule.register('../ngsw-worker.js') : []
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
   providers: [
     NavigationService,
