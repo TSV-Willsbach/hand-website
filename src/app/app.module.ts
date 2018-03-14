@@ -28,6 +28,7 @@ import { ShareButtonModule } from '@ngx-share/button';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsOptions } from '@ngx-share/core';
 import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
+import { SeoService } from './shared/seo.service';
 
 const options: ShareButtonsOptions = {
   include: ['facebook', 'whatsapp', 'copy', 'twitter', 'google', 'email', 'print'],
@@ -66,7 +67,8 @@ const options: ShareButtonsOptions = {
     LocationService,
     CarouselService,
     NewsService,
-    SponsorsService
+    SponsorsService,
+    SeoService
   ],
   bootstrap: [AppComponent]
 })
