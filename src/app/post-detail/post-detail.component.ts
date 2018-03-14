@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NewsService } from '../shared/news.service';
-import { Post } from '../post';
-import { SeoService } from '../shared/seo.service';
+import { Post } from '@wh-objects/post';
+import { NewsService } from '@wh-share/news.service';
+import { SeoService } from '@wh-share/seo.service';
 
 @Component({
   selector: 'app-post-detail',
