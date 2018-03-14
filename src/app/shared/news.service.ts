@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { Post } from '../post';
 
 const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
-const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?tags=11&_embed";
+const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6&_embed";
 const apiPost = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts/";
 const embed = "?_embed";
 
