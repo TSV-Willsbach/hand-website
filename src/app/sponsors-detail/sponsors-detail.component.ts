@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SponsorsService } from '../shared/sponsors.service';
-import { Sponsors } from '../sponsors';
+import { SponsorsService } from '@wh-share/sponsors.service';
+import { Sponsors } from '@wh-objects/sponsors';
 
 @Component({
   selector: 'app-sponsors-detail',

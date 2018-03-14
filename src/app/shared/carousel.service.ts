@@ -10,7 +10,7 @@ import 'rxjs/add/operator/publishReplay';
 import { timer } from 'rxjs/observable/timer';
 import { switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Team } from '../teams';
+import { Team } from '@wh-objects/teams';
 
 /* const transitionLeft = "carousel-item-left active";
 const transitionLeftNext = "carousel-item-next carousel-item-left"; */
