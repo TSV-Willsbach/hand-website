@@ -20,6 +20,8 @@ const apiTeams = "https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&se
 @Injectable()
 export class CarouselService {
 
+  teams: any;
+
   /*
 active carousel-item-left
 carousel-item-next carousel-item-left
@@ -48,12 +50,17 @@ carousel-item-next carousel-item-left
   }
 
   fetchTeams(): Observable<Team[]> {
-    return this.http.get<Team[]>(apiTeams)
-      .map(team => {
-        return team.map(team => {
-          return team;
-        });
-      });
+    if (!this.teams) {
+      this.teams = this.http.get<Team[]>(apiTeams)
+        .map(team => {
+          return team.map(team => {
+            return team;
+          });
+        })
+        .publishReplay(1)
+        .refCount();
+    }
+    return this.teams;
   }
 
   nextItem() {
