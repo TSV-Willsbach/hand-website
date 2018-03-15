@@ -9,6 +9,7 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path: 'postDetail/:id',
     component: PostDetailComponent
+  },
+  {
+    path: 'team/:id',
+    component: TeamDetailComponent
   }
 ];
 
