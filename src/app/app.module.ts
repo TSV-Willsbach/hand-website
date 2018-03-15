@@ -30,6 +30,7 @@ import { CarouselService } from '@wh-share/carousel.service';
 import { SponsorsService } from '@wh-share/sponsors.service';
 import { SeoService } from '@wh-share/seo.service';
 import { environment } from '@wh-enviroments/environment';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 
 const options: ShareButtonsOptions = {
@@ -53,7 +54,8 @@ const options: ShareButtonsOptions = {
     ResultsComponent,
     DocViewerComponent,
     PostDetailComponent,
-    SponsorsDetailComponent
+    SponsorsDetailComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,

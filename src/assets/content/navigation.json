@@ -26,6 +26,31 @@
                     "router": "majugend",
                     "title": "A Jugend (m)",
                     "tooltip": ""
+                },
+                {
+                    "router": "mbjugend",
+                    "title": "B Jugend (m)",
+                    "tooltip": ""
+                },
+                {
+                    "router": "mcjugend",
+                    "title": "C Jugend (m)",
+                    "tooltip": ""
+                },
+                {
+                    "router": "mdjugend",
+                    "title": "D Jugend (m)",
+                    "tooltip": ""
+                },
+                {
+                    "router": "mejugend",
+                    "title": "E Jugend (m)",
+                    "tooltip": ""
+                },
+                {
+                    "router": "minis",
+                    "title": "Minis",
+                    "tooltip": ""
                 }
             ]
         },
