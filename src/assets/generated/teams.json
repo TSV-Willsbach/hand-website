@@ -1,0 +1,252 @@
+{
+    "herren": {
+        "title": "Herren",
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren.jpg",
+        "trainer": [{
+            "name": "Kohler",
+            "prename": "Marco"
+        }],
+        "players": [{
+                "position": "TW",
+                "number": 12,
+                "name": "Gebhardt",
+                "prename": "Miguel",
+                "nickname": "Disco Migges, Miggi",
+                "birthday": "10.09.1992",
+                "picture": "",
+                "joinedClub": "2017",
+                "lastClubs": "CVJM Untertürkheim, TV Obertürkheim, HSG Oberer Neckar und TSB Horkheim"
+            },
+            {
+                "position": "TW",
+                "number": 99,
+                "name": "Spannagel",
+                "prename": "Daniel",
+                "birthday": "14.02.1991",
+                "nickname": "Spanni",
+                "picture": ""
+            }
+
+        ]
+
+    },
+    "damen": {
+        "title": "Damen",
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
+        "trainer": [{
+                "name": "Gebhardt",
+                "prename": "Miguel"
+            },
+            {
+                "name": "Trutzenberger",
+                "prename": "Daniel"
+            }
+        ],
+        "players": [{
+                "position": "TW",
+                "number": 91,
+                "name": "Caspar",
+                "prename": "Sina",
+                "birthday": "24.08.1991",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "LA",
+                "number": 3,
+                "name": "Bumbaru",
+                "prename": "Andreea",
+                "birthday": "01.11.1997",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "LA",
+                "number": 7,
+                "name": "Demele",
+                "prename": "Lisa",
+                "birthday": "04.01.1991",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Kahn",
+                "prename": "Jasmin",
+                "birthday": "28.10.1999",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Kreis",
+                "number": "26",
+                "name": "Keerl",
+                "prename": "Mona",
+                "birthday": "04.05.1994",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "18",
+                "name": "Kilian",
+                "prename": "Michelle",
+                "birthday": "12.04.1995",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "17",
+                "name": "Lorenz",
+                "prename": "Jenny",
+                "birthday": "10.10.1994",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "29",
+                "name": "Löffler",
+                "prename": "Anja",
+                "birthday": "25.02.1991",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "13",
+                "name": "Riedel",
+                "prename": "Julia",
+                "birthday": "13.02.1993",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "14",
+                "name": "Rüdele",
+                "prename": "Tina",
+                "birthday": "04.09.1981",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "5",
+                "name": "Schmidt",
+                "prename": "Ronja",
+                "birthday": "27.02.1995",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "4",
+                "name": "Schuhkraft",
+                "prename": "Antonia",
+                "birthday": "03.12.1992",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "12",
+                "name": "Vollert",
+                "prename": "Claudia",
+                "birthday": "11.09.1993",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "28",
+                "name": "Vollert",
+                "prename": "Lena",
+                "birthday": "23.12.1998",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "87",
+                "name": "Vonthien",
+                "prename": "Stefanie",
+                "birthday": "13.04.1987",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "20",
+                "name": "Vukoja",
+                "prename": "Maria",
+                "birthday": "20.09.1995",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "11",
+                "name": "Zehetner",
+                "prename": "Bianca",
+                "birthday": "09.06.1992",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "8",
+                "name": "Ziegler",
+                "prename": "Fabiola",
+                "birthday": "19.06.1991",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            }
+
+        ]
+    },
+    "majugend": {
+        "title": "Männliche A Jugend",
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg"
+    },
+    "mbjugend": {
+        "title": "Männliche B Jugend",
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg"
+    },
+    "mcjugend": {
+        "title": "Männliche C Jugend",
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mC.jpeg"
+    },
+    "mdjugend": {
+        "title": "Männliche D Jugend",
+        "picture": ""
+    },
+    "mejugend": {
+        "title": "Männliche E Jugend",
+        "picture": ""
+    },
+    "minis": {
+        "title": "Minis",
+        "picture": ""
+    }
+}

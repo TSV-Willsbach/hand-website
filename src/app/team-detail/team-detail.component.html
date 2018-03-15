@@ -1,0 +1,67 @@
+<h2 class="heading">{{team.title}}</h2>
+
+<img src="{{team.picture}}" class="img-fluid" alt="{{team.title}}">
+<br />
+<br />
+
+<h3 class="heading">Trainer</h3>
+
+<div *ngFor="let trainer of team.trainer">
+
+  <br />
+  <div class="row">
+    <div class="column">
+      <img src="{{trainer.picture}}" class="img-fluid" alt="{{trainer.name}}, {{trainer.prename}}">
+    </div>
+    <div class="column">
+      <h5>{{trainer.prename}} {{trainer.name}}</h5>
+    </div>
+  </div>
+  <br />
+  <br />
+</div>
+
+<h3 class="heading">Spieler</h3>
+
+<div *ngFor="let player of team.players">
+  <h4>{{player.prename}} {{player.name}}</h4>
+  <br />
+  <div class="row">
+    <div class="column">
+      <img src="{{player.picture}}" class="img-fluid" alt="{{player.name}}, {{player.prename}}">
+    </div>
+    <div class="column">
+      <table style="width:100%">
+        <tr>
+          <td>Position:</td>
+          <td>{{player.position}}</td>
+        </tr>
+        <tr>
+          <td>Number:</td>
+          <td>{{player.number}}</td>
+        </tr>
+        <tr>
+          <td>Spitzname:</td>
+          <td>{{player.nickname}}</td>
+        </tr>
+        <tr>
+          <td>Geburtstag:</td>
+          <td>{{player.birthday}}</td>
+        </tr>
+        <tr>
+          <td>Im Verein seit:</td>
+          <td>{{player.joinedClub}}</td>
+        </tr>
+        <tr>
+          <td>Vorheriger Verein:</td>
+          <td>{{player.lastClubs}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br />
+  <br />
+</div>
+
+<br />
+<br />
