@@ -1,3 +1,7 @@
+a {
+    color: var( --clubColor);
+}
+
 .column {
     float: left;
     width: 40%;
@@ -11,10 +15,26 @@
     clear: both;
 }
 
+table,
+th,
+td {
+    text-align: center;
+}
+
 #playerTable {
     table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#playerTable th {
+    background-color: var( --clubColor);
+    color: #ffff;
 }
 
 #playerTable td {
     width: 25%;
+}
+
+.playerName a {
+    color: black;
 }
