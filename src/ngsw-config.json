@@ -25,17 +25,30 @@
         }
     }],
     "dataGroups": [{
-        "name": "api-performance",
-        "urls": [
-            "/",
-            "/postDetail",
-            "/sponsors",
-            "/reports"
-        ],
-        "cacheConfig": {
-            "maxSize": 100,
-            "maxAge": "1d",
-            "strategy": "performance"
+            "name": "api-performance",
+            "urls": [
+                "/postDetail",
+                "/sponsors",
+                "/reports",
+                "/team/*"
+            ],
+            "cacheConfig": {
+                "maxSize": 100,
+                "maxAge": "1d",
+                "strategy": "performance"
+            }
+        },
+        {
+            "name": "api-freshness",
+            "urls": [
+                "/"
+            ],
+            "cacheConfig": {
+                "maxSize": 30,
+                "timeout": "5s",
+                "maxAge": "1h",
+                "strategy": "freshness"
+            }
         }
-    }]
+    ]
 }

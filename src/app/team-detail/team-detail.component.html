@@ -13,7 +13,7 @@
     <div class="column">
       <img src="{{trainer.picture}}" class="img-fluid" alt="{{trainer.name}}, {{trainer.prename}}">
     </div>
-    <div class="column">
+    <div class="column" style="margin-left: 10%;">
       <h5>{{trainer.prename}} {{trainer.name}}</h5>
     </div>
   </div>
@@ -23,15 +23,40 @@
 
 <h3 class="heading">Spieler</h3>
 
-<div *ngFor="let player of team.players">
+<table style="width:100%" id="playerTable" class="table table-bordered table-hover">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Geburtstag</th>
+    <th>beim Verein</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let player of team.players">
+    <td>{{player.number}}</td>
+    <td class="playerName">
+      <a [routerLink]="['./player', player.prename + '_' + player.name]">{{player.prename}} {{player.name}}</a>
+    </td>
+    <td>{{player.position}}</td>
+    <td>{{player.birthday}}</td>
+    <td>{{player.joinedClub}}</td>
+    <td>
+      <a [routerLink]="['./player', player.prename + '_' + player.name]">Details</a>
+    </td>
+  </tr>
+
+</table>
+
+
+<!-- <div *ngFor="let player of team.players">
   <h4>{{player.prename}} {{player.name}}</h4>
   <br />
   <div class="row">
     <div class="column">
       <img src="{{player.picture}}" class="img-fluid" alt="{{player.name}}, {{player.prename}}">
     </div>
-    <div class="column">
-      <table style="width:100%">
+    <div class="column" style="margin-left: 10%;">
+      <table id="playerTable" style="width:100%">
         <tr>
           <td>Position:</td>
           <td>{{player.position}}</td>
@@ -61,7 +86,7 @@
   </div>
   <br />
   <br />
-</div>
+</div> -->
 
 <br />
 <br />
