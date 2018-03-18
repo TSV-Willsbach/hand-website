@@ -1,6 +1,6 @@
 .column {
     float: left;
-    width: 50%;
+    width: 40%;
 }
 
 /* Clear floats after the columns */
@@ -9,4 +9,12 @@
     content: "";
     display: table;
     clear: both;
+}
+
+#playerTable {
+    table-layout: fixed;
+}
+
+#playerTable td {
+    width: 25%;
 }
