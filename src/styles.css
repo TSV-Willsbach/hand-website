@@ -23,6 +23,21 @@
     hyphens: auto;
 }
 
+table,
+th,
+td {
+    text-align: center;
+}
+
+th {
+    background-color: var( --clubColor);
+    color: #ffff;
+}
+
+td {
+    width: 25%;
+}
+
 .card {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     border: none;

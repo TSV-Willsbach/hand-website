@@ -22,15 +22,15 @@
 </div>
 
 <h3 class="heading">Spieler</h3>
-<p ng-show="!team.players.length">Keine Spielerinformationen vorhanden.</p>
+<!-- <p ng-show="!team.players.length">Keine Spielerinformationen vorhanden.</p> -->
 
-<table style="width:100%" id="playerTable" class="table table-responsive table-bordered table-hover">
+<table style="width:100%" id="playerTable" class="table table-responsive table-striped table-bordered table-hover">
   <tr>
     <th>#</th>
     <th>Name</th>
     <th>Position</th>
     <th>Geburtstag</th>
-    <th>beim Verein</th>
+    <th>im Verein seit</th>
     <th></th>
   </tr>
   <tr *ngFor="let player of team.players">
@@ -53,14 +53,17 @@
 <!-- <p ng-show="!posts.length">Keine Berichte vorhanden.</p> -->
 <div class="row mb-2">
   <div class="col-md-4 mb-3" *ngFor="let post of posts">
+
     <div class="card h-100">
       <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
       <div class="card-body">
+
         <h5 class="card-title">{{post.title.rendered}}</h5>
         <small class="card-subtitle mb-2 text-muted">
           <i class="fa fa-calendar-o"></i> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
         <small class="card-subtitle mb-2 text-muted">
           <i class="fa fa-user"></i> {{post.author}}</small>
+
         <p class="card-text">{{post.excerpt.rendered}}</p>
 
         <a [routerLink]="['/postDetail', post.id]" class="d-flex flex-row-reverse">
@@ -71,7 +74,6 @@
       </div>
     </div>
   </div>
-
 
   <!-- <div *ngFor="let player of team.players">
   <h4>{{player.prename}} {{player.name}}</h4>
@@ -112,6 +114,5 @@
   <br />
   <br />
 </div> -->
-
   <br />
   <br />
