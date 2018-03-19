@@ -11,11 +11,11 @@
                 "number": 12,
                 "name": "Gebhardt",
                 "prename": "Miguel",
-                "nickname": "Disco Migges, Miggi",
+                "nickname": "",
                 "birthday": "10.09.1992",
                 "picture": "",
                 "joinedClub": "2017",
-                "lastClubs": "CVJM Untertürkheim, TV Obertürkheim, HSG Oberer Neckar und TSB Horkheim"
+                "lastClubs": "CVJM Untertürkheim, TV Obertürkheim, HSG Oberer Neckar, TSB Horkheim"
             },
             {
                 "position": "TW",
@@ -25,6 +25,116 @@
                 "birthday": "14.02.1991",
                 "nickname": "Spanni",
                 "picture": ""
+            },
+            {
+                "position": "Außen",
+                "number": 2,
+                "name": "Hohl",
+                "prename": "Markus",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Kreis",
+                "number": 4,
+                "name": "Köder",
+                "prename": "Simon",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Mitte",
+                "number": 5,
+                "name": "Busch",
+                "prename": "Benedikt",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Kreis",
+                "number": 6,
+                "name": "Schiedt",
+                "prename": "Marvin",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Außen",
+                "number": 7,
+                "name": "Löffler",
+                "prename": "Florian",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Kreis",
+                "number": 10,
+                "name": "Vetter",
+                "prename": "Benjamin",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 13,
+                "name": "Rohmig",
+                "prename": "Markus",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 14,
+                "name": "Schwidurski",
+                "prename": "Silas",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 15,
+                "name": "Wörner",
+                "prename": "Fabio",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 17,
+                "name": "Löffler",
+                "prename": "Tim",
+                "nickname": "",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
             }
 
         ]
@@ -49,18 +159,18 @@
                 "prename": "Sina",
                 "birthday": "24.08.1991",
                 "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "joinedClub": "1995",
+                "lastClubs": "HSG Kochertürn/ Stein"
             },
             {
-                "position": "LA",
+                "position": "Außen",
                 "number": 3,
                 "name": "Bumbaru",
-                "prename": "Andreea",
+                "prename": "Andreea Bianca",
                 "birthday": "01.11.1997",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/Bumbaru_Andreea.jpg",
+                "joinedClub": "2011",
+                "lastClubs": "HSG Hohenlohe"
             },
             {
                 "position": "LA",
@@ -69,7 +179,7 @@
                 "prename": "Lisa",
                 "birthday": "04.01.1991",
                 "picture": "",
-                "joinedClub": "",
+                "joinedClub": "2008",
                 "lastClubs": ""
             },
             {
@@ -103,17 +213,17 @@
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "RL, RR",
                 "number": "17",
                 "name": "Lorenz",
                 "prename": "Jenny",
                 "birthday": "10.10.1994",
                 "picture": "",
                 "joinedClub": "",
-                "lastClubs": ""
+                "lastClubs": "TSG Öhringen"
             },
             {
-                "position": "",
+                "position": "RM",
                 "number": "29",
                 "name": "Löffler",
                 "prename": "Anja",
@@ -123,14 +233,14 @@
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "RL",
                 "number": "13",
                 "name": "Riedel",
                 "prename": "Julia",
                 "birthday": "13.02.1993",
                 "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "joinedClub": "2013",
+                "lastClubs": "TV Wißgoldingen, TV Sulzbach an der Murr"
             },
             {
                 "position": "",
@@ -153,17 +263,17 @@
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "RM",
                 "number": "4",
                 "name": "Schuhkraft",
                 "prename": "Antonia",
                 "birthday": "03.12.1992",
                 "picture": "",
-                "joinedClub": "",
+                "joinedClub": "2006",
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "Kreis",
                 "number": "12",
                 "name": "Vollert",
                 "prename": "Claudia",
@@ -183,13 +293,13 @@
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "Kreis",
                 "number": "87",
                 "name": "Vonthien",
                 "prename": "Stefanie",
                 "birthday": "13.04.1987",
                 "picture": "",
-                "joinedClub": "",
+                "joinedClub": "1999",
                 "lastClubs": ""
             },
             {
@@ -203,23 +313,23 @@
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "Außen",
                 "number": "11",
                 "name": "Zehetner",
                 "prename": "Bianca",
                 "birthday": "09.06.1992",
                 "picture": "",
-                "joinedClub": "",
+                "joinedClub": "2006",
                 "lastClubs": ""
             },
             {
-                "position": "",
+                "position": "RR",
                 "number": "8",
                 "name": "Ziegler",
                 "prename": "Fabiola",
                 "birthday": "19.06.1991",
                 "picture": "",
-                "joinedClub": "",
+                "joinedClub": "1997",
                 "lastClubs": ""
             }
 
