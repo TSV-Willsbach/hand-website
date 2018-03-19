@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Post } from '@wh-objects/post';
+import { NewsService } from '@wh-share/news.service';
 
 @Component({
   selector: 'app-team-detail',
@@ -12,8 +14,9 @@ export class TeamDetailComponent implements OnInit {
   id: string;
   private sub: any;
   team: any;
+  posts: Post[];
 
-  constructor(private route: ActivatedRoute, private httpService: HttpClient) {
+  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService) {
 
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
@@ -22,12 +25,15 @@ export class TeamDetailComponent implements OnInit {
         data => {
           this.team = data[this.id];
           console.log(this.team);
+          this.news.fetchReports(this.id).subscribe(posts => this.posts = posts);
         },
         (err: HttpErrorResponse) => {
           console.log(err.message);
         }
       );
     });
+
+
   }
 
   ngOnInit() {

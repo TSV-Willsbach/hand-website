@@ -10,11 +10,20 @@ import { timer } from 'rxjs/observable/timer';
 import { switchMap, take, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '@wh-objects/post';
+import { when } from 'q';
 
 const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
-const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6&_embed";
+const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6";
 const apiPost = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts/";
-const embed = "?_embed";
+const embed = "_embed";
+const catHerren = "&categories=10";
+const catDamen = "&categories=5";
+const catmA = "&categories=17";
+const catmB = "&categories=18";
+const catmC = "&categories=19";
+const catmD = "&categories=20";
+const catmE = "&categories=21";
+const catMinis = "&categories=22";
 
 @Injectable()
 export class NewsService {
@@ -37,8 +46,57 @@ export class NewsService {
 
   }
 
-  fetchReports(): Observable<Post[]> {
-    return this.http.get<Post[]>(apiReports)
+  fetchReports(id: string): Observable<Post[]> {
+    var link: string;
+
+    switch (id) {
+      case "herren": {
+        link = apiReports + catHerren + "&" + embed;
+        break;
+      }
+
+      case "damen": {
+        link = apiReports + catDamen + "&" + embed;
+        break;
+      }
+
+      case "majugend": {
+        link = apiReports + catmA + "&" + embed;
+        break;
+      }
+
+      case "mbjugend": {
+        link = apiReports + catmB + "&" + embed;
+        break;
+      }
+
+      case "mcjugend": {
+        link = apiReports + catmC + "&" + embed;
+        break;
+      }
+
+      case "mdjugend": {
+        link = apiReports + catmD + "&" + embed;
+        break;
+      }
+
+      case "mejugend": {
+        link = apiReports + catmE + "&" + embed;
+        break;
+      }
+
+      case "minis": {
+        link = apiReports + catMinis + "&" + embed;
+        break;
+      }
+
+      default: {
+        link = apiReports + "&" + embed;
+      }
+
+    }
+    console.log(link);
+    return this.http.get<Post[]>(link)
       .map(posts => {
         return posts.map(post => {
           this.mapFields(post);
@@ -48,7 +106,7 @@ export class NewsService {
   }
 
   fetchSinglePost(id: number): Observable<any> {
-    var link = apiPost + id + embed;
+    var link = apiPost + id + "?" + embed;
     return this.http.get<Post>(link).map(post => {
       this.mapFields(post);
       return post;

@@ -13,7 +13,7 @@ export class ReportComponent implements OnInit {
 
   constructor(private news: NewsService) {
 
-    this.news.fetchReports()
+    this.news.fetchReports("")
       .subscribe(posts => this.posts = posts);
   }
 
