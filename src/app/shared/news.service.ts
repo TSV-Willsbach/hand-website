@@ -24,6 +24,7 @@ const catmC = "&categories=19";
 const catmD = "&categories=20";
 const catmE = "&categories=21";
 const catMinis = "&categories=22";
+const maxPosts = "&per_page=6";
 
 @Injectable()
 export class NewsService {
@@ -31,7 +32,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
   fetchNews(): Observable<Post[]> {
-    return this.http.get<Post[]>(apiPosts)
+    return this.http.get<Post[]>(this.getLink(apiPosts))
       .map(posts => {
         return posts.map(post => {
           this.mapFields(post);
@@ -96,7 +97,7 @@ export class NewsService {
 
     }
     console.log(link);
-    return this.http.get<Post[]>(link)
+    return this.http.get<Post[]>(this.getLink(link))
       .map(posts => {
         return posts.map(post => {
           this.mapFields(post);
@@ -111,6 +112,10 @@ export class NewsService {
       this.mapFields(post);
       return post;
     });
+  }
+
+  private getLink(link: string): string {
+    return link + maxPosts;
   }
 
   private mapFields(post: Post) {
