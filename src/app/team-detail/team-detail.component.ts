@@ -24,7 +24,6 @@ export class TeamDetailComponent implements OnInit {
       this.httpService.get('./assets/generated/teams.json').subscribe(
         data => {
           this.team = data[this.id];
-          console.log(this.team);
           this.news.fetchReports(this.id).subscribe(posts => this.posts = posts);
         },
         (err: HttpErrorResponse) => {
