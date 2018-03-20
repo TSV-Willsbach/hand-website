@@ -39,7 +39,6 @@ export class NewsComponent implements OnInit {
           }
           this.pages.push(this.paginator);
         }
-        console.log(this.pages);
       });
   }
 
