@@ -14,30 +14,26 @@
     </div>
   </div>
 </div>
-<!-- <div class="pageinatorContainer">
+<div class="pageinatorContainer">
   <nav aria-label="Page navigation">
     <ul class="pagination">
       <li class="page-item">
-        <a class="page-link" href="#" aria-label="Previous">
+        <a class="page-link" href="#" aria-label="Previous" (click)="prevPage()">
           <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Vorherige</span>
         </a>
       </li>
+      <div *ngFor="let item of pages">
+        <li class="page-item">
+          <a class="page-link" href="#" (click)="jumpToPage(item)">{{item}}</a>
+        </li>
+      </div>
       <li class="page-item">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#" aria-label="Next">
+        <a class="page-link" href="#" aria-label="Next" (click)="nextPage()">
           <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Nächste</span>
         </a>
       </li>
     </ul>
   </nav>
-</div> -->
+</div>

@@ -29,17 +29,25 @@ const maxPosts = "&per_page=6";
 @Injectable()
 export class NewsService {
 
+  totalPages: number;
   page: number;
 
   constructor(private http: HttpClient) {
   }
 
+  getMaxPages(): number {
+    return this.totalPages;
+  }
+
   fetchNews(page: number): Observable<Post[]> {
     this.page = page;
-    return this.http.get<Post[]>(this.getLink(apiPosts))
+    return this.http.get<Post[]>(this.getLink(apiPosts), { observe: 'response' })
       .map(posts => {
-        return posts.map(post => {
+        this.totalPages = +posts.headers.get("X-WP-TotalPages");
+        console.log(page);
+        return posts.body.map(post => {
           this.mapFields(post);
+
           return post;
         });
       });
