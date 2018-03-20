@@ -11,3 +11,12 @@
     height: 100%;
     width: 100%;
 }
+
+.page-link {
+    color: var( --clubColor);
+}
+
+.page-item.active .page-link {
+    background-color: var( --clubColor);
+    border-color: var( --clubColor);
+}

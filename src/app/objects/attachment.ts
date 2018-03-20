@@ -11,4 +11,5 @@ export class Attachment {
     source_url: string;
     icon: string;
     iconColor: string;
+    fileType: string;
 }
