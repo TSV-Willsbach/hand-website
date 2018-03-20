@@ -4,3 +4,10 @@
     color: var( --clubColor);
     font-weight: bold;
 }
+
+.pageinatorContainer {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

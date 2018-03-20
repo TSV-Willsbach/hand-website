@@ -29,9 +29,13 @@ const maxPosts = "&per_page=6";
 @Injectable()
 export class NewsService {
 
-  constructor(private http: HttpClient) { }
+  page: number;
 
-  fetchNews(): Observable<Post[]> {
+  constructor(private http: HttpClient) {
+  }
+
+  fetchNews(page: number): Observable<Post[]> {
+    this.page = page;
     return this.http.get<Post[]>(this.getLink(apiPosts))
       .map(posts => {
         return posts.map(post => {
@@ -115,7 +119,12 @@ export class NewsService {
   }
 
   private getLink(link: string): string {
-    return link + maxPosts;
+
+    if ((this.page == null) || (this.page === 0)) {
+      // page undefined or null or 0
+      this.page = 1;
+    }
+    return link + maxPosts + "&page=" + this.page;
   }
 
   private mapFields(post: Post) {

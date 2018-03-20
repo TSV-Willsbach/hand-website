@@ -10,10 +10,11 @@ import { Post } from '@wh-objects/post';
 export class NewsComponent implements OnInit {
 
   posts: Post[];
+  page: number;
 
   constructor(private news: NewsService) {
 
-    this.news.fetchNews()
+    this.news.fetchNews(this.page)
       .subscribe(posts => this.posts = posts);
   }
 
