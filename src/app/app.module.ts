@@ -31,6 +31,7 @@ import { SponsorsService } from '@wh-share/sponsors.service';
 import { SeoService } from '@wh-share/seo.service';
 import { environment } from '@wh-enviroments/environment';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { FileServiceService } from '@wh-share/file-service.service';
 
 
 const options: ShareButtonsOptions = {
@@ -73,7 +74,8 @@ const options: ShareButtonsOptions = {
     CarouselService,
     NewsService,
     SponsorsService,
-    SeoService
+    SeoService,
+    FileServiceService
   ],
   bootstrap: [AppComponent]
 })
