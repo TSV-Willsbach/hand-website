@@ -27,6 +27,10 @@ export class AppComponent implements OnInit {
     private documentService: DocumentService,
   ) { }
 
+  onActivate(event) {
+    window.scroll(0, 0);
+  }
+
   ngOnInit() {
     this.navigationService.versionInfo.subscribe(vi => {
       this.versionInfo = vi
@@ -45,26 +49,26 @@ export class AppComponent implements OnInit {
     // prematurely).
     // On the first document, though, (when we know there is no previous document), we want to
     // ensure the styles are applied as soon as possible to avoid flicker.
-//    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
+    //    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
 
     this.locationService.currentPath.subscribe(path => {
       console.log(path)
       // Redirect to docs if we are in archive mode and are not hitting a docs page
       // (i.e. we have arrived at a marketing page)
-/*       if (this.deployment.mode === 'archive' && !/^(docs$|api|guide|tutorial)/.test(path)) {
-        this.locationService.replace('docs');
-      }
-      if (path === this.currentPath) {
-        // scroll only if on same page (most likely a change to the hash)
-        this.autoScroll();
-      } else {
-        // don't scroll; leave that to `onDocRendered`
-        this.currentPath = path;
-
-        // Start progress bar if doc not rendered within brief time
-        clearTimeout(this.isFetchingTimeout);
-        this.isFetchingTimeout = setTimeout(() => this.isFetching = true, 200);
-      } */
+      /*       if (this.deployment.mode === 'archive' && !/^(docs$|api|guide|tutorial)/.test(path)) {
+              this.locationService.replace('docs');
+            }
+            if (path === this.currentPath) {
+              // scroll only if on same page (most likely a change to the hash)
+              this.autoScroll();
+            } else {
+              // don't scroll; leave that to `onDocRendered`
+              this.currentPath = path;
+      
+              // Start progress bar if doc not rendered within brief time
+              clearTimeout(this.isFetchingTimeout);
+              this.isFetchingTimeout = setTimeout(() => this.isFetching = true, 200);
+            } */
     });
 
   }
