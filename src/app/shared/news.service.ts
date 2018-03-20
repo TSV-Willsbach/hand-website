@@ -24,17 +24,30 @@ const catmC = "&categories=19";
 const catmD = "&categories=20";
 const catmE = "&categories=21";
 const catMinis = "&categories=22";
+const maxPosts = "&per_page=6";
 
 @Injectable()
 export class NewsService {
 
-  constructor(private http: HttpClient) { }
+  totalPages: number;
+  page: number;
 
-  fetchNews(): Observable<Post[]> {
-    return this.http.get<Post[]>(apiPosts)
+  constructor(private http: HttpClient) {
+  }
+
+  getMaxPages(): number {
+    return this.totalPages;
+  }
+
+  fetchNews(page: number): Observable<Post[]> {
+    this.page = page;
+    return this.http.get<Post[]>(this.getLink(apiPosts), { observe: 'response' })
       .map(posts => {
-        return posts.map(post => {
+        this.totalPages = +posts.headers.get("X-WP-TotalPages");
+        console.log(page);
+        return posts.body.map(post => {
           this.mapFields(post);
+
           return post;
         });
       });
@@ -96,7 +109,7 @@ export class NewsService {
 
     }
     console.log(link);
-    return this.http.get<Post[]>(link)
+    return this.http.get<Post[]>(this.getLink(link))
       .map(posts => {
         return posts.map(post => {
           this.mapFields(post);
@@ -111,6 +124,15 @@ export class NewsService {
       this.mapFields(post);
       return post;
     });
+  }
+
+  private getLink(link: string): string {
+
+    if ((this.page == null) || (this.page === 0)) {
+      // page undefined or null or 0
+      this.page = 1;
+    }
+    return link + maxPosts + "&page=" + this.page;
   }
 
   private mapFields(post: Post) {

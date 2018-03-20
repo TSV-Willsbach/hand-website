@@ -15,20 +15,9 @@ a {
     clear: both;
 }
 
-table,
-th,
-td {
-    text-align: center;
-}
-
 #playerTable {
     table-layout: fixed;
     border-collapse: collapse;
-}
-
-#playerTable th {
-    background-color: var( --clubColor);
-    color: #ffff;
 }
 
 #playerTable td {
