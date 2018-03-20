@@ -14,7 +14,7 @@
         <div [ngStyle]="iconStyle(attachment.iconColor)">
           <span class="{{attachment.icon}} fa-2x"></span>
           <br />
-          <small>{{attachment.mime_type.replace('application/', '') | uppercase}}</small>
+          <small>{{attachment.fileType | uppercase}}</small>
         </div>
       </td>
       <td>{{attachment.title.rendered}}</td>

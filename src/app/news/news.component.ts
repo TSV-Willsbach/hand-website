@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '@wh-share/news.service';
 import { Post } from '@wh-objects/post';
+import { Paginator } from '@wh-objects/pagination';
 
 @Component({
   selector: 'app-news',
@@ -9,15 +10,19 @@ import { Post } from '@wh-objects/post';
 })
 export class NewsComponent implements OnInit {
 
-  posts: Post[];
   public maxPages: number;
+  public nextDisabled: string;
+  public prevDisabled: string;
+  posts: Post[];
   page: number = 1;
-  pages: Number[];
+  pages: Paginator[];
+  paginator: Paginator;
   myData: any;
 
 
-  constructor(private news: NewsService) {
 
+  constructor(private news: NewsService) {
+    this.prevDisabled = "disabled";
     this.callApi();
   }
 
@@ -27,10 +32,13 @@ export class NewsComponent implements OnInit {
         this.maxPages = this.news.getMaxPages();
         this.pages = new Array();
         for (var i = 1; i <= this.maxPages; i++) {
-          console.log(i);
-          this.pages.push(i);
+          if (i === this.page) {
+            this.paginator = { id: i, active: "active" };
+          } else {
+            this.paginator = { id: i, active: "" };
+          }
+          this.pages.push(this.paginator);
         }
-        console.log(this.pages);
       });
   }
 
@@ -38,24 +46,38 @@ export class NewsComponent implements OnInit {
   }
 
   prevPage() {
-    this.myData.unsubscribe();
     this.page--;
-    console.log(this.page);
-    this.callApi();
+    this.jumpToPage(this.page);
   }
 
   nextPage() {
-    this.myData.unsubscribe();
     this.page++;
-    console.log(this.page);
-    this.callApi();
+    this.jumpToPage(this.page);
   }
 
   jumpToPage(page: number) {
-    this.myData.unsubscribe();
     this.page = page;
-    console.log(this.page);
+    this.nextPrevAvailability();
+
+    this.myData.unsubscribe();
     this.callApi();
   }
 
+
+  private nextPrevAvailability() {
+    // this.pages[this.page] = { id: this.page, active: "active" };
+    if (this.page === 1) {
+      this.prevDisabled = "disabled";
+      this.nextDisabled = "";
+    }
+    else if (this.page === this.maxPages) {
+      this.nextDisabled = "disabled";
+      this.prevDisabled = "";
+    }
+    else {
+      this.prevDisabled = "";
+      this.nextDisabled = "";
+    }
+
+  }
 }
