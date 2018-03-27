@@ -44,7 +44,6 @@ export class NewsService {
     return this.http.get<Post[]>(this.getLink(apiPosts), { observe: 'response' })
       .map(posts => {
         this.totalPages = +posts.headers.get("X-WP-TotalPages");
-        console.log(page);
         return posts.body.map(post => {
           this.mapFields(post);
 
@@ -108,7 +107,6 @@ export class NewsService {
       }
 
     }
-    console.log(link);
     return this.http.get<Post[]>(this.getLink(link))
       .map(posts => {
         return posts.map(post => {
