@@ -194,7 +194,7 @@
             },
             {
                 "position": "Kreis",
-                "number": "26",
+                "number": 26,
                 "name": "Keerl",
                 "prename": "Mona",
                 "birthday": "04.05.1994",
@@ -204,7 +204,7 @@
             },
             {
                 "position": "",
-                "number": "18",
+                "number": 18,
                 "name": "Kilian",
                 "prename": "Michelle",
                 "birthday": "12.04.1995",
@@ -214,7 +214,7 @@
             },
             {
                 "position": "RL, RR",
-                "number": "17",
+                "number": 17,
                 "name": "Lorenz",
                 "prename": "Jenny",
                 "birthday": "10.10.1994",
@@ -224,7 +224,7 @@
             },
             {
                 "position": "RM",
-                "number": "29",
+                "number": 29,
                 "name": "Löffler",
                 "prename": "Anja",
                 "birthday": "25.02.1991",
@@ -234,7 +234,7 @@
             },
             {
                 "position": "RL",
-                "number": "13",
+                "number": 13,
                 "name": "Riedel",
                 "prename": "Julia",
                 "birthday": "13.02.1993",
@@ -244,7 +244,7 @@
             },
             {
                 "position": "",
-                "number": "14",
+                "number": 14,
                 "name": "Rüdele",
                 "prename": "Tina",
                 "birthday": "04.09.1981",
@@ -254,7 +254,7 @@
             },
             {
                 "position": "",
-                "number": "5",
+                "number": 5,
                 "name": "Schmidt",
                 "prename": "Ronja",
                 "birthday": "27.02.1995",
@@ -264,7 +264,7 @@
             },
             {
                 "position": "RM",
-                "number": "4",
+                "number": 4,
                 "name": "Schuhkraft",
                 "prename": "Antonia",
                 "birthday": "03.12.1992",
@@ -274,7 +274,7 @@
             },
             {
                 "position": "Kreis",
-                "number": "12",
+                "number": 12,
                 "name": "Vollert",
                 "prename": "Claudia",
                 "birthday": "11.09.1993",
@@ -284,7 +284,7 @@
             },
             {
                 "position": "",
-                "number": "28",
+                "number": 28,
                 "name": "Vollert",
                 "prename": "Lena",
                 "birthday": "23.12.1998",
@@ -294,7 +294,7 @@
             },
             {
                 "position": "Kreis",
-                "number": "87",
+                "number": 87,
                 "name": "Vonthien",
                 "prename": "Stefanie",
                 "birthday": "13.04.1987",
@@ -304,7 +304,7 @@
             },
             {
                 "position": "",
-                "number": "20",
+                "number": 20,
                 "name": "Vukoja",
                 "prename": "Maria",
                 "birthday": "20.09.1995",
@@ -314,7 +314,7 @@
             },
             {
                 "position": "Außen",
-                "number": "11",
+                "number": 11,
                 "name": "Zehetner",
                 "prename": "Bianca",
                 "birthday": "09.06.1992",
@@ -324,7 +324,7 @@
             },
             {
                 "position": "RR",
-                "number": "8",
+                "number": 8,
                 "name": "Ziegler",
                 "prename": "Fabiola",
                 "birthday": "19.06.1991",
