@@ -31,6 +31,11 @@ export class PlayerDetailComponent implements OnInit {
             item.name === playerNames[1] &&
             item.prename === playerNames[0]
           );
+
+          if (this.player.picture === "") {
+            // Default Picture if no picture is set
+            this.player.picture = "https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png";
+          }
           console.log(this.player);
         },
         (err: HttpErrorResponse) => {
