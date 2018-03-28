@@ -31,6 +31,14 @@ export class TeamDetailComponent implements OnInit {
         },
         (err: HttpErrorResponse) => {
           console.log(err.message);
+        },
+        () => {
+          // Sort by Prename when completed
+          this.team.players.sort(function (a, b) {
+            if (a.prename < b.prename) return -1;
+            if (a.prename > b.prename) return 1;
+            return 0;
+          });
         }
       );
     });
