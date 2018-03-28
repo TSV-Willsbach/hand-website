@@ -27,12 +27,21 @@
                 "picture": ""
             },
             {
+                "position": "",
+                "number": 11,
+                "name": "Purzel",
+                "prename": "Marvin",
+                "birthday": "17.07.1992",
+                "nickname": "",
+                "picture": ""
+            },
+            {
                 "position": "Außen",
                 "number": 2,
                 "name": "Hohl",
                 "prename": "Markus",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "01.10.1989",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -43,7 +52,18 @@
                 "name": "Köder",
                 "prename": "Simon",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "19.05.1990",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "Kreis",
+                "number": "",
+                "name": "Petzold",
+                "prename": "Nils",
+                "nickname": "",
+                "birthday": "17.05.1999",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -54,7 +74,18 @@
                 "name": "Busch",
                 "prename": "Benedikt",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "08.11.1995",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Galonska",
+                "prename": "Tom",
+                "nickname": "",
+                "birthday": "12.07.1999",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -65,7 +96,7 @@
                 "name": "Schiedt",
                 "prename": "Marvin",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "07.01.1995",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -76,7 +107,7 @@
                 "name": "Löffler",
                 "prename": "Florian",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "13.07.1994",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -87,7 +118,7 @@
                 "name": "Vetter",
                 "prename": "Benjamin",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "14.06.1999",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -98,7 +129,18 @@
                 "name": "Rohmig",
                 "prename": "Markus",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "08.07.1991",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "TW",
+                "number": 25,
+                "name": "Hanke",
+                "prename": "David",
+                "nickname": "",
+                "birthday": "10.11.1994",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -109,7 +151,7 @@
                 "name": "Schwidurski",
                 "prename": "Silas",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "03.09.1998",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -120,7 +162,7 @@
                 "name": "Wörner",
                 "prename": "Fabio",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "27.10.1999",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -131,7 +173,7 @@
                 "name": "Löffler",
                 "prename": "Tim",
                 "nickname": "",
-                "birthday": "",
+                "birthday": "25.11.1999",
                 "picture": "",
                 "joinedClub": "",
                 "lastClubs": ""
@@ -337,7 +379,147 @@
     },
     "majugend": {
         "title": "Männliche A Jugend",
-        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg"
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg",
+        "trainer": [{
+                "name": "Purzel",
+                "prename": "Michael"
+            },
+            {
+                "name": "Klappenecker",
+                "prename": "Markus"
+            }
+        ],
+        "players": [{
+                "position": "TW",
+                "number": 1,
+                "name": "Doll",
+                "prename": "Robin",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "TW",
+                "number": 12,
+                "name": "Krauß",
+                "prename": "Michael",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 5,
+                "name": "Anderl",
+                "prename": "Marius",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 13,
+                "name": "Butzelaar",
+                "prename": "Stephan",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 6,
+                "name": "Dicht",
+                "prename": "Timo",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 11,
+                "name": "Hellmich",
+                "prename": "Felix",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 3,
+                "name": "Jaspers",
+                "prename": "Jann",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "TW",
+                "number": "",
+                "name": "Kral",
+                "prename": "Tim",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 9,
+                "name": "Krebs",
+                "prename": "Marcel",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 10,
+                "name": "Riedel",
+                "prename": "Michael",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 14,
+                "name": "Sommer",
+                "prename": "Luis",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 7,
+                "name": "Waldmann",
+                "prename": "Nils",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Wörner",
+                "prename": "Tim",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            }
+        ]
     },
     "mbjugend": {
         "title": "Männliche B Jugend",
