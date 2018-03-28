@@ -22,7 +22,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pwa": "ng build --prod && sw-precache --root=dist --config=precache-config.js"
+    "pwa": "ng build --prod && sw-precache --root=dist --config=precache-config.js",
+    "doc:build": "compodoc -p src/tsconfig.app.json",
+    "doc:serve": "compodoc -s",
+    "doc:buildandserve": "compodoc -p src/tsconfig.app.json -s"
   },
   "private": true,
   "dependencies": {
