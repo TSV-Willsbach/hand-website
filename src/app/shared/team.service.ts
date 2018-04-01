@@ -22,11 +22,14 @@ export class TeamService {
       .map(player => {
         let team = player[teamId];
         let playerNames = playerName.split("_");
+
         player = team.players.find(item =>
           item.name === playerNames[1] &&
           item.prename === playerNames[0]
         );
-        if (player.picture === "") {
+
+        console.log(player);
+        if (player.picture === "" || player.picture === undefined) {
           // Default Picture if no picture is set
           player.picture = defaultImg;
         }

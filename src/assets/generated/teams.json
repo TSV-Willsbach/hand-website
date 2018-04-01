@@ -1,4 +1,5 @@
 {
+    "$schema": "./teamSchema.json",
     "herren": {
         "title": "Herren",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren.jpg",
@@ -11,7 +12,6 @@
                 "number": 12,
                 "name": "Gebhardt",
                 "prename": "Miguel",
-                "nickname": "",
                 "birthday": "10.09.1992",
                 "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/fb_Miguel_Gebhardt_min.jpg",
                 "joinedClub": "2017",
@@ -23,160 +23,97 @@
                 "name": "Spannagel",
                 "prename": "Daniel",
                 "birthday": "14.02.1991",
-                "nickname": "Spanni",
-                "picture": ""
+                "nickname": "Spanni"
             },
             {
-                "position": "",
                 "number": 11,
                 "name": "Purzel",
                 "prename": "Marvin",
-                "birthday": "17.07.1992",
-                "nickname": "",
-                "picture": ""
+                "birthday": "17.07.1992"
             },
             {
                 "position": "Außen",
                 "number": 2,
                 "name": "Hohl",
                 "prename": "Markus",
-                "nickname": "",
-                "birthday": "01.10.1989",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "01.10.1989"
             },
             {
                 "position": "Kreis",
                 "number": 4,
                 "name": "Köder",
                 "prename": "Simon",
-                "nickname": "",
-                "birthday": "19.05.1990",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "19.05.1990"
             },
             {
                 "position": "Kreis",
-                "number": "",
                 "name": "Petzold",
                 "prename": "Nils",
-                "nickname": "",
-                "birthday": "17.05.1999",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "17.05.1999"
             },
             {
                 "position": "Mitte",
                 "number": 5,
                 "name": "Busch",
                 "prename": "Benedikt",
-                "nickname": "",
-                "birthday": "08.11.1995",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "08.11.1995"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Galonska",
                 "prename": "Tom",
-                "nickname": "",
-                "birthday": "12.07.1999",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "12.07.1999"
             },
             {
                 "position": "Kreis",
                 "number": 6,
                 "name": "Schiedt",
                 "prename": "Marvin",
-                "nickname": "",
-                "birthday": "07.01.1995",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "07.01.1995"
             },
             {
                 "position": "Außen",
                 "number": 7,
                 "name": "Löffler",
                 "prename": "Florian",
-                "nickname": "",
-                "birthday": "13.07.1994",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "13.07.1994"
             },
             {
                 "position": "Kreis",
                 "number": 10,
                 "name": "Vetter",
                 "prename": "Benjamin",
-                "nickname": "",
-                "birthday": "14.06.1999",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "14.06.1999"
             },
             {
-                "position": "",
                 "number": 13,
                 "name": "Rohmig",
                 "prename": "Markus",
-                "nickname": "",
-                "birthday": "08.07.1991",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "08.07.1991"
             },
             {
                 "position": "TW",
                 "number": 25,
                 "name": "Hanke",
                 "prename": "David",
-                "nickname": "",
-                "birthday": "10.11.1994",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "10.11.1994"
             },
             {
-                "position": "",
                 "number": 14,
                 "name": "Schwidurski",
                 "prename": "Silas",
-                "nickname": "",
-                "birthday": "03.09.1998",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "03.09.1998"
             },
             {
-                "position": "",
                 "number": 15,
                 "name": "Wörner",
                 "prename": "Fabio",
-                "nickname": "",
-                "birthday": "27.10.1999",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "27.10.1999"
             },
             {
-                "position": "",
                 "number": 17,
                 "name": "Löffler",
                 "prename": "Tim",
-                "nickname": "",
-                "birthday": "25.11.1999",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "25.11.1999"
             }
 
         ]
@@ -221,38 +158,25 @@
                 "prename": "Lisa",
                 "birthday": "04.01.1991",
                 "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Lisa_min.jpg",
-                "joinedClub": "2008",
-                "lastClubs": ""
+                "joinedClub": "2008"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Kahn",
                 "prename": "Jasmin",
-                "birthday": "28.10.1999",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "28.10.1999"
             },
             {
                 "position": "Kreis",
                 "number": 26,
                 "name": "Keerl",
                 "prename": "Mona",
-                "birthday": "04.05.1994",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "04.05.1994"
             },
             {
-                "position": "",
                 "number": 18,
                 "name": "Kilian",
                 "prename": "Michelle",
-                "birthday": "12.04.1995",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "12.04.1995"
             },
             {
                 "position": "RL, RR",
@@ -260,8 +184,6 @@
                 "name": "Lorenz",
                 "prename": "Jenny",
                 "birthday": "10.10.1994",
-                "picture": "",
-                "joinedClub": "",
                 "lastClubs": "TSG Öhringen"
             },
             {
@@ -269,10 +191,7 @@
                 "number": 29,
                 "name": "Löffler",
                 "prename": "Anja",
-                "birthday": "25.02.1991",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "25.02.1991"
             },
             {
                 "position": "RL",
@@ -280,29 +199,20 @@
                 "name": "Riedel",
                 "prename": "Julia",
                 "birthday": "13.02.1993",
-                "picture": "",
                 "joinedClub": "2013",
                 "lastClubs": "TV Wißgoldingen, TV Sulzbach an der Murr"
             },
             {
-                "position": "",
                 "number": 14,
                 "name": "Rüdele",
                 "prename": "Tina",
-                "birthday": "04.09.1981",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "04.09.1981"
             },
             {
-                "position": "",
                 "number": 5,
                 "name": "Schmidt",
                 "prename": "Ronja",
-                "birthday": "27.02.1995",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "27.02.1995"
             },
             {
                 "position": "RM",
@@ -311,28 +221,20 @@
                 "prename": "Antonia",
                 "birthday": "03.12.1992",
                 "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Toni_min.jpg",
-                "joinedClub": "2006",
-                "lastClubs": ""
+                "joinedClub": "2006"
             },
             {
                 "position": "Kreis",
                 "number": 12,
                 "name": "Vollert",
                 "prename": "Claudia",
-                "birthday": "11.09.1993",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "11.09.1993"
             },
             {
-                "position": "",
                 "number": 28,
                 "name": "Vollert",
                 "prename": "Lena",
-                "birthday": "23.12.1998",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "23.12.1998"
             },
             {
                 "position": "Kreis",
@@ -340,19 +242,13 @@
                 "name": "Vonthien",
                 "prename": "Stefanie",
                 "birthday": "13.04.1987",
-                "picture": "",
-                "joinedClub": "1999",
-                "lastClubs": ""
+                "joinedClub": "1999"
             },
             {
-                "position": "",
                 "number": 20,
                 "name": "Vukoja",
                 "prename": "Maria",
-                "birthday": "20.09.1995",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "birthday": "20.09.1995"
             },
             {
                 "position": "Außen",
@@ -360,9 +256,7 @@
                 "name": "Zehetner",
                 "prename": "Bianca",
                 "birthday": "09.06.1992",
-                "picture": "",
-                "joinedClub": "2006",
-                "lastClubs": ""
+                "joinedClub": "2006"
             },
             {
                 "position": "RR",
@@ -370,9 +264,7 @@
                 "name": "Ziegler",
                 "prename": "Fabiola",
                 "birthday": "19.06.1991",
-                "picture": "",
-                "joinedClub": "1997",
-                "lastClubs": ""
+                "joinedClub": "1997"
             }
 
         ]
@@ -393,131 +285,67 @@
                 "position": "TW",
                 "number": 1,
                 "name": "Doll",
-                "prename": "Robin",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Robin"
             },
             {
                 "position": "TW",
                 "number": 12,
                 "name": "Krauß",
-                "prename": "Michael",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Michael"
             },
             {
-                "position": "",
                 "number": 5,
                 "name": "Anderl",
-                "prename": "Marius",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Marius"
             },
             {
-                "position": "",
                 "number": 13,
                 "name": "Butzelaar",
-                "prename": "Stephan",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Stephan"
             },
             {
-                "position": "",
                 "number": 6,
                 "name": "Dicht",
-                "prename": "Timo",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Timo"
             },
             {
-                "position": "",
                 "number": 11,
                 "name": "Hellmich",
-                "prename": "Felix",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Felix"
             },
             {
-                "position": "",
                 "number": 3,
                 "name": "Jaspers",
-                "prename": "Jann",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Jann"
             },
             {
                 "position": "TW",
-                "number": "",
                 "name": "Kral",
-                "prename": "Tim",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Tim"
             },
             {
-                "position": "",
                 "number": 9,
                 "name": "Krebs",
-                "prename": "Marcel",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Marcel"
             },
             {
-                "position": "",
                 "number": 10,
                 "name": "Riedel",
-                "prename": "Michael",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Michael"
             },
             {
-                "position": "",
                 "number": 14,
                 "name": "Sommer",
-                "prename": "Luis",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Luis"
             },
             {
-                "position": "",
                 "number": 7,
                 "name": "Waldmann",
-                "prename": "Nils",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Nils"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Wörner",
-                "prename": "Tim",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Tim"
             }
         ]
     },
@@ -529,184 +357,81 @@
             "prename": "Heiko"
         }],
         "players": [{
-                "position": "",
                 "number": 3,
                 "name": "Anderl",
-                "prename": "Marius",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Marius"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Dicht",
-                "prename": "Timo",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Timo"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Doll",
-                "prename": "Niklas",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Niklas"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Endtner",
-                "prename": "Noah",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Noah"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Huber",
-                "prename": "Kilian",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Kilian"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Jaspers",
-                "prename": "Jann",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Jann"
             },
             {
-                "position": "",
                 "number": 1,
                 "name": "Kral",
-                "prename": "Tim",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Tim"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Krebs",
-                "prename": "Marcel",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Marcel"
             },
             {
-                "position": "",
                 "number": 13,
                 "name": "Müller",
-                "prename": "Marius",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Marius"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Pigan",
-                "prename": "Felix",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Felix"
             },
             {
-                "position": "",
                 "number": 16,
                 "name": "Riedel",
-                "prename": "Michael",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Michael"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Rieker",
-                "prename": "Florian",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Florian"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Schlestein",
-                "prename": "Paul",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Paul"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Schwidurski",
-                "prename": "David",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "David"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Sommer",
-                "prename": "Luis",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Luis"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Waldmann",
-                "prename": "Nils",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Nils"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Wolf",
-                "prename": "Alexander",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Alexander"
             },
             {
-                "position": "",
                 "number": 12,
                 "name": "Wörner",
-                "prename": "Tim",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Tim"
             }
         ]
     },
@@ -723,174 +448,80 @@
             }
         ],
         "players": [{
-                "position": "",
                 "number": 10,
                 "name": "Doll",
-                "prename": "Michel",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Michel"
             },
             {
-                "position": "",
                 "number": 6,
                 "name": "Doll",
-                "prename": "Niklas",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Niklas"
             },
             {
-                "position": "",
                 "number": 13,
                 "name": "Eckstein",
-                "prename": "Mattis",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Mattis"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Endtner",
-                "prename": "Noah",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Noah"
             },
             {
-                "position": "",
                 "number": 7,
                 "name": "Gröger",
-                "prename": "Daniel",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Daniel"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Heinzmann",
-                "prename": "Luca",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Luca"
             },
             {
-                "position": "",
                 "number": 9,
                 "name": "Köhler",
-                "prename": "Justus",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Justus"
             },
             {
-                "position": "",
                 "number": 15,
                 "name": "Linder",
-                "prename": "Moritz",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Moritz"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Löffler",
-                "prename": "Jan",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Jan"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Mugler",
-                "prename": "Felix",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Felix"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Ott",
-                "prename": "Luis",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Luis"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Püschel",
-                "prename": "Lukas",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Lukas"
             },
             {
-                "position": "",
                 "number": 5,
                 "name": "Schlestein",
-                "prename": "Paul",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Paul"
             },
             {
-                "position": "",
                 "number": 1,
                 "name": "Schlestein",
-                "prename": "Theo",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Theo"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Schnitzler",
-                "prename": "Raphael",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Raphael"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Sowa",
-                "prename": "Johann",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Johann"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Wörner",
-                "prename": "Lucas",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Lucas"
             }
         ]
     },
@@ -907,114 +538,58 @@
             }
         ],
         "players": [{
-                "position": "",
                 "number": 7,
                 "name": "Block",
-                "prename": "Lukas",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Lukas"
             },
             {
-                "position": "",
                 "number": 11,
                 "name": "Doll",
-                "prename": "Michel",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Michel"
             },
             {
-                "position": "",
                 "number": 10,
                 "name": "Köhler",
-                "prename": "Justus",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Justus"
             },
             {
-                "position": "",
                 "number": 2,
                 "name": "Löffler",
-                "prename": "Jan",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Jan"
             },
             {
-                "position": "",
                 "number": 12,
                 "name": "Mugler",
-                "prename": "Felix",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Felix"
             },
             {
-                "position": "",
                 "number": 8,
                 "name": "Müller",
-                "prename": "Chris",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Chris"
             },
             {
-                "position": "",
                 "number": 4,
                 "name": "Püschel",
-                "prename": "Lukas",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Lukas"
             },
             {
-                "position": "",
                 "number": 6,
                 "name": "Riedel",
-                "prename": "Florian",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Florian"
             },
             {
-                "position": "",
                 "number": 15,
                 "name": "Schnitzler",
-                "prename": "Raphael",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Raphael"
             },
             {
-                "position": "",
-                "number": "",
                 "name": "Sowa",
-                "prename": "Johann",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Johann"
             },
             {
-                "position": "",
                 "number": 9,
                 "name": "Weihmüller",
-                "prename": "Noah",
-                "birthday": "",
-                "picture": "",
-                "joinedClub": "",
-                "lastClubs": ""
+                "prename": "Noah"
             }
         ]
     },
