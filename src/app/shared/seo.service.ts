@@ -12,7 +12,8 @@ export class SeoService {
       title: 'TSV Willsbach - Handball',
       description: 'Homepage der Handballabteilung des TSV Willsbach',
       image: 'https://willsbach-handball.de/assets/images/handball_willsbach.png',
-      slug: ''
+      slug: '',
+      ...config
     }
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
