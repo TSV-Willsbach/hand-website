@@ -16,6 +16,7 @@ export class PlayerDetailComponent implements OnInit {
   player: Player;
 
   constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService, teams: TeamService) {
+    this.player = new Player();
     this.sub = this.route.params.subscribe(params => {
       teams.getPlayer(params['id'], params['name']).subscribe(player => this.player = player);
     });
