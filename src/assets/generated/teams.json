@@ -523,7 +523,192 @@
     },
     "mbjugend": {
         "title": "Männliche B Jugend",
-        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg"
+        "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",
+        "trainer": [{
+            "name": "Bosch",
+            "prename": "Heiko"
+        }],
+        "players": [{
+                "position": "",
+                "number": 3,
+                "name": "Anderl",
+                "prename": "Marius",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Dicht",
+                "prename": "Timo",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Doll",
+                "prename": "Niklas",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Endtner",
+                "prename": "Noah",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Huber",
+                "prename": "Kilian",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Jaspers",
+                "prename": "Jann",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 1,
+                "name": "Kral",
+                "prename": "Tim",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Krebs",
+                "prename": "Marcel",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 13,
+                "name": "Müller",
+                "prename": "Marius",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Pigan",
+                "prename": "Felix",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 16,
+                "name": "Riedel",
+                "prename": "Michael",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Rieker",
+                "prename": "Florian",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Schlestein",
+                "prename": "Paul",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Schwidurski",
+                "prename": "David",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Sommer",
+                "prename": "Luis",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Waldmann",
+                "prename": "Nils",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Wolf",
+                "prename": "Alexander",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 12,
+                "name": "Wörner",
+                "prename": "Tim",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            }
+        ]
     },
     "mcjugend": {
         "title": "Männliche C Jugend",
