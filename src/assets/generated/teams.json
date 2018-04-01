@@ -896,7 +896,127 @@
     },
     "mdjugend": {
         "title": "Männliche D Jugend",
-        "picture": ""
+        "picture": "",
+        "trainer": [{
+                "name": "Schmautz",
+                "prename": "Rainer"
+            },
+            {
+                "name": "Kilian",
+                "prename": "Claudio"
+            }
+        ],
+        "players": [{
+                "position": "",
+                "number": 7,
+                "name": "Block",
+                "prename": "Lukas",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 11,
+                "name": "Doll",
+                "prename": "Michel",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 10,
+                "name": "Köhler",
+                "prename": "Justus",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 2,
+                "name": "Löffler",
+                "prename": "Jan",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 12,
+                "name": "Mugler",
+                "prename": "Felix",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 8,
+                "name": "Müller",
+                "prename": "Chris",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 4,
+                "name": "Püschel",
+                "prename": "Lukas",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 6,
+                "name": "Riedel",
+                "prename": "Florian",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 15,
+                "name": "Schnitzler",
+                "prename": "Raphael",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": "",
+                "name": "Sowa",
+                "prename": "Johann",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            },
+            {
+                "position": "",
+                "number": 9,
+                "name": "Weihmüller",
+                "prename": "Noah",
+                "birthday": "",
+                "picture": "",
+                "joinedClub": "",
+                "lastClubs": ""
+            }
+        ]
     },
     "mejugend": {
         "title": "Männliche E Jugend",
