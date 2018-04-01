@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { NewsService } from '@wh-share/news.service';
+import { TeamService } from '@wh-share/team.service';
+import { Player } from '@wh-objects/team';
 
 @Component({
   selector: 'app-player-detail',
@@ -10,38 +12,12 @@ import { NewsService } from '@wh-share/news.service';
 })
 export class PlayerDetailComponent implements OnInit {
 
-  name: string;
-  id: string;
   private sub: any;
-  player: any;
+  player: Player;
 
-  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService) {
+  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService, teams: TeamService) {
     this.sub = this.route.params.subscribe(params => {
-      this.name = params['name'];
-      this.id = params['id'];
-
-      // In a real app: dispatch action to load the details here.
-      this.httpService.get('./assets/generated/teams.json').subscribe(
-        data => {
-          let team = data[this.id];
-          let players = team.players;
-          let playerNames = this.name.split("_");
-
-          this.player = players.find(item =>
-            item.name === playerNames[1] &&
-            item.prename === playerNames[0]
-          );
-
-          if (this.player.picture === "") {
-            // Default Picture if no picture is set
-            this.player.picture = "https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png";
-          }
-          console.log(this.player);
-        },
-        (err: HttpErrorResponse) => {
-          console.log(err.message);
-        }
-      );
+      teams.getPlayer(params['id'], params['name']).subscribe(player => this.player = player);
     });
   }
 

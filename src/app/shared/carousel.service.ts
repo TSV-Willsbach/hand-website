@@ -10,7 +10,7 @@ import 'rxjs/add/operator/publishReplay';
 import { timer } from 'rxjs/observable/timer';
 import { switchMap, take } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { Team } from '@wh-objects/teams';
+import { TeamWP } from '@wh-objects/wordPress';
 
 /* const transitionLeft = "carousel-item-left active";
 const transitionLeftNext = "carousel-item-next carousel-item-left"; */
@@ -49,9 +49,9 @@ carousel-item-next carousel-item-left
 
   }
 
-  fetchTeams(): Observable<Team[]> {
+  fetchTeams(): Observable<TeamWP[]> {
     if (!this.teams) {
-      this.teams = this.http.get<Team[]>(apiTeams)
+      this.teams = this.http.get<TeamWP[]>(apiTeams)
         .map(team => {
           return team.map(team => {
             return team;

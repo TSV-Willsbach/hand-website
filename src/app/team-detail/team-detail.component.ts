@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
-import { Team } from '@wh-objects/teams';
+import { Team } from '@wh-objects/team';
+import { TeamService } from '@wh-share/team.service';
 
 @Component({
   selector: 'app-team-detail',
@@ -12,35 +13,19 @@ import { Team } from '@wh-objects/teams';
 })
 export class TeamDetailComponent implements OnInit {
 
-  id: string;
   private sub: any;
-  team: any;
+  team: Team;
   posts: Post[];
 
-  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService) {
+  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService, teamService: TeamService) {
     // init data to hide console errors if nothing is found
     this.team = new Team();
     this.posts = new Array();
 
     this.sub = this.route.params.subscribe(params => {
-      this.id = params['id'];
-      this.httpService.get('./assets/generated/teams.json').subscribe(
-        data => {
-          this.team = data[this.id];
-          this.news.fetchReports(this.id).subscribe(posts => this.posts = posts);
-        },
-        (err: HttpErrorResponse) => {
-          console.log(err.message);
-        },
-        () => {
-          // Sort by Prename when completed
-          this.team.players.sort(function (a, b) {
-            if (a.prename < b.prename) return -1;
-            if (a.prename > b.prename) return 1;
-            return 0;
-          });
-        }
-      );
+      let id = params['id'];
+      teamService.getTeam(id).subscribe(team => this.team = team);
+      teamService.getTeamReports(id).subscribe(posts => this.posts = posts);
     });
 
 
