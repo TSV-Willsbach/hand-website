@@ -27,8 +27,6 @@ export class TeamService {
           item.name === playerNames[1] &&
           item.prename === playerNames[0]
         );
-
-        console.log(player);
         if (player.picture === "" || player.picture === undefined) {
           // Default Picture if no picture is set
           player.picture = defaultImg;
