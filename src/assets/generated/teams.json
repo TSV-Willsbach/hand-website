@@ -124,7 +124,8 @@
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
         "trainer": [{
                 "name": "Gebhardt",
-                "prename": "Miguel"
+                "prename": "Miguel",
+                "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/fb_Miguel_Gebhardt_min.jpg"
             },
             {
                 "name": "Trutzenberger",
@@ -599,6 +600,10 @@
     },
     "minis": {
         "title": "Minis",
-        "picture": ""
+        "picture": "",
+        "trainer": [{
+            "name": "Caspar",
+            "prename": "Sina"
+        }]
     }
 }

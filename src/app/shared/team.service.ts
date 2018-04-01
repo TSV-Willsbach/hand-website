@@ -50,7 +50,9 @@ export class TeamService {
 
         if (team.trainer != undefined) {
           team.trainer.forEach(function (part, index, coach) {
-            coach[index].picture = defaultImg;
+            if (coach[index].picture === undefined || coach[index].picture === "") {
+              coach[index].picture = defaultImg;
+            }
           });
         }
 
