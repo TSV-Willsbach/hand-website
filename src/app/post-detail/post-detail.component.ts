@@ -22,14 +22,6 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.href = "https://willsbach-handball.de" + this.router.url;
-
-    this.seo.generateTags({
-      title: this.post.title.rendered,
-      description: this.post.excerpt.rendered,
-      image: this.post.thumbnail,
-      slug: this.router.url
-    });
   }
 
   ngOnDestroy() {
@@ -48,8 +40,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
           this.seo.generateTags({
             title: this.post.title.rendered,
             description: this.post.excerpt.rendered,
-            image: this.post.thumbnail,
-            slug: this.router.url
+            image: this.post.thumbnail
           });
         });
     });

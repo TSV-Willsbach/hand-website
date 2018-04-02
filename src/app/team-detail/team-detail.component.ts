@@ -3,6 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
+import { Team } from '@wh-objects/team';
+import { TeamService } from '@wh-share/team.service';
+import { SeoService } from '@wh-share/seo.service';
 
 @Component({
   selector: 'app-team-detail',
@@ -11,26 +14,32 @@ import { NewsService } from '@wh-share/news.service';
 })
 export class TeamDetailComponent implements OnInit {
 
-  id: string;
   private sub: any;
-  team: any;
+  team: Team;
   posts: Post[];
 
-  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService) {
+  constructor(private route: ActivatedRoute, teamService: TeamService, private seo: SeoService) {
+    // init data to hide console errors if nothing is found
+    this.team = new Team();
+    this.posts = new Array();
 
-    this.sub = this.route.params.subscribe(params => {
-      this.id = params['id'];
-      // In a real app: dispatch action to load the details here.
-      this.httpService.get('./assets/generated/teams.json').subscribe(
-        data => {
-          this.team = data[this.id];
-          this.news.fetchReports(this.id).subscribe(posts => this.posts = posts);
-        },
-        (err: HttpErrorResponse) => {
-          console.log(err.message);
-        }
-      );
-    });
+    this.sub = this.route.params.subscribe(
+      params => {
+        let id = params['id'];
+        teamService.getTeam(id).subscribe(
+          team => this.team = team,
+          error => { console.log(error); },
+          () => {
+            this.seo.generateTags({
+              title: this.team.title,
+              description: this.team.title,
+              image: this.team.picture
+            });
+          });
+        teamService.getTeamReports(id).subscribe(posts => this.posts = posts);
+      },
+      error => { console.log(error); },
+      () => { });
 
 
   }
