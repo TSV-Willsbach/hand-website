@@ -51,7 +51,15 @@ function detectBot(userAgent) {
     return false;
 }
 
-
+app.use(express.static(__dirname + '/dist'))
+app.use(bodyParser.urlencoded({
+    'extended': 'true'
+}))
+app.use(bodyParser.json())
+app.use(bodyParser.json({
+    type: 'application/vnd.api+json'
+}))
+app.use(methodOverride());
 
 
 app.get('*', function (req, res) {
@@ -61,7 +69,7 @@ app.get('*', function (req, res) {
     if (isBot) {
         const botUrl = generateUrl(req);
 
-        fetch('${renderUrl}/${botUrl}')
+        fetch(`${renderUrl}/${botUrl}`)
             .then(res => res.text())
             .then(body => {
                 // Cache user agent
@@ -70,16 +78,6 @@ app.get('*', function (req, res) {
                 res.send(body.toString());
             });
     } else {
-        app.use(express.static(__dirname + '/dist'))
-        app.use(bodyParser.urlencoded({
-            'extended': 'true'
-        }))
-        app.use(bodyParser.json())
-        app.use(bodyParser.json({
-            type: 'application/vnd.api+json'
-        }))
-        app.use(methodOverride());
-
         res.sendfile(__dirname + '/dist/index.html');
     }
 

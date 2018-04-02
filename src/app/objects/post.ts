@@ -20,13 +20,10 @@ export class Post {
 
     constructor() {
         // Default values
-        this.id = 0;
         this.date = new Date();
         this.date_gmt = new Date();
-        this.title = { rendered: "Eintrag nicht gefunden" };
-        this.content = { rendered: "<h2>Eintrag wurde nicht gefunden.<\/h2><a href=\"#\">Zur Startseite<\/a>" };
-        this.excerpt = { rendered: "Eintrag wurde nicht gefunden" };
-        this.author = "not found";
-        this.thumbnail = "https://willsbach-handball.de/assets/images/handball_willsbach.png";
+        this.title = { rendered: "" };
+        this.content = { rendered: "" };
+        this.excerpt = { rendered: "" };
     }
 }
