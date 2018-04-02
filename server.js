@@ -69,7 +69,7 @@ app.get('*', function (req, res) {
     if (isBot) {
         const botUrl = generateUrl(req);
 
-        fetch('${renderUrl}/${botUrl}')
+        fetch(`${renderUrl}/${botUrl}`)
             .then(res => res.text())
             .then(body => {
                 // Cache user agent
