@@ -35,7 +35,8 @@ function detectBot(userAgent) {
         'vkShare',
         'facebot',
         'outbrain',
-        'W3C_Validator'
+        'W3C_Validator',
+        'WhatsApp'
     ];
 
     const agent = userAgent.toLowerCase();
