@@ -125,11 +125,12 @@
         "trainer": [{
                 "name": "Gebhardt",
                 "prename": "Miguel",
-                "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/fb_Miguel_Gebhardt_min.jpg"
+                "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Gebhardt_Miguel_min.jpg"
             },
             {
                 "name": "Trutzenberger",
-                "prename": "Daniel"
+                "prename": "Daniel",
+                "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Trutzenberger_Daniel_min.jpg"
             }
         ],
         "players": [{
@@ -265,7 +266,8 @@
                 "name": "Ziegler",
                 "prename": "Fabiola",
                 "birthday": "19.06.1991",
-                "joinedClub": "1997"
+                "joinedClub": "1997",
+                "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_lola_min.jpg"
             }
 
         ]
