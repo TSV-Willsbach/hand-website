@@ -1,4 +1,4 @@
-export class Team {
+export class TeamWP {
     id: number;
     date: Date;
     date_gmt: Date;

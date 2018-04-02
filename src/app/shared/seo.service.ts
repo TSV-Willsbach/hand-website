@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SeoService {
 
-  constructor(private meta: Meta) { }
+  constructor(private meta: Meta, private router: Router) { }
 
   generateTags(config) {
     // default values
@@ -15,6 +16,7 @@ export class SeoService {
       slug: '',
       ...config
     }
+    config.slug = this.router.url;
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
     this.meta.updateTag({ name: 'twitter:site', content: '@willsbach_hndbl' });

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselService } from '@wh-share/carousel.service';
-import { Team } from '@wh-objects/teams';
+import { TeamWP } from '@wh-objects/wordPress';
 
 @Component({
   selector: 'app-img-carousel',
@@ -10,7 +10,7 @@ import { Team } from '@wh-objects/teams';
 })
 
 export class ImgCarouselComponent implements OnInit {
-  teams: Team[];
+  teams: TeamWP[];
 
   constructor(private transitionService: CarouselService, carouselConfig: NgbCarouselConfig) {
 

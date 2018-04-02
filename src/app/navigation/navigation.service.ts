@@ -84,7 +84,6 @@ export class NavigationService {
 
 
   private getCurrentNodes(navigationViews: Observable<NavigationViews>): Observable<CurrentNodes> {
-    console.log("getCurrentNodes")
     const currentNodes = combineLatest(
       navigationViews.map(views => this.computeUrlToNavNodesMap(views)),
       (navMap, url) => {
@@ -130,7 +129,6 @@ export class NavigationService {
       }
       const navMapItem = navMap.get(cleanedUrl)!;
       navMapItem[view] = { url, view, nodes };
-      console.log(navMapItem[view]);
     }
 
     if (node.children) {
