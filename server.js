@@ -51,9 +51,6 @@ function detectBot(userAgent) {
     return false;
 }
 
-
-
-
 app.get('*', function (req, res) {
 
     const isBot = detectBot(req.headers['user-agent']);
@@ -70,14 +67,14 @@ app.get('*', function (req, res) {
                 res.send(body.toString());
             });
     } else {
-        app.use(express.static(__dirname + '/dist'))
+        app.use(express.static(__dirname + '/dist'));
         app.use(bodyParser.urlencoded({
             'extended': 'true'
-        }))
-        app.use(bodyParser.json())
+        }));
+        app.use(bodyParser.json());
         app.use(bodyParser.json({
             type: 'application/vnd.api+json'
-        }))
+        }));
         app.use(methodOverride());
 
         res.sendfile(__dirname + '/dist/index.html');
@@ -86,4 +83,4 @@ app.get('*', function (req, res) {
 })
 
 app.listen(8080);
-console.log("App listening on port 8080")
+console.log("App listening on port 8080");
