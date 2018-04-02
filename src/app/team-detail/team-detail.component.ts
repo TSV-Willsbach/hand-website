@@ -18,7 +18,7 @@ export class TeamDetailComponent implements OnInit {
   team: Team;
   posts: Post[];
 
-  constructor(private route: ActivatedRoute, private httpService: HttpClient, private news: NewsService, teamService: TeamService, private seo: SeoService) {
+  constructor(private route: ActivatedRoute, teamService: TeamService, private seo: SeoService) {
     // init data to hide console errors if nothing is found
     this.team = new Team();
     this.posts = new Array();
