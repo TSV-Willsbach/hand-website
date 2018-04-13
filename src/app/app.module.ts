@@ -34,6 +34,7 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { FileServiceService } from '@wh-share/file-service.service';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamService } from '@wh-share/team.service';
+import { HvwService } from '@wh-share/hvw.service';
 
 
 const options: ShareButtonsOptions = {
@@ -79,7 +80,8 @@ const options: ShareButtonsOptions = {
     SponsorsService,
     SeoService,
     FileServiceService,
-    TeamService
+    TeamService,
+    HvwService
   ],
   bootstrap: [AppComponent]
 })
