@@ -1,3 +1,30 @@
-<p>
-  downloads works!
-</p>
+<h2 class="heading">Downloads</h2>
+
+
+<div>
+  <table style="width:100%" id="fileTable" class="table table-responsive table-striped table-bordered">
+    <tr>
+      <th>Typ</th>
+      <th>Name</th>
+      <th>Download</th>
+      <th>Stand</th>
+    </tr>
+    <tr *ngFor="let attachment of attachments">
+      <td>
+        <div [ngStyle]="iconStyle(attachment.iconColor)">
+          <span class="{{attachment.icon}} fa-2x"></span>
+          <br />
+          <small>{{attachment.fileType | uppercase}}</small>
+        </div>
+      </td>
+      <td>{{attachment.title.rendered}}</td>
+      <td>
+        <a href="{{attachment.source_url}}" target="_blank" title="{{attachment.title.rendered}}" type="{{attachment.mime_type}}"
+          download>
+          <i class="fa fa-download fa-2x"></i>
+        </a>
+      </td>
+      <td>{{attachment.caption.rendered}}</td>
+    </tr>
+  </table>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FileServiceService } from '@wh-share/file-service.service';
+import { Attachment } from '@wh-objects/attachment';
 
 @Component({
   selector: 'app-downloads',
@@ -7,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DownloadsComponent implements OnInit {
 
-  constructor() { }
+  attachments: Attachment[];
+
+  constructor(private file: FileServiceService) {
+
+    this.file.fetchFiles()
+      .subscribe(attachment => this.attachments = attachment);
+
+  }
+
+  iconStyle(color: string) {
+    let myStyles = {
+      'color': color
+    };
+    return myStyles;
+  }
 
   ngOnInit() {
   }

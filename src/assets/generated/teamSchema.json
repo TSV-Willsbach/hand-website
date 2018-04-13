@@ -1,0 +1,311 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {
+        "trainer": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "prename": {
+                        "type": "string"
+                    },
+                    "picture": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "prename"
+                ]
+            }
+        },
+        "players": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "prename": {
+                        "type": "string"
+                    },
+                    "position": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "number"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "type": "string"
+                    },
+                    "picture": {
+                        "type": "string"
+                    },
+                    "joinedClub": {
+                        "type": "string"
+                    },
+                    "lastClubs": {
+                        "type": "string"
+
+                    }
+                },
+                "required": [
+                    "name",
+                    "prename"
+                ]
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "herren": {
+            "$id": "/properties/herren",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/herren/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Herren"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/herren/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren.jpg"
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+
+            }
+        },
+        "damen": {
+            "$id": "/properties/damen",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/damen/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Damen"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/damen/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg"
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
+        "majugend": {
+            "$id": "/properties/majugend",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/majugend/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Männliche A Jugend"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/majugend/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg"
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
+        "mbjugend": {
+            "$id": "/properties/mbjugend",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/mbjugend/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Männliche B Jugend"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/mbjugend/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg"
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
+        "mcjugend": {
+            "$id": "/properties/mcjugend",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/mcjugend/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Männliche C Jugend"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/mcjugend/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        "https://wp.willsbach-handball.de/wp-content/uploads/teams/mC.jpeg"
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
+        "mdjugend": {
+            "$id": "/properties/mdjugend",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/mdjugend/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Männliche D Jugend"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/mdjugend/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
+        "mejugend": {
+            "$id": "/properties/mejugend",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/mejugend/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Männliche E Jugend"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/mejugend/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
+        "minis": {
+            "$id": "/properties/minis",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/minis/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Minis"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/minis/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        ""
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        }
+    }
+}

@@ -7,6 +7,10 @@ import { ReportComponent } from './report/report.component';
 import { ResultsComponent } from './results/results.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
+import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
 
 
 const routes: Routes = [
@@ -17,7 +21,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   }, {
-    path: 'report',
+    path: 'reports',
     component: ReportComponent
   }, {
     path: 'downloads',
@@ -30,7 +34,7 @@ const routes: Routes = [
     component: DocViewerComponent
   }, {
     path: 'sponsors',
-    component: SponsorsComponent
+    component: SponsorsDetailComponent
   }, {
     path: 'referee',
     component: DocViewerComponent
@@ -46,6 +50,18 @@ const routes: Routes = [
   }, {
     path: 'aidAssociation',
     component: DocViewerComponent
+  },
+  {
+    path: 'postDetail/:id',
+    component: PostDetailComponent
+  },
+  {
+    path: 'team/:id',
+    component: TeamDetailComponent
+  },
+  {
+    path: 'team/:id/player/:name',
+    component: PlayerDetailComponent
   }
 ];
 

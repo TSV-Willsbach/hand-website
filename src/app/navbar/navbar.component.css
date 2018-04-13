@@ -3,7 +3,7 @@
 }
 
 a:hover {
-    color: #23893b !important;
+    color: var( --clubColor) !important;
     text-decoration: none !important;
 }
 
@@ -14,5 +14,5 @@ ul {
 }
 
 .dropdown-menu {
-    border-top: 0.25rem solid #23893b;
+    border-top: 0.25rem solid var( --clubColor);
 }
