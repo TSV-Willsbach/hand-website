@@ -13,6 +13,7 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamResultComponent } from './team-result/team-result.component';
 import { TeamPlayersComponent } from './team-players/team-players.component';
+import { TeamReportsComponent } from './team-reports/team-reports.component';
 
 
 const routes: Routes = [
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: 'team/:id/results',
     component: TeamResultComponent
+  },
+  {
+    path: 'team/:id/reports',
+    component: TeamReportsComponent
   },
   {
     path: 'team/:id/players',

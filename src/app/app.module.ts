@@ -37,6 +37,7 @@ import { TeamService } from '@wh-share/team.service';
 import { HvwService } from '@wh-share/hvw.service';
 import { TeamResultComponent } from './team-result/team-result.component';
 import { TeamPlayersComponent } from './team-players/team-players.component';
+import { TeamReportsComponent } from './team-reports/team-reports.component';
 
 
 const options: ShareButtonsOptions = {
@@ -64,7 +65,8 @@ const options: ShareButtonsOptions = {
     TeamDetailComponent,
     PlayerDetailComponent,
     TeamResultComponent,
-    TeamPlayersComponent
+    TeamPlayersComponent,
+    TeamReportsComponent
   ],
   imports: [
     BrowserModule,
