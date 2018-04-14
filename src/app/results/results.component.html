@@ -4,32 +4,3 @@
     <a href="http://www.hvw-online.org/spielbetrieb/ergebnissetabellen-verband/#/club?ogId=3&pId=58&cId=60" target="_blank">HVW</a>
   </p>
 </div>
-<div>
-  <h3>{{ligue.head.headline2}}</h3>
-  <small>{{ligue.head.actualized}}</small>
-
-  <table id="{{ligue.head.sname}}" style="width:100%" class="table table-responsive table-striped table-bordered">
-    <caption>
-      <div [innerHTML]="ligue.content.scoreComments"></div>
-    </caption>
-    <tr>
-      <th>Platz</th>
-      <th>Verein</th>
-      <th>Spiele</th>
-      <th>S / U / N</th>
-      <th>Tore</th>
-      <th>Tordifferenz</th>
-      <th>Punkte</th>
-    </tr>
-
-    <tr *ngFor="let standing of ligue.content.score">
-      <td>{{standing.tabScore}}</td>
-      <td>{{standing.tabTeamname}}</td>
-      <td>{{standing.numPlayedGames}}</td>
-      <td>{{standing.numWonGames}} / {{standing.numEqualGames}} / {{standing.numLostGames}}</td>
-      <td>{{standing.numGoalsShot}} : {{standing.numGoalsGot}}</td>
-      <td>{{standing.difference}}</td>
-      <td>{{standing.pointsPlus}} : {{standing.pointsMinus}}</td>
-    </tr>
-  </table>
-</div>

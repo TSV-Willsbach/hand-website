@@ -11,6 +11,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { TeamResultComponent } from './team-result/team-result.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'team/:id',
     component: TeamDetailComponent
+  },
+  {
+    path: 'team/:id/results',
+    component: TeamResultComponent
   },
   {
     path: 'team/:id/player/:name',

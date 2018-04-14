@@ -1,6 +1,7 @@
 export class Ligue {
     head: Head;
     content: Content;
+    statistik: Statistik;
 
     constructor() { }
 }
@@ -10,6 +11,7 @@ export class Head {
     sname: string;
     headline2: string;
     actualized: string;
+
     constructor() { }
 }
 
@@ -22,6 +24,7 @@ export class Content {
     futureGames: {
         games: Game[];
     }
+
 
     constructor() { }
 }
@@ -68,4 +71,34 @@ export class Score {
     pointsMinus: number;
 
     constructor() { }
+}
+
+export class Statistik {
+    homeWins: number;
+    homeGoalsShot: number;
+    homeGoalsGot: number;
+    homeHighestWin: string;
+    homeHighestWinDiff: number;
+    homeHighestLose: string;
+    homeHighestLoseDiff: number;
+    awayWins: number;
+    awayGoalsShot: number;
+    awayGoalsGot: number;
+    awayHighestWin: string;
+    awayHighestWinDiff: number;
+    awayHighestLose: string;
+    awayHighestLoseDiff: number;
+    constructor() {
+
+        this.homeGoalsShot = this.homeGoalsGot = 0;
+        this.homeWins = 0;
+        this.homeHighestWinDiff = this.homeHighestLoseDiff = 0;
+        this.homeHighestWin = this.homeHighestLose = "-";
+
+        this.awayGoalsShot = this.awayGoalsGot = 0;
+        this.awayWins = 0;
+        this.awayHighestWinDiff = this.awayHighestLoseDiff = 0;
+        this.awayHighestWin = this.awayHighestLose = "-";
+
+    }
 }

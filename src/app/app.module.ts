@@ -35,6 +35,7 @@ import { FileServiceService } from '@wh-share/file-service.service';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamService } from '@wh-share/team.service';
 import { HvwService } from '@wh-share/hvw.service';
+import { TeamResultComponent } from './team-result/team-result.component';
 
 
 const options: ShareButtonsOptions = {
@@ -60,7 +61,8 @@ const options: ShareButtonsOptions = {
     PostDetailComponent,
     SponsorsDetailComponent,
     TeamDetailComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    TeamResultComponent
   ],
   imports: [
     BrowserModule,
