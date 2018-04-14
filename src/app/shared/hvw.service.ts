@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Ligue, Statistik, Club } from '@wh-objects/hvw';
 
-const baseUrl = 'http://spo.handball4all.de/service/if_g_json.php';
+const baseUrl = 'https://spo.handball4all.de/service/if_g_json.php';
 const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=58';
 const clubName = 'TSV Willsbach';
 
