@@ -40,47 +40,12 @@ export class HvwService {
       scores.forEach(element => {
         element.difference = element.numGoalsShot - element.numGoalsGot;
       });
-      console.log(games);
 
       games.forEach(element => {
         if (element.gGuestTeam === clubName) {
-          statistik.awayGoalsShot = statistik.awayGoalsShot + +element.gGuestGoals;
-          statistik.awayGoalsGot = statistik.awayGoalsGot + +element.gHomeGoals;
-
-          let diff = +element.gGuestGoals - +element.gHomeGoals;
-
-          if (element.gGuestPoints === '2') {
-            statistik.awayWins++;
-
-            if (diff > statistik.awayHighestWinDiff) {
-              statistik.awayHighestWinDiff = diff;
-              statistik.awayHighestWin = element.gHomeTeam + " ( " + element.gHomeGoals + " : " + element.gGuestGoals + " )";
-            }
-          } else if (element.gGuestPoints === '0') {
-            if (diff < statistik.awayHighestLoseDiff) {
-              statistik.awayHighestLoseDiff = diff;
-              statistik.awayHighestLose = element.gHomeTeam + " ( " + element.gHomeGoals + " : " + element.gGuestGoals + " )";
-            }
-          }
+          this.awayStatLogic(statistik, element);
         } else if (element.gHomeTeam === clubName) {
-          statistik.homeGoalsShot = statistik.homeGoalsShot + +element.gHomeGoals;
-          statistik.homeGoalsGot = statistik.homeGoalsGot + +element.gGuestGoals;
-
-          let diff = +element.gHomeGoals - +element.gGuestGoals;
-
-          if (element.gHomePoints === '2') {
-            statistik.homeWins++;
-
-            if (diff > statistik.homeHighestWinDiff) {
-              statistik.homeHighestWinDiff = diff;
-              statistik.homeHighestWin = element.gGuestTeam + " ( " + element.gHomeGoals + " : " + element.gGuestGoals + " )";
-            }
-          } else if (element.gHomePoints === '0') {
-            if (diff < statistik.homeHighestLoseDiff) {
-              statistik.homeHighestLoseDiff = diff;
-              statistik.homeHighestLose = element.gGuestTeam + " ( " + element.gHomeGoals + " : " + element.gGuestGoals + " )";
-            }
-          }
+          this.homeStatLogic(statistik, element);
         }
       });
 
@@ -88,7 +53,45 @@ export class HvwService {
     });
   }
 
-  buildUrlWithParam(): string {
+  private homeStatLogic(statistik: any, element: any) {
+    statistik.homeGoalsShot = statistik.homeGoalsShot + +element.gHomeGoals;
+    statistik.homeGoalsGot = statistik.homeGoalsGot + +element.gGuestGoals;
+    let diff = +element.gHomeGoals - +element.gGuestGoals;
+    if (element.gHomePoints === '2') {
+      statistik.homeWins++;
+      if (diff > statistik.homeHighestWinDiff) {
+        statistik.homeHighestWinDiff = diff;
+        statistik.homeHighestWin = this.buildWLText(element, element.gGuestTeam);
+      }
+    }
+    else if (element.gHomePoints === '0' && diff < statistik.homeHighestLoseDiff) {
+      statistik.homeHighestLoseDiff = diff;
+      statistik.homeHighestLose = this.buildWLText(element, element.gGuestTeam);
+    }
+  }
+
+  private awayStatLogic(statistik: any, element: any) {
+    statistik.awayGoalsShot = statistik.awayGoalsShot + +element.gGuestGoals;
+    statistik.awayGoalsGot = statistik.awayGoalsGot + +element.gHomeGoals;
+    let diff = +element.gGuestGoals - +element.gHomeGoals;
+    if (element.gGuestPoints === '2') {
+      statistik.awayWins++;
+      if (diff > statistik.awayHighestWinDiff) {
+        statistik.awayHighestWinDiff = diff;
+        statistik.awayHighestWin = this.buildWLText(element, element.gHomeTeam);
+      }
+    }
+    else if (element.gGuestPoints === '0' && diff < statistik.awayHighestLoseDiff) {
+      statistik.awayHighestLoseDiff = diff;
+      statistik.awayHighestLose = this.buildWLText(element, element.gHomeTeam);
+    }
+  }
+
+  private buildWLText(element: any, teamName: string): string {
+    return teamName + " ( " + element.gHomeGoals + " : " + element.gGuestGoals + " )";
+  }
+
+  private buildUrlWithParam(): string {
     return baseUrl + '?ca=' + this.allGames + '&cl=' + this.liga + '&cmd=ps&og=3';
   }
 
