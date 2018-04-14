@@ -1,0 +1,50 @@
+<ol class="breadcrumb">
+  <li>
+    <a href="#" [routerLink]="[ '/team', teamID ]">Herren</a>
+  </li>
+  <li class="active">Trainer & Spieler</li>
+</ol>
+
+<h3 class="heading ">Trainer</h3>
+<!-- <div ng-hide="team.trainer.length ">Keine Trainerinformationen vorhanden.</div> -->
+<div *ngFor="let trainer of team.trainer ">
+
+  <br />
+  <div class="row ">
+    <div class="column ">
+      <img src="{{trainer.picture}} " class="w-50 img-fluid img-thumbnail mx-auto d-block " alt="{{trainer.name}}, {{trainer.prename}} ">
+    </div>
+    <div class="column " style="margin-left: 10%; ">
+      <h5>{{trainer.prename}} {{trainer.name}}</h5>
+    </div>
+  </div>
+  <br />
+  <br />
+</div>
+
+<h3 class="heading ">Spieler</h3>
+<!-- <p ng-show="!team.players.length ">Keine Spielerinformationen vorhanden.</p> -->
+
+<table style="width:100% " id="playerTable " class="table table-responsive table-striped table-bordered table-hover ">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Position</th>
+    <th>Geburtstag</th>
+    <th>im Verein seit</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let player of team.players">
+    <td>{{player.number}}</td>
+    <td class="playerName ">
+      <a [routerLink]="[ './players', player.prename + '_' + player.name] ">{{player.prename}} {{player.name}}</a>
+    </td>
+    <td>{{player.position}}</td>
+    <td>{{player.birthday}}</td>
+    <td>{{player.joinedClub}}</td>
+    <td>
+      <a [routerLink]="[ './', player.prename + '_' + player.name] ">Details</a>
+    </td>
+  </tr>
+
+</table>
