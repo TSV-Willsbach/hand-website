@@ -276,6 +276,7 @@
     },
     "majugend": {
         "title": "Männliche A Jugend",
+        "ligaID": "30106",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg",
         "trainer": [{
                 "name": "Purzel",
@@ -356,6 +357,7 @@
     },
     "mbjugend": {
         "title": "Männliche B Jugend",
+        "ligaID": "30114",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",
         "trainer": [{
             "name": "Bosch",
@@ -443,6 +445,7 @@
     "mcjugend": {
         "title": "Männliche C Jugend",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mC.jpeg",
+        "ligaID": "30126",
         "trainer": [{
                 "name": "Schuhkraft",
                 "prename": "Antonia"
@@ -533,6 +536,7 @@
     "mdjugend": {
         "title": "Männliche D Jugend",
         "picture": "",
+        "ligaID": "30134",
         "trainer": [{
                 "name": "Schmautz",
                 "prename": "Rainer"
