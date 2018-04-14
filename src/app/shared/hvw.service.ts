@@ -54,6 +54,32 @@ export class HvwService {
     });
   }
 
+  getNextGames(): Observable<Ligue> {
+    let url = this.buildUrlWithParam();
+
+    return this.http.get<Ligue>(url).map(ligue => {
+      let data = ligue[0];
+      let scores = data.content.score;
+      let games = data.content.futureGames.games;
+      data.statistik = new Statistik();
+      let statistik = data.statistik;
+
+      scores.forEach(element => {
+        element.difference = element.numGoalsShot - element.numGoalsGot;
+      });
+
+      games.forEach(element => {
+        if (element.gGuestTeam === clubName) {
+          this.awayStatLogic(statistik, element);
+        } else if (element.gHomeTeam === clubName) {
+          this.homeStatLogic(statistik, element);
+        }
+      });
+
+      return data;
+    });
+  }
+
   getClubData(): Observable<Club> {
     return this.http.get<Club>(clubUrl).map(club => {
       let data = club[0];
