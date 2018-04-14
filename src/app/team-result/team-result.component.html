@@ -1,3 +1,10 @@
+<ol class="breadcrumb">
+  <li>
+    <a href="#" [routerLink]="[ '/team', teamID ]">Herren</a>
+  </li>
+  <li class="active">Ergebnisse</li>
+</ol>
+
 <h2 class="heading">Ergebnisse</h2>
 <div>
   <h3>{{ligue.head.headline2}}</h3>
@@ -8,12 +15,15 @@
       <div [innerHTML]="ligue.content.scoreComments"></div>
     </caption>
     <tr>
-      <th>Platz</th>
+      <th></th>
       <th>Verein</th>
-      <th>Spiele</th>
-      <th>S / U / N</th>
-      <th>Tore</th>
-      <th>Differenz</th>
+      <th>Sp</th>
+      <th>S</th>
+      <th>U</th>
+      <th>N</th>
+      <th>T</th>
+      <th>GT</th>
+      <th>TD</th>
       <th>Punkte</th>
     </tr>
 
@@ -21,8 +31,11 @@
       <td>{{standing.tabScore}}</td>
       <td>{{standing.tabTeamname}}</td>
       <td>{{standing.numPlayedGames}}</td>
-      <td>{{standing.numWonGames}} / {{standing.numEqualGames}} / {{standing.numLostGames}}</td>
-      <td>{{standing.numGoalsShot}} : {{standing.numGoalsGot}}</td>
+      <td>{{standing.numWonGames}}</td>
+      <td>{{standing.numEqualGames}}</td>
+      <td>{{standing.numLostGames}}</td>
+      <td>{{standing.numGoalsShot}}</td>
+      <td>{{standing.numGoalsGot}}</td>
       <td>{{standing.difference}}</td>
       <td>{{standing.pointsPlus}} : {{standing.pointsMinus}}</td>
     </tr>

@@ -13,6 +13,7 @@ import { Team } from '@wh-objects/team';
 })
 export class TeamResultComponent implements OnInit {
 
+  teamID: any;
   private sub: any;
   ligue: Ligue;
   team: Team;
@@ -22,8 +23,8 @@ export class TeamResultComponent implements OnInit {
 
 
     this.sub = this.route.params.subscribe(params => {
-      let id = params['id'];
-      teams.getTeam(id).subscribe(
+      this.teamID = params['id'];
+      teams.getTeam(this.teamID).subscribe(
         team => this.team = team,
         error => { console.log(error); },
         () => {
