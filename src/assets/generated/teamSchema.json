@@ -79,6 +79,15 @@
                         "Herren"
                     ]
                 },
+                "ligaID": {
+                    "$id": "/properties/herren/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/herren/properties/picture",
                     "type": "string",

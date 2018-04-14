@@ -34,6 +34,11 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { FileServiceService } from '@wh-share/file-service.service';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamService } from '@wh-share/team.service';
+import { HvwService } from '@wh-share/hvw.service';
+import { TeamResultComponent } from './team-result/team-result.component';
+import { TeamPlayersComponent } from './team-players/team-players.component';
+import { TeamReportsComponent } from './team-reports/team-reports.component';
+import { TeamGamesComponent } from './team-games/team-games.component';
 
 
 const options: ShareButtonsOptions = {
@@ -59,7 +64,11 @@ const options: ShareButtonsOptions = {
     PostDetailComponent,
     SponsorsDetailComponent,
     TeamDetailComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    TeamResultComponent,
+    TeamPlayersComponent,
+    TeamReportsComponent,
+    TeamGamesComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +88,8 @@ const options: ShareButtonsOptions = {
     SponsorsService,
     SeoService,
     FileServiceService,
-    TeamService
+    TeamService,
+    HvwService
   ],
   bootstrap: [AppComponent]
 })
