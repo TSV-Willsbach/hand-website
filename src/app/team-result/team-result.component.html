@@ -1,0 +1,95 @@
+<ol class="breadcrumb">
+  <li>
+    <a href="#" [routerLink]="[ '/team', teamID ]">{{team.title}}</a>
+  </li>
+  <li class="active">Ergebnisse</li>
+</ol>
+
+<h2 class="heading">Ergebnisse</h2>
+<div>
+  <h3>{{ligue.head.headline2}}</h3>
+  <small>{{ligue.head.actualized}}</small>
+
+  <table id="{{ligue.head.sname}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+    <caption>
+      <div [innerHTML]="ligue.content.scoreComments"></div>
+    </caption>
+    <tr>
+      <th></th>
+      <th>Verein</th>
+      <th>Sp</th>
+      <th>S</th>
+      <th>U</th>
+      <th>N</th>
+      <th>T</th>
+      <th>GT</th>
+      <th>TD</th>
+      <th>Punkte</th>
+    </tr>
+
+    <tr *ngFor="let standing of ligue.content.score">
+      <td>{{standing.tabScore}}</td>
+      <td>{{standing.tabTeamname}}</td>
+      <td>{{standing.numPlayedGames}}</td>
+      <td>{{standing.numWonGames}}</td>
+      <td>{{standing.numEqualGames}}</td>
+      <td>{{standing.numLostGames}}</td>
+      <td>{{standing.numGoalsShot}}</td>
+      <td>{{standing.numGoalsGot}}</td>
+      <td>{{standing.difference}}</td>
+      <td>{{standing.pointsPlus}} : {{standing.pointsMinus}}</td>
+    </tr>
+  </table>
+  <br />
+  <h2 class="heading">Statistik</h2>
+
+  <table style="width:100%" class="table table-responsive table-bordered">
+    <tr>
+      <td rowspan="2">Siege</td>
+      <td>Heim</td>
+      <td>{{ligue.statistik.homeWins}}</td>
+    </tr>
+    <tr>
+      <td>Auswärts</td>
+      <td>{{ligue.statistik.awayWins}}</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Tore geschossen</td>
+      <td>Heim</td>
+      <td>{{ligue.statistik.homeGoalsShot}}</td>
+    </tr>
+    <tr>
+      <td>Auswärts</td>
+      <td>{{ligue.statistik.awayGoalsShot}}</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Tore bekommen</td>
+      <td>Heim</td>
+      <td>{{ligue.statistik.homeGoalsGot}}</td>
+    </tr>
+    <tr>
+      <td>Auswärts</td>
+      <td>{{ligue.statistik.awayGoalsGot}}</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Höchster Sieg</td>
+      <td>Heim</td>
+      <td>{{ligue.statistik.homeHighestWin}}</td>
+    </tr>
+    <tr>
+      <td>Auswärts</td>
+      <td>{{ligue.statistik.awayHighestWin}}</td>
+    </tr>
+    <tr>
+      <td rowspan="2">Höchste Niederlage</td>
+      <td>Heim</td>
+      <td>{{ligue.statistik.homeHighestLose}}</td>
+    </tr>
+    <tr>
+      <td>Auswärts</td>
+      <td>{{ligue.statistik.awayHighestLose}}</td>
+    </tr>
+
+  </table>
+</div>
+<br />

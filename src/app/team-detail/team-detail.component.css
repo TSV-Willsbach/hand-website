@@ -1,29 +1,3 @@
-a {
-    color: var( --clubColor);
-}
-
-.column {
-    float: left;
-    width: 40%;
-}
-
-/* Clear floats after the columns */
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-#playerTable {
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-#playerTable td {
-    width: 25%;
-}
-
-.playerName a {
-    color: black;
+ul {
+    list-style-type: none;
 }

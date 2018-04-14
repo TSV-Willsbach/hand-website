@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HvwService } from '@wh-share/hvw.service';
+import { Club } from '@wh-objects/hvw';
 
 @Component({
   selector: 'app-results',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  club: Club;
+
+  constructor(private hvw: HvwService) {
+    this.club = new Club();
+    this.hvw.getClubData().subscribe(
+      club => this.club = club,
+      error => { console.log(error); },
+      () => { console.log(this.club); });
+  }
 
   ngOnInit() {
   }

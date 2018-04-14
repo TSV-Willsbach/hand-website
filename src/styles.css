@@ -69,3 +69,9 @@ td {
     color: var( --clubColor);
     border-bottom: 1px solid #CCCCCC;
 }
+
+.breadcrumb>li+li:before {
+    content: "/\00a0";
+    padding: 0 5px;
+    color: #ccc;
+}

@@ -11,6 +11,10 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { TeamResultComponent } from './team-result/team-result.component';
+import { TeamPlayersComponent } from './team-players/team-players.component';
+import { TeamReportsComponent } from './team-reports/team-reports.component';
+import { TeamGamesComponent } from './team-games/team-games.component';
 
 
 const routes: Routes = [
@@ -60,7 +64,23 @@ const routes: Routes = [
     component: TeamDetailComponent
   },
   {
-    path: 'team/:id/player/:name',
+    path: 'team/:id/results',
+    component: TeamResultComponent
+  },
+  {
+    path: 'team/:id/games',
+    component: TeamGamesComponent
+  },
+  {
+    path: 'team/:id/reports',
+    component: TeamReportsComponent
+  },
+  {
+    path: 'team/:id/players',
+    component: TeamPlayersComponent
+  },
+  {
+    path: 'team/:id/players/:name',
     component: PlayerDetailComponent
   }
 ];

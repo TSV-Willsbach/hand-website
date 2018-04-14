@@ -1,5 +1,6 @@
 export class Team {
     title: string;
+    ligaID: string;
     picture: string;
     trainer: Coach[];
     players: Player[];
