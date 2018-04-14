@@ -3,4 +3,36 @@
   <p>Ergebnisse beim
     <a href="http://www.hvw-online.org/spielbetrieb/ergebnissetabellen-verband/#/club?ogId=3&pId=58&cId=60" target="_blank">HVW</a>
   </p>
+
+  <h2 class="heading">Aktuelle Ergebnisse/ Spiele</h2>
+  <h3>{{club.head.headline2}}</h3>
+  <small>{{club.head.actualized}}</small>
+  <br />
+  <br />
+
+  <div *ngFor="let class of club.content.classes">
+    <h5>{{class.gClassSname}}</h5>
+    <div *ngFor="let game of class.games">
+      <table>
+        <tr>
+          <th>Datum</th>
+          <th>Uhrzeit</th>
+          <th>Halle</th>
+          <th>Heimteam</th>
+          <th>Gastteam</th>
+          <th>Ergebnis</th>
+          <th>SR</th>
+        </tr>
+        <tr>
+          <td>{{game.gDate}}</td>
+          <td>{{game.gTime}}</td>
+          <td>{{game.gGymnasiumName}}</td>
+          <td>{{game.gHomeTeam}}</td>
+          <td>{{game.gGuestTeam}}</td>
+          <td>{{game.gHomeGoals}} : {{game.gGuestGoals}} ( {{game.gHomeGoals_1}} : {{game.gGuestGoals_1}} )</td>
+          <td>{{game.gReferee}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>

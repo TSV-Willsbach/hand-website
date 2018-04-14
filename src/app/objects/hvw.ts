@@ -6,6 +6,17 @@ export class Ligue {
     constructor() { }
 }
 
+export class Club {
+    head: Head;
+    header: {
+        copy: string;
+    }
+    content: {
+        classes: Classes[];
+    };
+    constructor() { }
+}
+
 export class Head {
     name: string;
     sname: string;
@@ -25,7 +36,13 @@ export class Content {
         games: Game[];
     }
 
+    constructor() { }
+}
 
+export class Classes {
+    gClassId: string;
+    gClassSname: string;
+    games: Game[];
     constructor() { }
 }
 
@@ -53,7 +70,10 @@ export class Game {
     gComment: string;
     gReferee: string;
 
-    constructor() { }
+    constructor() {
+        this.gGuestGoals = this.gGuestGoals_1 = "0";
+        this.gHomeGoals = this.gHomeGoals_1 = "0";
+    }
 }
 
 export class Score {

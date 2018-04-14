@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
-import { Ligue, Statistik } from '@wh-objects/hvw';
+import { Ligue, Statistik, Club } from '@wh-objects/hvw';
 
 const baseUrl = 'http://spo.handball4all.de/service/if_g_json.php';
+const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=58';
 const clubName = 'TSV Willsbach';
 
 @Injectable()
@@ -49,6 +50,23 @@ export class HvwService {
         }
       });
 
+      return data;
+    });
+  }
+
+  getClubData(): Observable<Club> {
+    return this.http.get<Club>(clubUrl).map(club => {
+      let data = club[0];
+      let classes = data.content.classes;
+
+      classes.forEach(element => {
+        element.games.forEach(element => {
+          if (element.gGuestGoals === " ") { element.gGuestGoals = "0" }
+          if (element.gHomeGoals === " ") { element.gHomeGoals = "0" }
+          if (element.gGuestGoals_1 === " ") { element.gGuestGoals_1 = "0" }
+          if (element.gHomeGoals_1 === " ") { element.gHomeGoals_1 = "0" }
+        });
+      });
       return data;
     });
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HvwService } from '@wh-share/hvw.service';
-import { Ligue } from '@wh-objects/hvw';
+import { Club } from '@wh-objects/hvw';
 
 @Component({
   selector: 'app-results',
@@ -9,17 +9,14 @@ import { Ligue } from '@wh-objects/hvw';
 })
 export class ResultsComponent implements OnInit {
 
-  ligue: Ligue;
+  club: Club;
 
   constructor(private hvw: HvwService) {
-    console.log(this.hvw);
-    this.ligue = new Ligue();
-    this.hvw.liga = '28818'; // Herren
-    this.hvw.liga = '28842'; // Damen
-    this.hvw.getLigueData().subscribe(
-      ligue => this.ligue = ligue,
+    this.club = new Club();
+    this.hvw.getClubData().subscribe(
+      club => this.club = club,
       error => { console.log(error); },
-      () => { });
+      () => { console.log(this.club); });
   }
 
   ngOnInit() {
