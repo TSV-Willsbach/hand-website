@@ -88,10 +88,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/herren/properties/liga2ID",
+                "pokalID": {
+                    "$id": "/properties/herren/properties/pokalID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Pokal",
                     "default": "",
                     "examples": [
                         "28818"
@@ -137,10 +137,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/damen/properties/liga2ID",
+                "pokalID": {
+                    "$id": "/properties/damen/properties/pokalID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Pokal",
                     "default": "",
                     "examples": [
                         "28818"
@@ -185,10 +185,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/majugend/properties/liga2ID",
+                "qualID": {
+                    "$id": "/properties/majugend/properties/qualID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Quali",
                     "default": "",
                     "examples": [
                         "28818"
@@ -233,10 +233,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/mbjugend/properties/liga2ID",
+                "qualID": {
+                    "$id": "/properties/mbjugend/properties/qualID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Quali",
                     "default": "",
                     "examples": [
                         "28818"
@@ -281,10 +281,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/mcjugend/properties/liga2ID",
+                "qualID": {
+                    "$id": "/properties/mcjugend/properties/qualID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Quali",
                     "default": "",
                     "examples": [
                         "28818"
@@ -329,10 +329,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/mdjugend/properties/liga2ID",
+                "qualID": {
+                    "$id": "/properties/mdjugend/properties/qualID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Quali",
                     "default": "",
                     "examples": [
                         "28818"
@@ -377,10 +377,10 @@
                         "28818"
                     ]
                 },
-                "liga2ID": {
-                    "$id": "/properties/mejugend/properties/liga2ID",
+                "qualID": {
+                    "$id": "/properties/mejugend/properties/qualID",
                     "type": "string",
-                    "title": "LigaID - Pokal/ Quali",
+                    "title": "LigaID - Quali",
                     "default": "",
                     "examples": [
                         "28818"
