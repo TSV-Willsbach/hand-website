@@ -27,7 +27,7 @@
       <th>Punkte</th>
     </tr>
 
-    <tr *ngFor="let standing of ligue.content.score">
+    <tr *ngFor="let standing of ligue.content.score" [class.table-danger]="isClub(standing.tabTeamname)">
       <td>{{standing.tabScore}}</td>
       <td>{{standing.tabTeamname}}</td>
       <td>{{standing.numPlayedGames}}</td>
@@ -47,47 +47,57 @@
     <tr>
       <td rowspan="2">Siege</td>
       <td>Heim</td>
-      <td>{{ligue.statistik.homeWins}}</td>
+      <td>{{ligue.statistik.homeWins.wins}}</td>
+      <td>{{ligue.statistik.homeWins.procentualWins | percent}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
-      <td>{{ligue.statistik.awayWins}}</td>
+      <td>{{ligue.statistik.awayWins.wins}}</td>
+      <td>{{ligue.statistik.awayWins.procentualWins | percent}}</td>
     </tr>
     <tr>
       <td rowspan="2">Tore geschossen</td>
       <td>Heim</td>
-      <td>{{ligue.statistik.homeGoalsShot}}</td>
+      <td>{{ligue.statistik.homeGoalsShot.totalGoals}}</td>
+      <td>&oslash; {{ligue.statistik.homeGoalsShot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
-      <td>{{ligue.statistik.awayGoalsShot}}</td>
+      <td>{{ligue.statistik.awayGoalsShot.totalGoals}}</td>
+      <td>&oslash; {{ligue.statistik.awayGoalsShot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td rowspan="2">Tore bekommen</td>
       <td>Heim</td>
-      <td>{{ligue.statistik.homeGoalsGot}}</td>
+      <td>{{ligue.statistik.homeGoalsGot.totalGoals}}</td>
+      <td>&oslash; {{ligue.statistik.homeGoalsGot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
-      <td>{{ligue.statistik.awayGoalsGot}}</td>
+      <td>{{ligue.statistik.awayGoalsGot.totalGoals}}</td>
+      <td>&oslash; {{ligue.statistik.awayGoalsGot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td rowspan="2">Höchster Sieg</td>
       <td>Heim</td>
-      <td>{{ligue.statistik.homeHighestWin}}</td>
+      <td>{{ligue.statistik.homeHighestWin.teamName}}</td>
+      <td>{{ligue.statistik.homeHighestWin.result}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
-      <td>{{ligue.statistik.awayHighestWin}}</td>
+      <td>{{ligue.statistik.awayHighestWin.teamName}}</td>
+      <td>{{ligue.statistik.awayHighestWin.result}}</td>
     </tr>
     <tr>
       <td rowspan="2">Höchste Niederlage</td>
       <td>Heim</td>
-      <td>{{ligue.statistik.homeHighestLose}}</td>
+      <td>{{ligue.statistik.homeHighestLose.teamName}}</td>
+      <td>{{ligue.statistik.homeHighestLose.result}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
-      <td>{{ligue.statistik.awayHighestLose}}</td>
+      <td>{{ligue.statistik.awayHighestLose.teamName}}</td>
+      <td>{{ligue.statistik.awayHighestLose.result}}</td>
     </tr>
 
   </table>

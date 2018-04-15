@@ -1,4 +1,5 @@
 {
+    "configVersion": 1,
     "index": "/index.html",
     "assetGroups": [{
         "name": "app",
@@ -27,10 +28,12 @@
     "dataGroups": [{
             "name": "api-performance",
             "urls": [
+                "/",
                 "/postDetail",
                 "/sponsors",
                 "/reports",
-                "/team/*"
+                "/team/*",
+                "https://wp.willsbach-handball.de/wp-json/wp/v2/media*"
             ],
             "cacheConfig": {
                 "maxSize": 100,
@@ -41,11 +44,11 @@
         {
             "name": "api-freshness",
             "urls": [
-                "/"
+                "https://wp.willsbach-handball.de/wp-json/wp/v2/posts*"
             ],
             "cacheConfig": {
-                "maxSize": 30,
-                "timeout": "5s",
+                "maxSize": 100,
+                "timeout": "10s",
                 "maxAge": "1h",
                 "strategy": "freshness"
             }
