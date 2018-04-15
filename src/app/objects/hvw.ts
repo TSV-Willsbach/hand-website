@@ -3,18 +3,21 @@ export class Ligue {
     content: Content;
     statistik: Statistik;
 
-    constructor() { }
+    constructor() {
+        this.head = new Head();
+        this.content = new Content();
+        this.statistik = new Statistik();
+    }
 }
 
 export class Club {
     head: Head;
-    header: {
-        copy: string;
-    }
     content: {
         classes: Classes[];
     };
-    constructor() { }
+    constructor() {
+        this.head = new Head;
+    }
 }
 
 export class Head {
@@ -95,30 +98,56 @@ export class Score {
 
 export class Statistik {
     homeWins: number;
-    homeGoalsShot: number;
-    homeGoalsGot: number;
-    homeHighestWin: string;
+    homeGoalsShot: StatGoals;
+    homeGoalsGot: StatGoals;
+    homeHighestWin: StatGame;
     homeHighestWinDiff: number;
-    homeHighestLose: string;
+    homeHighestLose: StatGame;
     homeHighestLoseDiff: number;
     awayWins: number;
-    awayGoalsShot: number;
-    awayGoalsGot: number;
-    awayHighestWin: string;
+    awayGoalsShot: StatGoals;
+    awayGoalsGot: StatGoals;
+    awayHighestWin: StatGame;
     awayHighestWinDiff: number;
-    awayHighestLose: string;
+    awayHighestLose: StatGame;
     awayHighestLoseDiff: number;
     constructor() {
 
-        this.homeGoalsShot = this.homeGoalsGot = 0;
+        this.homeGoalsShot = new StatGoals();
+        this.homeGoalsGot = new StatGoals();
+        this.homeHighestWin = new StatGame();
+        this.homeHighestLose = new StatGame();
         this.homeWins = 0;
         this.homeHighestWinDiff = this.homeHighestLoseDiff = 0;
-        this.homeHighestWin = this.homeHighestLose = "-";
 
-        this.awayGoalsShot = this.awayGoalsGot = 0;
+        this.awayGoalsShot = new StatGoals();
+        this.awayGoalsGot = new StatGoals();
+        this.awayHighestWin = new StatGame();
+        this.awayHighestLose = new StatGame();
         this.awayWins = 0;
         this.awayHighestWinDiff = this.awayHighestLoseDiff = 0;
-        this.awayHighestWin = this.awayHighestLose = "-";
+
 
     }
+}
+
+export class StatGame {
+    teamName: string;
+    result: string;
+
+    constructor() {
+        this.teamName = this.result = "-";
+    }
+
+}
+
+export class StatGoals {
+    totalGoals: number;
+    avarageGoals: number;
+    gameAmount: number;
+
+    constructor() {
+        this.totalGoals = this.avarageGoals = this.gameAmount = 0;
+    }
+
 }
