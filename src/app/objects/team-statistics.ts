@@ -20,8 +20,6 @@ export class teamStatistics {
     }
 
     private calcAverage(statistik: any) {
-        // if (statistik.awayGoalsShot.avarageGoals === null) { statistik.awayGoalsShot.avarageGoals = 0; }
-
         statistik.homeGoalsShot.avarageGoals = statistik.homeGoalsShot.totalGoals / statistik.homeGoalsShot.gameAmount;
         statistik.homeGoalsGot.avarageGoals = statistik.homeGoalsGot.totalGoals / statistik.homeGoalsGot.gameAmount;
         statistik.homeWins.procentualWins = statistik.homeWins.wins / statistik.homeWins.gameAmount;

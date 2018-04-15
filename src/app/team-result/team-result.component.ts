@@ -64,7 +64,8 @@ export class TeamResultComponent implements OnInit {
     } else {
       if (this.hvw.liga != this.team.ligaID) {
         id = this.team.ligaID;
-        text = "Pokal";
+        let data = this.pokalOrQual();
+        text = data.init;
       } else {
         let data = this.pokalOrQual();
         text = data.text;
@@ -79,11 +80,11 @@ export class TeamResultComponent implements OnInit {
   pokalOrQual(): any {
     let id;
     let init;
-    if (this.team.qualID != null && this.hvw.liga != this.team.qualID) {
+    if (this.team.qualID != null) {
       id = this.team.qualID;
       init = "Qualifikation";
     }
-    else if (this.team.pokalID != null && this.hvw.liga != this.team.pokalID) {
+    else if (this.team.pokalID != null) {
       id = this.team.pokalID;
       init = "Pokal";
     }
