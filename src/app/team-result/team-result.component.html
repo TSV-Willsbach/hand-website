@@ -27,7 +27,7 @@
       <th>Punkte</th>
     </tr>
 
-    <tr *ngFor="let standing of ligue.content.score">
+    <tr *ngFor="let standing of ligue.content.score" [class.table-danger]="isClub(standing.tabTeamname)">
       <td>{{standing.tabScore}}</td>
       <td>{{standing.tabTeamname}}</td>
       <td>{{standing.numPlayedGames}}</td>

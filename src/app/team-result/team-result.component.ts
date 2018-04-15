@@ -47,4 +47,7 @@ export class TeamResultComponent implements OnInit {
   ngOnInit() {
   }
 
+  isClub(value): Boolean {
+    return value === 'TSV Willsbach';
+  }
 }
