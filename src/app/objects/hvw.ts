@@ -39,7 +39,10 @@ export class Content {
         games: Game[];
     }
 
-    constructor() { }
+    constructor() {
+        this.actualGames = { games: new Array<Game>() }
+        this.futureGames = { games: new Array<Game>() }
+    }
 }
 
 export class Classes {

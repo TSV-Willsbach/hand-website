@@ -1,6 +1,8 @@
 export class Team {
     title: string;
     ligaID: string;
+    pokalID: string;
+    qualID: string;
     picture: string;
     trainer: Coach[];
     players: Player[];
