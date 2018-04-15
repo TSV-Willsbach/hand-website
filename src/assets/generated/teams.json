@@ -604,7 +604,8 @@
     },
     "mejugend": {
         "title": "Männliche E Jugend",
-        "picture": ""
+        "picture": "",
+        "ligaID": "31634"
     },
     "minis": {
         "title": "Minis",

@@ -47,35 +47,35 @@
     <tr>
       <td rowspan="2">Siege</td>
       <td>Heim</td>
-      <td>{{ligue.statistik.homeWins}}</td>
-      <td></td>
+      <td>{{ligue.statistik.homeWins.wins}}</td>
+      <td>{{ligue.statistik.homeWins.procentualWins | percent}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
-      <td>{{ligue.statistik.awayWins}}</td>
-      <td></td>
+      <td>{{ligue.statistik.awayWins.wins}}</td>
+      <td>{{ligue.statistik.awayWins.procentualWins | percent}}</td>
     </tr>
     <tr>
       <td rowspan="2">Tore geschossen</td>
       <td>Heim</td>
       <td>{{ligue.statistik.homeGoalsShot.totalGoals}}</td>
-      <td>{{ligue.statistik.homeGoalsShot.avarageGoals}}</td>
+      <td>&oslash; {{ligue.statistik.homeGoalsShot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
       <td>{{ligue.statistik.awayGoalsShot.totalGoals}}</td>
-      <td>{{ligue.statistik.awayGoalsShot.avarageGoals}}</td>
+      <td>&oslash; {{ligue.statistik.awayGoalsShot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td rowspan="2">Tore bekommen</td>
       <td>Heim</td>
       <td>{{ligue.statistik.homeGoalsGot.totalGoals}}</td>
-      <td>{{ligue.statistik.homeGoalsGot.avarageGoals}}</td>
+      <td>&oslash; {{ligue.statistik.homeGoalsGot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td>Auswärts</td>
       <td>{{ligue.statistik.awayGoalsGot.totalGoals}}</td>
-      <td>{{ligue.statistik.awayGoalsGot.avarageGoals}}</td>
+      <td>&oslash; {{ligue.statistik.awayGoalsGot.avarageGoals | number : '1.2-2'}}</td>
     </tr>
     <tr>
       <td rowspan="2">Höchster Sieg</td>

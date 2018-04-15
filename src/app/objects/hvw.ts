@@ -97,14 +97,14 @@ export class Score {
 }
 
 export class Statistik {
-    homeWins: number;
+    homeWins: StatWins;
     homeGoalsShot: StatGoals;
     homeGoalsGot: StatGoals;
     homeHighestWin: StatGame;
     homeHighestWinDiff: number;
     homeHighestLose: StatGame;
     homeHighestLoseDiff: number;
-    awayWins: number;
+    awayWins: StatWins;
     awayGoalsShot: StatGoals;
     awayGoalsGot: StatGoals;
     awayHighestWin: StatGame;
@@ -117,14 +117,14 @@ export class Statistik {
         this.homeGoalsGot = new StatGoals();
         this.homeHighestWin = new StatGame();
         this.homeHighestLose = new StatGame();
-        this.homeWins = 0;
+        this.homeWins = new StatWins();
         this.homeHighestWinDiff = this.homeHighestLoseDiff = 0;
 
         this.awayGoalsShot = new StatGoals();
         this.awayGoalsGot = new StatGoals();
         this.awayHighestWin = new StatGame();
         this.awayHighestLose = new StatGame();
-        this.awayWins = 0;
+        this.awayWins = new StatWins();
         this.awayHighestWinDiff = this.awayHighestLoseDiff = 0;
 
 
@@ -141,6 +141,16 @@ export class StatGame {
 
 }
 
+export class StatWins {
+    wins: number;
+    procentualWins: number;
+    gameAmount: number;
+
+    constructor() {
+        this.wins = this.gameAmount = 0;
+        this.procentualWins = 0;
+    }
+}
 export class StatGoals {
     totalGoals: number;
     avarageGoals: number;

@@ -50,8 +50,22 @@ export class HvwService {
         }
       });
 
+      this.calcAverage(statistik);
+
       return data;
     });
+  }
+
+  private calcAverage(statistik: any) {
+    statistik.homeGoalsShot.avarageGoals = statistik.homeGoalsShot.totalGoals / statistik.homeGoalsShot.gameAmount;
+    statistik.homeGoalsGot.avarageGoals = statistik.homeGoalsGot.totalGoals / statistik.homeGoalsGot.gameAmount;
+    statistik.homeWins.procentualWins = statistik.homeWins.wins / statistik.homeWins.gameAmount;
+    statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.totalGoals / statistik.awayGoalsShot.gameAmount;
+    statistik.awayGoalsGot.avarageGoals = statistik.awayGoalsGot.totalGoals / statistik.awayGoalsGot.gameAmount;
+    statistik.awayWins.procentualWins = statistik.awayWins.wins / statistik.awayWins.gameAmount;
+
+    console.log(statistik.awayWins);
+    console.log(statistik.homeWins);
   }
 
   getNextGames(): Observable<Ligue> {
@@ -67,10 +81,6 @@ export class HvwService {
       scores.forEach(element => {
         element.difference = element.numGoalsShot - element.numGoalsGot;
       });
-
-      console.log(statistik.homeGoalsShot);
-      statistik.homeGoalsShot.avarageGoals = statistik.homeGoalsShot.totalGoals / statistik.homeGoalsShot.gameAmount;
-      console.log(statistik.homeGoalsShot.avarageGoals);
 
       games.forEach(element => {
         if (element.gGuestTeam === clubName) {
@@ -102,11 +112,14 @@ export class HvwService {
   }
 
   private homeStatLogic(statistik: any, element: any) {
-    this.homeGoalLogic(statistik, element);
+
+    if (element.gHomeGoals != " " || element.gGuestGoals != " ") {
+      this.homeGoalLogic(statistik, element);
+    }
 
     let diff = +element.gHomeGoals - +element.gGuestGoals;
     if (element.gHomePoints === '2') {
-      statistik.homeWins++;
+      statistik.homeWins.wins++;
       if (diff > statistik.homeHighestWinDiff) {
         statistik.homeHighestWinDiff = diff;
         statistik.homeHighestWin = this.buildWLText(element, element.gGuestTeam);
@@ -119,24 +132,30 @@ export class HvwService {
   }
 
   private homeGoalLogic(statistik: any, goals: any) {
-    statistik.homeGoalsShot.totalGoals = statistik.homeGoalsShot.totalGoals + +goals.gHomeGoals;
+    statistik.homeWins.gameAmount++;
     statistik.homeGoalsShot.gameAmount++;
-    statistik.homeGoalsGot.totalGoals = statistik.homeGoalsGot.totalGoals + +goals.gGuestGoals;
     statistik.homeGoalsGot.gameAmount++;
+    statistik.homeGoalsShot.totalGoals = statistik.homeGoalsShot.totalGoals + +goals.gHomeGoals;
+    statistik.homeGoalsGot.totalGoals = statistik.homeGoalsGot.totalGoals + +goals.gGuestGoals;
+
   }
 
   private awayGoalLogic(statistik: any, goals: any) {
-    statistik.awayGoalsShot.totalGoals = statistik.awayGoalsShot.totalGoals + +goals.gGuestGoals;
+    statistik.awayWins.gameAmount++;
     statistik.awayGoalsShot.gameAmount++;
-    statistik.awayGoalsGot.totalGoals = statistik.awayGoalsGot.totalGoals + +goals.gHomeGoals;
     statistik.awayGoalsGot.gameAmount++;
+    statistik.awayGoalsShot.totalGoals = statistik.awayGoalsShot.totalGoals + +goals.gGuestGoals;
+    statistik.awayGoalsGot.totalGoals = statistik.awayGoalsGot.totalGoals + +goals.gHomeGoals;
   }
 
   private awayStatLogic(statistik: any, element: any) {
-    this.awayGoalLogic(statistik, element);
+    if (element.gHomeGoals != " " || element.gGuestGoals != " ") {
+      console.log("Team: " + element.gHomeTeam);
+      this.awayGoalLogic(statistik, element);
+    }
     let diff = +element.gGuestGoals - +element.gHomeGoals;
     if (element.gGuestPoints === '2') {
-      statistik.awayWins++;
+      statistik.awayWins.wins++;
       if (diff > statistik.awayHighestWinDiff) {
         statistik.awayHighestWinDiff = diff;
         statistik.awayHighestWin = this.buildWLText(element, element.gHomeTeam);
