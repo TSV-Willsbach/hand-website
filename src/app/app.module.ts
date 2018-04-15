@@ -39,6 +39,7 @@ import { TeamResultComponent } from './team-result/team-result.component';
 import { TeamPlayersComponent } from './team-players/team-players.component';
 import { TeamReportsComponent } from './team-reports/team-reports.component';
 import { TeamGamesComponent } from './team-games/team-games.component';
+import { Globals } from '@wh-objects/globals';
 
 
 const options: ShareButtonsOptions = {
@@ -89,7 +90,8 @@ const options: ShareButtonsOptions = {
     SeoService,
     FileServiceService,
     TeamService,
-    HvwService
+    HvwService,
+    Globals
   ],
   bootstrap: [AppComponent]
 })
