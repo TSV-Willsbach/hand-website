@@ -20,12 +20,22 @@ export class teamStatistics {
     }
 
     private calcAverage(statistik: any) {
+        // if (statistik.awayGoalsShot.avarageGoals === null) { statistik.awayGoalsShot.avarageGoals = 0; }
+
         statistik.homeGoalsShot.avarageGoals = statistik.homeGoalsShot.totalGoals / statistik.homeGoalsShot.gameAmount;
         statistik.homeGoalsGot.avarageGoals = statistik.homeGoalsGot.totalGoals / statistik.homeGoalsGot.gameAmount;
         statistik.homeWins.procentualWins = statistik.homeWins.wins / statistik.homeWins.gameAmount;
         statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.totalGoals / statistik.awayGoalsShot.gameAmount;
         statistik.awayGoalsGot.avarageGoals = statistik.awayGoalsGot.totalGoals / statistik.awayGoalsGot.gameAmount;
         statistik.awayWins.procentualWins = statistik.awayWins.wins / statistik.awayWins.gameAmount;
+
+        // set value to 0 if undefinded (NaN)
+        statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.avarageGoals || 0;
+        statistik.homeGoalsGot.avarageGoals = statistik.homeGoalsGot.avarageGoals || 0;
+        statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.avarageGoals || 0;
+        statistik.awayGoalsGot.avarageGoals = statistik.awayGoalsGot.avarageGoals || 0;
+        statistik.homeWins.procentualWins = statistik.homeWins.procentualWins || 0;
+        statistik.awayWins.procentualWins = statistik.awayWins.procentualWins || 0;
     }
     private homeStatLogic(statistik: any, element: any) {
 
