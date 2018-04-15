@@ -58,11 +58,9 @@ export class DocumentService {
     const requestPath = `${DOC_CONTENT_URL_PREFIX}${id}.json`;
     const subject = new AsyncSubject<DocumentContents>();
 
-    console.log('fetching document from', requestPath);
     this.http
       .get<DocumentContents>(requestPath, { responseType: 'json' })
       .do(data => {
-        //  console.log("fetched document " + data);
         if (!data || typeof data !== 'object') {
           //  this.logger.log('received invalid data:', data);
           throw Error('Invalid data');

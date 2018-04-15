@@ -52,7 +52,6 @@ export class AppComponent implements OnInit {
     //    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
 
     this.locationService.currentPath.subscribe(path => {
-      console.log(path)
       // Redirect to docs if we are in archive mode and are not hitting a docs page
       // (i.e. we have arrived at a marketing page)
       /*       if (this.deployment.mode === 'archive' && !/^(docs$|api|guide|tutorial)/.test(path)) {

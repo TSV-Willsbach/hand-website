@@ -63,9 +63,6 @@ export class HvwService {
     statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.totalGoals / statistik.awayGoalsShot.gameAmount;
     statistik.awayGoalsGot.avarageGoals = statistik.awayGoalsGot.totalGoals / statistik.awayGoalsGot.gameAmount;
     statistik.awayWins.procentualWins = statistik.awayWins.wins / statistik.awayWins.gameAmount;
-
-    console.log(statistik.awayWins);
-    console.log(statistik.homeWins);
   }
 
   getNextGames(): Observable<Ligue> {
@@ -150,7 +147,6 @@ export class HvwService {
 
   private awayStatLogic(statistik: any, element: any) {
     if (element.gHomeGoals != " " || element.gGuestGoals != " ") {
-      console.log("Team: " + element.gHomeTeam);
       this.awayGoalLogic(statistik, element);
     }
     let diff = +element.gGuestGoals - +element.gHomeGoals;
