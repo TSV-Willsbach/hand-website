@@ -82,7 +82,7 @@ export class TeamResultComponent implements OnInit {
     }
 
     this.hvw.liga = id;
-    this.secondLigueText = "Wechsel zu " + text;
+    this.secondLigueText = text + " wechseln";
   }
 
   pokalOrQual(): any {
@@ -90,16 +90,16 @@ export class TeamResultComponent implements OnInit {
     let init;
     if (this.team.qualID != null) {
       id = this.team.qualID;
-      init = "Qualifikation";
+      init = "Zur Qualifikation";
     }
     else if (this.team.pokalID != null) {
       id = this.team.pokalID;
-      init = "Pokal";
+      init = "Zum Pokal";
     } else {
       init = "";
       this.buttonActive = true;
     }
-    return { id: id, text: "Saison", init: init };
+    return { id: id, text: "Zur Saison", init: init };
   }
 
   changeLigue() {
