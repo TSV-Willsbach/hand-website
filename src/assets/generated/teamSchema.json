@@ -88,6 +88,15 @@
                         "28818"
                     ]
                 },
+                "liga2ID": {
+                    "$id": "/properties/herren/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/herren/properties/picture",
                     "type": "string",
@@ -117,6 +126,24 @@
                     "default": "",
                     "examples": [
                         "Damen"
+                    ]
+                },
+                "ligaID": {
+                    "$id": "/properties/damen/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "liga2ID": {
+                    "$id": "/properties/damen/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
                     ]
                 },
                 "picture": {
@@ -149,6 +176,24 @@
                         "Männliche A Jugend"
                     ]
                 },
+                "ligaID": {
+                    "$id": "/properties/majugend/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "liga2ID": {
+                    "$id": "/properties/majugend/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/majugend/properties/picture",
                     "type": "string",
@@ -177,6 +222,24 @@
                     "default": "",
                     "examples": [
                         "Männliche B Jugend"
+                    ]
+                },
+                "ligaID": {
+                    "$id": "/properties/mbjugend/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "liga2ID": {
+                    "$id": "/properties/mbjugend/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
                     ]
                 },
                 "picture": {
@@ -209,6 +272,24 @@
                         "Männliche C Jugend"
                     ]
                 },
+                "ligaID": {
+                    "$id": "/properties/mcjugend/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "liga2ID": {
+                    "$id": "/properties/mcjugend/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/mcjugend/properties/picture",
                     "type": "string",
@@ -239,6 +320,24 @@
                         "Männliche D Jugend"
                     ]
                 },
+                "ligaID": {
+                    "$id": "/properties/mdjugend/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "liga2ID": {
+                    "$id": "/properties/mdjugend/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/mdjugend/properties/picture",
                     "type": "string",
@@ -267,6 +366,24 @@
                     "default": "",
                     "examples": [
                         "Männliche E Jugend"
+                    ]
+                },
+                "ligaID": {
+                    "$id": "/properties/mejugend/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "liga2ID": {
+                    "$id": "/properties/mejugend/properties/liga2ID",
+                    "type": "string",
+                    "title": "LigaID - Pokal/ Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
                     ]
                 },
                 "picture": {
