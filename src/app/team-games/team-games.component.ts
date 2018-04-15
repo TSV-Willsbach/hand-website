@@ -5,6 +5,7 @@ import { Ligue } from '@wh-objects/hvw';
 import { HvwService } from '@wh-share/hvw.service';
 import { TeamService } from '@wh-share/team.service';
 import { SeoService } from '@wh-share/seo.service';
+import { Globals } from '@wh-objects/globals';
 
 @Component({
   selector: 'app-team-games',
@@ -18,7 +19,7 @@ export class TeamGamesComponent implements OnInit {
   ligue: Ligue;
   team: Team;
 
-  constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService, private seo: SeoService) {
+  constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService, private seo: SeoService, private global: Globals) {
     this.ligue = new Ligue();
 
 
@@ -33,9 +34,9 @@ export class TeamGamesComponent implements OnInit {
           this.hvw.getNextGames().subscribe(
             ligue => {
               let games = ligue.content.actualGames.games;
-              let actClubGames = games.filter(element => element.gGuestTeam == "TSV Willsbach" || element.gHomeTeam == "TSV Willsbach");
+              let actClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
               games = ligue.content.futureGames.games;
-              let futClubGames = games.filter(element => element.gGuestTeam == "TSV Willsbach" || element.gHomeTeam == "TSV Willsbach");
+              let futClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
 
               ligue.content.actualGames.games = actClubGames.concat(futClubGames);
               this.ligue = ligue;
