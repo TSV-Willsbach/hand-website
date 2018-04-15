@@ -30,7 +30,7 @@ export class teamStatistics {
         statistik.awayWins.procentualWins = statistik.awayWins.wins / statistik.awayWins.gameAmount;
 
         // set value to 0 if undefinded (NaN)
-        statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.avarageGoals || 0;
+        statistik.homeGoalsShot.avarageGoals = statistik.awayGoalsShot.avarageGoals || 0;
         statistik.homeGoalsGot.avarageGoals = statistik.homeGoalsGot.avarageGoals || 0;
         statistik.awayGoalsShot.avarageGoals = statistik.awayGoalsShot.avarageGoals || 0;
         statistik.awayGoalsGot.avarageGoals = statistik.awayGoalsGot.avarageGoals || 0;
