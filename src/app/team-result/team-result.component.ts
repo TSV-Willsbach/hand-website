@@ -21,6 +21,7 @@ export class TeamResultComponent implements OnInit {
   secondLigueText: string;
   team: Team;
   myHVW: any;
+  buttonActive: Boolean = false;
 
   constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService, private seo: SeoService, private global: Globals) {
     this.ligue = new Ligue();
@@ -43,7 +44,15 @@ export class TeamResultComponent implements OnInit {
   }
 
   private getApiData() {
-    this.myHVW = this.hvw.getLigueData().subscribe(ligue => this.ligue = ligue, error => { console.log(error); }, () => {
+    this.myHVW = this.hvw.getLigueData().subscribe(ligue => {
+      this.ligue = ligue;
+      let games = ligue.content.actualGames.games;
+      games = ligue.content.futureGames.games;
+      let futClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
+      console.log(futClubGames);
+      ligue.content.actualGames.games = futClubGames;
+      return this.ligue;
+    }, error => { console.log(error); }, () => {
       this.seo.generateTags({
         title: this.ligue.head.name,
         description: this.ligue.head.headline2,
@@ -56,7 +65,6 @@ export class TeamResultComponent implements OnInit {
     let text;
 
     if (this.secondLigueText === undefined) {
-      console.log("init");
       // init data
       let data = this.pokalOrQual();
       text = data.init;
@@ -87,6 +95,9 @@ export class TeamResultComponent implements OnInit {
     else if (this.team.pokalID != null) {
       id = this.team.pokalID;
       init = "Pokal";
+    } else {
+      init = "";
+      this.buttonActive = true;
     }
     return { id: id, text: "Saison", init: init };
   }

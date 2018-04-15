@@ -7,7 +7,7 @@
 
 <h2 class="heading">Ergebnisse</h2>
 <div class="text-center">
-  <button type="button" class="btn btn-default btn-lg" (click)="changeLigue()">
+  <button type="button" class="btn btn-default btn-lg" (click)="changeLigue()" [disabled]="buttonActive">
     <i class="fa fa-refresh" aria-hidden="true"></i> {{secondLigueText}}</button>
   <br />
   <br />
@@ -110,4 +110,32 @@
 
   </table>
 </div>
+<br />
+<h2 class="heading">Spiele</h2>
+<small>{{ligue.head.actualized}}</small>
+<table id="{{ligue.head.sname}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+  <tr>
+    <th>Datum</th>
+    <th>Zeit</th>
+    <th>Halle</th>
+    <th>Heimteam</th>
+    <th>Gästeteam</th>
+    <th>Endstand</th>
+    <th>Halbzeitstand</th>
+    <th>SR</th>
+    <!-- <th>Live?</th> -->
+  </tr>
+  <tr *ngFor="let game of ligue.content.actualGames.games">
+    <td>{{game.gDate}}</td>
+    <td>{{game.gTime}}</td>
+    <td>{{game.gGymnasiumName}}</td>
+    <td>{{game.gHomeTeam}}</td>
+    <td>{{game.gGuestTeam}}</td>
+    <td>{{game.gHomeGoals}} : {{game.gGuestGoals}}</td>
+    <td>{{game.gHomeGoals_1}} : {{game.gGuestGoals_1}}</td>
+    <td>{{game.gReferee}}</td>
+    <!-- <td>{{game.live == true ? 'Ja': 'Nein'}}</td> -->
+  </tr>
+
+</table>
 <br />
