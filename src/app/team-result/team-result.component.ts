@@ -49,7 +49,6 @@ export class TeamResultComponent implements OnInit {
       let games = ligue.content.actualGames.games;
       games = ligue.content.futureGames.games;
       let futClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
-      console.log(futClubGames);
       ligue.content.actualGames.games = futClubGames;
       return this.ligue;
     }, error => { console.log(error); }, () => {
