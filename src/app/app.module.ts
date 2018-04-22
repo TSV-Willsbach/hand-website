@@ -9,6 +9,7 @@ import { ShareButtonsOptions } from '@ngx-share/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -42,6 +43,8 @@ import { TeamPlayersComponent } from './team-players/team-players.component';
 import { TeamReportsComponent } from './team-reports/team-reports.component';
 import { TeamGamesComponent } from './team-games/team-games.component';
 import { Globals } from '@wh-objects/globals';
+import { LoginComponent } from './login/login.component';
+import { EditComponent } from './edit/edit.component';
 export const firebaseConfig = environment.firebase;
 
 const options: ShareButtonsOptions = {
@@ -71,7 +74,9 @@ const options: ShareButtonsOptions = {
     TeamResultComponent,
     TeamPlayersComponent,
     TeamReportsComponent,
-    TeamGamesComponent
+    TeamGamesComponent,
+    LoginComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +87,8 @@ const options: ShareButtonsOptions = {
     ShareButtonsModule.forRoot({ options: options }),
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [
     NavigationService,

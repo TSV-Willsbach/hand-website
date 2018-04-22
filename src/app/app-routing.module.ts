@@ -15,6 +15,9 @@ import { TeamResultComponent } from './team-result/team-result.component';
 import { TeamPlayersComponent } from './team-players/team-players.component';
 import { TeamReportsComponent } from './team-reports/team-reports.component';
 import { TeamGamesComponent } from './team-games/team-games.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './core/auth.guard';
+import { EditComponent } from './edit/edit.component';
 
 
 const routes: Routes = [
@@ -82,6 +85,15 @@ const routes: Routes = [
   {
     path: 'team/:id/players/:name',
     component: PlayerDetailComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'edit',
+    component: EditComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
