@@ -6,7 +6,7 @@
 </ol>
 
 <h2 class="heading">Ergebnisse</h2>
-<div class="text-center">
+<div class="text-center" *ngIf="secondLigueText != ' wechseln'">
   <button type="button" class="btn btn-link btn-lg btn-block" (click)="changeLigue()" [disabled]="buttonActive">
     <i class="fa fa-refresh" aria-hidden="true"></i> {{secondLigueText}}</button>
   <br />
