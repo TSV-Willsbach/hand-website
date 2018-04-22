@@ -17,6 +17,7 @@ export class Club {
     };
     constructor() {
         this.head = new Head;
+        this.content = { classes: new Array<Classes>() };
     }
 }
 
@@ -75,6 +76,7 @@ export class Game {
     gGuestPoints: string;
     gComment: string;
     gReferee: string;
+    tickerUrl: string;
 
     constructor() {
         this.gGuestGoals = this.gGuestGoals_1 = "0";

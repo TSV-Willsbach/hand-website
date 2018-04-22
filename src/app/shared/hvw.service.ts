@@ -6,7 +6,8 @@ import { teamStatistics } from '@wh-objects/team-statistics';
 import { Globals } from '@wh-objects/globals';
 
 const baseUrl = 'https://spo.handball4all.de/service/if_g_json.php';
-const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=58';
+const tickerUrl = "http://spo.handball4all.de/service/ticker.html?appid=&token=";
+const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=' + this._period;
 
 @Injectable()
 export class HvwService {
@@ -27,6 +28,14 @@ export class HvwService {
     this._allGames = allGames;
   }
 
+  private _period: String = "58";
+  get period(): String {
+    return this._period;
+  }
+  set period(period: String) {
+    this._period = period;
+  }
+
   constructor(private http: HttpClient, private global: Globals) { }
 
   getLigueData(): Observable<Ligue> {
@@ -38,6 +47,16 @@ export class HvwService {
       scores.forEach(element => {
         element.difference = element.numGoalsShot - element.numGoalsGot;
       });
+
+      let games = data.content.games;
+      if (games != undefined) {
+        games.forEach(element => {
+          if (element.live === true) {
+            element.tickerUrl = tickerUrl + element.gToken;
+          }
+        });
+      }
+
 
       let stats = new teamStatistics(this.global);
       stats.calcStatistic(data);
@@ -51,6 +70,8 @@ export class HvwService {
   }
 
   getClubData(): Observable<Club> {
+    const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=' + this._period;
+    console.log(clubUrl);
     return this.http.get<Club>(clubUrl).map(club => {
       let data = club[0];
       let classes = data.content.classes;
