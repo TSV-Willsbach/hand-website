@@ -21,6 +21,7 @@ export class TeamGamesComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService, private seo: SeoService, private global: Globals) {
     this.ligue = new Ligue();
+    this.team = new Team();
 
 
     this.sub = this.route.params.subscribe(params => {
@@ -44,7 +45,6 @@ export class TeamGamesComponent implements OnInit {
             },
             error => { console.log(error); },
             () => {
-              console.log(this.ligue);
               this.seo.generateTags({
                 title: this.ligue.head.name,
                 description: this.ligue.head.headline2,
@@ -56,6 +56,17 @@ export class TeamGamesComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  hasLink(url: string): Boolean {
+    console.log(url);
+    if (url === undefined || url === null) {
+      console.log("TRUEEEEE");
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
 }
