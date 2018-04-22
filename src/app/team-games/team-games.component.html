@@ -31,7 +31,7 @@
       <td>{{game.gHomeGoals_1}} : {{game.gGuestGoals_1}}</td>
       <td>{{game.gReferee}}</td>
       <td>
-        <a class="btn " [class.disabled]="hasLink(game.tickerUrl)" href="{{game.tickerUrl}}" target="_blank" rel="noopener">{{game.live == true ? 'Ja': 'Nein'}}</a>
+        <a class="btn " [class.disabled]="!hasLink(game.tickerUrl)" href="{{game.tickerUrl}}" target="_blank" rel="noopener">{{game.live == true ? 'Ja': 'Nein'}}</a>
       </td>
     </tr>
 

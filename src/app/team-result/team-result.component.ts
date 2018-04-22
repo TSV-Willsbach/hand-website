@@ -85,6 +85,15 @@ export class TeamResultComponent implements OnInit {
     this.secondLigueText = text + " wechseln";
   }
 
+  hasLink(id: number): Boolean {
+    if (id === 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   pokalOrQual(): any {
     let id;
     let init;

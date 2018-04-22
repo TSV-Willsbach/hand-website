@@ -77,6 +77,7 @@ export class Game {
     gComment: string;
     gReferee: string;
     tickerUrl: string;
+    pdfDL: string;
 
     constructor() {
         this.gGuestGoals = this.gGuestGoals_1 = "0";

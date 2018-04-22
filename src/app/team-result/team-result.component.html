@@ -125,7 +125,7 @@
       <th>Gästeteam</th>
       <th>Endstand</th>
       <th>Halbzeitstand</th>
-      <th>SR</th>
+      <th></th>
       <!-- <th>Live?</th> -->
     </tr>
     <tr *ngFor="let game of ligue.content.actualGames.games">
@@ -136,7 +136,19 @@
       <td>{{game.gGuestTeam}}</td>
       <td>{{game.gHomeGoals}} : {{game.gGuestGoals}}</td>
       <td>{{game.gHomeGoals_1}} : {{game.gGuestGoals_1}}</td>
-      <td>{{game.gReferee}}</td>
+      <td>
+        <div *ngIf="game.sGID != '0';else referee">
+          <a href="{{game.pdfDL}}" target="_blank">
+            <i class="fa fa-file-pdf-o"></i>
+          </a>
+        </div>
+      </td>
+      <ng-template #referee>
+        <div *ngIf="game.gReferee != ' '">
+          SR: {{game.gReferee}}
+        </div>
+
+      </ng-template>
       <!-- <td>{{game.live == true ? 'Ja': 'Nein'}}</td> -->
     </tr>
 

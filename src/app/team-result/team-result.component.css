@@ -1,3 +1,7 @@
 a {
     color: var( --clubColor);
 }
+
+td a .fa {
+    color: red;
+}

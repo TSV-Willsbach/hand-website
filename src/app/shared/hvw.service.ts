@@ -7,6 +7,7 @@ import { Globals } from '@wh-objects/globals';
 
 const baseUrl = 'https://spo.handball4all.de/service/if_g_json.php';
 const tickerUrl = "http://spo.handball4all.de/service/ticker.html?appid=&token=";
+const reportUrl = "http://spo.handball4all.de/misc/sboPublicReports.php?sGID="
 const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=' + this._period;
 
 @Injectable()
@@ -47,12 +48,15 @@ export class HvwService {
       scores.forEach(element => {
         element.difference = element.numGoalsShot - element.numGoalsGot;
       });
+      let games = data.content.futureGames.games;
 
-      let games = data.content.games;
       if (games != undefined) {
         games.forEach(element => {
           if (element.live === true) {
             element.tickerUrl = tickerUrl + element.gToken;
+          }
+          if (element.sGID != undefined) {
+            element.pdfDL = reportUrl + element.sGID;
           }
         });
       }

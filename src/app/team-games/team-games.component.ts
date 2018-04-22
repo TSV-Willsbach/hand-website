@@ -59,13 +59,11 @@ export class TeamGamesComponent implements OnInit {
   }
 
   hasLink(url: string): Boolean {
-    console.log(url);
     if (url === undefined || url === null) {
-      console.log("TRUEEEEE");
-      return true;
+      return false;
     }
     else {
-      return false;
+      return true;
     }
   }
 
