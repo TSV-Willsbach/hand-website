@@ -134,20 +134,31 @@
       <td>{{game.gGymnasiumName}}</td>
       <td>{{game.gHomeTeam}}</td>
       <td>{{game.gGuestTeam}}</td>
-      <td>{{game.gHomeGoals}} : {{game.gGuestGoals}}</td>
-      <td>{{game.gHomeGoals_1}} : {{game.gGuestGoals_1}}</td>
+      <td>
+        <div *ngIf="game.gHomeGoals != ' '">
+          {{game.gHomeGoals}} : {{game.gGuestGoals}}
+        </div>
+      </td>
+      <td>
+        <div *ngIf="game.gHomeGoals_1 != ' '">
+          {{game.gHomeGoals_1}} : {{game.gGuestGoals_1}}
+        </div>
+      </td>
       <td>
         <div *ngIf="game.sGID != '0';else referee">
           <a href="{{game.pdfDL}}" target="_blank">
-            <i class="fa fa-file-pdf-o"></i>
+            <i class="fa fa-file-pdf-o">
+              <p style="color: black;">Presseinfo</p>
+            </i>
+
           </a>
         </div>
       </td>
       <ng-template #referee>
         <div *ngIf="game.gReferee != ' '">
-          SR: {{game.gReferee}}
+          <!-- <img src="https://h4allapp.it4sport.de/dist/assets/images/icon-whistle.png"> -->
+          <p>SR: {{game.gReferee}}</p>
         </div>
-
       </ng-template>
       <!-- <td>{{game.live == true ? 'Ja': 'Nein'}}</td> -->
     </tr>
