@@ -27,9 +27,7 @@ export class TeamPlayersComponent implements OnInit {
         let test = this.db.collection('teams').doc(this.teamID);
         let obTeam = test.valueChanges();
         obTeam.subscribe(data => {
-          console.log(data);
           this.team = data as Team;
-          console.log(this.team);
           return data;
         });
 
