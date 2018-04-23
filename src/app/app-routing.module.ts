@@ -18,6 +18,7 @@ import { TeamGamesComponent } from './team/team-games/team-games.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './core/auth.guard';
 import { EditComponent } from './edit/edit.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -64,7 +65,8 @@ const routes: Routes = [
   },
   {
     path: 'team/:id',
-    component: TeamDetailComponent
+    component: TeamDetailComponent,
+
   },
   {
     path: 'team/:id/results',
@@ -94,6 +96,10 @@ const routes: Routes = [
     path: 'edit',
     component: EditComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: "**",
+    component: PageNotFoundComponent
   }
 ];
 
