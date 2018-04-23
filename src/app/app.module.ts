@@ -48,6 +48,7 @@ import { EditComponent } from './edit/edit.component';
 import { AuthService } from '@wh-share/auth.service';
 import { AuthGuard } from './core/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 export const firebaseConfig = environment.firebase;
 
 const options: ShareButtonsOptions = {
@@ -79,7 +80,8 @@ const options: ShareButtonsOptions = {
     TeamReportsComponent,
     TeamGamesComponent,
     LoginComponent,
-    EditComponent
+    EditComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
