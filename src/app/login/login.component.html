@@ -7,11 +7,11 @@
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-  <h3>Howdy, GUEST</h3>
+  <h3>Hallo, Gast</h3>
   <p>Login to get started...</p>
 
   <button (click)="auth.googleLogin()">
-    <i class="fa fa-google"></i> Connect Google
+    <i class="fa fa-google" aria-hidden="true"></i> Connect Google
   </button>
 
 </ng-template>
@@ -20,10 +20,14 @@
 <!-- User logged in -->
 <ng-template #authenticated>
   <div *ngIf="auth.user | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
-    <p>UID: {{ user.uid }}</p>
-    <button (click)="auth.signOut()">Logout</button>
-
-    <button [routerLink]="[ '/edit'] ">Edit Data</button>
+    <h3>Hallo, {{ user.displayName }}</h3>
+    <br />
+    <div class="text-center">
+      <button class="btn btn-default btn-lg" [routerLink]="[ '/edit'] ">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Data</button>
+      <button class="btn btn-danger btn-lg" (click)="auth.signOut()">
+        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </button>
+    </div>
   </div>
 </ng-template>
