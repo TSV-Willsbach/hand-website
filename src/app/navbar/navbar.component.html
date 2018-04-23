@@ -10,6 +10,7 @@
         (click)="onHamburgerButtonClick()">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div [ngClass]="navbar" [ngStyle]="style" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li *ngFor="let node of nodes" [ngClass]="node.children.length > 0 ? 'nav-item dropdown active' : 'nav-item active'" (mouseenter)="selectedItem = node.title">
@@ -23,7 +24,10 @@
             </div>
           </li>
         </ul>
+        <a class="btn btn-sm btn-outline-secondary" href="#" [routerLink]="['./login']">
+          <span class="fa fa-sign-in"></span> Login</a>
       </div>
+
     </div>
   </nav>
 </header>
