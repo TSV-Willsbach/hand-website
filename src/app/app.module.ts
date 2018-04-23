@@ -45,6 +45,9 @@ import { TeamGamesComponent } from './team-games/team-games.component';
 import { Globals } from '@wh-objects/globals';
 import { LoginComponent } from './login/login.component';
 import { EditComponent } from './edit/edit.component';
+import { AuthService } from '@wh-share/auth.service';
+import { AuthGuard } from './core/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
 export const firebaseConfig = environment.firebase;
 
 const options: ShareButtonsOptions = {
@@ -88,7 +91,8 @@ const options: ShareButtonsOptions = {
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ReactiveFormsModule
   ],
   providers: [
     NavigationService,
@@ -101,7 +105,9 @@ const options: ShareButtonsOptions = {
     FileServiceService,
     TeamService,
     HvwService,
-    Globals
+    Globals,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

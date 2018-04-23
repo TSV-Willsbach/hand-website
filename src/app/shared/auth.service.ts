@@ -8,12 +8,12 @@ import { User } from '@wh-objects/auth';
 @Injectable()
 export class AuthService {
 
-  user$: Observable<User>;
+  user: Observable<User>;
 
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
 
     //// Get auth data, then get firestore user document || null
-    this.user$ = this.afAuth.authState
+    this.user = this.afAuth.authState
       .switchMap(user => {
         if (user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
@@ -31,8 +31,8 @@ export class AuthService {
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.updateUserData(credential.user)
-      })
+        this.updateUserData(credential.user);
+      });
   }
 
   signOut() {
@@ -44,6 +44,7 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
       uid: user.uid,
+      displayName: user.displayName,
       email: user.email,
       roles: {
         admin: false,
