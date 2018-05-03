@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light white fixed-top">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light white fixed-top scrolling-navbar">
   <logo>
     <a class="navbar-brand" href="#">
       <img src="assets/images/tsv_willsbach.png" class="logo" alt="Willsbach Logo" />
@@ -6,67 +6,36 @@
   </logo>
   <links>
     <ul class="navbar-nav mr-auto" *ngFor="let node of nodes">
-      <ng-container [ngTemplateOutlet]="node.children.length == 0 ?noDropdown : isDropdown" [ngTemplateOutletContext]="{node:node}"></ng-container>
+      <div *ngIf="node.children.length == 0">
+        <li class="nav-item">
+          <a [routerLink]="[node.router]" class="nav-link waves-dark" href="#" mdbWavesEffect (click)="onMenuClick()">{{node.title}}
+          </a>
+        </li>
+      </div>
+      <div *ngIf="node.children.length > 0">
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle class="nav-link dropdown-toggle waves-dark" mdbWavesEffect>
+            {{node.title}}
+            <span class="caret"></span>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <div *ngFor="let item of node.children; let i=index">
+              <a [routerLink]="[node.router, item.router]" class="dropdown-item waves-dark" href="#" mdbWavesEffect (click)="onMenuClick()">{{item.title}}</a>
+              <div *ngIf="i === 1">
+                <div class="divider dropdown-divider"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
     </ul>
-    <!-- <span class="navbar-text black-text">
-      Navbar text with an inline element
-    </span> -->
+    <ul>
+      <li class="nav-item ">
+        <a href="#" id="navbar-static-login" [routerLink]="['/login']" class="nav-link waves-effect waves-dark">
+          <i class="fa fa-sign-in mr-1"></i>
+          <span class="clearfix d-none d-sm-inline-block">Log In</span>
+        </a>
+      </li>
+    </ul>
   </links>
 </mdb-navbar>
-
-<ng-template #noDropdown let-node='node'>
-  <li class="nav-item">
-    <a [routerLink]="[node.router]" class="nav-link waves-dark" href="#" mdbWavesEffect (click)="onMenuClick()">{{node.title}}
-    </a>
-  </li>
-</ng-template>
-
-<ng-template #isDropdown let-node='node'>
-  <li class="nav-item dropdown btn-group" dropdown>
-    <a dropdownToggle class="nav-link dropdown-toggle waves-dark" mdbWavesEffect>
-      {{node.title}}
-      <span class="caret"></span>
-    </a>
-    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-      <div *ngFor="let item of node.children; let i=index">
-        <a [routerLink]="[node.router, item.router]" class="dropdown-item waves-dark" href="#" mdbWavesEffect (click)="onMenuClick()">{{item.title}}</a>
-        <div *ngIf="i === 1">
-          <div class="divider dropdown-divider"></div>
-        </div>
-      </div>
-    </div>
-  </li>
-</ng-template>
-
-
-<!-- <header class="py-5">
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <div class="container">
-      <a href="#">
-        <img src="assets/images/tsv_willsbach.png" class="logo" alt="Willsbach Logo" />
-      </a>
-
-      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-        (click)="onHamburgerButtonClick()">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div [ngClass]="navbar" [ngStyle]="style" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li *ngFor="let node of nodes" [ngClass]="node.children.length > 0 ? 'nav-item dropdown active' : 'nav-item active'" (mouseenter)="selectedItem = node.title">
-            <a [ngClass]="node.children.length > 0 ? 'nav-link dropdown-toggle px-5' : 'nav-link  px-5'" [href]="node.router" [routerLink]="node.router"
-              routerLinkActive="active">{{node.title}}
-            </a>
-
-            <div [ngClass]="{ 'dropdown-menu': true, 'show' : selectedItem === node.title }" aria-labelledby="navbarDropdown" *ngIf="node.children.length > 0"
-              (mouseleave)="selectedItem = ''">
-              <a class="dropdown-item" [routerLink]="[node.router, item.router]" *ngFor="let item of node.children" (click)="selectedItem = item.title">{{item.title}}</a>
-            </div>
-          </li>
-        </ul>
-        <a class="btn btn-sm btn-outline-secondary" href="#" [routerLink]="['./login']">
-          <span class="fa fa-sign-in"></span> Login</a>
-      </div>
-    </div>
-  </nav>
-</header> -->
