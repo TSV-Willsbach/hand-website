@@ -1,17 +1,17 @@
 {
     "TopBar": [{
             "title": "Aktuell",
-            "router": "",
+            "router": "/",
             "children": []
         },
         {
             "title": "Spielberichte",
-            "router": "reports",
+            "router": "/reports",
             "children": []
         },
         {
             "title": "Mannschaften",
-            "router": "team",
+            "router": "/team",
             "children": [{
                     "router": "herren",
                     "title": "Herren",
@@ -56,7 +56,7 @@
         },
         {
             "title": "Ergebnisse",
-            "router": "results",
+            "router": "/results",
             "children": []
         }
     ],

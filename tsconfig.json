@@ -1,5 +1,9 @@
 {
   "compileOnSave": false,
+  "include": [
+    "node_modules/angular-bootstrap-md/**/*.ts",
+    "src/**/*.ts"
+  ],
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -17,10 +21,18 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@wh-share/*": ["app/shared/*"],
-      "@wh-enviroments/*": ["environments/*"],
-      "@wh-content/*": ["assets/content/*"],
-      "@wh-objects/*": ["app/objects/*"]
+      "@wh-share/*": [
+        "app/shared/*"
+      ],
+      "@wh-enviroments/*": [
+        "environments/*"
+      ],
+      "@wh-content/*": [
+        "assets/content/*"
+      ],
+      "@wh-objects/*": [
+        "app/objects/*"
+      ]
     }
   }
 }

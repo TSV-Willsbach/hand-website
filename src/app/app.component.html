@@ -22,6 +22,10 @@
 
   <div class="container">
     <app-navbar [nodes]="topMenuNodes"></app-navbar>
+    <br />
+    <br />
+    <br />
+    <br />
     <router-outlet (activate)="onActivate($event)"></router-outlet>
   </div>
   <app-sponsors></app-sponsors>
@@ -43,6 +47,11 @@
       text: 'Thumbnail'
     });
   </script>
+  <!-- <script>
+    $('.navbar-collapse a').click(function () {
+      $(".navbar-collapse").collapse('hide');
+    });
+  </script> -->
 </body>
 
 </html>
