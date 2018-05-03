@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-team-result',
   templateUrl: './team-result.component.html',
-  styleUrls: ['./team-result.component.css']
+  styleUrls: ['./team-result.component.scss']
 })
 export class TeamResultComponent implements OnInit {
 
