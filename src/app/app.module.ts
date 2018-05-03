@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShareButtonModule } from '@ngx-share/button';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsOptions } from '@ngx-share/core';
@@ -89,7 +88,6 @@ const options: ShareButtonsOptions = {
     AppRoutingModule,
     AngularFontAwesomeModule,
     HttpClientModule,
-    NgbModule.forRoot(),
     ShareButtonsModule.forRoot({ options: options }),
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     AngularFireModule.initializeApp(firebaseConfig),
