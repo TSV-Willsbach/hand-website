@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-team-result',
   templateUrl: './team-result.component.html',
-  styleUrls: ['./team-result.component.css']
+  styleUrls: ['./team-result.component.scss']
 })
 export class TeamResultComponent implements OnInit {
 
@@ -49,7 +49,7 @@ export class TeamResultComponent implements OnInit {
       let games = ligue.content.actualGames.games;
       games = ligue.content.futureGames.games;
       let futClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
-      console.log(futClubGames);
+
       ligue.content.actualGames.games = futClubGames;
       return this.ligue;
     }, error => { console.log(error); }, () => {
@@ -83,6 +83,15 @@ export class TeamResultComponent implements OnInit {
 
     this.hvw.liga = id;
     this.secondLigueText = text + " wechseln";
+  }
+
+  hasLink(id: number): Boolean {
+    if (id === 0) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   pokalOrQual(): any {

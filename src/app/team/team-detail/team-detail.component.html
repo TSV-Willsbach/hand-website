@@ -1,0 +1,18 @@
+<h2 class="heading">{{team.title}}</h2>
+
+<img src="{{team.picture}}" class="img-fluid" alt="{{team.title}}">
+<br />
+<br />
+
+<div class="text-center">
+  <button class="btn btn-dark-green btn-lg btn-block waves-dark" [routerLink]="[ './players']" mdbWavesEffect>
+    <i class="fa fa-address-card"></i> Trainer & Spieler</button>
+  <button class="btn btn-dark-green btn-lg btn-block waves-dark" [routerLink]="[ './reports']" mdbWavesEffect>
+    <i class="fa fa-newspaper-o"></i> Berichte</button>
+  <button class="btn btn-dark-green btn-lg btn-block waves-dark" [routerLink]="[ './games']" mdbWavesEffect>
+    <i class="fa fa-calendar"></i> Nächste Spiele</button>
+  <button class="btn btn-dark-green btn-lg btn-block waves-dark" [routerLink]="[ './results']" mdbWavesEffect>
+    <i class="fa fa-bar-chart"></i> Ergebnisse</button>
+</div>
+<br />
+<br />

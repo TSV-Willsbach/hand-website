@@ -2,12 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ShareButtonModule } from '@ngx-share/button';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsOptions } from '@ngx-share/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,17 +33,23 @@ import { CarouselService } from '@wh-share/carousel.service';
 import { SponsorsService } from '@wh-share/sponsors.service';
 import { SeoService } from '@wh-share/seo.service';
 import { environment } from '@wh-enviroments/environment';
-import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { TeamDetailComponent } from './team/team-detail/team-detail.component';
 import { FileServiceService } from '@wh-share/file-service.service';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamService } from '@wh-share/team.service';
 import { HvwService } from '@wh-share/hvw.service';
-import { TeamResultComponent } from './team-result/team-result.component';
-import { TeamPlayersComponent } from './team-players/team-players.component';
-import { TeamReportsComponent } from './team-reports/team-reports.component';
-import { TeamGamesComponent } from './team-games/team-games.component';
+import { TeamResultComponent } from './team/team-result/team-result.component';
+import { TeamPlayersComponent } from './team/team-players/team-players.component';
+import { TeamReportsComponent } from './team/team-reports/team-reports.component';
+import { TeamGamesComponent } from './team/team-games/team-games.component';
 import { Globals } from '@wh-objects/globals';
-
+import { LoginComponent } from './login/login.component';
+import { EditComponent } from './edit/edit.component';
+import { AuthService } from '@wh-share/auth.service';
+import { AuthGuard } from './core/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+export const firebaseConfig = environment.firebase;
 
 const options: ShareButtonsOptions = {
   include: ['facebook', 'whatsapp', 'copy', 'twitter', 'google', 'email', 'print'],
@@ -69,16 +78,23 @@ const options: ShareButtonsOptions = {
     TeamResultComponent,
     TeamPlayersComponent,
     TeamReportsComponent,
-    TeamGamesComponent
+    TeamGamesComponent,
+    LoginComponent,
+    EditComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
     HttpClientModule,
-    NgbModule.forRoot(),
     ShareButtonsModule.forRoot({ options: options }),
-    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    ReactiveFormsModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     NavigationService,
@@ -91,7 +107,9 @@ const options: ShareButtonsOptions = {
     FileServiceService,
     TeamService,
     HvwService,
-    Globals
+    Globals,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

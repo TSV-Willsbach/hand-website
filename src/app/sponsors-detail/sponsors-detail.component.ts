@@ -5,7 +5,7 @@ import { Sponsors } from '@wh-objects/sponsors';
 @Component({
   selector: 'app-sponsors-detail',
   templateUrl: './sponsors-detail.component.html',
-  styleUrls: ['./sponsors-detail.component.css']
+  styleUrls: ['./sponsors-detail.component.scss']
 })
 export class SponsorsDetailComponent implements OnInit {
 

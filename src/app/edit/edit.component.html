@@ -1,0 +1,39 @@
+<h2 class="heading">Daten bearbeiten</h2>
+
+<form [formGroup]="playerForm">
+  <label for="Test">Name</label>
+  <br>
+  <input class="form-control" type="text" formControlName="Name" placeholder="Name">
+  <label for="Prename">Vorname</label>
+  <br>
+  <input class="form-control" type="text" formControlName="Prename" placeholder="Vorname">
+  <label for="Nickname">Spitzname</label>
+  <br>
+  <input class="form-control" type="text" formControlName="Nickname" placeholder="Spitzname">
+  <label for="Position">Position</label>
+  <br>
+  <select class="form-control" type="text" formControlName="Position" placeholder="Position">
+    <option></option>
+    <option>TW</option>
+    <option>Außen</option>
+  </select>
+  <label for="Number">Spielernummer</label>
+  <br>
+  <input class="form-control" type="number" formControlName="Number" placeholder="Spielernummer">
+  <label for="Birthday">Geburtsdatum</label>
+  <br>
+  <input class="form-control" type="date" formControlName="Birthday" placeholder="Geburtsdatum">
+  <label for="Picture">Spielerbild</label>
+  <br>
+  <input class="form-control" type="text" formControlName="Picture" placeholder="http://test.de/Spielerbild.jpg">
+  <label for="JoinedClub">Im Verein seit</label>
+  <br>
+  <input class="form-control" type="text" formControlName="JoinedClub" placeholder="Im Verein seit">
+  <label for="LastClubs">Vorherige Vereine</label>
+  <br>
+  <input class="form-control" type="text" formControlName="LastClubs" placeholder="Vorherige Vereine">
+  <br />
+  <button type="submit" class="btn btn-primary">Speichern</button>
+</form>
+
+<br />

@@ -1,18 +1,13 @@
-<h2 class="heading">Ergebnisse</h2>
-<div class="hvw">
-  <p>Ergebnisse beim
-    <a href="http://www.hvw-online.org/spielbetrieb/ergebnissetabellen-verband/#/club?ogId=3&pId=58&cId=60" target="_blank">HVW</a>
-  </p>
-
-  <h2 class="heading">Aktuelle Ergebnisse/ Spiele</h2>
+<h2 class="heading">Aktuelle Ergebnisse/ Spiele</h2>
+<div *ngFor="let club of clubs">
   <h3>{{club.head.headline2}}</h3>
   <small>{{club.head.actualized}}</small>
   <br />
   <br />
 
   <div *ngFor="let class of club.content.classes">
-    <h5>{{class.gClassSname}}</h5>
-    <div *ngFor="let game of class.games">
+    <div *ngIf="class.games?.length > 0">
+      <h5>{{class.gClassSname}}</h5>
       <table style="width:100%" class="table table-responsive table-striped table-bordered">
         <tr>
           <th>Datum</th>
@@ -21,18 +16,21 @@
           <th>Heimteam</th>
           <th>Gastteam</th>
           <th>Ergebnis</th>
+          <th>Halbzeit</th>
           <th>SR</th>
         </tr>
-        <tr>
+        <tr *ngFor="let game of class.games">
           <td>{{game.gDate}}</td>
           <td>{{game.gTime}}</td>
           <td>{{game.gGymnasiumName}}</td>
           <td>{{game.gHomeTeam}}</td>
           <td>{{game.gGuestTeam}}</td>
-          <td>{{game.gHomeGoals}} : {{game.gGuestGoals}} ( {{game.gHomeGoals_1}} : {{game.gGuestGoals_1}} )</td>
+          <td>{{game.gHomeGoals}} : {{game.gGuestGoals}}</td>
+          <td>{{game.gHomeGoals_1}} : {{game.gGuestGoals_1}}</td>
           <td>{{game.gReferee}}</td>
         </tr>
       </table>
     </div>
   </div>
 </div>
+<br/>

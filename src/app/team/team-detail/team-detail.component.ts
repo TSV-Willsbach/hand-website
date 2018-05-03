@@ -1,27 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Post } from '@wh-objects/post';
+import { NewsService } from '@wh-share/news.service';
 import { Team } from '@wh-objects/team';
 import { TeamService } from '@wh-share/team.service';
 import { SeoService } from '@wh-share/seo.service';
 
 @Component({
-  selector: 'app-team-players',
-  templateUrl: './team-players.component.html',
-  styleUrls: ['./team-players.component.css']
+  selector: 'app-team-detail',
+  templateUrl: './team-detail.component.html',
+  styleUrls: ['./team-detail.component.scss']
 })
-export class TeamPlayersComponent implements OnInit {
+export class TeamDetailComponent implements OnInit {
+
   private sub: any;
   team: Team;
-  teamID: any;
+  posts: Post[];
 
   constructor(private route: ActivatedRoute, teamService: TeamService, private seo: SeoService) {
     // init data to hide console errors if nothing is found
     this.team = new Team();
+    this.posts = new Array();
 
     this.sub = this.route.params.subscribe(
       params => {
-        this.teamID = params['id'];
-        teamService.getTeam(this.teamID).subscribe(
+        let id = params['id'];
+        teamService.getTeam(id).subscribe(
           team => this.team = team,
           error => { console.log(error); },
           () => {
@@ -31,9 +36,12 @@ export class TeamPlayersComponent implements OnInit {
               image: this.team.picture
             });
           });
+        teamService.getTeamReports(id).subscribe(posts => this.posts = posts);
       },
       error => { console.log(error); },
       () => { });
+
+
   }
 
   ngOnInit() {
