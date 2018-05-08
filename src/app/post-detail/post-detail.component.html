@@ -11,12 +11,12 @@
 <br />
 <div class="postEnd">
   <small class="mb-2 text-muted">
-    <ul>
+    <ul class="icons">
       <li>
-        <i class="fa fa-calendar-o"></i> {{post.date_gmt | date: 'dd.MM.yyyy'}}
+        <fa-icon [icon]="['fas', 'calendar']"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}}
       </li>
       <li>
-        <i class="fa fa-user-o"></i> {{post.author}}
+        <fa-icon [icon]="['fas', 'user']"></fa-icon> {{post.author}}
       </li>
     </ul>
   </small>

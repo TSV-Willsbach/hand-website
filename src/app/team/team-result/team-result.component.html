@@ -147,16 +147,15 @@
       <td>
         <div *ngIf="game.sGID != '0';else referee">
           <a href="{{game.pdfDL}}" target="_blank">
-            <i class="fa fa-file-pdf-o">
-              <p style="color: black;">Presseinfo</p>
-            </i>
-
+            <fa-icon [icon]="['fas', 'file-pdf']" size="lg" class="pdf"></fa-icon>
+            Presseinfo
           </a>
         </div>
       </td>
       <ng-template #referee>
         <div *ngIf="game.gReferee != ' '">
           <!-- <img src="https://h4allapp.it4sport.de/dist/assets/images/icon-whistle.png"> -->
+          <fa-icon [icon]="['fas', 'user']" size="lg" class="referee"></fa-icon>
           <p>SR: {{game.gReferee}}</p>
         </div>
       </ng-template>
