@@ -2,18 +2,12 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-6 col-md">
+      <div class="col-12 col-md text-center">
         <a href="https://tsv-willsbach.de/" target="_blank" rel="noopener">
           <img class="img-responsive" src="assets/images/tsv_willsbach.png" alt="Willsbach Logo" />
 
           <small class="d-block mb-3 text-muted">Hauptverein</small>
         </a>
-      </div>
-
-      <div class="col-6 col-md">
-        <img class="img-responsive" src="assets/images/handball_willsbach.png" alt="Handball Logo" />
-
-        <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
       </div>
 
       <div class="col-6 col-md" *ngFor="let node of nodes">
@@ -57,6 +51,24 @@
             </a>
           </li>
         </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Webseiten Entwicklung</h5>
+        <ul class="list-unstyled text-small">
+          <li>
+            <a class="social facebook" href="https://bitbucket.org/tsvwillsbachhandball/" target="_blank" rel="noopener">
+              <fa-icon [icon]="['fab', 'bitbucket']"></fa-icon> Bitbucket Team</a>
+          </li>
+          <li>
+            <a class="social youtube" href="https://bitbucket.org/tsvwillsbachhandball/website/issues" target="_blank" rel="noopener">
+              <fa-icon [icon]="['fas', 'bug']"></fa-icon> Fehler melden</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-12 col-md text-center">
+        <img class="img-responsive" src="assets/images/handball_willsbach.png" alt="Handball Logo" />
+
+        <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
       </div>
     </div>
   </div>
