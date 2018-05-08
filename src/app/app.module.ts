@@ -6,6 +6,11 @@ import { ShareButtonModule } from '@ngx-share/button';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsOptions } from '@ngx-share/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -57,6 +62,8 @@ const options: ShareButtonsOptions = {
   twitterAccount: 'willsbach_hndbl'
 }
 
+// Add an icon to the library for convenient access in other components
+library.add(fas, far, fab);
 
 @NgModule({
   declarations: [
@@ -87,6 +94,7 @@ const options: ShareButtonsOptions = {
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
+    FontAwesomeModule,
     HttpClientModule,
     ShareButtonsModule.forRoot({ options: options }),
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
