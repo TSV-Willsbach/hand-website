@@ -29,6 +29,7 @@ const maxPosts = "&per_page=6";
 @Injectable()
 export class NewsService {
 
+
   totalPages: number;
   page: number;
 
@@ -134,6 +135,9 @@ export class NewsService {
   }
 
   private mapFields(post: Post) {
+
+    post.content.rendered = this.responsiveImgs(post.content.rendered);
+
     try {
       post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
     }
@@ -154,5 +158,10 @@ export class NewsService {
       post.author = post._embedded['author'][0].name;
     }
     catch (e) { console.log('Error:', e); }
+  }
+
+  responsiveImgs(content: string): string {
+    // Make all images responsive
+    return content.replace(new RegExp('<img', 'g'), '<img class="img-fluid"');;
   }
 }
