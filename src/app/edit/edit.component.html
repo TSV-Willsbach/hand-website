@@ -1,5 +1,12 @@
 <h2 class="heading">Daten bearbeiten</h2>
 
+<div class="text-center">
+  <button class="btn btn-primary">
+    <i class="fa fa-newspaper-o"></i> Mannschaft hinzufügen</button>
+  <button class="btn btn-primary">
+    <fa-icon icon="edit"></fa-icon> Mannschaft bearbeiten</button>
+</div>
+
 <form [formGroup]="playerForm">
   <label for="Test">Name</label>
   <br>
@@ -33,7 +40,8 @@
   <br>
   <input class="form-control" type="text" formControlName="LastClubs" placeholder="Vorherige Vereine">
   <br />
-  <button type="submit" class="btn btn-primary">Speichern</button>
+  <button type="submit" class="btn btn-primary">
+    <fa-icon icon="save"></fa-icon> Speichern</button>
 </form>
 
 <br />

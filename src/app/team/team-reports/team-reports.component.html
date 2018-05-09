@@ -18,9 +18,9 @@
           <div [innerHTML]="post.title.rendered "></div>
         </h5>
         <small class="card-subtitle mb-2 text-muted ">
-          <i class="fa fa-calendar-o "></i> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
+          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
         <small class="card-subtitle mb-2 text-muted ">
-          <i class="fa fa-user "></i> {{post.author}}</small>
+          <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon> {{post.author}}</small>
 
         <p class="card-text " [innerHTML]="post.excerpt.rendered "></p>
       </div>
