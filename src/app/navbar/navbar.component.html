@@ -30,14 +30,27 @@
           </li>
         </div>
       </ul>
-      <ul>
-        <li class="nav-item">
-          <a href="#" id="navbar-static-login" [routerLink]="['/login']" class="nav-link waves-effect waves-dark">
-            <fa-icon icon="sign-in-alt"></fa-icon>
-            <span class="clearfix d-none d-sm-inline-block">Log In</span>
-          </a>
-        </li>
-      </ul>
+      <span class="navbar-text black-text">
+        <a href="#" [routerLink]="['/login']" class="nav-link waves-effect waves-dark">
+          <div *ngIf="auth.user | async as user; else guest">
+            <fa-icon icon="user"></fa-icon>
+            {{ user.displayName }}
+          </div>
+        </a>
+      </span>
     </links>
   </mdb-navbar>
 </div>
+
+<ng-template #authenticated>
+  <a href="#" id="navbar-static-login" (click)="logout()" class="nav-link waves-effect waves-dark">
+    <fa-icon icon="sign-out-alt"></fa-icon>
+    <span class="clearfix d-none d-sm-inline-block">Log Out</span>
+  </a>
+</ng-template>
+<ng-template #guest>
+  <a href="#" id="navbar-static-login" [routerLink]="['/login']" class="nav-link waves-effect waves-dark">
+    <fa-icon icon="sign-in-alt"></fa-icon>
+    <span class="clearfix d-none d-sm-inline-block">Log In</span>
+  </a>
+</ng-template>
