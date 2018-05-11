@@ -38,11 +38,11 @@ export class Content {
     scoreComments: string[];
     futureGames: {
         games: Game[];
-    }
+    };
 
     constructor() {
-        this.actualGames = { games: new Array<Game>() }
-        this.futureGames = { games: new Array<Game>() }
+        this.actualGames = { games: new Array<Game>() };
+        this.futureGames = { games: new Array<Game>() };
     }
 }
 
@@ -80,8 +80,8 @@ export class Game {
     pdfDL: string;
 
     constructor() {
-        this.gGuestGoals = this.gGuestGoals_1 = "0";
-        this.gHomeGoals = this.gHomeGoals_1 = "0";
+        this.gGuestGoals = this.gGuestGoals_1 = '0';
+        this.gHomeGoals = this.gHomeGoals_1 = '0';
     }
 }
 
@@ -142,7 +142,7 @@ export class StatGame {
     result: string;
 
     constructor() {
-        this.teamName = this.result = "-";
+        this.teamName = this.result = '-';
     }
 
 }

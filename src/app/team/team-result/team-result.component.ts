@@ -23,10 +23,11 @@ export class TeamResultComponent implements OnInit {
   myHVW: any;
   buttonActive: Boolean = false;
 
-  constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService, private seo: SeoService, private global: Globals) {
+  constructor(private route: ActivatedRoute, private hvw: HvwService,
+    teams: TeamService, private seo: SeoService, private global: Globals) {
     this.ligue = new Ligue();
     this.team = new Team();
-    this.teamID = "";
+    this.teamID = '';
 
 
     this.sub = this.route.params.subscribe(params => {
@@ -48,7 +49,8 @@ export class TeamResultComponent implements OnInit {
       this.ligue = ligue;
       let games = ligue.content.actualGames.games;
       games = ligue.content.futureGames.games;
-      let futClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
+      const futClubGames = games.filter(element => element.gGuestTeam === this.global.clubName
+        || element.gHomeTeam === this.global.clubName);
 
       ligue.content.actualGames.games = futClubGames;
       return this.ligue;
@@ -66,30 +68,29 @@ export class TeamResultComponent implements OnInit {
 
     if (this.secondLigueText === undefined) {
       // init data
-      let data = this.pokalOrQual();
+      const data = this.pokalOrQual();
       text = data.init;
       id = this.hvw.liga;
     } else {
-      if (this.hvw.liga != this.team.ligaID) {
+      if (this.hvw.liga !== this.team.ligaID) {
         id = this.team.ligaID;
-        let data = this.pokalOrQual();
+        const data = this.pokalOrQual();
         text = data.init;
       } else {
-        let data = this.pokalOrQual();
+        const data = this.pokalOrQual();
         text = data.text;
         id = data.id;
       }
     }
 
     this.hvw.liga = id;
-    this.secondLigueText = text + " wechseln";
+    this.secondLigueText = text + ' wechseln';
   }
 
   hasLink(id: number): Boolean {
     if (id === 0) {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
@@ -99,16 +100,15 @@ export class TeamResultComponent implements OnInit {
     let init;
     if (this.team.qualID != null) {
       id = this.team.qualID;
-      init = "Zur Qualifikation";
-    }
-    else if (this.team.pokalID != null) {
+      init = 'Zur Qualifikation';
+    } else if (this.team.pokalID != null) {
       id = this.team.pokalID;
-      init = "Zum Pokal";
+      init = 'Zum Pokal';
     } else {
-      init = "";
+      init = '';
       this.buttonActive = true;
     }
-    return { id: id, text: "Zur Saison", init: init };
+    return { id: id, text: 'Zur Saison', init: init };
   }
 
   changeLigue() {

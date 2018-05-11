@@ -54,14 +54,14 @@ import { AuthService } from '@wh-share/auth.service';
 import { AuthGuard } from './core/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ReportCardsComponent } from './report-cards/report-cards.component';
+import { ReportCardsComponent } from './child-components/report-cards/report-cards.component';
 export const firebaseConfig = environment.firebase;
 
 const options: ShareButtonsOptions = {
   include: ['facebook', 'whatsapp', 'copy', 'twitter', 'google', 'email', 'print'],
   tags: 'tsvWillsbach',
   twitterAccount: 'willsbach_hndbl'
-}
+};
 
 // Add an icon to the library for convenient access in other components
 library.add(fas, far, fab);
