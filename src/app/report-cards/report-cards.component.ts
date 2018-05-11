@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Paginator } from '@wh-objects/pagination';
 import { Post } from '@wh-objects/post';
 import { ActivatedRoute } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './report-cards.component.html',
   styleUrls: ['./report-cards.component.scss']
 })
-export class ReportCardsComponent implements OnInit {
+export class ReportCardsComponent implements OnInit, OnChanges {
   @Input() pages: Paginator[];
   @Input() posts: Post[];
   @Input() myData: any;
@@ -29,7 +29,8 @@ export class ReportCardsComponent implements OnInit {
   }
 
   nextPrevAvailability() {
-    if (this.page === 1 || this.maxPages === this.page) {
+    console.log('Max pages ', this.maxPages);
+    if (this.page === 1 && this.maxPages === this.page || this.maxPages === undefined) {
       this.nextDisabled = this.prevDisabled = 'disabled';
     } else if (this.page === 1) {
       this.prevDisabled = 'disabled';
@@ -44,6 +45,10 @@ export class ReportCardsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.nextPrevAvailability();
   }
 
   prevPage() {
@@ -65,5 +70,7 @@ export class ReportCardsComponent implements OnInit {
     this.callApi();
     document.querySelector('#Cards').scrollIntoView();
   }
+
+
 
 }
