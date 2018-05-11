@@ -32,6 +32,9 @@
       ],
       "@wh-objects/*": [
         "app/objects/*"
+      ],
+      "@wh-childs/*": [
+        "app/child-components/*"
       ]
     }
   }
