@@ -54,6 +54,7 @@ import { AuthService } from '@wh-share/auth.service';
 import { AuthGuard } from './core/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReportCardsComponent } from './report-cards/report-cards.component';
 export const firebaseConfig = environment.firebase;
 
 const options: ShareButtonsOptions = {
@@ -88,7 +89,8 @@ library.add(fas, far, fab);
     TeamGamesComponent,
     LoginComponent,
     EditComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ReportCardsComponent
   ],
   imports: [
     BrowserModule,

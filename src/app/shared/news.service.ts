@@ -12,19 +12,19 @@ import { HttpClient } from '@angular/common/http';
 import { Post } from '@wh-objects/post';
 import { when } from 'q';
 
-const apiPosts = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed";
-const apiReports = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6";
-const apiPost = "https://wp.willsbach-handball.de/wp-json/wp/v2/posts/";
-const embed = "_embed";
-const catHerren = "&categories=10";
-const catDamen = "&categories=5";
-const catmA = "&categories=17";
-const catmB = "&categories=18";
-const catmC = "&categories=19";
-const catmD = "&categories=20";
-const catmE = "&categories=21";
-const catMinis = "&categories=22";
-const maxPosts = "&per_page=6";
+const apiPosts = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed';
+const apiReports = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6';
+const apiPost = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts/';
+const embed = '_embed';
+const catHerren = '&categories=10';
+const catDamen = '&categories=5';
+const catmA = '&categories=17';
+const catmB = '&categories=18';
+const catmC = '&categories=19';
+const catmD = '&categories=20';
+const catmE = '&categories=21';
+const catMinis = '&categories=22';
+const maxPosts = '&per_page=6';
 
 @Injectable()
 export class NewsService {
@@ -44,7 +44,7 @@ export class NewsService {
     this.page = page;
     return this.http.get<Post[]>(this.getLink(apiPosts), { observe: 'response' })
       .map(posts => {
-        this.totalPages = +posts.headers.get("X-WP-TotalPages");
+        this.totalPages = +posts.headers.get('X-WP-TotalPages');
         return posts.body.map(post => {
           this.mapFields(post);
 
@@ -60,51 +60,51 @@ export class NewsService {
   }
 
   fetchReports(id: string): Observable<Post[]> {
-    var link: string;
+    let link: string;
 
     switch (id) {
-      case "herren": {
-        link = apiReports + catHerren + "&" + embed;
+      case 'herren': {
+        link = apiReports + catHerren + '&' + embed;
         break;
       }
 
-      case "damen": {
-        link = apiReports + catDamen + "&" + embed;
+      case 'damen': {
+        link = apiReports + catDamen + '&' + embed;
         break;
       }
 
-      case "majugend": {
-        link = apiReports + catmA + "&" + embed;
+      case 'majugend': {
+        link = apiReports + catmA + '&' + embed;
         break;
       }
 
-      case "mbjugend": {
-        link = apiReports + catmB + "&" + embed;
+      case 'mbjugend': {
+        link = apiReports + catmB + '&' + embed;
         break;
       }
 
-      case "mcjugend": {
-        link = apiReports + catmC + "&" + embed;
+      case 'mcjugend': {
+        link = apiReports + catmC + '&' + embed;
         break;
       }
 
-      case "mdjugend": {
-        link = apiReports + catmD + "&" + embed;
+      case 'mdjugend': {
+        link = apiReports + catmD + '&' + embed;
         break;
       }
 
-      case "mejugend": {
-        link = apiReports + catmE + "&" + embed;
+      case 'mejugend': {
+        link = apiReports + catmE + '&' + embed;
         break;
       }
 
-      case "minis": {
-        link = apiReports + catMinis + "&" + embed;
+      case 'minis': {
+        link = apiReports + catMinis + '&' + embed;
         break;
       }
 
       default: {
-        link = apiReports + "&" + embed;
+        link = apiReports + '&' + embed;
       }
 
     }
@@ -118,7 +118,7 @@ export class NewsService {
   }
 
   fetchSinglePost(id: number): Observable<any> {
-    var link = apiPost + id + "?" + embed;
+    const link = apiPost + id + '?' + embed;
     return this.http.get<Post>(link).map(post => {
       this.mapFields(post);
       return post;
@@ -131,7 +131,7 @@ export class NewsService {
       // page undefined or null or 0
       this.page = 1;
     }
-    return link + maxPosts + "&page=" + this.page;
+    return link + maxPosts + '&page=' + this.page;
   }
 
   private mapFields(post: Post) {
@@ -140,28 +140,24 @@ export class NewsService {
 
     try {
       post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
-    }
-    catch (e) {
+    } catch (e) {
       /* Fallback smaller picture */
       try {
         post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
-      }
-      catch (e) {
+      } catch (e) {
         try {
           post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
-        }
-        catch (e) { post.thumbnail = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
+        } catch (e) { post.thumbnail = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
       }
     }
 
     try {
       post.author = post._embedded['author'][0].name;
-    }
-    catch (e) { console.log('Error:', e); }
+    } catch (e) { console.log('Error:', e); }
   }
 
   responsiveImgs(content: string): string {
     // Make all images responsive
-    return content.replace(new RegExp('<img', 'g'), '<img class="img-fluid"');;
+    return content.replace(new RegExp('<img', 'g'), '<img class="img-fluid"');
   }
 }

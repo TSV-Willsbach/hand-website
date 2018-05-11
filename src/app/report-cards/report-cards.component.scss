@@ -1,0 +1,23 @@
+@import '../../variables';
+.tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.8);
+    color: $color-club;
+    font-weight: bold;
+}
+
+.pageinatorContainer {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.page-link {
+    color: $color-club;
+}
+
+.page-item.active .page-link {
+    background-color: $color-club;
+    border-color: $color-club;
+}

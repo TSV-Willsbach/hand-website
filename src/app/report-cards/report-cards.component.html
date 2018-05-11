@@ -1,8 +1,4 @@
-<h2 class="heading" id="Aktuelles">Aktuelles</h2>
-
-<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages" (callParentMethods)="callMethod($event)"
-  (pagesEvent)="setPages($event)"></app-report-cards>
-<!-- <div class="row mb-2">
+<div class="row mb-2">
   <div class="col-md-4 mb-3" *ngFor="let post of posts">
     <div class="card h-100" [routerLink]="['/postDetail', post.id]">
       <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
@@ -42,4 +38,4 @@
       </li>
     </ul>
   </nav>
-</div> -->
+</div>
