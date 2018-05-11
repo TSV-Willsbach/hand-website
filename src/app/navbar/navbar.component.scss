@@ -1,9 +1,10 @@
+@import '../../variables';
 .logo {
     max-height: 3rem;
 }
 
 a:hover {
-    color: var( --clubColor) !important;
+    color: $color-club !important;
     text-decoration: none !important;
 }
 
@@ -14,5 +15,5 @@ ul {
 }
 
 .dropdown-menu {
-    border-top: 0.25rem solid var( --clubColor);
+    border-top: 0.25rem solid $color-club;
 }

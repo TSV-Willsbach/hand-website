@@ -16,14 +16,14 @@ export class Post {
     slug: string;
     excerpt: {
         rendered: string;
-    }
+    };
 
     constructor() {
         // Default values
         this.date = new Date();
         this.date_gmt = new Date();
-        this.title = { rendered: "" };
-        this.content = { rendered: "" };
-        this.excerpt = { rendered: "" };
+        this.title = { rendered: '' };
+        this.content = { rendered: '' };
+        this.excerpt = { rendered: '' };
     }
 }

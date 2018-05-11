@@ -6,7 +6,7 @@ import { NewsService } from '@wh-share/news.service';
 import { Observable } from 'rxjs/Observable';
 
 const jsonUrl = './assets/generated/teams.json';
-const defaultImg = "https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png";
+const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png';
 
 @Injectable()
 export class TeamService {
@@ -20,14 +20,14 @@ export class TeamService {
   getPlayer(teamId: string, playerName: string): Observable<Player> {
     return this.http.get<Player>(jsonUrl)
       .map(player => {
-        let team = player[teamId];
-        let playerNames = playerName.split("_");
+        const team = player[teamId];
+        const playerNames = playerName.split('_');
 
         player = team.players.find(item =>
           item.name === playerNames[1] &&
           item.prename === playerNames[0]
         );
-        if (player.picture === "" || player.picture === undefined) {
+        if (player.picture === '' || player.picture === undefined) {
           // Default Picture if no picture is set
           player.picture = defaultImg;
         }
@@ -40,17 +40,17 @@ export class TeamService {
       .map(team => {
         team = team[teamId];
 
-        if (team.players != undefined) {
+        if (team.players !== undefined) {
           team.players.sort(function (a, b) {
-            if (a.prename < b.prename) return -1;
-            if (a.prename > b.prename) return 1;
+            if (a.prename < b.prename) { return -1; }
+            if (a.prename > b.prename) { return 1; }
             return 0;
           });
         }
 
-        if (team.trainer != undefined) {
+        if (team.trainer !== undefined) {
           team.trainer.forEach(function (part, index, coach) {
-            if (coach[index].picture === undefined || coach[index].picture === "") {
+            if (coach[index].picture === undefined || coach[index].picture === '') {
               coach[index].picture = defaultImg;
             }
           });
@@ -60,8 +60,12 @@ export class TeamService {
       });
   }
 
-  getTeamReports(teamId: string): Observable<Post[]> {
-    return this.news.fetchReports(teamId);
+  getTeamReports(teamId: string, page: number): Observable<Post[]> {
+    return this.news.fetchReports(teamId, page);
+  }
+
+  getMaxPages(): number {
+    return this.news.getMaxPages();
   }
 
 }

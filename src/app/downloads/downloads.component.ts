@@ -5,7 +5,7 @@ import { Attachment } from '@wh-objects/attachment';
 @Component({
   selector: 'app-downloads',
   templateUrl: './downloads.component.html',
-  styleUrls: ['./downloads.component.css']
+  styleUrls: ['./downloads.component.scss']
 })
 export class DownloadsComponent implements OnInit {
 

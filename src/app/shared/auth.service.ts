@@ -16,15 +16,15 @@ export class AuthService {
     this.user = this.afAuth.authState
       .switchMap(user => {
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
-          return Observable.of(null)
+          return Observable.of(null);
         }
       });
   }
 
   googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider()
+    const provider = new firebase.auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
   }
 
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   signOut() {
-    this.afAuth.auth.signOut()
+    this.afAuth.auth.signOut();
   }
 
   private updateUserData(user) {
@@ -51,38 +51,38 @@ export class AuthService {
         editor: false,
         sponsor: false
       }
-    }
-    return userRef.set(data, { merge: true })
+    };
+    return userRef.set(data, { merge: true });
   }
 
   ///// Role-based Authorization //////
 
   canRead(user: User): boolean {
-    const allowed = ['admin', 'editor', 'sponsoring']
-    return this.checkAuthorization(user, allowed)
+    const allowed = ['admin', 'editor', 'sponsoring'];
+    return this.checkAuthorization(user, allowed);
   }
 
   canEdit(user: User): boolean {
-    const allowed = ['admin', 'editor', 'sponsoring']
-    return this.checkAuthorization(user, allowed)
+    const allowed = ['admin', 'editor', 'sponsoring'];
+    return this.checkAuthorization(user, allowed);
   }
 
   canDelete(user: User): boolean {
-    const allowed = ['admin']
-    return this.checkAuthorization(user, allowed)
+    const allowed = ['admin'];
+    return this.checkAuthorization(user, allowed);
   }
 
 
 
   // determines if user has matching role
   private checkAuthorization(user: User, allowedRoles: string[]): boolean {
-    if (!user) return false
+    if (!user) { return false; }
     for (const role of allowedRoles) {
       if (user.roles[role]) {
-        return true
+        return true;
       }
     }
-    return false
+    return false;
   }
 
 }

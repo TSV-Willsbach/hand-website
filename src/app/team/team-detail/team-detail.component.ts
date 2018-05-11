@@ -25,7 +25,7 @@ export class TeamDetailComponent implements OnInit {
 
     this.sub = this.route.params.subscribe(
       params => {
-        let id = params['id'];
+        const id = params['id'];
         teamService.getTeam(id).subscribe(
           team => this.team = team,
           error => { console.log(error); },
@@ -36,7 +36,7 @@ export class TeamDetailComponent implements OnInit {
               image: this.team.picture
             });
           });
-        teamService.getTeamReports(id).subscribe(posts => this.posts = posts);
+        teamService.getTeamReports(id, 1).subscribe(posts => this.posts = posts);
       },
       error => { console.log(error); },
       () => { });

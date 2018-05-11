@@ -1,7 +1,8 @@
+@import '../../../variables';
 .tag {
     display: inline-block;
     background: rgba(255, 255, 255, 0.8);
-    color: var( --clubColor);
+    color: $color-club;
     font-weight: bold;
 }
 
@@ -13,10 +14,10 @@
 }
 
 .page-link {
-    color: var( --clubColor);
+    color: $color-club;
 }
 
 .page-item.active .page-link {
-    background-color: var( --clubColor);
-    border-color: var( --clubColor);
+    background-color: $color-club;
+    border-color: $color-club;
 }

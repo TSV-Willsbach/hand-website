@@ -2,19 +2,16 @@
 
 @import '~@ngx-share/button/styles/share-buttons';
 @import '~@ngx-share/button/styles/themes/default/default-theme';
-:root {
-    --clubColor: #23893b;
-}
-
+@import '/variables';
 .heading {
     font-size: 3.375rem;
-    color: var( --clubColor);
+    color: $color-club;
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
     text-transform: uppercase;
     font-weight: lighter;
     letter-spacing: -.125rem;
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid $color-grey;
     /* Umbruch wenn Text zu lang ist. */
     -ms-word-break: break-all;
     word-break: break-all;
@@ -32,7 +29,7 @@ td {
 }
 
 th {
-    background-color: var( --clubColor);
+    background-color: $color-club;
     color: #ffff;
 }
 
@@ -44,14 +41,12 @@ td {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     border: none;
     border-radius: 0%;
-}
-
-.card .fa {
-    color: var( --clubColor);
-}
-
-.card a {
-    color: var( --clubColor);
+    .fa {
+        color: $color-club;
+    }
+    a {
+        color: $color-club;
+    }
 }
 
 .card-img-top {
@@ -68,16 +63,16 @@ td {
 }
 
 .card-title {
-    color: var( --clubColor);
-    border-bottom: 1px solid #CCCCCC;
+    color: $color-club;
+    border-bottom: 1px solid $color-grey;
 }
 
 .breadcrumb>li+li:before {
     content: "/\00a0";
     padding: 0 5px;
-    color: #ccc;
+    color: $color-grey;
 }
 
 .icons {
-    color: var( --clubColor);
+    color: $color-club;
 }

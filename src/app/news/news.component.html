@@ -1,42 +1,4 @@
-<h2 class="heading" id="Aktuelles">Aktuelles</h2>
-<div class="row mb-2">
-  <div class="col-md-4 mb-3" *ngFor="let post of posts">
-    <div class="card h-100" [routerLink]="['/postDetail', post.id]">
-      <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">
-          <div [innerHTML]="post.title.rendered"></div>
-        </h5>
-        <small class="card-subtitle mb-2 text-muted">
-          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
-        <small class="card-subtitle mb-2 text-muted">
-          <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon> {{post.author}}</small>
-        <p class="card-text" [innerHTML]="post.excerpt.rendered">
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="pageinatorContainer">
-  <nav aria-label="Page navigation">
-    <ul class="pagination pagination-circle mb-0 justify-content-center">
-      <li class="page-item {{prevDisabled}}">
-        <a class="page-link" href="#Aktuelles" aria-label="Previous" (click)="prevPage()" mdbWavesEffect>
-          <span aria-hidden="true">&laquo;</span>
-          <span class="sr-only">Vorherige</span>
-        </a>
-      </li>
-      <div *ngFor="let item of pages">
-        <li class="page-item {{item.active}}">
-          <a class="page-link" href="#Aktuelles" (click)="jumpToPage(item.id)" mdbWavesEffect>{{item.id}}</a>
-        </li>
-      </div>
-      <li class="page-item {{nextDisabled}}">
-        <a class="page-link" href="#Aktuelles" aria-label="Next" (click)="nextPage()" mdbWavesEffect>
-          <span aria-hidden="true">&raquo;</span>
-          <span class="sr-only">Nächste</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</div>
+<h2 class="heading" id="Cards">Aktuelles</h2>
+
+<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages" (callParentMethods)="callMethod($event)"
+  (pagesEvent)="setPages($event)"></app-report-cards>
