@@ -5,25 +5,8 @@
   <li class="active">Berichte</li>
 </ol>
 
-<h3 class="heading ">Berichte</h3>
-<!-- <p ng-show="!posts.length ">Keine Berichte vorhanden.</p> -->
-<div class="row mb-2 ">
-  <div class="col-md-4 mb-3 " *ngFor="let post of posts ">
+<h3 class="heading" id="Cards">Berichte</h3>
 
-    <div class="card h-100 " [routerLink]="[ '/postDetail', post.id] ">
-      <img class="card-img-top " src="{{post.thumbnail}} " alt="Card image cap ">
-      <div class="card-body ">
-
-        <h5 class="card-title ">
-          <div [innerHTML]="post.title.rendered "></div>
-        </h5>
-        <small class="card-subtitle mb-2 text-muted ">
-          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
-        <small class="card-subtitle mb-2 text-muted ">
-          <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon> {{post.author}}</small>
-
-        <p class="card-text " [innerHTML]="post.excerpt.rendered "></p>
-      </div>
-    </div>
-  </div>
-  <br />
+<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages" (callParentMethods)="callMethod($event)"
+  (pagesEvent)="setPages($event)"></app-report-cards>
+<br />

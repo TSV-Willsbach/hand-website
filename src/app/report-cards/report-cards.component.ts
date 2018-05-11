@@ -22,14 +22,16 @@ export class ReportCardsComponent implements OnInit {
   page = 1;
   private fragment: string;
 
-  constructor(private route: ActivatedRoute) { this.prevDisabled = 'disabled'; }
+  constructor(private route: ActivatedRoute) { this.nextPrevAvailability(); }
 
   callApi() {
     this.callParentMethods.next('callApi');
   }
 
   nextPrevAvailability() {
-    if (this.page === 1) {
+    if (this.page === 1 || this.maxPages === this.page) {
+      this.nextDisabled = this.prevDisabled = 'disabled';
+    } else if (this.page === 1) {
       this.prevDisabled = 'disabled';
       this.nextDisabled = '';
     } else if (this.page === this.maxPages) {
