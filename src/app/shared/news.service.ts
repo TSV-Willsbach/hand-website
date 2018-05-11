@@ -51,16 +51,11 @@ export class NewsService {
           return post;
         });
       });
-
-    /*         (post: Post) => {
-      post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url
-      return post
-    } */
-
   }
 
-  fetchReports(id: string): Observable<Post[]> {
+  fetchReports(id: string, page: number): Observable<Post[]> {
     let link: string;
+    this.page = page;
 
     switch (id) {
       case 'herren': {
@@ -108,9 +103,10 @@ export class NewsService {
       }
 
     }
-    return this.http.get<Post[]>(this.getLink(link))
+    return this.http.get<Post[]>(this.getLink(link), { observe: 'response' })
       .map(posts => {
-        return posts.map(post => {
+        this.totalPages = +posts.headers.get('X-WP-TotalPages');
+        return posts.body.map(post => {
           this.mapFields(post);
           return post;
         });

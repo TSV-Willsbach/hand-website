@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Paginator } from '@wh-objects/pagination';
 import { Post } from '@wh-objects/post';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-report-cards',
@@ -19,6 +20,9 @@ export class ReportCardsComponent implements OnInit {
   public nextDisabled: string;
   public prevDisabled: string;
   page = 1;
+  private fragment: string;
+
+  constructor(private route: ActivatedRoute) { this.prevDisabled = 'disabled'; }
 
   callApi() {
     this.callParentMethods.next('callApi');
@@ -36,8 +40,6 @@ export class ReportCardsComponent implements OnInit {
       this.nextDisabled = '';
     }
   }
-
-  constructor() { this.prevDisabled = 'disabled'; }
 
   ngOnInit() {
   }
@@ -59,6 +61,7 @@ export class ReportCardsComponent implements OnInit {
 
     this.myData.unsubscribe();
     this.callApi();
+    document.querySelector('#Cards').scrollIntoView();
   }
 
 }

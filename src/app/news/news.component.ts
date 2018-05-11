@@ -23,18 +23,19 @@ export class NewsComponent implements OnInit {
 
   public callApi() {
     this.myData = this.news.fetchNews(this.page)
-      .subscribe(posts => this.posts = posts, error => console.log('Error: ', error), () => {
-        this.maxPages = this.news.getMaxPages();
-        this.pages = new Array();
-        for (let i = 1; i <= this.maxPages; i++) {
-          if (i === this.page) {
-            this.paginator = { id: i, active: 'active' };
-          } else {
-            this.paginator = { id: i, active: '' };
+      .subscribe(posts => this.posts = posts, error => console.log('Error: ', error),
+        () => {
+          this.maxPages = this.news.getMaxPages();
+          this.pages = new Array();
+          for (let i = 1; i <= this.maxPages; i++) {
+            if (i === this.page) {
+              this.paginator = { id: i, active: 'active' };
+            } else {
+              this.paginator = { id: i, active: '' };
+            }
+            this.pages.push(this.paginator);
           }
-          this.pages.push(this.paginator);
-        }
-      });
+        });
   }
 
   ngOnInit() {
