@@ -1,17 +1,16 @@
+@import '../../variables';
 .postEnd {
-    border-top: 1px dashed var( --clubColor);
+    border-top: 1px dashed $color-club;
+    ul {
+        text-align: right;
+    }
+    li {
+        display: inline;
+    }
 }
 
 .postImage {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.postEnd ul {
-    text-align: right;
-}
-
-.postEnd li {
-    display: inline;
 }

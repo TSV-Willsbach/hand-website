@@ -22,9 +22,9 @@ export const NO_ANIMATIONS = 'no-animations';
 const initialDocViewerContent = '<p></p>';
 @Component({
   selector: 'app-doc-viewer',
-//  templateUrl: './doc-viewer.component.html',
-template: '',
-  styleUrls: ['./doc-viewer.component.css']
+  //  templateUrl: './doc-viewer.component.html',
+  template: '',
+  styleUrls: ['./doc-viewer.component.scss']
 })
 
 export class DocViewerComponent implements DoCheck, OnDestroy {
@@ -49,7 +49,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     private router: Router,
     private documentService: DocumentService) {
     router.events
-      .filter(event => event instanceof NavigationEnd )
+      .filter(event => event instanceof NavigationEnd)
       .switchMap((url: any) => this.render(url))
       .subscribe();
     this.hostElement = elementRef.nativeElement;
@@ -112,16 +112,16 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
    * Add doc content to host element and build it out with embedded components.
    */
   protected render(doc: any): Observable<void> {
-  //  console.log("Render beeing called " + doc)
-     this.documentService
-      .getDocument(doc.url.replace(/^\//,""))
+    //  console.log("Render beeing called " + doc)
+    this.documentService
+      .getDocument(doc.url.replace(/^\//, ""))
       .subscribe(document => {
 
-       // console.log("Render doc read " + JSON.stringify(document))
+        // console.log("Render doc read " + JSON.stringify(document))
         this.nextViewContainer.innerHTML = document.contents || ''
-        this.swapViews().subscribe(() => {})
+        this.swapViews().subscribe(() => { })
       });
-      return this.void$;
+    return this.void$;
   }
 
   /**
@@ -148,8 +148,8 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
    */
   protected swapViews(onInsertedCb = () => { }): Observable<void> {
 
-   //  this.currViewContainer = this.nextViewContainer;
-//   this.hostElement.appendChild(this.nextViewContainer);
+    //  this.currViewContainer = this.nextViewContainer;
+    //   this.hostElement.appendChild(this.nextViewContainer);
 
     const raf$ = new Observable<void>(subscriber => {
       const rafId = requestAnimationFrame(() => {
@@ -197,7 +197,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     if (this.currViewContainer.parentElement) {
       done$ = done$
         // Remove the current view from the viewer.
-       .switchMap(() => animateLeave(this.currViewContainer))
+        .switchMap(() => animateLeave(this.currViewContainer))
         .do(() => {
           this.hostElement.removeChild(this.currViewContainer)
         }

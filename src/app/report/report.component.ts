@@ -5,7 +5,7 @@ import { NewsService } from '@wh-share/news.service';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
-  styleUrls: ['./report.component.css']
+  styleUrls: ['./report.component.scss']
 })
 export class ReportComponent implements OnInit {
 

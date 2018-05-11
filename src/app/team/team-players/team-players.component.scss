@@ -1,5 +1,6 @@
+@import '../../../variables';
 a {
-    color: var( --clubColor);
+    color: $color-club;
 }
 
 .column {
@@ -18,12 +19,10 @@ a {
 #playerTable {
     table-layout: fixed;
     border-collapse: collapse;
-}
-
-#playerTable td {
-    width: 25%;
-}
-
-.playerName a {
-    color: black;
+    td {
+        width: 25%;
+    }
+    a {
+        color: black;
+    }
 }
