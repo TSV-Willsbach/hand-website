@@ -33,8 +33,8 @@ export class CarouselService {
       this.teams = this.http.get<TeamWP[]>(apiTeams)
         .pipe(
           map(team => {
-            return team.map(team => {
-              return team;
+            return team.map(cTeam => {
+              return cTeam;
             });
           }),
           publishReplay(1),

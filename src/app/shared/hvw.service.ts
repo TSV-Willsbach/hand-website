@@ -80,11 +80,11 @@ export class HvwService {
       const classes = data.content.classes;
 
       classes.forEach(element => {
-        element.games.forEach(element => {
-          if (element.gGuestGoals === ' ') { element.gGuestGoals = '0'; }
-          if (element.gHomeGoals === ' ') { element.gHomeGoals = '0'; }
-          if (element.gGuestGoals_1 === ' ') { element.gGuestGoals_1 = '0'; }
-          if (element.gHomeGoals_1 === ' ') { element.gHomeGoals_1 = '0'; }
+        element.games.forEach(child => {
+          if (child.gGuestGoals === ' ') { child.gGuestGoals = '0'; }
+          if (child.gHomeGoals === ' ') { child.gHomeGoals = '0'; }
+          if (child.gGuestGoals_1 === ' ') { child.gGuestGoals_1 = '0'; }
+          if (child.gHomeGoals_1 === ' ') { child.gHomeGoals_1 = '0'; }
         });
       });
       return data;

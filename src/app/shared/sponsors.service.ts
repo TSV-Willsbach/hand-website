@@ -17,9 +17,9 @@ export class SponsorsService {
       this.sponsors = this.http.get<Sponsors[]>(apiSponsorImages)
         .pipe(
           map(sponsors => {
-            return sponsors.map(sponsors => {
-              // sponsors.thumbnail = sponsors._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
-              return sponsors;
+            return sponsors.map(sponsor => {
+              // sponsor.thumbnail = sponsor._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
+              return sponsor;
             });
           }),
           publishReplay(1),
