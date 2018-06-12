@@ -21,7 +21,7 @@ export class ResultsComponent implements OnInit {
       error => { console.log(error); },
       () => { console.log(this.clubs); });
 
-    this.hvw.period = "62";
+    this.hvw.period = '62';
     this.hvw.getClubData().subscribe(
       club => {
         this.clubs.push(club);
