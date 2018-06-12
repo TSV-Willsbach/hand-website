@@ -114,6 +114,8 @@
 </table>
 <br />
 <div *ngIf="ligue.content.actualGames.games?.length > 0">
-  <app-game-table [ligue]="ligue"></app-game-table>
+  <h2 class="heading">Spiele</h2>
+  <small>{{ligue.head.actualized}}</small>
+  <app-game-table [ligaName]="ligue.head.sname" [games]="ligue.content.actualGames.games"></app-game-table>
 </div>
 <br />

@@ -1,3 +1,4 @@
+import { Game } from './../../objects/hvw';
 import { Ligue } from '@wh-objects/hvw';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -8,7 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GameTableComponent implements OnInit {
 
-  @Input() ligue: Ligue;
+  @Input() ligaName: string;
+  @Input() games: Game[];
 
   constructor() { }
 
