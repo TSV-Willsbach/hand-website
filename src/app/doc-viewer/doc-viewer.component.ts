@@ -2,16 +2,15 @@ import { Component, ComponentRef, DoCheck, ElementRef, EventEmitter, Input, OnDe
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { timer } from 'rxjs/observable/timer';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/takeUntil';
-import 'rxjs/add/operator/filter';
+import { Observable, of, timer } from 'rxjs';
+
+
+
+
+
 
 import { DocumentService, DocumentContents, FILE_NOT_FOUND_ID, FETCHING_ERROR_ID } from '../documents/document.service';
+import { tap, switchMap } from 'rxjs/operators';
 
 
 
@@ -91,7 +90,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     }
 
     return () => {
-      //this.tocService.reset();
+      // this.tocService.reset();
       let title: string | null = '';
 
       // Only create ToC for docs with an `<h1>` heading.
@@ -100,7 +99,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
         title = (typeof titleEl.innerText === 'string') ? titleEl.innerText : titleEl.textContent;
 
         if (hasToc) {
-          //this.tocService.genToc(targetElem, docId);
+          // this.tocService.genToc(targetElem, docId);
         }
       }
 
@@ -114,12 +113,12 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
   protected render(doc: any): Observable<void> {
     //  console.log("Render beeing called " + doc)
     this.documentService
-      .getDocument(doc.url.replace(/^\//, ""))
+      .getDocument(doc.url.replace(/^\//, ''))
       .subscribe(document => {
 
         // console.log("Render doc read " + JSON.stringify(document))
-        this.nextViewContainer.innerHTML = document.contents || ''
-        this.swapViews().subscribe(() => { })
+        this.nextViewContainer.innerHTML = document.contents || '';
+        this.swapViews().subscribe(() => { });
       });
     return this.void$;
   }
@@ -177,15 +176,15 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
         }
         elem.style.transition = '';
         return animationsDisabled
-          ? this.void$.do(() => elem.style[prop] = to)
+          ? this.void$.pipe(tap(() => elem.style[prop] = to))
           : this.void$
             // In order to ensure that the `from` value will be applied immediately (i.e.
             // without transition) and that the `to` value will be affected by the
             // `transition` style, we need to ensure an animation frame has passed between
             // setting each style.
-            .switchMap(() => raf$).do(() => elem.style[prop] = from)
-            .switchMap(() => raf$).do(() => elem.style.transition = `all ${duration}ms ease-in-out`)
-            .switchMap(() => raf$).do(() => (elem.style as any)[prop] = to)
+            .switchMap(() => raf$).pipe(tap(() => elem.style[prop] = from))
+            .switchMap(() => raf$).pipe(tap(() => elem.style.transition = `all ${duration}ms ease-in-out`))
+            .switchMap(() => raf$).pipe(tap(() => (elem.style as any)[prop] = to))
             .switchMap(() => timer(getActualDuration(elem))).switchMap(() => this.void$);
       };
 
@@ -198,25 +197,27 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
       done$ = done$
         // Remove the current view from the viewer.
         .switchMap(() => animateLeave(this.currViewContainer))
-        .do(() => {
-          this.hostElement.removeChild(this.currViewContainer)
-        }
-        )
+        .pipe(
+          tap(() => {
+            this.hostElement.removeChild(this.currViewContainer);
+          }
+          ));
       //    .do(() => this.docRemoved.emit());
     }
 
     return done$
       // Insert the next view into the viewer.
-      .do(() => this.hostElement.appendChild(this.nextViewContainer))
-      .do(() => onInsertedCb())
-      //  .do(() => this.docInserted.emit())
-      .switchMap(() => animateEnter(this.nextViewContainer))
-      // Update the view references and clean up unused nodes.
-      .do(() => {
-        const prevViewContainer = this.currViewContainer;
-        this.currViewContainer = this.nextViewContainer;
-        this.nextViewContainer = prevViewContainer;
-        this.nextViewContainer.innerHTML = '';  // Empty to release memory.
-      });
+      .pipe(
+        tap(() => this.hostElement.appendChild(this.nextViewContainer)),
+        tap(() => onInsertedCb()),
+        switchMap(() => animateEnter(this.nextViewContainer)),
+        tap(() => {
+          const prevViewContainer = this.currViewContainer;
+          this.currViewContainer = this.nextViewContainer;
+          this.nextViewContainer = prevViewContainer;
+          this.nextViewContainer.innerHTML = '';  // Empty to release memory.
+        })
+        //  .tap(() => this.docInserted.emit())
+      );
   }
 }

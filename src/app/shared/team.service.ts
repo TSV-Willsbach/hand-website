@@ -3,7 +3,7 @@ import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { Team, Player } from '@wh-objects/team';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 const jsonUrl = './assets/generated/teams.json';
 const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png';

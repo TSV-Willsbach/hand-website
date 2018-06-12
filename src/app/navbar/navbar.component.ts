@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, Renderer, ElementRef } from '@angular/core';
 import { NavigationNode } from '../navigation/navigation.service';
-import { timer } from 'rxjs/observable/timer';
+import { timer ,  Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
 import { AuthService } from '@wh-share/auth.service';
 
 @Component({

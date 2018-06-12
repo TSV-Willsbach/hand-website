@@ -1,21 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
-import { Observable } from 'rxjs/Observable';
-import { AsyncSubject } from 'rxjs/AsyncSubject';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/switchMap';
-
+import { Observable, AsyncSubject, of } from 'rxjs';
 import { DocumentContents } from './document-contents';
 import { LocationService } from '@wh-share/location.service';
+import { tap } from 'rxjs/operators';
 export { DocumentContents } from './document-contents';
-
 export const FILE_NOT_FOUND_ID = 'file-not-found';
 export const FETCHING_ERROR_ID = 'fetching-error';
-
 export const CONTENT_URL_PREFIX = 'assets/generated/';
-export const DOC_CONTENT_URL_PREFIX = CONTENT_URL_PREFIX; //+ 'docs/';
+export const DOC_CONTENT_URL_PREFIX = CONTENT_URL_PREFIX; // + 'docs/';
+
 const FETCHING_ERROR_CONTENTS = `
   <div class="nf-container l-flex-wrap flex-center">
     <div class="nf-icon material-icons">error_outline</div>
@@ -60,14 +54,16 @@ export class DocumentService {
 
     this.http
       .get<DocumentContents>(requestPath, { responseType: 'json' })
-      .do(data => {
-        if (!data || typeof data !== 'object') {
-          //  this.logger.log('received invalid data:', data);
-          throw Error('Invalid data');
-        }
-      })
+      .pipe(
+        tap(data => {
+          if (!data || typeof data !== 'object') {
+            //  this.logger.log('received invalid data:', data);
+            throw Error('Invalid data');
+          }
+        })
+      )
       .catch((error: HttpErrorResponse) => {
-        return error.status === 404 ? this.getFileNotFoundDoc(id) : null//this.getErrorDoc(id, error);
+        return error.status === 404 ? this.getFileNotFoundDoc(id) : null; // this.getErrorDoc(id, error);
       })
       .subscribe(subject);
 
@@ -93,6 +89,6 @@ export class DocumentService {
        return Observable.of({
         id: FETCHING_ERROR_ID,
         contents: FETCHING_ERROR_CONTENTS
-      }); 
+      });
     } */
 }
