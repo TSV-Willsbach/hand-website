@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import 'rxjs/add/operator/do';
-import { Observable } from 'rxjs/Observable';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import { interval } from 'rxjs/observable/interval';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/publishLast';
-import 'rxjs/add/operator/publishReplay';
-import { timer } from 'rxjs/observable/timer';
-import { switchMap, take } from 'rxjs/operators';
+import { ReplaySubject, Observable, combineLatest, interval, timer } from 'rxjs';
+import { switchMap, take, map, publishReplay, refCount } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { TeamWP } from '@wh-objects/wordPress';
 
@@ -32,7 +24,7 @@ carousel-item-next carousel-item-left
   transitionClasses: Observable<any>;
 
   constructor(private http: HttpClient
-    //private items: Number, private inter: Number
+    // private items: Number, private inter: Number
   ) {
     /*    this.transitionClasses = timer(0, 3000)
          .map(value => {Math.ceil(value % 5)})
@@ -42,8 +34,10 @@ carousel-item-next carousel-item-left
     this.transitionClasses = timer(2000, 5000)
       .pipe(switchMap(() =>
         interval(500)
-          .pipe(take(3))
-          .map(val => { return { tick: val, class: transitionLeft[val] } })
+          .pipe(
+            take(3),
+            map(val => ({ tick: val, class: transitionLeft[val] }))
+          )
       )
       );
 
@@ -52,13 +46,15 @@ carousel-item-next carousel-item-left
   fetchTeams(): Observable<TeamWP[]> {
     if (!this.teams) {
       this.teams = this.http.get<TeamWP[]>(apiTeams)
-        .map(team => {
-          return team.map(team => {
-            return team;
-          });
-        })
-        .publishReplay(1)
-        .refCount();
+        .pipe(
+          map(team => {
+            return team.map(team => {
+              return team;
+            });
+          }),
+          publishReplay(1),
+          refCount()
+        );
     }
     return this.teams;
   }

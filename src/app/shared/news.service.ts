@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import 'rxjs/add/operator/do';
-import { Observable } from 'rxjs/Observable';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import { interval } from 'rxjs/observable/interval';
-import 'rxjs/add/operator/publishLast';
-import 'rxjs/add/operator/publishReplay';
-import { timer } from 'rxjs/observable/timer';
+import { ReplaySubject ,  Observable ,  combineLatest ,  interval ,  timer } from 'rxjs';
 import { switchMap, take, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '@wh-objects/post';

@@ -6,7 +6,7 @@ import { SeoService } from '@wh-share/seo.service';
 import { TeamService } from '@wh-share/team.service';
 import { Team } from '@wh-objects/team';
 import { Globals } from '@wh-objects/globals';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-team-result',

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Location, PlatformLocation } from '@angular/common';
 
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import 'rxjs/add/operator/do';
+import { ReplaySubject } from 'rxjs';
+
 
 
 @Injectable()

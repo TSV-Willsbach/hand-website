@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest } from 'rxjs/observable/combineLatest';
+import { combineLatest } from 'rxjs';
 
 import { NavigationService, NavigationNode, VersionInfo, CurrentNodes } from './navigation/navigation.service';
 import { LocationService } from './shared/location.service';
 import { DocumentService, DocumentContents } from './documents/document.service';
 
-import 'rxjs/add/operator/first';
+
 
 @Component({
   selector: 'app-root',
