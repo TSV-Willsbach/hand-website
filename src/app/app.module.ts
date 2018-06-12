@@ -55,6 +55,7 @@ import { AuthGuard } from './core/auth.guard';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReportCardsComponent } from '@wh-childs/report-cards/report-cards.component';
+import { GameTableComponent } from './child-components/game-table/game-table.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -91,7 +92,8 @@ library.add(fas, far, fab);
     LoginComponent,
     EditComponent,
     PageNotFoundComponent,
-    ReportCardsComponent
+    ReportCardsComponent,
+    GameTableComponent
   ],
   imports: [
     BrowserModule,
