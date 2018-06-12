@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest } from 'rxjs';
+import { Observable, combineLatest, ConnectableObservable } from 'rxjs';
 import { publishLast, map, publishReplay } from 'rxjs/operators';
 // Import and re-export the Navigation model types
 import { CurrentNodes, NavigationNode, NavigationResponse, NavigationViews, VersionInfo } from './navigation.model';
@@ -49,7 +49,7 @@ export class NavigationService {
   private fetchNavigationInfo(): Observable<NavigationResponse> {
     const navigationInfo = this.http.get<NavigationResponse>(navigationPath).pipe(
       publishLast()
-    );
+    ) as ConnectableObservable<NavigationResponse>;
     navigationInfo.connect();
     return navigationInfo;
   }
@@ -61,7 +61,7 @@ export class NavigationService {
           return response.__versionInfo;
         }),
         publishLast()
-      );
+      ) as ConnectableObservable<VersionInfo>;
     versionInfo.connect();
     return versionInfo;
   }
@@ -77,7 +77,7 @@ export class NavigationService {
           return views as NavigationViews;
         }),
         publishLast()
-      );
+      ) as ConnectableObservable<NavigationViews>;
     navigationViews.connect();
     return navigationViews;
   }
@@ -92,7 +92,7 @@ export class NavigationService {
       })
       .pipe(
         publishReplay(1)
-      );
+      ) as ConnectableObservable<CurrentNodes>;
     currentNodes.connect();
     return currentNodes;
   }
@@ -150,6 +150,4 @@ export class NavigationService {
       node.tooltip = title + (/[a-zA-Z0-9]$/.test(title) ? '.' : '');
     }
   }
-
-
 }
