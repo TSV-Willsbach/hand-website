@@ -40,7 +40,7 @@ function detectBot(userAgent) {
     //     'WhatsApp'
     // ];
 
-    const agent = userAgent.toLowerCase();
+    const agent = userAgent; // .toLowerCase();
 
     for (const bot of bots) {
         if (agent.indexOf(bot) > -1) {
