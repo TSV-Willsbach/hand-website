@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Post } from '@wh-objects/post';
-import { NewsService } from '@wh-share/news.service';
 import { Team } from '@wh-objects/team';
 import { TeamService } from '@wh-share/team.service';
 import { SeoService } from '@wh-share/seo.service';
@@ -14,9 +12,9 @@ import { SeoService } from '@wh-share/seo.service';
 })
 export class TeamDetailComponent implements OnInit {
 
-  private sub: any;
   team: Team;
   posts: Post[];
+  sub: any;
 
   constructor(private route: ActivatedRoute, teamService: TeamService, private seo: SeoService) {
     // init data to hide console errors if nothing is found
