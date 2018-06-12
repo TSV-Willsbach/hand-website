@@ -39,13 +39,13 @@ function detectBot(userAgent) {
     //     'W3C_Validator',
     //     'WhatsApp'
     // ];
-    // const agent = userAgent.toLowerCase();
+    const agent = userAgent.toLowerCase();
     console.log(bots);
 
     for (const bot of bots) {
-        // const botUserAgent = bot.pattern.toLowerCase();
-        if (RegExp(bot.pattern).test(userAgent)) {
-            console.log('Bot detected', bot.pattern, userAgent);
+        const botUserAgent = bot.pattern.toLowerCase();
+        if (RegExp(botUserAgent).test(agent)) {
+            console.log('Bot detected', botUserAgent, agent);
             return true;
         }
     }
