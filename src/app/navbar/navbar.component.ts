@@ -1,7 +1,5 @@
 import { Component, OnInit, Input, Renderer, ElementRef } from '@angular/core';
 import { NavigationNode } from '../navigation/navigation.service';
-import { timer ,  Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
 import { AuthService } from '@wh-share/auth.service';
 
 @Component({
@@ -15,8 +13,8 @@ export class NavbarComponent implements OnInit {
 
   @Input() nodes: NavigationNode[];
 
-  constructor(private el: ElementRef, private renderer: Renderer, public auth: AuthService) {
-    console.log("Test", auth.user);
+  constructor(public auth: AuthService) {
+    console.log('User', auth.user);
   }
 
   ngOnInit() {
