@@ -307,6 +307,54 @@
                 }
             }
         },
+        "wcjugend": {
+            "$id": "/properties/wcjugend",
+            "type": "object",
+            "properties": {
+                "title": {
+                    "$id": "/properties/wcjugend/properties/title",
+                    "type": "string",
+                    "title": "The Title Schema ",
+                    "default": "",
+                    "examples": [
+                        "Weibliche C Jugend"
+                    ]
+                },
+                "ligaID": {
+                    "$id": "/properties/wcjugend/properties/ligaID",
+                    "type": "string",
+                    "title": "LigaID ",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "qualID": {
+                    "$id": "/properties/wcjugend/properties/qualID",
+                    "type": "string",
+                    "title": "LigaID - Quali",
+                    "default": "",
+                    "examples": [
+                        "28818"
+                    ]
+                },
+                "picture": {
+                    "$id": "/properties/wcjugend/properties/picture",
+                    "type": "string",
+                    "title": "The Picture Schema ",
+                    "default": "",
+                    "examples": [
+                        "https://wp.willsbach-handball.de/wp-content/uploads/teams/wC.jpeg"
+                    ]
+                },
+                "trainer": {
+                    "$ref": "#/definitions/trainer"
+                },
+                "players": {
+                    "$ref": "#/definitions/players"
+                }
+            }
+        },
         "mdjugend": {
             "$id": "/properties/mdjugend",
             "type": "object",
