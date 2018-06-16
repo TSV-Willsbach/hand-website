@@ -97,6 +97,15 @@
                         "28818"
                     ]
                 },
+                "wpCat": {
+                    "$id": "/properties/herren/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/herren/properties/picture",
                     "type": "string",
@@ -144,6 +153,15 @@
                     "default": "",
                     "examples": [
                         "28818"
+                    ]
+                },
+                "wpCat": {
+                    "$id": "/properties/damen/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
                     ]
                 },
                 "picture": {
@@ -194,6 +212,15 @@
                         "28818"
                     ]
                 },
+                "wpCat": {
+                    "$id": "/properties/majugend/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/majugend/properties/picture",
                     "type": "string",
@@ -240,6 +267,15 @@
                     "default": "",
                     "examples": [
                         "28818"
+                    ]
+                },
+                "wpCat": {
+                    "$id": "/properties/mbjugend/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
                     ]
                 },
                 "picture": {
@@ -290,6 +326,15 @@
                         "28818"
                     ]
                 },
+                "wpCat": {
+                    "$id": "/properties/mcjugend/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/mcjugend/properties/picture",
                     "type": "string",
@@ -336,6 +381,15 @@
                     "default": "",
                     "examples": [
                         "28818"
+                    ]
+                },
+                "wpCat": {
+                    "$id": "/properties/wcjugend/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
                     ]
                 },
                 "picture": {
@@ -386,6 +440,15 @@
                         "28818"
                     ]
                 },
+                "wpCat": {
+                    "$id": "/properties/mdjugend/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/mdjugend/properties/picture",
                     "type": "string",
@@ -434,6 +497,15 @@
                         "28818"
                     ]
                 },
+                "wpCat": {
+                    "$id": "/properties/mejugend/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
+                    ]
+                },
                 "picture": {
                     "$id": "/properties/mejugend/properties/picture",
                     "type": "string",
@@ -471,6 +543,15 @@
                     "default": "",
                     "examples": [
                         ""
+                    ]
+                },
+                "wpCat": {
+                    "$id": "/properties/minis/properties/wpCat",
+                    "type": "string",
+                    "title": "Wordpress Category",
+                    "default": "",
+                    "examples": [
+                        "20"
                     ]
                 },
                 "trainer": {
