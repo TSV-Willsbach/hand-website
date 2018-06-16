@@ -5,6 +5,7 @@
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren-768x513.jpg",
         "ligaID": "28818",
         "pokalID": "30098",
+        "wpCat": "10",
         "trainer": [{
             "name": "Kohler",
             "prename": "Marco"
@@ -125,6 +126,7 @@
         "title": "Damen",
         "ligaID": "28842",
         "pokalID": "30102",
+        "wpCat": "5",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
         "trainer": [{
                 "name": "Gebhardt",
@@ -280,6 +282,7 @@
         "title": "Männliche A Jugend",
         "ligaID": "30106",
         "qualID": "32900",
+        "wpCat": "17",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg",
         "trainer": [{
                 "name": "Purzel",
@@ -361,6 +364,7 @@
     "mbjugend": {
         "title": "Männliche B Jugend",
         "ligaID": "30114",
+        "wpCat": "18",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",
         "trainer": [{
             "name": "Bosch",
@@ -450,6 +454,7 @@
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mC.jpeg",
         "ligaID": "30126",
         "qualID": "32909",
+        "wpCat": "19",
         "trainer": [{
                 "name": "Schuhkraft",
                 "prename": "Antonia"
@@ -537,10 +542,22 @@
             }
         ]
     },
+    "wcjugend": {
+        "title": "Weibliche C Jugend",
+        "picture": "",
+        "qualID": "33695",
+        "ligaID": "",
+        "wpCat": "40",
+        "trainer": [{
+            "name": "Vonthien",
+            "prename": "Stefanie"
+        }]
+    },
     "mdjugend": {
         "title": "Männliche D Jugend",
         "picture": "",
         "ligaID": "30134",
+        "wpCat": "20",
         "trainer": [{
                 "name": "Schmautz",
                 "prename": "Rainer"
@@ -609,11 +626,13 @@
     "mejugend": {
         "title": "Männliche E Jugend",
         "picture": "",
-        "ligaID": "31634"
+        "ligaID": "31634",
+        "wpCat": "21"
     },
     "minis": {
         "title": "Minis",
         "picture": "",
+        "wpCat": "22",
         "trainer": [{
             "name": "Caspar",
             "prename": "Sina"

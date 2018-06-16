@@ -33,6 +33,11 @@
                     "tooltip": ""
                 },
                 {
+                    "router": "wcjugend",
+                    "title": "C Jugend (w)",
+                    "tooltip": ""
+                },
+                {
                     "router": "mcjugend",
                     "title": "C Jugend (m)",
                     "tooltip": ""
