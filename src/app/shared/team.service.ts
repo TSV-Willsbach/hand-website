@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Team, Player } from '@wh-objects/team';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
@@ -13,6 +13,7 @@ export class TeamService {
 
   team: Team;
   posts: Post[];
+  wpCategory: string;
 
   constructor(private http: HttpClient, private news: NewsService) { }
 
@@ -55,7 +56,7 @@ export class TeamService {
             }
           });
         }
-
+        this.wpCategory = team.wpCat;
         return team;
       });
   }

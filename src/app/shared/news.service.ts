@@ -1,19 +1,21 @@
+
+import { TeamService } from '@wh-share/team.service';
 import { Injectable } from '@angular/core';
-import { ReplaySubject ,  Observable ,  combineLatest ,  interval ,  timer } from 'rxjs';
-import { switchMap, take, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '@wh-objects/post';
-import { when } from 'q';
 
 const apiPosts = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed';
 const apiReports = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6';
 const apiPost = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts/';
 const embed = '_embed';
+const cat = '&categories=';
 const catHerren = '&categories=10';
 const catDamen = '&categories=5';
 const catmA = '&categories=17';
 const catmB = '&categories=18';
 const catmC = '&categories=19';
+const catwC = '&categories=40';
 const catmD = '&categories=20';
 const catmE = '&categories=21';
 const catMinis = '&categories=22';
@@ -68,6 +70,11 @@ export class NewsService {
 
       case 'mbjugend': {
         link = apiReports + catmB + '&' + embed;
+        break;
+      }
+
+      case 'wcjugend': {
+        link = apiReports + catwC + '&' + embed;
         break;
       }
 
