@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+  <li>
+    <a href="#" [routerLink]="[ '/team', teamID ]">{{teamID}}</a>
+  </li>
+  <li class="active">Berichte</li>
+</ol>
+
+<h3 class="heading" id="Cards">Berichte</h3>
+
+<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages" (callParentMethods)="callMethod($event)"
+  (pagesEvent)="setPages($event)"></app-report-cards>
+<br />

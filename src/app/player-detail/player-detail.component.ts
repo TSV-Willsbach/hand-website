@@ -9,7 +9,7 @@ import { SeoService } from '@wh-share/seo.service';
 @Component({
   selector: 'app-player-detail',
   templateUrl: './player-detail.component.html',
-  styleUrls: ['./player-detail.component.css']
+  styleUrls: ['./player-detail.component.scss']
 })
 export class PlayerDetailComponent implements OnInit {
 

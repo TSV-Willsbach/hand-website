@@ -4,6 +4,7 @@ export class Team {
     pokalID: string;
     qualID: string;
     picture: string;
+    wpCat: string;
     trainer: Coach[];
     players: Player[];
 

@@ -5,18 +5,30 @@ import { Club } from '@wh-objects/hvw';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
 
-  club: Club;
+  clubs: Club[];
 
   constructor(private hvw: HvwService) {
-    this.club = new Club();
+    this.clubs = new Array<Club>();
+
     this.hvw.getClubData().subscribe(
-      club => this.club = club,
+      club => {
+        this.clubs.push(club);
+      },
       error => { console.log(error); },
-      () => { console.log(this.club); });
+      () => { console.log(this.clubs); });
+
+    this.hvw.period = '62';
+    this.hvw.getClubData().subscribe(
+      club => {
+        this.clubs.push(club);
+      },
+      error => { console.log(error); },
+      () => { console.log(this.clubs); }
+    );
   }
 
   ngOnInit() {

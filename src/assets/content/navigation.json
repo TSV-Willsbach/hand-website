@@ -1,17 +1,17 @@
 {
     "TopBar": [{
             "title": "Aktuell",
-            "router": "",
+            "router": "/",
             "children": []
         },
         {
             "title": "Spielberichte",
-            "router": "reports",
+            "router": "/reports",
             "children": []
         },
         {
             "title": "Mannschaften",
-            "router": "team",
+            "router": "/team",
             "children": [{
                     "router": "herren",
                     "title": "Herren",
@@ -30,6 +30,11 @@
                 {
                     "router": "mbjugend",
                     "title": "B Jugend (m)",
+                    "tooltip": ""
+                },
+                {
+                    "router": "wcjugend",
+                    "title": "C Jugend (w)",
                     "tooltip": ""
                 },
                 {
@@ -56,7 +61,7 @@
         },
         {
             "title": "Ergebnisse",
-            "router": "results",
+            "router": "/results",
             "children": []
         }
     ],

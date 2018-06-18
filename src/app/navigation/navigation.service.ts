@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { Observable } from 'rxjs/Observable';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/publishLast';
-import 'rxjs/add/operator/publishReplay';
-
+import { Observable, combineLatest, ConnectableObservable } from 'rxjs';
+import { publishLast, map, publishReplay } from 'rxjs/operators';
 // Import and re-export the Navigation model types
 import { CurrentNodes, NavigationNode, NavigationResponse, NavigationViews, VersionInfo } from './navigation.model';
 export { CurrentNodes, CurrentNode, NavigationNode, NavigationResponse, NavigationViews, VersionInfo } from './navigation.model';
@@ -52,32 +47,37 @@ export class NavigationService {
    * We are not storing the subscription from connecting as we do not expect this service to be destroyed.
    */
   private fetchNavigationInfo(): Observable<NavigationResponse> {
-    const navigationInfo = this.http.get<NavigationResponse>(navigationPath)
-      .publishLast();
+    const navigationInfo = this.http.get<NavigationResponse>(navigationPath).pipe(
+      publishLast()
+    ) as ConnectableObservable<NavigationResponse>;
     navigationInfo.connect();
     return navigationInfo;
   }
 
   private getVersionInfo(navigationInfo: Observable<NavigationResponse>) {
     const versionInfo = navigationInfo
-      .map(response => {
-        return response.__versionInfo
-      })
-      .publishLast();
+      .pipe(
+        map(response => {
+          return response.__versionInfo;
+        }),
+        publishLast()
+      ) as ConnectableObservable<VersionInfo>;
     versionInfo.connect();
     return versionInfo;
   }
 
   private getNavigationViews(navigationInfo: Observable<NavigationResponse>): Observable<NavigationViews> {
     const navigationViews = navigationInfo
-      .map(response => {
-        const views = Object.assign({}, response);
-        Object.keys(views).forEach(key => {
-          if (key[0] === '_') { delete views[key]; }
-        });
-        return views as NavigationViews;
-      })
-      .publishLast();
+      .pipe(
+        map(response => {
+          const views = Object.assign({}, response);
+          Object.keys(views).forEach(key => {
+            if (key[0] === '_') { delete views[key]; }
+          });
+          return views as NavigationViews;
+        }),
+        publishLast()
+      ) as ConnectableObservable<NavigationViews>;
     navigationViews.connect();
     return navigationViews;
   }
@@ -90,7 +90,9 @@ export class NavigationService {
         const urlKey = url.startsWith('api/') ? 'api' : url;
         return navMap.get(urlKey) || { '': { view: '', url: urlKey, nodes: [] } };
       })
-      .publishReplay(1);
+      .pipe(
+        publishReplay(1)
+      ) as ConnectableObservable<CurrentNodes>;
     currentNodes.connect();
     return currentNodes;
   }
@@ -148,6 +150,4 @@ export class NavigationService {
       node.tooltip = title + (/[a-zA-Z0-9]$/.test(title) ? '.' : '');
     }
   }
-
-
 }

@@ -9,12 +9,16 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
-import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { TeamDetailComponent } from './team/team-detail/team-detail.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
-import { TeamResultComponent } from './team-result/team-result.component';
-import { TeamPlayersComponent } from './team-players/team-players.component';
-import { TeamReportsComponent } from './team-reports/team-reports.component';
-import { TeamGamesComponent } from './team-games/team-games.component';
+import { TeamResultComponent } from './team/team-result/team-result.component';
+import { TeamPlayersComponent } from './team/team-players/team-players.component';
+import { TeamReportsComponent } from './team/team-reports/team-reports.component';
+import { TeamGamesComponent } from './team/team-games/team-games.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './core/auth.guard';
+import { EditComponent } from './edit/edit.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -61,7 +65,8 @@ const routes: Routes = [
   },
   {
     path: 'team/:id',
-    component: TeamDetailComponent
+    component: TeamDetailComponent,
+
   },
   {
     path: 'team/:id/results',
@@ -82,6 +87,19 @@ const routes: Routes = [
   {
     path: 'team/:id/players/:name',
     component: PlayerDetailComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'edit',
+    component: EditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "**",
+    component: PageNotFoundComponent
   }
 ];
 

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const url = require('url');
 const fetch = require('node-fetch');
+const bots = require('crawler-user-agents');
 const app = express();
 
 const methodOverride = require('method-override');
@@ -17,33 +18,34 @@ function generateUrl(request) {
 }
 
 function detectBot(userAgent) {
-    const bots = [
-        // crawler bots
-        'googlebot',
-        'bingbot',
-        'yandexbot',
-        'duckduckbot',
-        'slurp',
-        // link bots
-        'twitterbot',
-        'facebookexternalhit',
-        'linkedinbot',
-        'embedly',
-        'baiduspider',
-        'pinterest',
-        'slackbot',
-        'vkShare',
-        'facebot',
-        'outbrain',
-        'W3C_Validator',
-        'WhatsApp'
-    ];
-
+    // const bots = [
+    //     // crawler bots
+    //     'googlebot',
+    //     'bingbot',
+    //     'yandexbot',
+    //     'duckduckbot',
+    //     'slurp',
+    //     // link bots
+    //     'twitterbot',
+    //     'facebookexternalhit',
+    //     'linkedinbot',
+    //     'embedly',
+    //     'baiduspider',
+    //     'pinterest',
+    //     'slackbot',
+    //     'vkShare',
+    //     'facebot',
+    //     'outbrain',
+    //     'W3C_Validator',
+    //     'WhatsApp'
+    // ];
     const agent = userAgent.toLowerCase();
+    console.log(bots);
 
     for (const bot of bots) {
-        if (agent.indexOf(bot) > -1) {
-            console.log('Bot detected', bot, agent);
+        const botUserAgent = bot.pattern.toLowerCase();
+        if (RegExp(botUserAgent).test(agent)) {
+            console.log('Bot detected', botUserAgent, agent);
             return true;
         }
     }

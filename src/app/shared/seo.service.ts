@@ -15,7 +15,7 @@ export class SeoService {
       image: 'https://willsbach-handball.de/assets/images/handball_willsbach.png',
       slug: '',
       ...config
-    }
+    };
     config.slug = this.router.url;
 
     this.meta.updateTag({ name: 'twitter:card', content: 'summary' });

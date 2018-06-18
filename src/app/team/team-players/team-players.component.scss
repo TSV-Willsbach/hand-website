@@ -1,0 +1,28 @@
+@import '../../../variables';
+a {
+    color: $color-club;
+}
+
+.column {
+    float: left;
+    width: 40%;
+}
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#playerTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+    td {
+        width: 25%;
+    }
+    a {
+        color: black;
+    }
+}

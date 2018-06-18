@@ -1,0 +1,66 @@
+@import '../../variables';
+footer {
+    background-color: #ffffff;
+    border-top: 0.25rem solid $color-club;
+}
+
+h5 {
+    color: $color-club;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: $color-club;
+}
+
+.gray {
+    color: gray;
+}
+
+.fa-facebook-square:hover {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+.fa-instagram:hover {
+    color: #833ab4;
+    text-decoration: none;
+}
+
+.fa-twitter:hover {
+    color: #55ACEE;
+    text-decoration: none;
+}
+
+.social {
+    color: grey;
+}
+
+.youtube:hover {
+    color: #bb0000;
+    text-decoration: none;
+}
+
+.facebook:hover {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+.twitter:hover {
+    color: #55ACEE;
+    text-decoration: none;
+}
+
+.instagram:hover {
+    color: #833ab4;
+    text-decoration: none;
+}
+
+.social-media {
+    padding-left: 0rem;
+}

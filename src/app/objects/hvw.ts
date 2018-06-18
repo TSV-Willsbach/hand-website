@@ -17,6 +17,7 @@ export class Club {
     };
     constructor() {
         this.head = new Head;
+        this.content = { classes: new Array<Classes>() };
     }
 }
 
@@ -37,11 +38,11 @@ export class Content {
     scoreComments: string[];
     futureGames: {
         games: Game[];
-    }
+    };
 
     constructor() {
-        this.actualGames = { games: new Array<Game>() }
-        this.futureGames = { games: new Array<Game>() }
+        this.actualGames = { games: new Array<Game>() };
+        this.futureGames = { games: new Array<Game>() };
     }
 }
 
@@ -75,10 +76,12 @@ export class Game {
     gGuestPoints: string;
     gComment: string;
     gReferee: string;
+    tickerUrl: string;
+    pdfDL: string;
 
     constructor() {
-        this.gGuestGoals = this.gGuestGoals_1 = "0";
-        this.gHomeGoals = this.gHomeGoals_1 = "0";
+        this.gGuestGoals = this.gGuestGoals_1 = '0';
+        this.gHomeGoals = this.gHomeGoals_1 = '0';
     }
 }
 
@@ -139,7 +142,7 @@ export class StatGame {
     result: string;
 
     constructor() {
-        this.teamName = this.result = "-";
+        this.teamName = this.result = '-';
     }
 
 }

@@ -1,0 +1,18 @@
+<ol class="breadcrumb">
+  <li>
+    <a href="#" [routerLink]="[ '/team', teamID ]">{{team.title}}</a>
+  </li>
+  <li class="active">Nächste Spiele</li>
+</ol>
+
+<h2 class="heading">Nächste Spiele</h2>
+
+<div *ngIf="ligue.content.actualGames.games?.length > 0; else noGames">
+  <small>{{ligue.head.actualized}}</small>
+  <app-game-table [ligaName]="ligue.head.sname" [games]="ligue.content.actualGames.games"></app-game-table>
+</div>
+<ng-template #noGames>
+  <p>Es gibt keine weitere Spiele</p>
+</ng-template>
+
+<br />

@@ -1,11 +1,15 @@
-<ngb-carousel>
+<mdb-carousel [isControls]="true" class="carousel slide carousel-slide" [animation]="'slide'">
+
   <div *ngFor="let team of teams; let i = index">
-    <ng-template ngbSlide>
-      <img class="d-block w-100" src="{{team.media_details.sizes.large.source_url}}" alt="{{team.alt_text}}">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>{{team.alt_text}}</h5>
+    <mdb-slide>
+      <div class="view">
+        <img class="d-block w-100" src="{{team.media_details.sizes.large.source_url}}" alt="{{team.alt_text}}">
+        <div class="mask rgba-black-slight waves-dark" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">{{team.alt_text}}</h3>
         <p>{{team.caption.rendered}}</p>
       </div>
-    </ng-template>
+    </mdb-slide>
   </div>
-</ngb-carousel>
+</mdb-carousel>
