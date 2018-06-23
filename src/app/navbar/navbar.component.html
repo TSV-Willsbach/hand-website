@@ -22,7 +22,7 @@
             <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
               <div *ngFor="let item of node.children; let i=index">
                 <a [routerLink]="[node.router, item.router]" class="dropdown-item waves-dark" href="#" mdbWavesEffect (click)="onMenuClick()">{{item.title}}</a>
-                <div *ngIf="i === 1">
+                <div *ngIf="i === 2">
                   <div class="divider dropdown-divider"></div>
                 </div>
               </div>
