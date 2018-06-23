@@ -5,9 +5,8 @@
   <li class="active">Trainer & Spieler</li>
 </ol>
 
-<div *ngIf="team.trainer?.length > 0">
-  <h3 class="heading ">Trainer</h3>
-  <!-- <div ng-hide="team.trainer.length ">Keine Trainerinformationen vorhanden.</div> -->
+<h3 class="heading ">Trainer</h3>
+<div *ngIf="team.trainer?.length > 0; else noTrainer">
   <div *ngFor="let trainer of team.trainer ">
 
     <br />
@@ -24,10 +23,8 @@
   </div>
 </div>
 
-<div *ngIf="team.players?.length > 0">
-  <h3 class="heading ">Spieler</h3>
-  <!-- <p ng-show="!team.players.length ">Keine Spielerinformationen vorhanden.</p> -->
-
+<h3 class="heading ">Spieler</h3>
+<div *ngIf="team.players?.length > 0; else noPlayers">
   <table style="width:100% " id="playerTable " class="table table-responsive table-striped table-bordered table-hover ">
     <tr>
       <th>#</th>
@@ -53,3 +50,11 @@
 
 </div>
 <br />
+
+
+<ng-template #noTrainer>
+  <p>Kein Trainer vorhanden oder noch nicht eingetragen</p>
+</ng-template>
+<ng-template #noPlayers>
+  <p>Kein Spieler vorhanden oder noch nicht eingetragen</p>
+</ng-template>
