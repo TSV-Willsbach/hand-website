@@ -18,6 +18,11 @@
                     "tooltip": ""
                 },
                 {
+                    "router": "herren2",
+                    "title": "Herren 2",
+                    "tooltip": ""
+                },
+                {
                     "router": "damen",
                     "title": "Damen",
                     "tooltip": ""

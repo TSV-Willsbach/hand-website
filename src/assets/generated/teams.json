@@ -122,6 +122,9 @@
         ]
 
     },
+    "herren2": {
+        "title": "Herren 2"
+    },
     "damen": {
         "title": "Damen",
         "ligaID": "28842",

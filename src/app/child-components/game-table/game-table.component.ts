@@ -1,3 +1,4 @@
+import { Globals } from '@wh-objects/globals';
 import { Game } from './../../objects/hvw';
 import { Ligue } from '@wh-objects/hvw';
 import { Component, OnInit, Input } from '@angular/core';
@@ -12,9 +13,14 @@ export class GameTableComponent implements OnInit {
   @Input() ligaName: string;
   @Input() games: Game[];
 
-  constructor() { }
+  constructor(private glob: Globals) { }
 
   ngOnInit() {
+  }
+
+  buildGymnUrl(game: Game) {
+    const url = `${this.glob.gMapsSearch}${game.gGymnasiumName},${game.gGymnasiumStreet},${game.gGymnasiumPostal}+${game.gGymnasiumTown}`;
+    return url;
   }
 
 }

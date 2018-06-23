@@ -13,7 +13,11 @@
   <tr *ngFor="let game of games">
     <td>{{game.gDate}}</td>
     <td>{{game.gTime}}</td>
-    <td>{{game.gGymnasiumName}}</td>
+    <td>
+      <a href="{{buildGymnUrl(game)}}" target="_blank" class="url">
+        {{game.gGymnasiumName}}
+      </a>
+    </td>
     <td>{{game.gHomeTeam}}</td>
     <td>{{game.gGuestTeam}}</td>
     <td>
