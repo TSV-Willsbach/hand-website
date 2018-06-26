@@ -22,6 +22,10 @@ export class SeoService {
     };
     config.slug = this.router.url;
 
+    // clear added tags
+    this.meta.removeTag('property="og:image"');
+    this.meta.removeTag('property="article:publisher"');
+
     this.meta.updateTag({ name: 'twitter:card', content: 'summary' });
     this.meta.updateTag({ name: 'twitter:site', content: '@willsbach_hndbl' });
     this.meta.updateTag({ name: 'twitter:title', content: config.title });
@@ -40,12 +44,15 @@ export class SeoService {
         this.meta.addTag({ property: 'og:image', content: element });
       });
     }
-
     if (config.type === 'article') {
       this.meta.addTag({ property: 'article:publisher', content: 'https://www.facebook.com/tsvwillsbachhandball' });
     }
   }
   articleTags(author: string) {
+    // clear added tags
+    this.meta.removeTag('property="article:author"');
+    this.meta.removeTag('property="article:section"');
+    // add new tags
     this.meta.addTag({ property: 'article:author', content: author });
     this.meta.addTag({ property: 'article:section', content: 'Sports' });
   }
