@@ -17,6 +17,7 @@ export class SeoService {
         'https://willsbach-handball.de/assets/images/tsv_willsbach.png'
       ],
       slug: '',
+      type: 'website',
       ...config
     };
     config.slug = this.router.url;
@@ -27,7 +28,7 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:description', content: config.description });
     this.meta.updateTag({ name: 'twitter:image', content: config.image });
 
-    this.meta.updateTag({ property: 'og:type', content: 'article' });
+    this.meta.updateTag({ property: 'og:type', content: config.type });
     this.meta.updateTag({ property: 'og:site_name', content: 'Willsbach Handball' });
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
@@ -39,5 +40,13 @@ export class SeoService {
         this.meta.addTag({ property: 'og:image', content: element });
       });
     }
+
+    if (config.type === 'article') {
+      this.meta.addTag({ property: 'article:publisher', content: 'https://www.facebook.com/tsvwillsbachhandball' });
+    }
+  }
+  articleTags(author: string) {
+    this.meta.addTag({ property: 'article:author', content: author });
+    this.meta.addTag({ property: 'article:section', content: 'Sports' });
   }
 }
