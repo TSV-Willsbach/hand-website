@@ -128,6 +128,7 @@
     "damen": {
         "title": "Damen",
         "ligaID": "28842",
+        "pokalID": "30102",
         "wpCat": "5",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
         "trainer": [{
