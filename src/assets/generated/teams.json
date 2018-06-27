@@ -3,7 +3,7 @@
     "herren": {
         "title": "Herren",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren-768x513.jpg",
-        "ligaID": "28818",
+        "ligaID": "36040",
         "pokalID": "30098",
         "wpCat": "10",
         "trainer": [{
@@ -123,11 +123,12 @@
 
     },
     "herren2": {
-        "title": "Herren 2"
+        "title": "Herren 2",
+        "ligaID": "36034"
     },
     "damen": {
         "title": "Damen",
-        "ligaID": "28842",
+        "ligaID": "36004",
         "pokalID": "30102",
         "wpCat": "5",
         "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
