@@ -1,7 +1,6 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche E Jugend",
-    "picture": "",
     "ligaID": "31634",
     "wpCat": "21"
 }
