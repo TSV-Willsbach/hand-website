@@ -1,0 +1,121 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {
+        "trainer": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "prename": {
+                        "type": "string"
+                    },
+                    "picture": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "prename"
+                ]
+            }
+        },
+        "players": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "prename": {
+                        "type": "string"
+                    },
+                    "position": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "number"
+                    },
+                    "nickname": {
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "type": "string"
+                    },
+                    "picture": {
+                        "type": "string"
+                    },
+                    "joinedClub": {
+                        "type": "string"
+                    },
+                    "lastClubs": {
+                        "type": "string"
+
+                    }
+                },
+                "required": [
+                    "name",
+                    "prename"
+                ]
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "title": {
+            "$id": "/properties/title",
+            "type": "string",
+            "title": "The Title Schema ",
+            "default": "",
+            "examples": [
+                "Herren"
+            ]
+        },
+        "ligaID": {
+            "$id": "/properties/ligaID",
+            "type": "string",
+            "title": "LigaID ",
+            "default": "",
+            "examples": [
+                "28818"
+            ]
+        },
+        "pokalID": {
+            "$id": "/properties/pokalID",
+            "type": "string",
+            "title": "LigaID - Pokal",
+            "default": "",
+            "examples": [
+                "28818"
+            ]
+        },
+        "wpCat": {
+            "$id": "/properties/wpCat",
+            "type": "string",
+            "title": "Wordpress Category",
+            "default": "",
+            "examples": [
+                "20"
+            ]
+        },
+        "picture": {
+            "$id": "/properties/picture",
+            "type": "string",
+            "title": "The Picture Schema ",
+            "default": "",
+            "examples": [
+                "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren.jpg"
+            ]
+        },
+        "trainer": {
+            "$ref": "#/definitions/trainer"
+        },
+        "players": {
+            "$ref": "#/definitions/players"
+        }
+    }
+}
