@@ -20,7 +20,7 @@ export class Coach {
 }
 
 export class Player {
-    position: string;
+    position: string[];
     number: number;
     name: string;
     prename: string;
@@ -28,7 +28,7 @@ export class Player {
     birthday: Date;
     picture: string;
     joinedClub: string;
-    lastClubs: string;
+    lastClubs: string[];
 
     constructor() { }
 }

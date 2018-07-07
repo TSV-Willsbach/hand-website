@@ -35,7 +35,11 @@
   </tr>
   <tr>
     <td>Vorherige Vereine:</td>
-    <td>{{player.lastClubs}}</td>
+    <td>
+      <div *ngFor="let club of player.lastClubs">
+        {{club}}
+      </div>
+    </td>
   </tr>
 
 </table>

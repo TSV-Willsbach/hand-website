@@ -70,7 +70,10 @@
                         "type": "string"
                     },
                     "lastClubs": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
 
                     }
                 },

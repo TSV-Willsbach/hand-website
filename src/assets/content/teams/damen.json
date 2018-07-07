@@ -23,7 +23,7 @@
             "birthday": "24.08.1991",
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Sina_min.jpg",
             "joinedClub": "1995",
-            "lastClubs": "HSG Kochertürn/ Stein"
+            "lastClubs": ["HSG Kochertürn/ Stein"]
         },
         {
             "position": ["RA"],
@@ -33,7 +33,7 @@
             "birthday": "01.11.1997",
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/Bumbaru_Andreea.jpg",
             "joinedClub": "2011",
-            "lastClubs": "HSG Hohenlohe"
+            "lastClubs": ["HSG Hohenlohe"]
         },
         {
             "position": ["LA"],
@@ -71,7 +71,7 @@
             "name": "Lorenz",
             "prename": "Jenny",
             "birthday": "10.10.1994",
-            "lastClubs": "TSG Öhringen"
+            "lastClubs": ["TSG Öhringen"]
         },
         {
             "position": [
@@ -89,7 +89,7 @@
             "prename": "Julia",
             "birthday": "13.02.1993",
             "joinedClub": "2013",
-            "lastClubs": "TV Wißgoldingen, TV Sulzbach an der Murr"
+            "lastClubs": ["TV Wißgoldingen", "TV Sulzbach an der Murr"]
         },
         {
             "number": 14,

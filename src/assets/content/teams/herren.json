@@ -17,7 +17,7 @@
             "birthday": "10.09.1992",
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/fb_Miguel_Gebhardt_min.jpg",
             "joinedClub": "2017",
-            "lastClubs": "CVJM Untertürkheim, TV Obertürkheim, HSG Oberer Neckar, TSB Horkheim"
+            "lastClubs": ["CVJM Untertürkheim", "TV Obertürkheim", "HSG Oberer Neckar", "TSB Horkheim"]
         },
         {
             "position": ["TW"],
@@ -93,7 +93,7 @@
             "birthday": "08.07.1991"
         },
         {
-            "position": ["TW"],
+            "position": ["TW", "Kreis"],
             "number": 25,
             "name": "Hanke",
             "prename": "David",

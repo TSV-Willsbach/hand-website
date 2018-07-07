@@ -39,7 +39,11 @@
       <td class="playerName ">
         <a [routerLink]="[ './', player.prename + '_' + player.name] ">{{player.prename}} {{player.name}}</a>
       </td>
-      <td>{{player.position}}</td>
+      <td>
+        <div *ngFor="let position of player.position">
+          {{position}}
+        </div>
+      </td>
       <td>{{player.birthday}}</td>
       <td>{{player.joinedClub}}</td>
       <td>
