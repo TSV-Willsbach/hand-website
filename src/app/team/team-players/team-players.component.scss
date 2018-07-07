@@ -1,11 +1,12 @@
 @import '../../../variables';
-a {
-    color: $color-club;
-}
-
 .column {
     float: left;
     width: 40%;
+}
+
+td a {
+    color: $color-club;
+    font-weight: bold;
 }
 
 /* Clear floats after the columns */
@@ -21,8 +22,5 @@ a {
     border-collapse: collapse;
     td {
         width: 25%;
-    }
-    a {
-        color: black;
     }
 }
