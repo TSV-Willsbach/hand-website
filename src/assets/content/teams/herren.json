@@ -10,7 +10,7 @@
         "prename": "Marco"
     }],
     "players": [{
-            "position": "TW",
+            "position": ["TW"],
             "number": 12,
             "name": "Gebhardt",
             "prename": "Miguel",
@@ -20,7 +20,7 @@
             "lastClubs": "CVJM Untertürkheim, TV Obertürkheim, HSG Oberer Neckar, TSB Horkheim"
         },
         {
-            "position": "TW",
+            "position": ["TW"],
             "number": 99,
             "name": "Spannagel",
             "prename": "Daniel",
@@ -34,27 +34,27 @@
             "birthday": "17.07.1992"
         },
         {
-            "position": "Außen",
+            "position": ["RA"],
             "number": 2,
             "name": "Hohl",
             "prename": "Markus",
             "birthday": "01.10.1989"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "number": 4,
             "name": "Köder",
             "prename": "Simon",
             "birthday": "19.05.1990"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "name": "Petzold",
             "prename": "Nils",
             "birthday": "17.05.1999"
         },
         {
-            "position": "Mitte",
+            "position": ["RM"],
             "number": 5,
             "name": "Busch",
             "prename": "Benedikt",
@@ -66,21 +66,21 @@
             "birthday": "12.07.1999"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "number": 6,
             "name": "Schiedt",
             "prename": "Marvin",
             "birthday": "07.01.1995"
         },
         {
-            "position": "Außen",
+            "position": ["LA"],
             "number": 7,
             "name": "Löffler",
             "prename": "Florian",
             "birthday": "13.07.1994"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "number": 10,
             "name": "Vetter",
             "prename": "Benjamin",
@@ -93,7 +93,7 @@
             "birthday": "08.07.1991"
         },
         {
-            "position": "TW",
+            "position": ["TW"],
             "number": 25,
             "name": "Hanke",
             "prename": "David",

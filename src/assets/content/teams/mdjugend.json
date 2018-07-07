@@ -1,7 +1,6 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche D Jugend",
-    "picture": "",
     "ligaID": "30134",
     "wpCat": "20",
     "trainer": [{

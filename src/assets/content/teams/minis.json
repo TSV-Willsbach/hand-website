@@ -1,7 +1,6 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Minis",
-    "picture": "",
     "wpCat": "22",
     "trainer": [{
         "name": "Caspar",

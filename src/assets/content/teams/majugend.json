@@ -15,13 +15,13 @@
         }
     ],
     "players": [{
-            "position": "TW",
+            "position": ["TW"],
             "number": 1,
             "name": "Doll",
             "prename": "Robin"
         },
         {
-            "position": "TW",
+            "position": ["TW"],
             "number": 12,
             "name": "Krauß",
             "prename": "Michael"
@@ -52,7 +52,7 @@
             "prename": "Jann"
         },
         {
-            "position": "TW",
+            "position": ["TW"],
             "name": "Kral",
             "prename": "Tim"
         },

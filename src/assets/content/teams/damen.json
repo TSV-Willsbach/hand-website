@@ -16,7 +16,7 @@
         }
     ],
     "players": [{
-            "position": "TW",
+            "position": ["TW"],
             "number": 91,
             "name": "Caspar",
             "prename": "Sina",
@@ -26,7 +26,7 @@
             "lastClubs": "HSG Kochertürn/ Stein"
         },
         {
-            "position": "Außen",
+            "position": ["RA"],
             "number": 3,
             "name": "Bumbaru",
             "prename": "Andreea Bianca",
@@ -36,7 +36,7 @@
             "lastClubs": "HSG Hohenlohe"
         },
         {
-            "position": "LA",
+            "position": ["LA"],
             "number": 7,
             "name": "Demele",
             "prename": "Lisa",
@@ -50,7 +50,7 @@
             "birthday": "28.10.1999"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "number": 26,
             "name": "Keerl",
             "prename": "Mona",
@@ -63,7 +63,10 @@
             "birthday": "12.04.1995"
         },
         {
-            "position": "RL, RR",
+            "position": [
+                "RL",
+                "RR"
+            ],
             "number": 17,
             "name": "Lorenz",
             "prename": "Jenny",
@@ -71,14 +74,16 @@
             "lastClubs": "TSG Öhringen"
         },
         {
-            "position": "RM",
+            "position": [
+                "RM"
+            ],
             "number": 29,
             "name": "Löffler",
             "prename": "Anja",
             "birthday": "25.02.1991"
         },
         {
-            "position": "RL",
+            "position": ["RL"],
             "number": 13,
             "name": "Riedel",
             "prename": "Julia",
@@ -99,7 +104,7 @@
             "birthday": "27.02.1995"
         },
         {
-            "position": "RM",
+            "position": ["RM"],
             "number": 4,
             "name": "Schuhkraft",
             "prename": "Antonia",
@@ -108,7 +113,7 @@
             "joinedClub": "2006"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "number": 12,
             "name": "Vollert",
             "prename": "Claudia",
@@ -121,7 +126,7 @@
             "birthday": "23.12.1998"
         },
         {
-            "position": "Kreis",
+            "position": ["Kreis"],
             "number": 87,
             "name": "Vonthien",
             "prename": "Stefanie",
@@ -135,7 +140,7 @@
             "birthday": "20.09.1995"
         },
         {
-            "position": "Außen",
+            "position": ["LA"],
             "number": 11,
             "name": "Zehetner",
             "prename": "Bianca",
@@ -143,7 +148,7 @@
             "joinedClub": "2006"
         },
         {
-            "position": "RR",
+            "position": ["RR"],
             "number": 8,
             "name": "Ziegler",
             "prename": "Fabiola",

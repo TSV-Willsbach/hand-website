@@ -14,7 +14,8 @@
                         "type": "string"
                     },
                     "picture": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "uri"
                     }
                 },
                 "required": [
@@ -35,19 +36,35 @@
                         "type": "string"
                     },
                     "position": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "TW",
+                                "RA",
+                                "LA",
+                                "RL",
+                                "RM",
+                                "RR",
+                                "Kreis"
+                            ]
+                        }
                     },
                     "number": {
-                        "type": "number"
+                        "type": "number",
+                        "minimum": 1,
+                        "maximum": 99
                     },
                     "nickname": {
                         "type": "string"
                     },
                     "birthday": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "date-time"
                     },
                     "picture": {
-                        "type": "string"
+                        "type": "string",
+                        "format": "uri"
                     },
                     "joinedClub": {
                         "type": "string"
@@ -107,6 +124,7 @@
             "type": "string",
             "title": "The Picture Schema ",
             "default": "",
+            "format": "uri",
             "examples": [
                 "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren.jpg"
             ]
