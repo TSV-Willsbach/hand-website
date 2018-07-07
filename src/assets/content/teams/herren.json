@@ -50,6 +50,7 @@
         {
             "position": ["Kreis"],
             "name": "Petzold",
+            "number": 0,
             "prename": "Nils",
             "birthday": "1999-05-17"
         },
@@ -63,7 +64,8 @@
         {
             "name": "Galonska",
             "prename": "Tom",
-            "birthday": "1999-07-12"
+            "birthday": "1999-07-12",
+            "number": 0
         },
         {
             "position": ["Kreis"],

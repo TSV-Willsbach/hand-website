@@ -47,7 +47,8 @@
         {
             "name": "Kahn",
             "prename": "Jasmin",
-            "birthday": "1999-10-28"
+            "birthday": "1999-10-28",
+            "number": 0
         },
         {
             "position": ["Kreis"],

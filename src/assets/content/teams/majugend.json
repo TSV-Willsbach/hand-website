@@ -54,7 +54,8 @@
         {
             "position": ["TW"],
             "name": "Kral",
-            "prename": "Tim"
+            "prename": "Tim",
+            "number": 0
         },
         {
             "number": 9,
@@ -78,7 +79,8 @@
         },
         {
             "name": "Wörner",
-            "prename": "Tim"
+            "prename": "Tim",
+            "number": 0
         }
     ]
 }

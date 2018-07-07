@@ -31,7 +31,8 @@
         },
         {
             "name": "Endtner",
-            "prename": "Noah"
+            "prename": "Noah",
+            "number": 0
         },
         {
             "number": 7,
@@ -40,7 +41,8 @@
         },
         {
             "name": "Heinzmann",
-            "prename": "Luca"
+            "prename": "Luca",
+            "number": 0
         },
         {
             "number": 9,
@@ -54,19 +56,23 @@
         },
         {
             "name": "Löffler",
-            "prename": "Jan"
+            "prename": "Jan",
+            "number": 0
         },
         {
             "name": "Mugler",
-            "prename": "Felix"
+            "prename": "Felix",
+            "number": 0
         },
         {
             "name": "Ott",
-            "prename": "Luis"
+            "prename": "Luis",
+            "number": 0
         },
         {
             "name": "Püschel",
-            "prename": "Lukas"
+            "prename": "Lukas",
+            "number": 0
         },
         {
             "number": 5,
@@ -80,15 +86,18 @@
         },
         {
             "name": "Schnitzler",
-            "prename": "Raphael"
+            "prename": "Raphael",
+            "number": 0
         },
         {
             "name": "Sowa",
-            "prename": "Johann"
+            "prename": "Johann",
+            "number": 0
         },
         {
             "name": "Wörner",
-            "prename": "Lucas"
+            "prename": "Lucas",
+            "number": 0
         }
     ]
 }

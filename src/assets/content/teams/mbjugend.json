@@ -15,23 +15,28 @@
         },
         {
             "name": "Dicht",
-            "prename": "Timo"
+            "prename": "Timo",
+            "number": 0
         },
         {
             "name": "Doll",
-            "prename": "Niklas"
+            "prename": "Niklas",
+            "number": 0
         },
         {
             "name": "Endtner",
-            "prename": "Noah"
+            "prename": "Noah",
+            "number": 0
         },
         {
             "name": "Huber",
-            "prename": "Kilian"
+            "prename": "Kilian",
+            "number": 0
         },
         {
             "name": "Jaspers",
-            "prename": "Jann"
+            "prename": "Jann",
+            "number": 0
         },
         {
             "number": 1,
@@ -40,7 +45,8 @@
         },
         {
             "name": "Krebs",
-            "prename": "Marcel"
+            "prename": "Marcel",
+            "number": 0
         },
         {
             "number": 13,
@@ -49,7 +55,8 @@
         },
         {
             "name": "Pigan",
-            "prename": "Felix"
+            "prename": "Felix",
+            "number": 0
         },
         {
             "number": 16,
@@ -58,27 +65,33 @@
         },
         {
             "name": "Rieker",
-            "prename": "Florian"
+            "prename": "Florian",
+            "number": 0
         },
         {
             "name": "Schlestein",
-            "prename": "Paul"
+            "prename": "Paul",
+            "number": 0
         },
         {
             "name": "Schwidurski",
-            "prename": "David"
+            "prename": "David",
+            "number": 0
         },
         {
             "name": "Sommer",
-            "prename": "Luis"
+            "prename": "Luis",
+            "number": 0
         },
         {
             "name": "Waldmann",
-            "prename": "Nils"
+            "prename": "Nils",
+            "number": 0
         },
         {
             "name": "Wolf",
-            "prename": "Alexander"
+            "prename": "Alexander",
+            "number": 0
         },
         {
             "number": 12,
