@@ -35,17 +35,17 @@
       <th></th>
     </tr>
     <tr>
-      <th>
-        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('number')"></i>
+      <th (click)="sortPlayer('number')">
+        <fa-icon [icon]="['fas', 'sort']"></fa-icon>
       </th>
-      <th>
-        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('names')"></i>
+      <th (click)="sortPlayer('names')">
+        <fa-icon [icon]="['fas', 'sort']"></fa-icon>
       </th>
       <th>
         <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('position')"></i> -->
       </th>
-      <th>
-        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('birthday')"></i>
+      <th (click)="sortPlayer('birthday')">
+        <fa-icon [icon]="['fas', 'sort']"></fa-icon>
       </th>
       <th>
         <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('joinedClub')"></i> -->
