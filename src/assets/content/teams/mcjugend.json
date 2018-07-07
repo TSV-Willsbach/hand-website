@@ -1,5 +1,5 @@
 {
-    "$schema": "../teamSchema.json",
+    "$schema": "../schemas/teamSchema.json",
     "title": "Männliche C Jugend",
     "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mC.jpeg",
     "ligaID": "30126",

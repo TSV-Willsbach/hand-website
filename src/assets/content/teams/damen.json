@@ -1,5 +1,5 @@
 {
-    "$schema": "../teamSchema.json",
+    "$schema": "../schemas/teamSchema.json",
     "title": "Damen",
     "ligaID": "36004",
     "wpCat": "5",

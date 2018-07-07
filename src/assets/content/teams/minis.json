@@ -1,5 +1,5 @@
 {
-    "$schema": "../teamSchema.json",
+    "$schema": "../schemas/teamSchema.json",
     "title": "Minis",
     "picture": "",
     "wpCat": "22",

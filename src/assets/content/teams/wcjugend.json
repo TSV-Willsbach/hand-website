@@ -1,5 +1,5 @@
 {
-    "$schema": "../teamSchema.json",
+    "$schema": "../schemas/teamSchema.json",
     "title": "Weibliche C Jugend",
     "picture": "",
     "qualID": "33695",
