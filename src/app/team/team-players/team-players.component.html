@@ -27,11 +27,18 @@
 <div *ngIf="team.players?.length > 0; else noPlayers">
   <table style="width:100% " id="playerTable " class="table table-responsive table-striped table-bordered table-hover ">
     <tr>
-      <th>#</th>
+      <th>
+        #
+        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('number')"></i>
+      </th>
       <th>Name</th>
       <th>Position</th>
-      <th>Geburtstag</th>
-      <th>im Verein seit</th>
+      <th>Geburtstag
+        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('birthday')"></i>
+      </th>
+      <th>im Verein seit
+        <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('joinedClub')"></i> -->
+      </th>
       <th></th>
     </tr>
     <tr *ngFor="let player of team.players">
@@ -46,7 +53,7 @@
           {{position}}
         </div>
       </td>
-      <td>{{player.birthday}}</td>
+      <td>{{player.birthday | date: 'dd.MM.yyyy' }}</td>
       <td>{{player.joinedClub}}</td>
       <td>
         <a [routerLink]="[ './', player.prename + '_' + player.name] ">

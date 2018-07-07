@@ -14,7 +14,7 @@
             "number": 12,
             "name": "Gebhardt",
             "prename": "Miguel",
-            "birthday": "10.09.1992",
+            "birthday": "1992-09-10",
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/fb_Miguel_Gebhardt_min.jpg",
             "joinedClub": "2017",
             "lastClubs": ["CVJM Untertürkheim", "TV Obertürkheim", "HSG Oberer Neckar", "TSB Horkheim"]
@@ -24,98 +24,98 @@
             "number": 99,
             "name": "Spannagel",
             "prename": "Daniel",
-            "birthday": "14.02.1991",
+            "birthday": "1991-02-14",
             "nickname": "Spanni"
         },
         {
             "number": 11,
             "name": "Purzel",
             "prename": "Marvin",
-            "birthday": "17.07.1992"
+            "birthday": "1992-07-17"
         },
         {
             "position": ["RA"],
             "number": 2,
             "name": "Hohl",
             "prename": "Markus",
-            "birthday": "01.10.1989"
+            "birthday": "1989-10-01"
         },
         {
             "position": ["Kreis"],
             "number": 4,
             "name": "Köder",
             "prename": "Simon",
-            "birthday": "19.05.1990"
+            "birthday": "1990-05-19"
         },
         {
             "position": ["Kreis"],
             "name": "Petzold",
             "prename": "Nils",
-            "birthday": "17.05.1999"
+            "birthday": "1999-05-17"
         },
         {
             "position": ["RM"],
             "number": 5,
             "name": "Busch",
             "prename": "Benedikt",
-            "birthday": "08.11.1995"
+            "birthday": "1995-11-08"
         },
         {
             "name": "Galonska",
             "prename": "Tom",
-            "birthday": "12.07.1999"
+            "birthday": "1999-07-12"
         },
         {
             "position": ["Kreis"],
             "number": 6,
             "name": "Schiedt",
             "prename": "Marvin",
-            "birthday": "07.01.1995"
+            "birthday": "1995-01-07"
         },
         {
             "position": ["LA"],
             "number": 7,
             "name": "Löffler",
             "prename": "Florian",
-            "birthday": "13.07.1994"
+            "birthday": "1994-07-13"
         },
         {
             "position": ["Kreis"],
             "number": 10,
             "name": "Vetter",
             "prename": "Benjamin",
-            "birthday": "14.06.1999"
+            "birthday": "1999-06-14"
         },
         {
             "number": 13,
             "name": "Rohmig",
             "prename": "Markus",
-            "birthday": "08.07.1991"
+            "birthday": "1991-07-08"
         },
         {
             "position": ["TW", "Kreis"],
             "number": 25,
             "name": "Hanke",
             "prename": "David",
-            "birthday": "10.11.1994"
+            "birthday": "1994-11-10"
         },
         {
             "number": 14,
             "name": "Schwidurski",
             "prename": "Silas",
-            "birthday": "03.09.1998"
+            "birthday": "1998-09-03"
         },
         {
             "number": 15,
             "name": "Wörner",
             "prename": "Fabio",
-            "birthday": "27.10.1999"
+            "birthday": "1999-10-27"
         },
         {
             "number": 17,
             "name": "Löffler",
             "prename": "Tim",
-            "birthday": "25.11.1999"
+            "birthday": "1999-11-25"
         }
 
     ]
