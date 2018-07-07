@@ -1,0 +1,84 @@
+{
+    "$schema": "../teamSchema.json",
+    "title": "Männliche A Jugend",
+    "ligaID": "30106",
+    "qualID": "32900",
+    "wpCat": "17",
+    "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mA.jpg",
+    "trainer": [{
+            "name": "Purzel",
+            "prename": "Michael"
+        },
+        {
+            "name": "Klappenecker",
+            "prename": "Markus"
+        }
+    ],
+    "players": [{
+            "position": "TW",
+            "number": 1,
+            "name": "Doll",
+            "prename": "Robin"
+        },
+        {
+            "position": "TW",
+            "number": 12,
+            "name": "Krauß",
+            "prename": "Michael"
+        },
+        {
+            "number": 5,
+            "name": "Anderl",
+            "prename": "Marius"
+        },
+        {
+            "number": 13,
+            "name": "Butzelaar",
+            "prename": "Stephan"
+        },
+        {
+            "number": 6,
+            "name": "Dicht",
+            "prename": "Timo"
+        },
+        {
+            "number": 11,
+            "name": "Hellmich",
+            "prename": "Felix"
+        },
+        {
+            "number": 3,
+            "name": "Jaspers",
+            "prename": "Jann"
+        },
+        {
+            "position": "TW",
+            "name": "Kral",
+            "prename": "Tim"
+        },
+        {
+            "number": 9,
+            "name": "Krebs",
+            "prename": "Marcel"
+        },
+        {
+            "number": 10,
+            "name": "Riedel",
+            "prename": "Michael"
+        },
+        {
+            "number": 14,
+            "name": "Sommer",
+            "prename": "Luis"
+        },
+        {
+            "number": 7,
+            "name": "Waldmann",
+            "prename": "Nils"
+        },
+        {
+            "name": "Wörner",
+            "prename": "Tim"
+        }
+    ]
+}

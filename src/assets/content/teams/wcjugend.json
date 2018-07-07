@@ -1,0 +1,12 @@
+{
+    "$schema": "../teamSchema.json",
+    "title": "Weibliche C Jugend",
+    "picture": "",
+    "qualID": "33695",
+    "ligaID": "",
+    "wpCat": "40",
+    "trainer": [{
+        "name": "Vonthien",
+        "prename": "Stefanie"
+    }]
+}

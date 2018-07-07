@@ -1,0 +1,156 @@
+{
+    "$schema": "../teamSchema.json",
+    "title": "Damen",
+    "ligaID": "36004",
+    "wpCat": "5",
+    "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
+    "trainer": [{
+            "name": "Gebhardt",
+            "prename": "Miguel",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Gebhardt_Miguel_min.jpg"
+        },
+        {
+            "name": "Trutzenberger",
+            "prename": "Daniel",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Trutzenberger_Daniel_min.jpg"
+        }
+    ],
+    "players": [{
+            "position": "TW",
+            "number": 91,
+            "name": "Caspar",
+            "prename": "Sina",
+            "birthday": "24.08.1991",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Sina_min.jpg",
+            "joinedClub": "1995",
+            "lastClubs": "HSG Kochertürn/ Stein"
+        },
+        {
+            "position": "Außen",
+            "number": 3,
+            "name": "Bumbaru",
+            "prename": "Andreea Bianca",
+            "birthday": "01.11.1997",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/Bumbaru_Andreea.jpg",
+            "joinedClub": "2011",
+            "lastClubs": "HSG Hohenlohe"
+        },
+        {
+            "position": "LA",
+            "number": 7,
+            "name": "Demele",
+            "prename": "Lisa",
+            "birthday": "04.01.1991",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Lisa_min.jpg",
+            "joinedClub": "2008"
+        },
+        {
+            "name": "Kahn",
+            "prename": "Jasmin",
+            "birthday": "28.10.1999"
+        },
+        {
+            "position": "Kreis",
+            "number": 26,
+            "name": "Keerl",
+            "prename": "Mona",
+            "birthday": "04.05.1994"
+        },
+        {
+            "number": 18,
+            "name": "Kilian",
+            "prename": "Michelle",
+            "birthday": "12.04.1995"
+        },
+        {
+            "position": "RL, RR",
+            "number": 17,
+            "name": "Lorenz",
+            "prename": "Jenny",
+            "birthday": "10.10.1994",
+            "lastClubs": "TSG Öhringen"
+        },
+        {
+            "position": "RM",
+            "number": 29,
+            "name": "Löffler",
+            "prename": "Anja",
+            "birthday": "25.02.1991"
+        },
+        {
+            "position": "RL",
+            "number": 13,
+            "name": "Riedel",
+            "prename": "Julia",
+            "birthday": "13.02.1993",
+            "joinedClub": "2013",
+            "lastClubs": "TV Wißgoldingen, TV Sulzbach an der Murr"
+        },
+        {
+            "number": 14,
+            "name": "Rüdele",
+            "prename": "Tina",
+            "birthday": "04.09.1981"
+        },
+        {
+            "number": 5,
+            "name": "Schmidt",
+            "prename": "Ronja",
+            "birthday": "27.02.1995"
+        },
+        {
+            "position": "RM",
+            "number": 4,
+            "name": "Schuhkraft",
+            "prename": "Antonia",
+            "birthday": "03.12.1992",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Toni_min.jpg",
+            "joinedClub": "2006"
+        },
+        {
+            "position": "Kreis",
+            "number": 12,
+            "name": "Vollert",
+            "prename": "Claudia",
+            "birthday": "11.09.1993"
+        },
+        {
+            "number": 28,
+            "name": "Vollert",
+            "prename": "Lena",
+            "birthday": "23.12.1998"
+        },
+        {
+            "position": "Kreis",
+            "number": 87,
+            "name": "Vonthien",
+            "prename": "Stefanie",
+            "birthday": "13.04.1987",
+            "joinedClub": "1999"
+        },
+        {
+            "number": 20,
+            "name": "Vukoja",
+            "prename": "Maria",
+            "birthday": "20.09.1995"
+        },
+        {
+            "position": "Außen",
+            "number": 11,
+            "name": "Zehetner",
+            "prename": "Bianca",
+            "birthday": "09.06.1992",
+            "joinedClub": "2006"
+        },
+        {
+            "position": "RR",
+            "number": 8,
+            "name": "Ziegler",
+            "prename": "Fabiola",
+            "birthday": "19.06.1991",
+            "joinedClub": "1997",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_lola_min.jpg"
+        }
+
+    ]
+}

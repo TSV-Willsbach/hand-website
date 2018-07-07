@@ -1,0 +1,89 @@
+{
+    "$schema": "../teamSchema.json",
+    "title": "Männliche B Jugend",
+    "ligaID": "30114",
+    "wpCat": "18",
+    "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",
+    "trainer": [{
+        "name": "Bosch",
+        "prename": "Heiko"
+    }],
+    "players": [{
+            "number": 3,
+            "name": "Anderl",
+            "prename": "Marius"
+        },
+        {
+            "name": "Dicht",
+            "prename": "Timo"
+        },
+        {
+            "name": "Doll",
+            "prename": "Niklas"
+        },
+        {
+            "name": "Endtner",
+            "prename": "Noah"
+        },
+        {
+            "name": "Huber",
+            "prename": "Kilian"
+        },
+        {
+            "name": "Jaspers",
+            "prename": "Jann"
+        },
+        {
+            "number": 1,
+            "name": "Kral",
+            "prename": "Tim"
+        },
+        {
+            "name": "Krebs",
+            "prename": "Marcel"
+        },
+        {
+            "number": 13,
+            "name": "Müller",
+            "prename": "Marius"
+        },
+        {
+            "name": "Pigan",
+            "prename": "Felix"
+        },
+        {
+            "number": 16,
+            "name": "Riedel",
+            "prename": "Michael"
+        },
+        {
+            "name": "Rieker",
+            "prename": "Florian"
+        },
+        {
+            "name": "Schlestein",
+            "prename": "Paul"
+        },
+        {
+            "name": "Schwidurski",
+            "prename": "David"
+        },
+        {
+            "name": "Sommer",
+            "prename": "Luis"
+        },
+        {
+            "name": "Waldmann",
+            "prename": "Nils"
+        },
+        {
+            "name": "Wolf",
+            "prename": "Alexander"
+        },
+        {
+            "number": 12,
+            "name": "Wörner",
+            "prename": "Tim"
+        }
+    ]
+}
