@@ -27,16 +27,27 @@
 <div *ngIf="team.players?.length > 0; else noPlayers">
   <table style="width:100% " id="playerTable " class="table table-responsive table-striped table-bordered table-hover ">
     <tr>
-      <th>
-        #
-        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('number')"></i>
-      </th>
+      <th>#</th>
       <th>Name</th>
       <th>Position</th>
-      <th>Geburtstag
+      <th>Geburtstag</th>
+      <th>im Verein seit</th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>
+        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('number')"></i>
+      </th>
+      <th>
+        <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('names')"></i>
+      </th>
+      <th>
+        <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('position')"></i> -->
+      </th>
+      <th>
         <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('birthday')"></i>
       </th>
-      <th>im Verein seit
+      <th>
         <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('joinedClub')"></i> -->
       </th>
       <th></th>

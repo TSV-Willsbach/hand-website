@@ -25,6 +25,9 @@ export class TeamPlayersComponent implements OnInit {
   }, {
     column: 'birthday',
     sort: 'asc'
+  }, {
+    column: 'names',
+    sort: 'desc'
   }];
 
   constructor(private route: ActivatedRoute, private db: AngularFirestore, private teamService: TeamService, private seo: SeoService) {
@@ -97,8 +100,15 @@ export class TeamPlayersComponent implements OnInit {
         } else {
           return dateB - dateA;
         }
-
       }
+      if (col === 'names') {
+        const nameA = `${a.prename} ${a.name}`;
+        const nameB = `${b.prename} ${b.name}`;
+
+        if (nameA < nameB) { return firstRet; }
+        if (nameA > nameB) { return secondRet; }
+      }
+
       if (a[col] < b[col]) { return firstRet; }
       if (a[col] > b[col]) { return secondRet; }
       return 0;
