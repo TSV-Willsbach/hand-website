@@ -5,7 +5,6 @@ import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
 import { Observable } from 'rxjs';
 
-const jsonUrl = './assets/generated/teams.json';
 const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png';
 
 @Injectable()
@@ -19,12 +18,11 @@ export class TeamService {
 
 
   getPlayer(teamId: string, playerName: string): Observable<Player> {
-    return this.http.get<Player>(jsonUrl)
-      .map(player => {
-        const team = player[teamId];
+    return this.http.get<Team>(this.getTeamUrl(teamId))
+      .map(team => {
         const playerNames = playerName.split('_');
 
-        player = team.players.find(item =>
+        const player = team.players.find(item =>
           item.name === playerNames[1] &&
           item.prename === playerNames[0]
         );
@@ -37,9 +35,9 @@ export class TeamService {
   }
 
   getTeam(teamId: string): Observable<Team> {
-    return this.http.get<Team>(jsonUrl)
+    return this.http.get<Team>(this.getTeamUrl(teamId))
       .map(team => {
-        team = team[teamId];
+        // team = team[teamId];
 
         if (team.players !== undefined) {
           team.players.sort(function (a, b) {
@@ -59,6 +57,10 @@ export class TeamService {
         this.wpCategory = team.wpCat;
         return team;
       });
+  }
+
+  private getTeamUrl(teamId: string): string {
+    return `./assets/content/teams/${teamId}.json`;
   }
 
   getTeamReports(teamId: string, page: number): Observable<Post[]> {

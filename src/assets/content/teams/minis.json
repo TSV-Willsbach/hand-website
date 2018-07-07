@@ -1,0 +1,9 @@
+{
+    "$schema": "../schemas/teamSchema.json",
+    "title": "Minis",
+    "wpCat": "22",
+    "trainer": [{
+        "name": "Caspar",
+        "prename": "Sina"
+    }]
+}

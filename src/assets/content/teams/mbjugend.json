@@ -1,0 +1,102 @@
+{
+    "$schema": "../schemas/teamSchema.json",
+    "title": "Männliche B Jugend",
+    "ligaID": "30114",
+    "wpCat": "18",
+    "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",
+    "trainer": [{
+        "name": "Bosch",
+        "prename": "Heiko"
+    }],
+    "players": [{
+            "number": 3,
+            "name": "Anderl",
+            "prename": "Marius"
+        },
+        {
+            "name": "Dicht",
+            "prename": "Timo",
+            "number": 0
+        },
+        {
+            "name": "Doll",
+            "prename": "Niklas",
+            "number": 0
+        },
+        {
+            "name": "Endtner",
+            "prename": "Noah",
+            "number": 0
+        },
+        {
+            "name": "Huber",
+            "prename": "Kilian",
+            "number": 0
+        },
+        {
+            "name": "Jaspers",
+            "prename": "Jann",
+            "number": 0
+        },
+        {
+            "number": 1,
+            "name": "Kral",
+            "prename": "Tim"
+        },
+        {
+            "name": "Krebs",
+            "prename": "Marcel",
+            "number": 0
+        },
+        {
+            "number": 13,
+            "name": "Müller",
+            "prename": "Marius"
+        },
+        {
+            "name": "Pigan",
+            "prename": "Felix",
+            "number": 0
+        },
+        {
+            "number": 16,
+            "name": "Riedel",
+            "prename": "Michael"
+        },
+        {
+            "name": "Rieker",
+            "prename": "Florian",
+            "number": 0
+        },
+        {
+            "name": "Schlestein",
+            "prename": "Paul",
+            "number": 0
+        },
+        {
+            "name": "Schwidurski",
+            "prename": "David",
+            "number": 0
+        },
+        {
+            "name": "Sommer",
+            "prename": "Luis",
+            "number": 0
+        },
+        {
+            "name": "Waldmann",
+            "prename": "Nils",
+            "number": 0
+        },
+        {
+            "name": "Wolf",
+            "prename": "Alexander",
+            "number": 0
+        },
+        {
+            "number": 12,
+            "name": "Wörner",
+            "prename": "Tim"
+        }
+    ]
+}
