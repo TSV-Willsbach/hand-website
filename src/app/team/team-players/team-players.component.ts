@@ -16,6 +16,19 @@ export class TeamPlayersComponent implements OnInit {
   teamID: any;
   obTeam: Observable<Team>;
   sub: any;
+  sorting: Array<any> = [{
+    column: 'number',
+    sort: 'asc'
+  }, {
+    column: 'joinedClub',
+    sort: 'asc'
+  }, {
+    column: 'birthday',
+    sort: 'asc'
+  }, {
+    column: 'names',
+    sort: 'desc'
+  }];
 
   constructor(private route: ActivatedRoute, private db: AngularFirestore, private teamService: TeamService, private seo: SeoService) {
     // init data to hide console errors if nothing is found
@@ -63,8 +76,44 @@ export class TeamPlayersComponent implements OnInit {
 
   }
 
+  sortPlayer(col: string) {
+    let firstRet, secondRet;
+    const type = this.sorting.find(item =>
+      item.column === col
+    );
+    if (type.sort === 'asc') {
+      firstRet = -1;
+      secondRet = 1;
+      type.sort = 'desc';
+    } else {
+      firstRet = 1;
+      secondRet = -1;
+      type.sort = 'asc';
+    }
 
+    this.team.players.sort(function (a, b) {
+      if (col === 'birthday') {
+        const dateA = new Date(a[col]).getTime(), dateB = new Date(b[col]).getTime();
+        console.log('A', dateA);
+        if (type.sort === 'desc') {
+          return dateA - dateB;
+        } else {
+          return dateB - dateA;
+        }
+      }
+      if (col === 'names') {
+        const nameA = `${a.prename} ${a.name}`;
+        const nameB = `${b.prename} ${b.name}`;
 
+        if (nameA < nameB) { return firstRet; }
+        if (nameA > nameB) { return secondRet; }
+      }
+
+      if (a[col] < b[col]) { return firstRet; }
+      if (a[col] > b[col]) { return secondRet; }
+      return 0;
+    });
+  }
 }
 
 

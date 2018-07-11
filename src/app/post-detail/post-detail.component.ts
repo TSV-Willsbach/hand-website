@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
 import { SeoService } from '@wh-share/seo.service';
@@ -11,12 +11,12 @@ import { SeoService } from '@wh-share/seo.service';
 })
 export class PostDetailComponent implements OnInit, OnDestroy {
 
-  public href: string = "";
+  public href = '';
   id: number;
   post: Post;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private router: Router, private news: NewsService, private seo: SeoService) {
+  constructor(private route: ActivatedRoute, private news: NewsService, private seo: SeoService) {
     this.post = new Post();
     this.getPostData();
   }
@@ -40,8 +40,10 @@ export class PostDetailComponent implements OnInit, OnDestroy {
           this.seo.generateTags({
             title: this.post.title.rendered,
             description: this.post.excerpt.rendered,
-            image: this.post.thumbnail
+            image: this.post.thumbnail,
+            type: 'article'
           });
+          this.seo.articleTags(this.post.author);
         });
     });
   }

@@ -1,0 +1,71 @@
+{
+    "$schema": "../schemas/teamSchema.json",
+    "title": "Männliche D Jugend",
+    "ligaID": "30134",
+    "wpCat": "20",
+    "trainer": [{
+            "name": "Schmautz",
+            "prename": "Rainer"
+        },
+        {
+            "name": "Kilian",
+            "prename": "Claudio"
+        }
+    ],
+    "players": [{
+            "number": 7,
+            "name": "Block",
+            "prename": "Lukas"
+        },
+        {
+            "number": 11,
+            "name": "Doll",
+            "prename": "Michel"
+        },
+        {
+            "number": 10,
+            "name": "Köhler",
+            "prename": "Justus"
+        },
+        {
+            "number": 2,
+            "name": "Löffler",
+            "prename": "Jan"
+        },
+        {
+            "number": 12,
+            "name": "Mugler",
+            "prename": "Felix"
+        },
+        {
+            "number": 8,
+            "name": "Müller",
+            "prename": "Chris"
+        },
+        {
+            "number": 4,
+            "name": "Püschel",
+            "prename": "Lukas"
+        },
+        {
+            "number": 6,
+            "name": "Riedel",
+            "prename": "Florian"
+        },
+        {
+            "number": 15,
+            "name": "Schnitzler",
+            "prename": "Raphael"
+        },
+        {
+            "name": "Sowa",
+            "prename": "Johann",
+            "number": 0
+        },
+        {
+            "number": 9,
+            "name": "Weihmüller",
+            "prename": "Noah"
+        }
+    ]
+}

@@ -34,16 +34,42 @@
       <th>im Verein seit</th>
       <th></th>
     </tr>
+    <tr>
+      <th (click)="sortPlayer('number')">
+        <fa-icon [icon]="['fas', 'sort']"></fa-icon>
+      </th>
+      <th (click)="sortPlayer('names')">
+        <fa-icon [icon]="['fas', 'sort']"></fa-icon>
+      </th>
+      <th>
+        <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('position')"></i> -->
+      </th>
+      <th (click)="sortPlayer('birthday')">
+        <fa-icon [icon]="['fas', 'sort']"></fa-icon>
+      </th>
+      <th>
+        <!-- <i class="fa fa-sort" aria-hidden="true" (click)="sortPlayer('joinedClub')"></i> -->
+      </th>
+      <th></th>
+    </tr>
     <tr *ngFor="let player of team.players">
       <td>{{player.number}}</td>
       <td class="playerName ">
-        <a [routerLink]="[ './', player.prename + '_' + player.name] ">{{player.prename}} {{player.name}}</a>
+        <a [routerLink]="[ './', player.prename + '_' + player.name] ">
+          {{player.prename}} {{player.name}}
+        </a>
       </td>
-      <td>{{player.position}}</td>
-      <td>{{player.birthday}}</td>
+      <td>
+        <div *ngFor="let position of player.position">
+          {{position}}
+        </div>
+      </td>
+      <td>{{player.birthday | date: 'dd.MM.yyyy' }}</td>
       <td>{{player.joinedClub}}</td>
       <td>
-        <a [routerLink]="[ './', player.prename + '_' + player.name] ">Details</a>
+        <a [routerLink]="[ './', player.prename + '_' + player.name] ">
+          Details
+        </a>
       </td>
     </tr>
   </table>

@@ -1,0 +1,6 @@
+{
+    "$schema": "../schemas/teamSchema.json",
+    "title": "Männliche E Jugend",
+    "ligaID": "31634",
+    "wpCat": "21"
+}

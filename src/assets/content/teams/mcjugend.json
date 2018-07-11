@@ -1,0 +1,103 @@
+{
+    "$schema": "../schemas/teamSchema.json",
+    "title": "Männliche C Jugend",
+    "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mC.jpeg",
+    "ligaID": "30126",
+    "qualID": "32909",
+    "wpCat": "19",
+    "trainer": [{
+            "name": "Schuhkraft",
+            "prename": "Antonia"
+        },
+        {
+            "name": "Demele",
+            "prename": "Lisa"
+        }
+    ],
+    "players": [{
+            "number": 10,
+            "name": "Doll",
+            "prename": "Michel"
+        },
+        {
+            "number": 6,
+            "name": "Doll",
+            "prename": "Niklas"
+        },
+        {
+            "number": 13,
+            "name": "Eckstein",
+            "prename": "Mattis"
+        },
+        {
+            "name": "Endtner",
+            "prename": "Noah",
+            "number": 0
+        },
+        {
+            "number": 7,
+            "name": "Gröger",
+            "prename": "Daniel"
+        },
+        {
+            "name": "Heinzmann",
+            "prename": "Luca",
+            "number": 0
+        },
+        {
+            "number": 9,
+            "name": "Köhler",
+            "prename": "Justus"
+        },
+        {
+            "number": 15,
+            "name": "Linder",
+            "prename": "Moritz"
+        },
+        {
+            "name": "Löffler",
+            "prename": "Jan",
+            "number": 0
+        },
+        {
+            "name": "Mugler",
+            "prename": "Felix",
+            "number": 0
+        },
+        {
+            "name": "Ott",
+            "prename": "Luis",
+            "number": 0
+        },
+        {
+            "name": "Püschel",
+            "prename": "Lukas",
+            "number": 0
+        },
+        {
+            "number": 5,
+            "name": "Schlestein",
+            "prename": "Paul"
+        },
+        {
+            "number": 1,
+            "name": "Schlestein",
+            "prename": "Theo"
+        },
+        {
+            "name": "Schnitzler",
+            "prename": "Raphael",
+            "number": 0
+        },
+        {
+            "name": "Sowa",
+            "prename": "Johann",
+            "number": 0
+        },
+        {
+            "name": "Wörner",
+            "prename": "Lucas",
+            "number": 0
+        }
+    ]
+}
