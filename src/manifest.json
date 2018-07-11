@@ -1,7 +1,7 @@
 {
-    "short_name": "Handball",
+    "short_name": "TSV Willsbach",
     "lang": "de",
-    "name": "TSV Willsbach - Handball",
+    "name": "TSV Willsbach Handball",
     "start_url": "/",
 
     "theme_color": "#23893b",
@@ -36,8 +36,33 @@
             "type": "image/png"
         },
         {
-            "src": "/assets/images/icons/android-chrome-96x96.png",
-            "sizes": "96x96",
+            "src": "/assets/images/icons/apple-touch-icon-120x120.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icons/apple-touch-icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icons/apple-touch-icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icons/apple-touch-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/images/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         },
         {
@@ -45,6 +70,5 @@
             "sizes": "150x150",
             "type": "image/png"
         }
-
     ]
 }
