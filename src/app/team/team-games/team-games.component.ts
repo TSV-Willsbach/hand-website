@@ -19,7 +19,8 @@ export class TeamGamesComponent implements OnInit {
   ligue: Ligue;
   team: Team;
 
-  constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService, private seo: SeoService, private global: Globals) {
+  constructor(private route: ActivatedRoute, private hvw: HvwService, teams: TeamService,
+    private seo: SeoService, private global: Globals) {
     this.ligue = new Ligue();
     this.team = new Team();
 
@@ -35,9 +36,11 @@ export class TeamGamesComponent implements OnInit {
           this.hvw.getNextGames().subscribe(
             ligue => {
               let games = ligue.content.actualGames.games;
-              let actClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
+              const actClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
+                || this.global.isOwnClub(element.gHomeTeam) === true);
               games = ligue.content.futureGames.games;
-              let futClubGames = games.filter(element => element.gGuestTeam == this.global.clubName || element.gHomeTeam == this.global.clubName);
+              const futClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
+                || this.global.isOwnClub(element.gHomeTeam) === true);
 
               ligue.content.actualGames.games = actClubGames.concat(futClubGames);
               this.ligue = ligue;
@@ -61,8 +64,7 @@ export class TeamGamesComponent implements OnInit {
   hasLink(url: string): Boolean {
     if (url === undefined || url === null) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }

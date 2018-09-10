@@ -49,8 +49,8 @@ export class TeamResultComponent implements OnInit {
       this.ligue = ligue;
       let games = ligue.content.actualGames.games;
       games = ligue.content.futureGames.games;
-      const futClubGames = games.filter(element => element.gGuestTeam === this.global.clubName
-        || element.gHomeTeam === this.global.clubName);
+      const futClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam)
+        || this.global.isOwnClub(element.gHomeTeam) === true);
 
       ligue.content.actualGames.games = futClubGames;
       return this.ligue;
@@ -121,6 +121,6 @@ export class TeamResultComponent implements OnInit {
   }
 
   isClub(value): Boolean {
-    return value === this.global.clubName;
+    return this.global.isOwnClub(value);
   }
 }
