@@ -1,16 +1,22 @@
 <h2 class="heading">Aktuelle Ergebnisse/ Spiele</h2>
 <div *ngFor="let club of clubs">
-  <h3>{{club.head.headline2}}</h3>
-  <small>{{club.head.actualized}}</small>
-  <br />
-  <br />
+  <div *ngIf="club.head.actualized.indexOf('00.00.0000') === -1; else noData">
+    <h3>{{club.head.headline2}}</h3>
+    <small>{{club.head.actualized}}</small>
+    <br />
+    <br />
 
-  <div *ngFor="let class of club.content.classes">
-    <div *ngIf="class.games?.length > 0">
-      <h5>{{class.gClassSname}}</h5>
+    <div *ngFor="let class of club.content.classes">
+      <div *ngIf="class.games?.length > 0">
+        <h5>{{class.gClassSname}}</h5>
 
-      <app-game-table [ligaName]="class.gClassSname" [games]="class.games"></app-game-table>
+        <app-game-table [ligaName]="class.gClassSname" [games]="class.games"></app-game-table>
+      </div>
     </div>
   </div>
 </div>
-<br/>
+<br />
+
+<ng-template #noData>
+  <p></p>
+</ng-template>
