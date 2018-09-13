@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche D Jugend",
-    "ligaID": "30134",
+    "ligaID": "37686",
     "wpCat": "20",
     "trainer": [{
             "name": "Schmautz",

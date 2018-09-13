@@ -2,7 +2,7 @@
     "$schema": "../schemas/teamSchema.json",
     "title": "Weibliche C Jugend",
     "qualID": "33695",
-    "ligaID": "",
+    "ligaID": "36574",
     "wpCat": "40",
     "trainer": [{
         "name": "Vonthien",
