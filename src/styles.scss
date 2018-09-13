@@ -3,6 +3,7 @@
 @import '~@ngx-share/button/styles/share-buttons';
 @import '~@ngx-share/button/styles/themes/default/default-theme';
 @import '/variables';
+
 .heading {
     font-size: 3.375rem;
     color: $color-club;
@@ -41,9 +42,11 @@ td {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     border: none;
     border-radius: 0%;
+
     .fa {
         color: $color-club;
     }
+
     a {
         color: $color-club;
     }
