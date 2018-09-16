@@ -1,0 +1,38 @@
+{
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "definitions": {
+        "contacts": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "prename": {
+                        "type": "string"
+                    },
+                    "position": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    }
+                },
+                "required": [
+                    "name",
+                    "prename",
+                    "position"
+                ]
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "properties": {
+        "contacts": {
+            "$ref": "#/definitions/contacts"
+        }
+    }
+}

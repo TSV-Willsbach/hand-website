@@ -1,3 +1,4 @@
+import { GeneralDataService } from './shared/general-data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -56,6 +57,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReportCardsComponent } from '@wh-childs/report-cards/report-cards.component';
 import { GameTableComponent } from './child-components/game-table/game-table.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -93,7 +95,8 @@ library.add(fas, far, fab);
     EditComponent,
     PageNotFoundComponent,
     ReportCardsComponent,
-    GameTableComponent
+    GameTableComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +125,8 @@ library.add(fas, far, fab);
     HvwService,
     Globals,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    GeneralDataService
   ],
   bootstrap: [AppComponent]
 })

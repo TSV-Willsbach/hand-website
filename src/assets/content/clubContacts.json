@@ -1,0 +1,52 @@
+{
+    "$schema": "./schemas/contactSchema.json",
+    "contacts": [{
+            "name": "Schiedt",
+            "prename": "Marvin",
+            "email": "abteilungsleiter@willsbach-handball.de",
+            "position": "Abteilungsleiter"
+        },
+        {
+            "name": "Vollert",
+            "prename": "Claudia",
+            "position": "Stellvertretende Abteilungsleiterin",
+            "email": "abteilungsleiter.2@willsbach-handball.de"
+        },
+        {
+            "name": "Bosch",
+            "prename": "Heiko",
+            "position": "Jugendleiter",
+            "email": "jugend@willsbach-handball.de"
+        },
+        {
+            "name": "Vonthien",
+            "prename": "Stefanie",
+            "position": "Sponsoring",
+            "email": "sponsoring@willsbach-handball.de"
+        },
+        {
+            "name": "Gebhardt",
+            "prename": "Miguel",
+            "position": "Spielleitende Stelle",
+            "email": "spielleiter@willsbach-handball.de"
+        },
+        {
+            "name": "Riedel",
+            "prename": "Julia",
+            "position": "Kasse",
+            "email": "kasse@willsbach-handball.de"
+        },
+        {
+            "name": "Klappenecker",
+            "prename": "Markus",
+            "position": "Schiedsrichter",
+            "email": "schiedsrichter@willsbach-handball.de"
+        },
+        {
+            "name": "Festausschuss",
+            "prename": "",
+            "position": "Festausschuss",
+            "email": "festausschuss@willsbach-handball.de"
+        }
+    ]
+}
