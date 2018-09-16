@@ -1,3 +1,4 @@
+import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -54,7 +55,7 @@ const routes: Routes = [
     component: DocViewerComponent
   }, {
     path: 'contact',
-    component: DocViewerComponent
+    component: ContactComponent
   }, {
     path: 'aidAssociation',
     component: DocViewerComponent
@@ -98,7 +99,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: "**",
+    path: '**',
     component: PageNotFoundComponent
   }
 ];
