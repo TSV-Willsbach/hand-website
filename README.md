@@ -1,4 +1,4 @@
-# README #
+# TSV Willsbach Handball website #
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
@@ -6,19 +6,8 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 
 * Relaunch of the TSV Willsbach website
-* Version 0.1
+* Version 1.0
+* Website Link [www.willsbach-handball.de](https://willsbach-handball.de)
 
-### How do I get set up? ###
-
-* Summary of set up
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+### Authors ###
+* Miguel Gebhardt
