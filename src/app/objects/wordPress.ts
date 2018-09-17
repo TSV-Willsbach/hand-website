@@ -20,7 +20,7 @@ export class TeamWP {
     alt_text: string;
     caption: {
         rendered: string;
-    }
+    };
 }
 
 export class MediaObject {

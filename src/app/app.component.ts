@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.navigationService.versionInfo.subscribe(vi => {
-      this.versionInfo = vi
+      this.versionInfo = vi;
     });
 
     this.navigationService.navigationViews.subscribe(views => {
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     });
 
     this.documentService.currentDocument.subscribe(doc => {
-      this.currentDocument = doc
+      this.currentDocument = doc;
     });
     // Generally, we want to delay updating the host classes for the new document, until after the
     // leaving document has been removed (to avoid having the styles for the new document applied
@@ -63,7 +63,6 @@ export class AppComponent implements OnInit {
             } else {
               // don't scroll; leave that to `onDocRendered`
               this.currentPath = path;
-      
               // Start progress bar if doc not rendered within brief time
               clearTimeout(this.isFetchingTimeout);
               this.isFetchingTimeout = setTimeout(() => this.isFetching = true, 200);
@@ -73,7 +72,7 @@ export class AppComponent implements OnInit {
   }
 
   updateHostClassesForDoc(doc: DocumentContents) {
-    //Do nothing for now
+    // Do nothing for now
   }
 
 }

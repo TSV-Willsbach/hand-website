@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Ligue, Club } from '@wh-objects/hvw';
-import { teamStatistics } from '@wh-objects/team-statistics';
+import { TeamStatistics } from '@wh-objects/team-statistics';
 import { Globals } from '@wh-objects/globals';
 
 const baseUrl = 'https://spo.handball4all.de/service/if_g_json.php';
@@ -61,7 +61,7 @@ export class HvwService {
       }
 
 
-      const stats = new teamStatistics(this.global);
+      const stats = new TeamStatistics(this.global);
       stats.calcStatistic(data);
       return data;
     });

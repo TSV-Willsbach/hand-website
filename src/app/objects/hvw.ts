@@ -1,55 +1,9 @@
-export class Ligue {
-    head: Head;
-    content: Content;
-    statistik: Statistik;
-
-    constructor() {
-        this.head = new Head();
-        this.content = new Content();
-        this.statistik = new Statistik();
-    }
-}
-
-export class Club {
-    head: Head;
-    content: {
-        classes: Classes[];
-    };
-    constructor() {
-        this.head = new Head;
-        this.content = { classes: new Array<Classes>() };
-    }
-}
-
 export class Head {
     name: string;
     sname: string;
     headline2: string;
     actualized: string;
 
-    constructor() { }
-}
-
-export class Content {
-    actualGames: {
-        games: Game[]
-    };
-    score: Score[];
-    scoreComments: string[];
-    futureGames: {
-        games: Game[];
-    };
-
-    constructor() {
-        this.actualGames = { games: new Array<Game>() };
-        this.futureGames = { games: new Array<Game>() };
-    }
-}
-
-export class Classes {
-    gClassId: string;
-    gClassSname: string;
-    games: Game[];
     constructor() { }
 }
 
@@ -102,6 +56,72 @@ export class Score {
     constructor() { }
 }
 
+export class StatGame {
+    teamName: string;
+    result: string;
+
+    constructor() {
+        this.teamName = this.result = '-';
+    }
+
+}
+
+export class StatWins {
+    wins: number;
+    procentualWins: number;
+    gameAmount: number;
+
+    constructor() {
+        this.wins = this.gameAmount = 0;
+        this.procentualWins = 0;
+    }
+}
+export class StatGoals {
+    totalGoals: number;
+    avarageGoals: number;
+    gameAmount: number;
+
+    constructor() {
+        this.totalGoals = this.avarageGoals = this.gameAmount = 0;
+    }
+
+}
+
+export class Content {
+    actualGames: {
+        games: Game[]
+    };
+    score: Score[];
+    scoreComments: string[];
+    futureGames: {
+        games: Game[];
+    };
+
+    constructor() {
+        this.actualGames = { games: new Array<Game>() };
+        this.futureGames = { games: new Array<Game>() };
+    }
+}
+
+export class Club {
+    head: Head;
+    content: {
+        classes: Classes[];
+    };
+    constructor() {
+        this.head = new Head;
+        this.content = { classes: new Array<Classes>() };
+    }
+}
+
+
+export class Classes {
+    gClassId: string;
+    gClassSname: string;
+    games: Game[];
+    constructor() { }
+}
+
 export class Statistik {
     homeWins: StatWins;
     homeGoalsShot: StatGoals;
@@ -137,33 +157,15 @@ export class Statistik {
     }
 }
 
-export class StatGame {
-    teamName: string;
-    result: string;
+
+export class Ligue {
+    head: Head;
+    content: Content;
+    statistik: Statistik;
 
     constructor() {
-        this.teamName = this.result = '-';
+        this.head = new Head();
+        this.content = new Content();
+        this.statistik = new Statistik();
     }
-
-}
-
-export class StatWins {
-    wins: number;
-    procentualWins: number;
-    gameAmount: number;
-
-    constructor() {
-        this.wins = this.gameAmount = 0;
-        this.procentualWins = 0;
-    }
-}
-export class StatGoals {
-    totalGoals: number;
-    avarageGoals: number;
-    gameAmount: number;
-
-    constructor() {
-        this.totalGoals = this.avarageGoals = this.gameAmount = 0;
-    }
-
 }

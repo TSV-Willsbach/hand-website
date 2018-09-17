@@ -19,7 +19,7 @@ export class DownloadsComponent implements OnInit {
   }
 
   iconStyle(color: string) {
-    let myStyles = {
+    const myStyles = {
       'color': color
     };
     return myStyles;

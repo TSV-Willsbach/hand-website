@@ -1,12 +1,12 @@
-import { StatGame, Statistik } from "@wh-objects/hvw";
-import { Globals } from "@wh-objects/globals";
+import { StatGame, Statistik } from '@wh-objects/hvw';
+import { Globals } from '@wh-objects/globals';
 
-export class teamStatistics {
+export class TeamStatistics {
     constructor(private global: Globals) { }
     calcStatistic(data: any) {
-        let games = data.content.futureGames.games;
+        const games = data.content.futureGames.games;
         data.statistik = new Statistik();
-        let statistik = data.statistik;
+        const statistik = data.statistik;
 
         games.forEach(element => {
             if (element.gGuestTeam === this.global.clubName) {
@@ -37,19 +37,18 @@ export class teamStatistics {
     }
     private homeStatLogic(statistik: any, element: any) {
 
-        if (element.gHomeGoals != " " || element.gGuestGoals != " ") {
+        if (element.gHomeGoals !== ' ' || element.gGuestGoals !== ' ') {
             this.homeGoalLogic(statistik, element);
         }
 
-        let diff = +element.gHomeGoals - +element.gGuestGoals;
+        const diff = +element.gHomeGoals - +element.gGuestGoals;
         if (element.gHomePoints === '2') {
             statistik.homeWins.wins++;
             if (diff > statistik.homeHighestWinDiff) {
                 statistik.homeHighestWinDiff = diff;
                 statistik.homeHighestWin = this.buildWLText(element, element.gGuestTeam);
             }
-        }
-        else if (element.gHomePoints === '0' && diff < statistik.homeHighestLoseDiff) {
+        } else if (element.gHomePoints === '0' && diff < statistik.homeHighestLoseDiff) {
             statistik.homeHighestLoseDiff = diff;
             statistik.homeHighestLose = this.buildWLText(element, element.gGuestTeam);
         }
@@ -73,28 +72,27 @@ export class teamStatistics {
     }
 
     private awayStatLogic(statistik: any, element: any) {
-        if (element.gHomeGoals != " " || element.gGuestGoals != " ") {
+        if (element.gHomeGoals !== ' ' || element.gGuestGoals !== ' ') {
             this.awayGoalLogic(statistik, element);
         }
-        let diff = +element.gGuestGoals - +element.gHomeGoals;
+        const diff = +element.gGuestGoals - +element.gHomeGoals;
         if (element.gGuestPoints === '2') {
             statistik.awayWins.wins++;
             if (diff > statistik.awayHighestWinDiff) {
                 statistik.awayHighestWinDiff = diff;
                 statistik.awayHighestWin = this.buildWLText(element, element.gHomeTeam);
             }
-        }
-        else if (element.gGuestPoints === '0' && diff < statistik.awayHighestLoseDiff) {
+        } else if (element.gGuestPoints === '0' && diff < statistik.awayHighestLoseDiff) {
             statistik.awayHighestLoseDiff = diff;
             statistik.awayHighestLose = this.buildWLText(element, element.gHomeTeam);
         }
     }
 
     private buildWLText(element: any, teamName: string): StatGame {
-        let stat = new StatGame();
+        const stat = new StatGame();
 
         stat.teamName = teamName;
-        stat.result = element.gHomeGoals + " : " + element.gGuestGoals;
+        stat.result = element.gHomeGoals + ' : ' + element.gGuestGoals;
         return stat;
     }
 }
