@@ -86,6 +86,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     const hasToc = !!titleEl && !/no-?toc/i.test(titleEl.className);
 
     if (hasToc) {
+      // tslint:disable-next-line:no-non-null-assertion
       titleEl!.insertAdjacentHTML('afterend', '<aio-toc class="embedded"></aio-toc>');
     }
 
