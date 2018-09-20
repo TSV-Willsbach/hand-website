@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const bodyParser = require('body-parser');
 const url = require('url');
 const fetch = require('node-fetch');
@@ -85,6 +86,6 @@ app.get('*', function (req, res) {
     }
 
 })
-
+app.use(compression());
 app.listen(8080);
 console.log("App listening on port 8080")
