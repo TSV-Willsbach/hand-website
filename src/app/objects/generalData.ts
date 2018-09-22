@@ -1,13 +1,3 @@
-export class Contacts {
-    contacts: Contact[];
-
-    constructor() {
-        const contact = new Contact();
-        this.contacts = new Array<Contact>();
-        this.contacts.push(contact);
-    }
-}
-
 export class Contact {
     name: string;
     prename: string;
@@ -19,5 +9,15 @@ export class Contact {
         this.prename = 'Max';
         this.position = 'Test User';
         this.email = 'max.mustermann@willsbach-handball.de';
+    }
+}
+
+export class Contacts {
+    contacts: Contact[];
+
+    constructor() {
+        const contact = new Contact();
+        this.contacts = new Array<Contact>();
+        this.contacts.push(contact);
     }
 }

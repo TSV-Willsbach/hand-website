@@ -45,6 +45,7 @@ export class DocumentService {
     if (!this.cache.has(id)) {
       this.cache.set(id, this.fetchDocument(id));
     }
+    // tslint:disable-next-line:no-non-null-assertion
     return this.cache.get(id)!;
   }
 

@@ -4,14 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DownloadsComponent } from './downloads/downloads.component';
 import { HomeComponent } from './home/home.component';
-import { ReportComponent } from './report/report.component';
+import { ReportComponent } from './posts/report/report.component';
 import { ResultsComponent } from './results/results.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
-import { PostDetailComponent } from './post-detail/post-detail.component';
-import { SponsorsDetailComponent } from './sponsors-detail/sponsors-detail.component';
+import { PostDetailComponent } from './posts/post-detail/post-detail.component';
+import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-detail.component';
 import { TeamDetailComponent } from './team/team-detail/team-detail.component';
-import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { PlayerDetailComponent } from './team/player-detail/player-detail.component';
 import { TeamResultComponent } from './team/team-result/team-result.component';
 import { TeamPlayersComponent } from './team/team-players/team-players.component';
 import { TeamReportsComponent } from './team/team-reports/team-reports.component';
@@ -19,7 +19,7 @@ import { TeamGamesComponent } from './team/team-games/team-games.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './core/auth.guard';
 import { EditComponent } from './edit/edit.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [

@@ -129,6 +129,7 @@ export class NavigationService {
       if (!navMap.has(cleanedUrl)) {
         navMap.set(cleanedUrl, {});
       }
+      // tslint:disable-next-line:no-non-null-assertion
       const navMapItem = navMap.get(cleanedUrl)!;
       navMapItem[view] = { url, view, nodes };
     }

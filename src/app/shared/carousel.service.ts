@@ -33,6 +33,7 @@ export class CarouselService {
       this.teams = this.http.get<TeamWP[]>(apiTeams)
         .pipe(
           map(team => {
+            team = team.filter(e => e.acf.archive !== true);
             return team.map(cTeam => {
               return cTeam;
             });

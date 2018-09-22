@@ -29,7 +29,6 @@ export class ReportCardsComponent implements OnInit, OnChanges {
   }
 
   nextPrevAvailability() {
-    console.log('Max pages ', this.maxPages);
     if (this.page === 1 && this.maxPages === this.page || this.maxPages === undefined) {
       this.nextDisabled = this.prevDisabled = 'disabled';
     } else if (this.page === 1) {

@@ -20,7 +20,12 @@ export class TeamWP {
     alt_text: string;
     caption: {
         rendered: string;
-    }
+    };
+    acf: {
+        archive: Boolean;
+        sponsorUrl: string;
+        team: string;
+    };
 }
 
 export class MediaObject {
