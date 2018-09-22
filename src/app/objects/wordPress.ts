@@ -21,6 +21,11 @@ export class TeamWP {
     caption: {
         rendered: string;
     };
+    acf: {
+        archive: Boolean;
+        sponsorUrl: string;
+        team: string;
+    };
 }
 
 export class MediaObject {
