@@ -12,4 +12,9 @@ export class Attachment {
     icon: string;
     iconColor: string;
     fileType: string;
+    acf: {
+        archive: Boolean;
+        sponsorUrl: string;
+        team: string;
+    };
 }
