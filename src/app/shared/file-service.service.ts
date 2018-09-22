@@ -13,11 +13,8 @@ export class FileServiceService {
   fetchFiles(): Observable<Attachment[]> {
     return this.http.get<Attachment[]>(apiFiles)
       .map(attachments => {
-        attachments.forEach((item, index) => {
-          if (item.acf.archive === true) {
-            attachments.splice(index, 1);
-          }
-        });
+        attachments = attachments.filter(e => e.acf.archive !== true);
+
         return attachments.map(attachment => {
           return this.getIconForType(attachment);
         });
