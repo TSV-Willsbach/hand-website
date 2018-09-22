@@ -35,7 +35,6 @@ export class CarouselService {
           map(team => {
             team.forEach((item, index) => {
               if (item.acf.archive === true) {
-                console.log(item);
                 team.splice(index, 1);
               }
             });
