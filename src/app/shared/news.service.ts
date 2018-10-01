@@ -1,3 +1,4 @@
+import { Globals } from './../objects/globals';
 
 import { TeamService } from '@wh-share/team.service';
 import { Injectable } from '@angular/core';
@@ -28,7 +29,8 @@ export class NewsService {
   totalPages: number;
   page: number;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private global: Globals) {
+
   }
 
   getMaxPages(): number {
@@ -42,6 +44,7 @@ export class NewsService {
         this.totalPages = +posts.headers.get('X-WP-TotalPages');
         return posts.body.map(post => {
           this.mapFields(post);
+          post.isNew = this.global.isPostNew(post.date);
 
           return post;
         });
