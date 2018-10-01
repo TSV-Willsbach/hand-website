@@ -1,15 +1,27 @@
 <div class="row mb-2">
   <div class="col-md-4 mb-3" *ngFor="let post of posts">
     <div class="card h-100" [routerLink]="['/postDetail', post.id]">
-      <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
+      <div class="imageContainer">
+        <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
+        <div class="top-right" *ngIf="post.isNew === true">
+          <h4>
+            <span class="badge red">Neu</span>
+          </h4>
+        </div>
+      </div>
+
       <div class="card-body">
         <h5 class="card-title">
           <div [innerHTML]="post.title.rendered"></div>
         </h5>
         <small class="card-subtitle mb-2 text-muted">
-          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}} </small>
+          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}}
+        </small>
         <small class="card-subtitle mb-2 text-muted">
-          <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon> {{post.author}}</small>
+          <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon> {{post.author}}
+        </small>
+
+        <br />
         <p class="card-text" [innerHTML]="post.excerpt.rendered">
         </p>
       </div>

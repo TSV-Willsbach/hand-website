@@ -2,6 +2,7 @@ export class Post {
     id: number;
     date: Date;
     date_gmt: Date;
+    isNew: Boolean;
     guid: Object;
     title: {
         rendered: string;
@@ -25,5 +26,6 @@ export class Post {
         this.title = { rendered: '' };
         this.content = { rendered: '' };
         this.excerpt = { rendered: '' };
+        this.isNew = false;
     }
 }
