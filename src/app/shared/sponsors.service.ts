@@ -17,6 +17,7 @@ export class SponsorsService {
       this.sponsors = this.http.get<Sponsors[]>(apiSponsorImages)
         .pipe(
           map(sponsors => {
+            sponsors = sponsors.filter(e => e.acf.archive !== true);
             return sponsors.map(sponsor => {
               // sponsor.thumbnail = sponsor._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
               return sponsor;

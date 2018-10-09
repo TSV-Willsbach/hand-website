@@ -15,6 +15,7 @@ export class Sponsors {
 
     acf: {
         sponsorUrl: string;
+        archive: Boolean;
     };
     thumbnail: string;
 }
