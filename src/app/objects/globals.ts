@@ -14,4 +14,16 @@ export class Globals {
         }
     }
 
+    public isPostNew(date: Date): Boolean {
+        const today = new Date();
+        const last3Days = new Date();
+        last3Days.setDate(today.getDate() - 4);
+        const testDate = new Date(date);
+        console.log(testDate);
+        if (today >= testDate && last3Days <= testDate) {
+            return true;
+        }
+        return false;
+    }
+
 }

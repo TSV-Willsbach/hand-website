@@ -1,12 +1,12 @@
 <h2 class="heading">Sponsoren</h2>
-<div class="container" *ngFor="let sponsor of sponsors">
+<div class="container-fluid" *ngFor="let sponsor of sponsors">
   <div class="row">
-    <div class="column">
+    <div class="col centered">
       <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">
         <img src="{{sponsor.source_url}}" alt="{{sponsor.alt_text}}" class="img-fluid">
       </a>
     </div>
-    <div class="column">
+    <div class="col">
       <h3>{{sponsor.caption.rendered}}</h3>
       <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">{{sponsor.acf.sponsorUrl}}</a>
     </div>
