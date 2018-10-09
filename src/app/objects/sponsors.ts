@@ -12,7 +12,9 @@ export class Sponsors {
     _embedded: Object;
     source_url: string;
     alt_text: string;
-
+    caption: {
+        rendered: string;
+    };
     acf: {
         sponsorUrl: string;
         archive: Boolean;
