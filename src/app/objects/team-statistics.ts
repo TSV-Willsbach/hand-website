@@ -9,9 +9,10 @@ export class TeamStatistics {
         const statistik = data.statistik;
 
         games.forEach(element => {
-            if (element.gGuestTeam === this.global.clubName) {
+            if (this.global.isOwnClub(element.gGuestTeam)) {
                 this.awayStatLogic(statistik, element);
-            } else if (element.gHomeTeam === this.global.clubName) {
+            }
+            if (this.global.isOwnClub(element.gHomeTeam)) {
                 this.homeStatLogic(statistik, element);
             }
         });
