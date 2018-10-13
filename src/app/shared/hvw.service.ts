@@ -51,12 +51,7 @@ export class HvwService {
 
       if (games !== undefined) {
         games.forEach(element => {
-          if (element.live === true) {
-            element.tickerUrl = tickerUrl + element.gToken;
-          }
-          if (element.sGID !== undefined) {
-            element.pdfDL = reportUrl + element.sGID;
-          }
+          this.liveAndPDF(element);
         });
       }
 
@@ -67,6 +62,15 @@ export class HvwService {
     });
   }
 
+  private liveAndPDF(element: any) {
+    if (element.live === true) {
+      element.tickerUrl = tickerUrl + element.gToken;
+    }
+    if (element.sGID !== undefined) {
+      element.pdfDL = reportUrl + element.sGID;
+    }
+  }
+
   getNextGames(): Observable<Ligue> {
     const url = this.buildUrlWithParam();
     return this.http.get<Ligue>(url).map(ligue => ligue[0]);
@@ -74,7 +78,6 @@ export class HvwService {
 
   getClubData(): Observable<Club> {
     const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=' + this._period;
-    console.log(clubUrl);
     return this.http.get<Club>(clubUrl).map(club => {
       const data = club[0];
       const classes = data.content.classes;
@@ -85,6 +88,7 @@ export class HvwService {
           if (child.gHomeGoals === ' ') { child.gHomeGoals = '0'; }
           if (child.gGuestGoals_1 === ' ') { child.gGuestGoals_1 = '0'; }
           if (child.gHomeGoals_1 === ' ') { child.gHomeGoals_1 = '0'; }
+          this.liveAndPDF(child);
         });
       });
       return data;

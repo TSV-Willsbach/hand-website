@@ -19,7 +19,7 @@ export class ResultsComponent implements OnInit {
         this.clubs.push(club);
       },
       error => { console.log(error); },
-      () => { console.log(this.clubs); });
+      () => { });
 
     this.hvw.period = '62';
     this.hvw.getClubData().subscribe(
@@ -27,7 +27,7 @@ export class ResultsComponent implements OnInit {
         this.clubs.push(club);
       },
       error => { console.log(error); },
-      () => { console.log(this.clubs); }
+      () => { }
     );
   }
 

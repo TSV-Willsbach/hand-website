@@ -1,4 +1,5 @@
 @import '../../../variables';
+
 a {
     color: $color-club;
 }
@@ -17,4 +18,12 @@ td a .fa {
 
 .referee {
     color: black;
+}
+
+.table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.Ticker {
+    color: $color-club-light;
 }
