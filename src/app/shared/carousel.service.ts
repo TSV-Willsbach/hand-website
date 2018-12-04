@@ -3,6 +3,7 @@ import { Observable, interval, timer } from 'rxjs';
 import { switchMap, take, map, publishReplay, refCount } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { TeamWP } from '@wh-objects/wordPress';
+import { filter } from 'bluebird';
 
 const transitionLeft = [
   'carousel-item carousel-item-left active',
@@ -43,6 +44,13 @@ export class CarouselService {
         );
     }
     return this.teams;
+  }
+
+  getTeam(teamName: string): Observable<TeamWP[]> {
+    const myTeams = this.fetchTeams().pipe(
+      map(teams => teams.filter(team => team.acf.team === teamName))
+    );
+    return myTeams;
   }
 
   nextItem() {

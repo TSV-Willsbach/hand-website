@@ -1,3 +1,5 @@
+import { CarouselService } from './carousel.service';
+import { HvwService } from '@wh-share/hvw.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Team, Player } from '@wh-objects/team';
@@ -14,7 +16,7 @@ export class TeamService {
   posts: Post[];
   wpCategory: string;
 
-  constructor(private http: HttpClient, private news: NewsService) { }
+  constructor(private http: HttpClient, private news: NewsService, private carousel: CarouselService) { }
 
 
   getPlayer(teamId: string, playerName: string): Observable<Player> {
@@ -46,6 +48,12 @@ export class TeamService {
             return 0;
           });
         }
+        let picture;
+        this.carousel.getTeam(team.wpID).subscribe(pic => picture = pic,
+          error => { console.log(error); },
+          () => {
+            team.picture = picture[0].media_details.sizes.medium_large.source_url;
+          });
 
         if (team.trainer !== undefined) {
           team.trainer.forEach(function (part, index, coach) {

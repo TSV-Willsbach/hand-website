@@ -124,6 +124,15 @@
                 "20"
             ]
         },
+        "wpID": {
+            "$id": "/properties/wpID",
+            "type": "string",
+            "title": "Wordpress ID",
+            "default": "",
+            "examples": [
+                "herren", "wC"
+            ]
+        },
         "picture": {
             "$id": "/properties/picture",
             "type": "string",

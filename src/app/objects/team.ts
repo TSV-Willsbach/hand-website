@@ -5,6 +5,7 @@ export class Team {
     qualID: string;
     picture: string;
     wpCat: string;
+    wpID: string;
     trainer: Coach[];
     players: Player[];
 

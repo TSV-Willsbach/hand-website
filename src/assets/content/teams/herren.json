@@ -5,9 +5,10 @@
     "ligaID": "36040",
     "pokalID": "37540",
     "wpCat": "10",
+    "wpID": "herren",
     "trainer": [{
-        "name": "Kohler",
-        "prename": "Marco"
+        "name": "Wacker",
+        "prename": "Torsten"
     }],
     "players": [{
             "position": ["TW"],
