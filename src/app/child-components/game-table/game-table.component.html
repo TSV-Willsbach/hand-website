@@ -39,13 +39,20 @@
       </div>
     </td>
     <ng-template #referee>
+      <div *ngIf="game.live == true">
+        <a href="{{game.tickerUrl}}" target="_blank" class="Ticker">
+          <fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon>
+          Liveticker
+        </a>
+        <br />
+        <br />
+      </div>
       <div *ngIf="game.gReferee != ' '">
         <!-- <img src="https://h4allapp.it4sport.de/dist/assets/images/icon-whistle.png"> -->
         <fa-icon [icon]="['fas', 'user']" size="lg" class="referee"></fa-icon>
-        <p>SR: {{game.gReferee}}</p>
+        {{game.gReferee}}
       </div>
     </ng-template>
-    <!-- <td>{{game.live == true ? 'Ja': 'Nein'}}</td> -->
   </tr>
 
 </table>

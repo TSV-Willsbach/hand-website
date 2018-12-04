@@ -1,3 +1,4 @@
+import { GameHistory } from './hvw';
 import { StatGame, Statistik } from '@wh-objects/hvw';
 import { Globals } from '@wh-objects/globals';
 
@@ -7,17 +8,49 @@ export class TeamStatistics {
         const games = data.content.futureGames.games;
         data.statistik = new Statistik();
         const statistik = data.statistik;
+        statistik.GameHistory = new Array<GameHistory>();
 
         games.forEach(element => {
             if (this.global.isOwnClub(element.gGuestTeam)) {
                 this.awayStatLogic(statistik, element);
+                this.historyStatistik(element, statistik, false);
             }
             if (this.global.isOwnClub(element.gHomeTeam)) {
                 this.homeStatLogic(statistik, element);
+                this.historyStatistik(element, statistik, true);
             }
         });
 
         this.calcAverage(statistik);
+    }
+
+    private historyStatistik(element: any, statistik: any, team: boolean) {
+        const hist = new GameHistory();
+        hist.date = element.gDate;
+        if (element.sGID !== 0) {
+            if (team) {
+                // is home Team
+                hist.result = this.calcResult(element.gHomeGoals, element.gGuestGoals);
+                hist.opponent = element.gGuestTeam;
+            } else {
+                hist.result = this.calcResult(element.gGuestGoals, element.gHomeGoals);
+                hist.opponent = element.gHomeTeam;
+            }
+            statistik.GameHistory.push(hist);
+        }
+    }
+
+    private calcResult(goal1: number, goal2: number): number {
+        if (goal1 === goal2) {
+            // draft
+            return 0;
+        } else if (goal1 > goal2) {
+            // win
+            return 1;
+        } else {
+            // lose
+            return -1;
+        }
     }
 
     private calcAverage(statistik: any) {

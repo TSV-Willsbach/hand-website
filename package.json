@@ -52,7 +52,6 @@
     "angular-font-awesome": "^3.1.2",
     "angularfire2": "^5.0.0-rc.7",
     "body-parser": "~1.18.3",
-    "chart.js": "^2.5.0",
     "core-js": "^2.4.1",
     "crawler-user-agents": "git+https://github.com/monperrus/crawler-user-agents.git",
     "express": "~4.16.3",

@@ -3,11 +3,17 @@
     "title": "Männliche B Jugend",
     "ligaID": "36475",
     "wpCat": "18",
+    "wpID": "mB",
     "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",
     "trainer": [{
-        "name": "Bosch",
-        "prename": "Heiko"
-    }],
+            "name": "Bosch",
+            "prename": "Heiko"
+        },
+        {
+            "name": "Romig",
+            "prename": "Markus"
+        }
+    ],
     "players": [{
             "number": 3,
             "name": "Anderl",

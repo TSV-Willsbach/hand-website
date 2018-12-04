@@ -3,6 +3,7 @@
     "title": "Damen",
     "ligaID": "36004",
     "wpCat": "5",
+    "wpID": "damen",
     "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
     "trainer": [{
             "name": "Gebhardt",
@@ -10,9 +11,8 @@
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Gebhardt_Miguel_min.jpg"
         },
         {
-            "name": "Trutzenberger",
-            "prename": "Daniel",
-            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Trutzenberger_Daniel_min.jpg"
+            "name": "Hamonajec",
+            "prename": "Jura"
         }
     ],
     "players": [{
@@ -156,6 +156,18 @@
             "birthday": "1991-06-19",
             "joinedClub": "1997",
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_lola_min.jpg"
+        },
+        {
+            "number": 5,
+            "name": "Schwarz",
+            "prename": "Janica",
+            "joinedClub": "2018"
+        },
+        {
+            "number": 14,
+            "name": "Strauch",
+            "prename": "Hanna",
+            "joinedClub": "2018"
         }
 
     ]

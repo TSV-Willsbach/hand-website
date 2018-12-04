@@ -50,6 +50,19 @@
                             ]
                         }
                     },
+                    "socialMedia": {
+                        "type": "object",
+                        "properties": {
+                            "facebook": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "instagram": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    },
                     "number": {
                         "type": "number",
                         "default": 0,
@@ -122,6 +135,15 @@
             "default": "",
             "examples": [
                 "20"
+            ]
+        },
+        "wpID": {
+            "$id": "/properties/wpID",
+            "type": "string",
+            "title": "Wordpress ID",
+            "default": "",
+            "examples": [
+                "herren", "wC"
             ]
         },
         "picture": {

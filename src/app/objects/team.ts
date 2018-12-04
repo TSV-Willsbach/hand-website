@@ -5,6 +5,7 @@ export class Team {
     qualID: string;
     picture: string;
     wpCat: string;
+    wpID: string;
     trainer: Coach[];
     players: Player[];
 
@@ -29,6 +30,11 @@ export class Player {
     picture: string;
     joinedClub: string;
     lastClubs: string[];
+    socialMedia: {
+        instagram: string;
+        facebook: string;
+        twitter: string;
+    };
 
     constructor() { }
 }
