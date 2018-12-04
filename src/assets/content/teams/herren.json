@@ -29,17 +29,17 @@
             "nickname": "Spanni"
         },
         {
-            "number": 11,
+            "number": 10,
             "name": "Purzel",
             "prename": "Marvin",
             "birthday": "1992-07-17"
         },
         {
-            "position": ["RA"],
             "number": 2,
-            "name": "Hohl",
-            "prename": "Markus",
-            "birthday": "1989-10-01"
+            "position": ["Kreis"],
+            "name": "König",
+            "prename": "Fabian",
+            "joinedClub": "2018"
         },
         {
             "position": ["Kreis"],
@@ -49,24 +49,11 @@
             "birthday": "1990-05-19"
         },
         {
-            "position": ["Kreis"],
-            "name": "Petzold",
-            "number": 0,
-            "prename": "Nils",
-            "birthday": "1999-05-17"
-        },
-        {
             "position": ["RM"],
             "number": 5,
             "name": "Busch",
             "prename": "Benedikt",
             "birthday": "1995-11-08"
-        },
-        {
-            "name": "Galonska",
-            "prename": "Tom",
-            "birthday": "1999-07-12",
-            "number": 0
         },
         {
             "position": ["Kreis"],
@@ -83,24 +70,10 @@
             "birthday": "1994-07-13"
         },
         {
-            "position": ["Kreis"],
-            "number": 10,
-            "name": "Vetter",
-            "prename": "Benjamin",
-            "birthday": "1999-06-14"
-        },
-        {
             "number": 13,
-            "name": "Rohmig",
+            "name": "Romig",
             "prename": "Markus",
             "birthday": "1991-07-08"
-        },
-        {
-            "position": ["TW", "Kreis"],
-            "number": 25,
-            "name": "Hanke",
-            "prename": "David",
-            "birthday": "1994-11-10"
         },
         {
             "number": 14,
@@ -109,16 +82,44 @@
             "birthday": "1998-09-03"
         },
         {
-            "number": 15,
+            "number": 18,
             "name": "Wörner",
             "prename": "Fabio",
-            "birthday": "1999-10-27"
+            "birthday": "1999-10-27",
+            "position": ["LA"]
         },
         {
             "number": 17,
             "name": "Löffler",
             "prename": "Tim",
             "birthday": "1999-11-25"
+        },
+        {
+            "number": 3,
+            "name": "Müller",
+            "prename": "Simon",
+            "position": ["RL"]
+        },
+        {
+            "number": 11,
+            "name": "Henn",
+            "prename": "Markus",
+            "joinedClub": "2018",
+            "lastClubs": ["HC Staufer Bad Wimpfen"],
+            "position": ["RA"]
+        },
+        {
+            "number": 15,
+            "name": "Greinig",
+            "prename": "Götz",
+            "position": ["RA"]
+        },
+        {
+            "number": 20,
+            "name": "Schenk",
+            "prename": "Alexander",
+            "joinedClub": "2018",
+            "position": ["TW"]
         }
 
     ]

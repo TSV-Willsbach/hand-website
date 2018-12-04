@@ -3,5 +3,40 @@
     "title": "Herren 2",
     "ligaID": "36034",
     "wpCat": "41",
-    "wpID": "herren2"
+    "wpID": "herren2",
+    "players": [{
+            "position": ["RA"],
+            "number": 2,
+            "name": "Hohl",
+            "prename": "Markus",
+            "birthday": "1989-10-01"
+        },
+        {
+            "name": "Galonska",
+            "prename": "Tom",
+            "birthday": "1999-07-12",
+            "number": 0
+        },
+        {
+            "position": ["Kreis"],
+            "name": "Petzold",
+            "number": 0,
+            "prename": "Nils",
+            "birthday": "1999-05-17"
+        },
+        {
+            "position": ["Kreis"],
+            "number": 10,
+            "name": "Vetter",
+            "prename": "Benjamin",
+            "birthday": "1999-06-14"
+        },
+        {
+            "position": ["TW"],
+            "number": 25,
+            "name": "Hanke",
+            "prename": "David",
+            "birthday": "1994-11-10"
+        }
+    ]
 }

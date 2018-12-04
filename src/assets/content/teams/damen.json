@@ -158,11 +158,13 @@
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_lola_min.jpg"
         },
         {
+            "number": 5,
             "name": "Schwarz",
             "prename": "Janica",
             "joinedClub": "2018"
         },
         {
+            "number": 14,
             "name": "Strauch",
             "prename": "Hanna",
             "joinedClub": "2018"
