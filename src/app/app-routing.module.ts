@@ -6,7 +6,6 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { HomeComponent } from './home/home.component';
 import { ReportComponent } from './posts/report/report.component';
 import { ResultsComponent } from './results/results.component';
-import { SponsorsComponent } from './sponsors/sponsors.component';
 import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
 import { PostDetailComponent } from './posts/post-detail/post-detail.component';
 import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-detail.component';

@@ -30,7 +30,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/chart.js/dist/Chart.js",
               "node_modules/hammerjs/hammer.min.js"
             ]
           },
@@ -78,7 +77,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [
-              "node_modules/chart.js/dist/Chart.js",
               "node_modules/hammerjs/hammer.min.js"
             ],
             "styles": [

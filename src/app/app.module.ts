@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { ShareButtonModule } from '@ngx-share/button';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { ShareButtonsOptions } from '@ngx-share/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
