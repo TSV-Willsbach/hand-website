@@ -30,6 +30,11 @@ export class Player {
     picture: string;
     joinedClub: string;
     lastClubs: string[];
+    socialMedia: {
+        instagram: string;
+        facebook: string;
+        twitter: string;
+    };
 
     constructor() { }
 }

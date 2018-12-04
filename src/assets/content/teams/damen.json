@@ -156,6 +156,16 @@
             "birthday": "1991-06-19",
             "joinedClub": "1997",
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_lola_min.jpg"
+        },
+        {
+            "name": "Schwarz",
+            "prename": "Janica",
+            "joinedClub": "2018"
+        },
+        {
+            "name": "Strauch",
+            "prename": "Hanna",
+            "joinedClub": "2018"
         }
 
     ]

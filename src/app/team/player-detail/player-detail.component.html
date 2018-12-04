@@ -43,4 +43,30 @@
   </tr>
 
 </table>
+<div *ngIf="player.socialMedia != undefined">
+  <h3>Folge {{player.prename}} in den sozialen Netzwerken:</h3>
+  <div>
+    <div *ngIf="player.socialMedia.facebook != undefined">
+      <a href="{{player.socialMedia.facebook}}" target="_blank" rel="noopener">
+        <span class="sr-only">Facebook</span>
+        <!-- <i aria-hidden="true" class="fa fa-facebook-square gray fa-3x"></i> -->
+        <fa-icon class="social facebook" [icon]="['fab', 'facebook']" size="3x"></fa-icon>
+      </a>
+    </div>
+    <div *ngIf="player.socialMedia.instagram != undefined">
+      <a href="{{player.socialMedia.instagram}}" target="_blank" rel="noopener">
+        <span class="sr-only">Instagram</span>
+        <!-- <i aria-hidden="true" class="fa fa-instagram gray fa-3x"></i> -->
+        <fa-icon class="social instagram" [icon]="['fab', 'instagram']" size="3x"></fa-icon>
+      </a>
+    </div>
+    <div *ngIf="player.socialMedia.twitter != undefined">
+      <a href="{{player.socialMedia.twitter}}" target="_blank" rel="noopener">
+        <span class="sr-only">Twitter</span>
+        <!-- <i aria-hidden="true" class="fa fa-twitter gray fa-3x"></i> -->
+        <fa-icon class="social twitter" [icon]="['fab', 'twitter']" size="3x"></fa-icon>
+      </a>
+    </div>
+  </div>
+</div>
 <br />

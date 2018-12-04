@@ -50,6 +50,19 @@
                             ]
                         }
                     },
+                    "socialMedia": {
+                        "type": "object",
+                        "properties": {
+                            "facebook": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "instagram": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    },
                     "number": {
                         "type": "number",
                         "default": 0,
