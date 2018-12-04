@@ -122,6 +122,12 @@ export class Classes {
     constructor() { }
 }
 
+export class GameHistory {
+    date: Date;
+    result: number;
+    opponent: string;
+}
+
 export class Statistik {
     homeWins: StatWins;
     homeGoalsShot: StatGoals;
@@ -137,6 +143,7 @@ export class Statistik {
     awayHighestWinDiff: number;
     awayHighestLose: StatGame;
     awayHighestLoseDiff: number;
+    GameHistory: GameHistory[];
     constructor() {
 
         this.homeGoalsShot = new StatGoals();
@@ -152,6 +159,8 @@ export class Statistik {
         this.awayHighestLose = new StatGame();
         this.awayWins = new StatWins();
         this.awayHighestWinDiff = this.awayHighestLoseDiff = 0;
+
+        this.GameHistory = new Array<GameHistory>();
 
 
     }

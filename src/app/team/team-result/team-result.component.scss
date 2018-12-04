@@ -1,4 +1,5 @@
 @import '../../../variables';
+
 a {
     color: $color-club;
 }
@@ -13,4 +14,16 @@ td a .fa {
 
 .referee {
     color: black;
+}
+
+.win {
+    color: green;
+}
+
+.draft {
+    color: yellow;
+}
+
+.lose {
+    color: red;
 }
