@@ -4,6 +4,7 @@ import { combineLatest } from 'rxjs';
 import { NavigationService, NavigationNode, VersionInfo, CurrentNodes } from './navigation/navigation.service';
 import { LocationService } from './shared/location.service';
 import { DocumentService, DocumentContents } from './documents/document.service';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 
@@ -25,7 +26,15 @@ export class AppComponent implements OnInit {
     private navigationService: NavigationService,
     private locationService: LocationService,
     private documentService: DocumentService,
-  ) { }
+    private router: Router,
+  ) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        (<any>window).ga('set', 'page', event.urlAfterRedirects);
+        (<any>window).ga('send', 'pageview');
+      }
+    });
+  }
 
   onActivate(event) {
     window.scroll(0, 0);

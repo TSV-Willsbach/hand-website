@@ -19,7 +19,7 @@ export class Globals {
         const last3Days = new Date();
         last3Days.setDate(today.getDate() - 4);
         const testDate = new Date(date);
-        console.log(testDate);
+
         if (today >= testDate && last3Days <= testDate) {
             return true;
         }
