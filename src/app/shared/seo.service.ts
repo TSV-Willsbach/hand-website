@@ -14,7 +14,8 @@ export class SeoService {
       description: 'Homepage der Handballabteilung des TSV Willsbach',
       image: 'https://willsbach-handball.de/assets/images/handball_willsbach.png',
       images: [
-        'https://willsbach-handball.de/assets/images/tsv_willsbach.png'
+        'https://willsbach-handball.de/assets/images/tsv_willsbach.png',
+        'https://willsbach-handball.de/assets/images/handball_logo_mit_text.png'
       ],
       slug: '',
       type: 'website',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeoService } from '@wh-share/seo.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private seo: SeoService) { }
 
   ngOnInit() {
+    this.seo.generateTags({
+      title: 'Seite nicht gefunden',
+      description: '404 Seite nicht gefunden'
+    });
   }
 
 }

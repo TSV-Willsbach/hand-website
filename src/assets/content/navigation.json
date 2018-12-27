@@ -115,6 +115,11 @@
                     "router": "aidAssociation",
                     "title": "Förderverein",
                     "tooltip": "Förderverein"
+                },
+                {
+                    "router": "dataprotection",
+                    "title": "Datenschutzerklärung",
+                    "tooltip": "Datenschutzerklärung"
                 }
             ]
         }
