@@ -57,6 +57,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { ReportCardsComponent } from '@wh-childs/report-cards/report-cards.component';
 import { GameTableComponent } from './child-components/game-table/game-table.component';
 import { ContactComponent } from './contact/contact.component';
+import { DataProtectionComponent } from './core/data-protection/data-protection.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -95,7 +96,8 @@ library.add(fas, far, fab);
     PageNotFoundComponent,
     ReportCardsComponent,
     GameTableComponent,
-    ContactComponent
+    ContactComponent,
+    DataProtectionComponent
   ],
   imports: [
     BrowserModule,

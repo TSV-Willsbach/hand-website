@@ -1,3 +1,4 @@
+import { DataProtectionComponent } from './core/data-protection/data-protection.component';
 import { ContactComponent } from './contact/contact.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -55,6 +56,9 @@ const routes: Routes = [
   }, {
     path: 'contact',
     component: ContactComponent
+  }, {
+    path: 'dataprotection',
+    component: DataProtectionComponent
   }, {
     path: 'aidAssociation',
     component: DocViewerComponent
