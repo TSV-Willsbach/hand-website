@@ -1,3 +1,4 @@
+import { SeoService } from './../../shared/seo.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataProtectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private seo: SeoService) { }
 
   ngOnInit() {
+    this.seo.generateTags({
+      title: 'Datenschutz',
+      description: 'Datenschutzverordnung'
+    });
   }
 
 }
