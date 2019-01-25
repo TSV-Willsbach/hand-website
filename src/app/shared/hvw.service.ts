@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Ligue, Club } from '@wh-objects/hvw';
 import { TeamStatistics } from '@wh-objects/team-statistics';
 import { Globals } from '@wh-objects/globals';
+import { Team } from '@wh-objects/team';
 
 const baseUrl = 'https://spo.handball4all.de/service/if_g_json.php';
 const tickerUrl = 'http://spo.handball4all.de/service/ticker.html?appid=&token=';
@@ -99,4 +100,52 @@ export class HvwService {
     return baseUrl + '?ca=' + this.allGames + '&cl=' + this.liga + '&cmd=ps&og=3';
   }
 
+  public getAllGamesForTeam(team: Team): Observable<Ligue> {
+    const mGames = new Ligue();
+    this.liga = team.ligaID;
+    this.getNextGames().subscribe(
+      ligue => {
+        ligue = this.getOnlyOurGames(ligue);
+        mGames.content = ligue.content;
+        return ligue;
+      },
+      error => { console.log(error); },
+      () => {
+        if (team.pokalID != null) {
+          this.liga = team.pokalID;
+          this.getNextGames().subscribe(
+            ligue => {
+              ligue = this.getOnlyOurGames(ligue);
+              mGames.content.actualGames.games = mGames.content.actualGames.games.concat(ligue.content.actualGames.games);
+              return ligue;
+            },
+            error => { console.log(error); },
+            () => { });
+        }
+        if (team.qualID != null) {
+          this.liga = team.qualID;
+          this.getNextGames().subscribe(
+            ligue => {
+              ligue = this.getOnlyOurGames(ligue);
+              mGames.content.actualGames.games = mGames.content.actualGames.games.concat(ligue.content.actualGames.games);
+              return ligue;
+            },
+            error => { console.log(error); },
+            () => { });
+        }
+      });
+    return Observable.of(mGames);
+  }
+
+
+  private getOnlyOurGames(ligue: Ligue): Ligue {
+    let games = ligue.content.actualGames.games;
+    const actClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
+      || this.global.isOwnClub(element.gHomeTeam) === true);
+    games = ligue.content.futureGames.games;
+    const futClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
+      || this.global.isOwnClub(element.gHomeTeam) === true);
+    ligue.content.actualGames.games = actClubGames.concat(futClubGames);
+    return ligue;
+  }
 }

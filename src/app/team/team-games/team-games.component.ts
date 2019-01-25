@@ -31,29 +31,8 @@ export class TeamGamesComponent implements OnInit {
         team => this.team = team,
         error => { console.log(error); },
         () => {
-          this.hvw.liga = this.team.ligaID;
           this.hvw.allGames = '0'; // all games = false
-          this.hvw.getNextGames().subscribe(
-            ligue => {
-              let games = ligue.content.actualGames.games;
-              const actClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
-                || this.global.isOwnClub(element.gHomeTeam) === true);
-              games = ligue.content.futureGames.games;
-              const futClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
-                || this.global.isOwnClub(element.gHomeTeam) === true);
-
-              ligue.content.actualGames.games = actClubGames.concat(futClubGames);
-              this.ligue = ligue;
-              return ligue;
-            },
-            error => { console.log(error); },
-            () => {
-              this.seo.generateTags({
-                title: this.ligue.head.name,
-                description: this.ligue.head.headline2,
-                // image: this.player.picture
-              });
-            });
+          this.hvw.getAllGamesForTeam(this.team).subscribe(ligue => this.ligue = ligue);
         });
     });
   }
