@@ -26,7 +26,8 @@
             "name": "Spannagel",
             "prename": "Daniel",
             "birthday": "1991-02-14",
-            "nickname": "Spanni"
+            "nickname": "Spanni",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/99_Spannagel_Daniel.jpg"
         },
         {
             "number": 10,
@@ -60,14 +61,16 @@
             "number": 6,
             "name": "Schiedt",
             "prename": "Marvin",
-            "birthday": "1995-01-07"
+            "birthday": "1995-01-07",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/6_Schiedt_Marvin_2_1.jpg"
         },
         {
             "position": ["LA"],
             "number": 7,
             "name": "Löffler",
             "prename": "Florian",
-            "birthday": "1994-07-13"
+            "birthday": "1994-07-13",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/7_Loeffler_Florian_2.jpg"
         },
         {
             "number": 13,
@@ -98,7 +101,8 @@
             "number": 3,
             "name": "Müller",
             "prename": "Simon",
-            "position": ["RL"]
+            "position": ["RL"],
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/Mueller_simon.jpg"
         },
         {
             "number": 11,
