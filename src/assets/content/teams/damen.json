@@ -55,7 +55,8 @@
             "number": 26,
             "name": "Keerl",
             "prename": "Mona",
-            "birthday": "1994-05-04"
+            "birthday": "1994-05-04",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Mona_compressed.jpg"
         },
         {
             "number": 18,
@@ -72,7 +73,8 @@
             "name": "Lorenz",
             "prename": "Jenny",
             "birthday": "1994-10-10",
-            "lastClubs": ["TSG Öhringen"]
+            "lastClubs": ["TSG Öhringen"],
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_jenny_compressed.jpg"
         },
         {
             "position": [
@@ -81,7 +83,8 @@
             "number": 29,
             "name": "Löffler",
             "prename": "Anja",
-            "birthday": "1991-02-25"
+            "birthday": "1991-02-25",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Anja_compressed.jpg"
         },
         {
             "position": ["RL"],
@@ -90,7 +93,8 @@
             "prename": "Julia",
             "birthday": "1993-03-13",
             "joinedClub": "2013",
-            "lastClubs": ["TV Wißgoldingen", "TV Sulzbach an der Murr"]
+            "lastClubs": ["TV Wißgoldingen", "TV Sulzbach an der Murr"],
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Julia_compressed.jpg"
         },
         {
             "number": 14,
@@ -118,7 +122,8 @@
             "number": 12,
             "name": "Vollert",
             "prename": "Claudia",
-            "birthday": "1993-09-11"
+            "birthday": "1993-09-11",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_claudi_compressed.jpg"
         },
         {
             "number": 28,
@@ -132,7 +137,8 @@
             "name": "Vonthien",
             "prename": "Stefanie",
             "birthday": "1987-04-13",
-            "joinedClub": "1999"
+            "joinedClub": "1999",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Steffi_compressed.jpg"
         },
         {
             "number": 20,
@@ -146,7 +152,8 @@
             "name": "Zehetner",
             "prename": "Bianca",
             "birthday": "1992-06-09",
-            "joinedClub": "2006"
+            "joinedClub": "2006",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/damen/fb_Bibi_compressed.jpg"
         },
         {
             "position": ["RR"],
