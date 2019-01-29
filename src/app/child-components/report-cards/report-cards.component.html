@@ -2,7 +2,7 @@
   <div class="col-md-4 mb-3" *ngFor="let post of posts">
     <div class="card h-100" [routerLink]="['/postDetail', post.id]">
       <div class="imageContainer">
-        <img class="card-img-top" src="{{post.thumbnail}}" alt="Card image cap">
+        <img class="card-img-top" src="{{post.picture.url}}" alt="Card image cap">
         <div class="top-right" *ngIf="post.isNew === true">
           <h4>
             <span class="badge pink">Neu</span>

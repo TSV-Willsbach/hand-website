@@ -1,3 +1,9 @@
+export class Picture {
+    width: number;
+    height: number;
+    url: string;
+}
+
 export class Post {
     id: number;
     date: Date;
@@ -12,7 +18,7 @@ export class Post {
     };
     media_details: Object;
     _embedded: Object;
-    thumbnail: string;
+    picture: Picture;
     author: string;
     slug: string;
     excerpt: {
@@ -27,5 +33,6 @@ export class Post {
         this.content = { rendered: '' };
         this.excerpt = { rendered: '' };
         this.isNew = false;
+        this.picture = { url: '', height: 0, width: 0 };
     }
 }

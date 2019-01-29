@@ -40,7 +40,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
           this.seo.generateTags({
             title: this.post.title.rendered,
             description: this.post.excerpt.rendered,
-            image: this.post.thumbnail,
+            image: this.post.picture.url,
             type: 'article'
           });
           this.seo.articleTags(this.post.author);

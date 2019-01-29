@@ -12,9 +12,11 @@ export class SeoService {
     config = {
       title: 'TSV Willsbach - Handball',
       description: 'Homepage der Handballabteilung des TSV Willsbach',
-      image: 'https://willsbach-handball.de/assets/images/handball_willsbach.png',
+      image: 'https://willsbach-handball.de/assets/images/handball_logo_mit_text.png',
+      width: 0,
+      height: 0,
       images: [
-        'https://willsbach-handball.de/assets/images/tsv_willsbach.png',
+        'https://willsbach-handball.de/assets/images/handball_logo.png',
         'https://willsbach-handball.de/assets/images/handball_logo_mit_text.png'
       ],
       slug: '',
@@ -40,6 +42,13 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:image', content: config.image });
     this.meta.updateTag({ property: 'og:url', content: `https://willsbach-handball.de/${config.slug}` });
 
+    if (config.width !== 0) {
+      this.meta.addTag({ property: 'og:image:width', content: config.width });
+    }
+    if (config.height !== 0) {
+      this.meta.addTag({ property: 'og:image:height', content: config.height });
+    }
+
     if (config.images.length > 0) {
       config.images.forEach(element => {
         this.meta.addTag({ property: 'og:image', content: element });
@@ -56,5 +65,6 @@ export class SeoService {
     // add new tags
     this.meta.addTag({ property: 'article:author', content: author });
     this.meta.addTag({ property: 'article:section', content: 'Sports' });
+    this.meta.addTag({ property: 'article:publisher', content: 'https://www.facebook.com/tsvwillsbachhandball' });
   }
 }
