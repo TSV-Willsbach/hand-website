@@ -68,6 +68,7 @@ export class SeoService {
     this.meta.removeTag('property="article:author"');
     this.meta.removeTag('property="article:section"');
     // add new tags
+    this.meta.addTag({ property: 'author', content: author });
     this.meta.addTag({ property: 'article:author', content: author });
     this.meta.addTag({ property: 'article:section', content: 'Sports' });
     this.meta.addTag({ property: 'article:publisher', content: 'https://www.facebook.com/tsvwillsbachhandball' });
