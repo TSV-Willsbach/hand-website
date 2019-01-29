@@ -4,7 +4,7 @@ import { TeamService } from '@wh-share/team.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '@wh-objects/post';
+import { Post, Picture } from '@wh-objects/post';
 
 const apiPosts = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed';
 const apiReports = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6';
@@ -136,17 +136,24 @@ export class NewsService {
   private mapFields(post: Post) {
 
     post.content.rendered = this.responsiveImgs(post.content.rendered);
+    post.picture = new Picture();
 
     try {
-      post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
+      post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
+      post.picture.width = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.width;
+      post.picture.height = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.height;
     } catch (e) {
       /* Fallback smaller picture */
       try {
-        post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+        post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
+        post.picture.width = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.width;
+        post.picture.height = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.height;
       } catch (e) {
         try {
-          post.thumbnail = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
-        } catch (e) { post.thumbnail = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
+          post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
+          post.picture.width = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width;
+          post.picture.height = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height;
+        } catch (e) { post.picture.url = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
       }
     }
 
