@@ -15,6 +15,7 @@ export class SeoService {
       image: 'https://willsbach-handball.de/assets/images/handball_logo_mit_text.png',
       width: 0,
       height: 0,
+      mime_type: '',
       images: [
         'https://willsbach-handball.de/assets/images/handball_logo.png',
         'https://willsbach-handball.de/assets/images/handball_logo_mit_text.png'
@@ -47,6 +48,10 @@ export class SeoService {
     }
     if (config.height !== 0) {
       this.meta.addTag({ property: 'og:image:height', content: config.height });
+    }
+
+    if (config.mime_type !== '') {
+      this.meta.addTag({ property: 'og:image:type', content: config.mime_type });
     }
 
     if (config.images.length > 0) {

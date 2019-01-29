@@ -142,17 +142,20 @@ export class NewsService {
       post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
       post.picture.width = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.width;
       post.picture.height = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.height;
+      post.picture.mime_type = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.mime_type;
     } catch (e) {
       /* Fallback smaller picture */
       try {
         post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url;
         post.picture.width = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.width;
         post.picture.height = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.height;
+        post.picture.mime_type = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.mime_type;
       } catch (e) {
         try {
           post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url;
           post.picture.width = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.width;
           post.picture.height = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.height;
+          post.picture.mime_type = post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.mime_type;
         } catch (e) { post.picture.url = 'https://wp.willsbach-handball.de/wp-content/uploads/samples/Handball_1520472636-768x512.jpg'; }
       }
     }

@@ -41,6 +41,9 @@ export class PostDetailComponent implements OnInit, OnDestroy {
             title: this.post.title.rendered,
             description: this.post.excerpt.rendered,
             image: this.post.picture.url,
+            height: this.post.picture.height,
+            width: this.post.picture.width,
+            mime_type: this.post.picture.mime_type,
             type: 'article'
           });
           this.seo.articleTags(this.post.author);
