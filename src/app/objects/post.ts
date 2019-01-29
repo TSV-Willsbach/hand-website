@@ -2,6 +2,7 @@ export class Picture {
     width: number;
     height: number;
     url: string;
+    mime_type: string;
 }
 
 export class Post {
@@ -33,6 +34,6 @@ export class Post {
         this.content = { rendered: '' };
         this.excerpt = { rendered: '' };
         this.isNew = false;
-        this.picture = { url: '', height: 0, width: 0 };
+        this.picture = { url: '', height: 0, width: 0, mime_type: '' };
     }
 }
