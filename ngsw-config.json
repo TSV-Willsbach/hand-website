@@ -1,9 +1,10 @@
 {
-    "configVersion": 2,
+    "configVersion": 3,
     "index": "/index.html",
     "assetGroups": [{
         "name": "app",
         "installMode": "prefetch",
+        "updateMode": "prefetch",
         "resources": {
             "files": [
                 "/favicon.ico",

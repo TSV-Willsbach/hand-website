@@ -37,6 +37,7 @@
     "@angular/http": "^6.0.4",
     "@angular/platform-browser": "^6.0.4",
     "@angular/platform-browser-dynamic": "^6.0.4",
+    "@angular/pwa": "^0.13.3",
     "@angular/router": "^6.0.4",
     "@angular/service-worker": "^6.0.4",
     "@fortawesome/angular-fontawesome": "0.1.0-10",
