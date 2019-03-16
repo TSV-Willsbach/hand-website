@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Attachment } from '@wh-objects/attachment';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 const apiFiles = 'https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&search=downloads';
 
@@ -12,13 +13,15 @@ export class FileServiceService {
 
   fetchFiles(): Observable<Attachment[]> {
     return this.http.get<Attachment[]>(apiFiles)
-      .map(attachments => {
-        attachments = attachments.filter(e => e.acf.archive !== true);
+      .pipe(
+        map(attachments => {
+          attachments = attachments.filter(e => e.acf.archive !== true);
 
-        return attachments.map(attachment => {
-          return this.getIconForType(attachment);
-        });
-      });
+          return attachments.map(attachment => {
+            return this.getIconForType(attachment);
+          });
+        })
+      );
   }
 
   private getIconForType(attachment: Attachment): Attachment {

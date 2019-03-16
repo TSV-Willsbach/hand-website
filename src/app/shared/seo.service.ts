@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class SeoService {
 
-  constructor(private meta: Meta, private router: Router) { }
+  constructor(private meta: Meta, private router: Router, private route: ActivatedRoute) { }
 
   generateTags(config) {
     // default values
@@ -24,7 +24,7 @@ export class SeoService {
       type: 'website',
       ...config
     };
-    config.slug = this.router.url;
+    config.slug = window.location.href;
 
     // clear added tags
     this.meta.removeTag('property="og:image"');
@@ -41,7 +41,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:image', content: config.image });
-    this.meta.updateTag({ property: 'og:url', content: `https://willsbach-handball.de/${config.slug}` });
+    this.meta.updateTag({ property: 'og:url', content: config.slug });
 
     if (config.width !== 0) {
       this.meta.addTag({ property: 'og:image:width', content: config.width });

@@ -1,24 +1,19 @@
-import { Component, ComponentRef, DoCheck, ElementRef, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { Component, ComponentRef, DoCheck, ElementRef, EventEmitter, OnDestroy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
-
 import { Observable, of, timer } from 'rxjs';
-
-
-
-
-
-
-import { DocumentService, DocumentContents, FILE_NOT_FOUND_ID, FETCHING_ERROR_ID } from '../documents/document.service';
+import { DocumentService, DocumentContents } from '../documents/document.service';
 import { tap, switchMap } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
-
+// Coding from: https://github.com/ReactiveX/rxjs/blob/master/docs_app/src/app/layout/doc-viewer/doc-viewer.component.ts
 
 // Constants
 export const NO_ANIMATIONS = 'no-animations';
 
 // Initialization prevents flicker once pre-rendering is on
 const initialDocViewerContent = '<p></p>';
+
 @Component({
   selector: 'app-doc-viewer',
   //  templateUrl: './doc-viewer.component.html',
@@ -34,7 +29,6 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
 
   private void$ = of<void>(undefined);
   private onDestroy$ = new EventEmitter<void>();
-  private docContents$ = new EventEmitter<DocumentContents>();
 
   protected embeddedComponentRefs: ComponentRef<any>[] = [];
   protected currViewContainer: HTMLElement = document.createElement('div');
@@ -45,12 +39,12 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     elementRef: ElementRef,
     private titleService: Title,
     private metaService: Meta,
-    private router: Router,
+    router: Router,
     private documentService: DocumentService) {
-    router.events
-      .filter(event => event instanceof NavigationEnd)
-      .switchMap((url: any) => this.render(url))
-      .subscribe();
+    router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      switchMap((url: any) => this.render(url))
+    ).subscribe();
     this.hostElement = elementRef.nativeElement;
     // Security: the initialDocViewerContent comes from the prerendered DOM and is considered to be secure
     this.hostElement.innerHTML = initialDocViewerContent;
@@ -81,7 +75,7 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
    * Prepare for setting the window title and ToC.
    * Return a function to actually set them.
    */
-  protected prepareTitleAndToc(targetElem: HTMLElement, docId: string): () => void {
+  protected prepareTitleAndToc(targetElem: HTMLElement): () => void {
     const titleEl = targetElem.querySelector('h1');
     const hasToc = !!titleEl && !/no-?toc/i.test(titleEl.className);
 
@@ -124,18 +118,6 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     return this.void$;
   }
 
-  /**
-   * Tell search engine crawlers whether to index this page
-   */
-  private setNoIndex(val: boolean) {
-    if (val) {
-      this.metaService.addTag({ name: 'googlebot', content: 'noindex' });
-      this.metaService.addTag({ name: 'robots', content: 'noindex' });
-    } else {
-      this.metaService.removeTag('name="googlebot"');
-      this.metaService.removeTag('name="robots"');
-    }
-  }
 
   /**
    * Swap the views, removing `currViewContainer` and inserting `nextViewContainer`.
@@ -178,15 +160,16 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
         elem.style.transition = '';
         return animationsDisabled
           ? this.void$.pipe(tap(() => elem.style[prop] = to))
-          : this.void$
+          : this.void$.pipe(
             // In order to ensure that the `from` value will be applied immediately (i.e.
             // without transition) and that the `to` value will be affected by the
             // `transition` style, we need to ensure an animation frame has passed between
             // setting each style.
-            .switchMap(() => raf$).pipe(tap(() => elem.style[prop] = from))
-            .switchMap(() => raf$).pipe(tap(() => elem.style.transition = `all ${duration}ms ease-in-out`))
-            .switchMap(() => raf$).pipe(tap(() => (elem.style as any)[prop] = to))
-            .switchMap(() => timer(getActualDuration(elem))).switchMap(() => this.void$);
+            switchMap(() => raf$), tap(() => elem.style[prop] = from),
+            switchMap(() => raf$), tap(() => elem.style.transition = `all ${duration}ms ease-in-out`),
+            switchMap(() => raf$), tap(() => (elem.style as any)[prop] = to),
+            switchMap(() => timer(getActualDuration(elem))), switchMap(() => this.void$),
+          );
       };
 
     const animateLeave = (elem: HTMLElement) => animateProp(elem, 'opacity', '1', '0.1');
@@ -195,15 +178,12 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
     let done$ = this.void$;
 
     if (this.currViewContainer.parentElement) {
-      done$ = done$
+      done$ = done$.pipe(
         // Remove the current view from the viewer.
-        .switchMap(() => animateLeave(this.currViewContainer))
-        .pipe(
-          tap(() => {
-            this.hostElement.removeChild(this.currViewContainer);
-          }
-          ));
-      //    .do(() => this.docRemoved.emit());
+        switchMap(() => animateLeave(this.currViewContainer)),
+        // tslint:disable-next-line:no-non-null-assertion
+        tap(() => this.currViewContainer.parentElement!.removeChild(this.currViewContainer)),
+      );
     }
 
     return done$

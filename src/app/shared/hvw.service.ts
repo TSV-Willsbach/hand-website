@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Ligue, Club } from '@wh-objects/hvw';
 import { TeamStatistics } from '@wh-objects/team-statistics';
 import { Globals } from '@wh-objects/globals';
 import { Team } from '@wh-objects/team';
+import { map } from 'rxjs/operators';
 
 const baseUrl = 'https://spo.handball4all.de/service/if_g_json.php';
 const tickerUrl = 'http://spo.handball4all.de/service/ticker.html?appid=&token=';
@@ -42,25 +43,27 @@ export class HvwService {
   getLigueData(): Observable<Ligue> {
     const url = this.buildUrlWithParam();
 
-    return this.http.get<Ligue>(url).map(ligue => {
-      const data = ligue[0];
-      const scores = data.content.score;
-      scores.forEach(element => {
-        element.difference = element.numGoalsShot - element.numGoalsGot;
-      });
-      const games = data.content.futureGames.games;
-
-      if (games !== undefined) {
-        games.forEach(element => {
-          this.liveAndPDF(element);
+    return this.http.get<Ligue>(url).pipe(
+      map(ligue => {
+        const data = ligue[0];
+        const scores = data.content.score;
+        scores.forEach(element => {
+          element.difference = element.numGoalsShot - element.numGoalsGot;
         });
-      }
+        const games = data.content.futureGames.games;
+
+        if (games !== undefined) {
+          games.forEach(element => {
+            this.liveAndPDF(element);
+          });
+        }
 
 
-      const stats = new TeamStatistics(this.global);
-      stats.calcStatistic(data);
-      return data;
-    });
+        const stats = new TeamStatistics(this.global);
+        stats.calcStatistic(data);
+        return data;
+      })
+    );
   }
 
   private liveAndPDF(element: any) {
@@ -74,26 +77,30 @@ export class HvwService {
 
   getNextGames(): Observable<Ligue> {
     const url = this.buildUrlWithParam();
-    return this.http.get<Ligue>(url).map(ligue => ligue[0]);
+    return this.http.get<Ligue>(url).pipe(
+      map(ligue => ligue[0])
+    );
   }
 
   getClubData(): Observable<Club> {
     const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=' + this._period;
-    return this.http.get<Club>(clubUrl).map(club => {
-      const data = club[0];
-      const classes = data.content.classes;
+    return this.http.get<Club>(clubUrl).pipe(
+      map(club => {
+        const data = club[0];
+        const classes = data.content.classes;
 
-      classes.forEach(element => {
-        element.games.forEach(child => {
-          if (child.gGuestGoals === ' ') { child.gGuestGoals = '0'; }
-          if (child.gHomeGoals === ' ') { child.gHomeGoals = '0'; }
-          if (child.gGuestGoals_1 === ' ') { child.gGuestGoals_1 = '0'; }
-          if (child.gHomeGoals_1 === ' ') { child.gHomeGoals_1 = '0'; }
-          this.liveAndPDF(child);
+        classes.forEach(element => {
+          element.games.forEach(child => {
+            if (child.gGuestGoals === ' ') { child.gGuestGoals = '0'; }
+            if (child.gHomeGoals === ' ') { child.gHomeGoals = '0'; }
+            if (child.gGuestGoals_1 === ' ') { child.gGuestGoals_1 = '0'; }
+            if (child.gHomeGoals_1 === ' ') { child.gHomeGoals_1 = '0'; }
+            this.liveAndPDF(child);
+          });
         });
-      });
-      return data;
-    });
+        return data;
+      })
+    );
   }
 
   private buildUrlWithParam(): string {
@@ -134,7 +141,7 @@ export class HvwService {
             () => { });
         }
       });
-    return Observable.of(mGames);
+    return of(mGames);
   }
 
 

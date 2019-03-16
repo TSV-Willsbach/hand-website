@@ -4,16 +4,16 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareButtonsModule } from '@ngx-share/buttons';
-import { ShareButtonsOptions } from '@ngx-share/core';
+import { ShareButtonsConfig, IShareButtons } from '@ngx-share/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -58,13 +58,26 @@ import { ReportCardsComponent } from '@wh-childs/report-cards/report-cards.compo
 import { GameTableComponent } from './child-components/game-table/game-table.component';
 import { ContactComponent } from './contact/contact.component';
 import { DataProtectionComponent } from './core/data-protection/data-protection.component';
+import { OutfitterFooterComponent } from '@wh-outfitter/outfitter-footer/outfitter-footer.component';
 
 export const firebaseConfig = environment.firebase;
 
-const options: ShareButtonsOptions = {
-  include: ['facebook', 'whatsapp', 'copy', 'twitter', 'google', 'email', 'print'],
+const customConfig: ShareButtonsConfig = {
+  include: ['facebook', 'whatsapp', 'copy', 'twitter', 'email', 'print', 'sms'],
   tags: 'tsvWillsbach',
-  twitterAccount: 'willsbach_hndbl'
+  theme: 'default',
+  gaTracking: true,
+  autoSetMeta: true,
+  twitterAccount: 'willsbach_hndbl',
+  prop: {
+    copy: {
+      text: 'Link kopieren'
+    },
+    print: {
+      text: 'Drucken'
+    }
+    // and so on...
+  }
 };
 
 // Add an icon to the library for convenient access in other components
@@ -97,7 +110,8 @@ library.add(fas, far, fab);
     ReportCardsComponent,
     GameTableComponent,
     ContactComponent,
-    DataProtectionComponent
+    DataProtectionComponent,
+    OutfitterFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +119,7 @@ library.add(fas, far, fab);
     AngularFontAwesomeModule,
     FontAwesomeModule,
     HttpClientModule,
-    ShareButtonsModule.forRoot({ options: options }),
+    ShareButtonsModule.withConfig(customConfig),
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,

@@ -23,13 +23,14 @@
 </div>
 
 <div class="SocialShare">
+  <share-buttons [show]="4" [showText]="true" [showCount]="true" [size]="2" [autoSetMeta]="true" [url]="href" [image]="post.picture.url"></share-buttons>
   <!-- <share-buttons [include]="['facebook','whatsapp','copy','email','twitter','google','print']" [showText]="true" [showCount]="true"
     [size]="4" [show]="3" [title]="post.title.rendered" [description]="href" [image]="post.thumbnail" [tags]="'tsvWillsbachHandball'"></share-buttons> -->
-  <share-button [button]="'facebook'" [showCount]="true" [title]="post.title.rendered" [image]="post.picture.url"></share-button>
+  <!-- <share-button [button]="'facebook'" [showCount]="true" [title]="post.title.rendered" [image]="post.picture.url"></share-button>
   <share-button [button]="'whatsapp'" [title]="post.title.rendered" [description]="href" [image]="post.picture.url"></share-button>
   <share-button [button]="'twitter'" [title]="post.title.rendered" [image]="post.picture.url" [tags]="'tsvwillsbachhandball'"></share-button>
   <share-button [button]="'copy'"></share-button>
   <share-button [button]="'print'"></share-button>
-  <share-button [button]="'email'" [title]="post.title.rendered" [description]="href"></share-button>
+  <share-button [button]="'email'" [title]="post.title.rendered" [description]="href"></share-button> -->
 </div>
 <br />

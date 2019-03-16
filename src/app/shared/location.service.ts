@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Location, PlatformLocation } from '@angular/common';
 
 import { ReplaySubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 
@@ -13,10 +14,14 @@ export class LocationService {
   private swUpdateActivated = false;
 
   currentUrl = this.urlSubject
-    .map(url => this.stripSlashes(url));
+    .pipe(
+      map(url => this.stripSlashes(url))
+    );
 
   currentPath = this.currentUrl
-    .map(url => (url.match(/[^?#]*/) || [])[0]);
+    .pipe(
+      map(url => (url.match(/[^?#]*/) || [])[0])
+    );
 
   constructor(
     private location: Location,

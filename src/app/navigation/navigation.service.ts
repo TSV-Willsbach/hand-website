@@ -85,7 +85,9 @@ export class NavigationService {
 
   private getCurrentNodes(navigationViews: Observable<NavigationViews>): Observable<CurrentNodes> {
     const currentNodes = combineLatest(
-      navigationViews.map(views => this.computeUrlToNavNodesMap(views)),
+      navigationViews.pipe(
+        map(views => this.computeUrlToNavNodesMap(views))
+      ),
       (navMap, url) => {
         const urlKey = url.startsWith('api/') ? 'api' : url;
         return navMap.get(urlKey) || { '': { view: '', url: urlKey, nodes: [] } };
