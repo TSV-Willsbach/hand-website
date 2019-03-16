@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest } from 'rxjs';
 
 import { NavigationService, NavigationNode, VersionInfo, CurrentNodes } from './navigation/navigation.service';
 import { LocationService } from './shared/location.service';
@@ -36,7 +35,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onActivate(event) {
+  onActivate() {
     window.scroll(0, 0);
   }
 
@@ -60,7 +59,7 @@ export class AppComponent implements OnInit {
     // ensure the styles are applied as soon as possible to avoid flicker.
     //    this.documentService.currentDocument.first().subscribe(doc => this.updateHostClassesForDoc(doc));
 
-    this.locationService.currentPath.subscribe(path => {
+    this.locationService.currentPath.subscribe(() => {
       // Redirect to docs if we are in archive mode and are not hitting a docs page
       // (i.e. we have arrived at a marketing page)
       /*       if (this.deployment.mode === 'archive' && !/^(docs$|api|guide|tutorial)/.test(path)) {
@@ -80,7 +79,7 @@ export class AppComponent implements OnInit {
 
   }
 
-  updateHostClassesForDoc(doc: DocumentContents) {
+  updateHostClassesForDoc() {
     // Do nothing for now
   }
 
