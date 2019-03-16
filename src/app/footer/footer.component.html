@@ -14,7 +14,8 @@
         <h5>{{node.title}}</h5>
         <ul class="list-unstyled text-small">
           <li *ngFor="let item of node.children">
-            <a class="text-muted" [href]="item.url" [title]="item.tooltip || item.title" [routerLink]="item.router">{{ item.title }}</a>
+            <a class="text-muted" [href]="item.url" [title]="item.tooltip || item.title" [routerLink]="item.router">{{
+              item.title }}</a>
           </li>
         </ul>
       </div>
@@ -57,19 +58,21 @@
         <ul class="list-unstyled text-small">
           <li>
             <a class="social facebook" href="https://bitbucket.org/tsvwillsbachhandball/" target="_blank" rel="noopener">
-              <fa-icon [icon]="['fab', 'bitbucket']"></fa-icon> Bitbucket Team</a>
+              <fa-icon [icon]="['fab', 'bitbucket']"></fa-icon> Bitbucket Team
+            </a>
           </li>
           <li>
-            <a class="social youtube" href="https://bitbucket.org/tsvwillsbachhandball/website/issues?status=new&status=open" target="_blank"
-              rel="noopener">
-              <fa-icon [icon]="['fas', 'bug']"></fa-icon> Fehler melden</a>
+            <a class="social youtube" href="https://bitbucket.org/tsvwillsbachhandball/website/issues?status=new&status=open"
+              target="_blank" rel="noopener">
+              <fa-icon [icon]="['fas', 'bug']"></fa-icon> Fehler melden
+            </a>
           </li>
         </ul>
       </div>
       <div class="col-12 col-md text-center">
         <figure>
-            <img class="img-responsive" src="assets/images/handball_logo_mit_text.svg" alt="Handball Logo" />
-            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+          <img class="img-responsive" src="assets/images/handball_logo_mit_text.svg" alt="Handball Logo" />
+          <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
         </figure>
       </div>
     </div>

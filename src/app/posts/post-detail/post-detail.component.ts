@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
 import { SeoService } from '@wh-share/seo.service';
@@ -16,9 +16,10 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   post: Post;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private news: NewsService, private seo: SeoService) {
+  constructor(private route: ActivatedRoute, private news: NewsService, private seo: SeoService, private router: Router) {
     this.post = new Post();
     this.getPostData();
+    this.href = this.router.url;
   }
 
   ngOnInit() {
