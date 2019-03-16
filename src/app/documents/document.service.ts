@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, AsyncSubject, of } from 'rxjs';
 import { DocumentContents } from './document-contents';
 import { LocationService } from '@wh-share/location.service';
-import { tap } from 'rxjs/operators';
+import { tap, catchError, switchMap } from 'rxjs/operators';
 export { DocumentContents } from './document-contents';
 export const FILE_NOT_FOUND_ID = 'file-not-found';
 export const FETCHING_ERROR_ID = 'fetching-error';
@@ -36,7 +36,9 @@ export class DocumentService {
     location: LocationService
   ) {
     // Whenever the URL changes we try to get the appropriate doc
-    this.currentDocument = location.currentPath.switchMap(path => this.getDocument(path));
+    this.currentDocument = location.currentPath.pipe(
+      switchMap(path => this.getDocument(path))
+    );
   }
 
   public getDocument(url: string) {
@@ -61,12 +63,11 @@ export class DocumentService {
             //  this.logger.log('received invalid data:', data);
             throw Error('Invalid data');
           }
+        }),
+        catchError((error: HttpErrorResponse) => {
+          return error.status === 404 ? this.getFileNotFoundDoc(id) : null; // this.getErrorDoc(id, error);
         })
-      )
-      .catch((error: HttpErrorResponse) => {
-        return error.status === 404 ? this.getFileNotFoundDoc(id) : null; // this.getErrorDoc(id, error);
-      })
-      .subscribe(subject);
+      ).subscribe(subject);
 
     return subject.asObservable();
   }

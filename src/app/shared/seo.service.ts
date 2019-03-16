@@ -41,7 +41,7 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({ property: 'og:description', content: config.description });
     this.meta.updateTag({ property: 'og:image', content: config.image });
-    this.meta.updateTag({ property: 'og:url', content: `https://willsbach-handball.de/${config.slug}` });
+    this.meta.updateTag({ property: 'og:url', content: `https://willsbach-handball.de${config.slug}` });
 
     if (config.width !== 0) {
       this.meta.addTag({ property: 'og:image:width', content: config.width });

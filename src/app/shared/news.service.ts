@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Post, Picture } from '@wh-objects/post';
+import { map } from 'rxjs/operators';
 
 const apiPosts = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed';
 const apiReports = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6';
@@ -40,15 +41,17 @@ export class NewsService {
   fetchNews(page: number): Observable<Post[]> {
     this.page = page;
     return this.http.get<Post[]>(this.getLink(apiPosts), { observe: 'response' })
-      .map(posts => {
-        this.totalPages = +posts.headers.get('X-WP-TotalPages');
-        return posts.body.map(post => {
-          this.mapFields(post);
-          post.isNew = this.global.isPostNew(post.date);
+      .pipe(
+        map(posts => {
+          this.totalPages = +posts.headers.get('X-WP-TotalPages');
+          return posts.body.map(post => {
+            this.mapFields(post);
+            post.isNew = this.global.isPostNew(post.date);
 
-          return post;
-        });
-      });
+            return post;
+          });
+        })
+      );
   }
 
   fetchReports(id: string, page: number): Observable<Post[]> {
@@ -107,21 +110,25 @@ export class NewsService {
 
     }
     return this.http.get<Post[]>(this.getLink(link), { observe: 'response' })
-      .map(posts => {
-        this.totalPages = +posts.headers.get('X-WP-TotalPages');
-        return posts.body.map(post => {
-          this.mapFields(post);
-          return post;
-        });
-      });
+      .pipe(
+        map(posts => {
+          this.totalPages = +posts.headers.get('X-WP-TotalPages');
+          return posts.body.map(post => {
+            this.mapFields(post);
+            return post;
+          });
+        })
+      );
   }
 
   fetchSinglePost(id: number): Observable<any> {
     const link = apiPost + id + '?' + embed;
-    return this.http.get<Post>(link).map(post => {
-      this.mapFields(post);
-      return post;
-    });
+    return this.http.get<Post>(link).pipe(
+      map(post => {
+        this.mapFields(post);
+        return post;
+      })
+    );
   }
 
   private getLink(link: string): string {

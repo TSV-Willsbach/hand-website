@@ -2,7 +2,7 @@ import { SeoService } from '@wh-share/seo.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Team } from '@wh-objects/team';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from '@firebase/util';
 import { TeamService } from '@wh-share/team.service';
 
