@@ -19,7 +19,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute, private news: NewsService, private seo: SeoService, private router: Router) {
     this.post = new Post();
     this.getPostData();
-    this.href = this.router.url;
+    this.href = window.location.href;
   }
 
   ngOnInit() {
