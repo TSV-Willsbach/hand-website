@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!doctype html>
-<html lang="en">
+<html lang="de">
 
 <head>
   <meta charset="utf-8">
@@ -19,14 +19,16 @@
 </head>
 
 <body>
-
+  <app-navbar [nodes]="topMenuNodes"></app-navbar>
+  <br />
+  <br />
+  <br />
+  <br />
   <div class="container">
-    <app-navbar [nodes]="topMenuNodes"></app-navbar>
-    <br />
-    <br />
-    <br />
-    <br />
+    <!-- <app-outfitter></app-outfitter> -->
+    <br /><br />
     <router-outlet (activate)="onActivate($event)"></router-outlet>
+    <br />
   </div>
   <br />
   <app-sponsors></app-sponsors>

@@ -35,6 +35,9 @@
       ],
       "@wh-childs/*": [
         "app/child-components/*"
+      ],
+      "@wh-outfitter/*": [
+        "app/sponsors/outfitter/*"
       ]
     }
   }
