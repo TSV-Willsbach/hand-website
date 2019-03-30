@@ -1,0 +1,11 @@
+{
+    "$schema": "../schemas/teamSchema.json",
+    "title": "Weibliche B Jugend",
+    "qualID": "39479",
+    "wpCat": "48",
+    "wpID": "wB",
+    "trainer": [{
+        "name": "Vonthien",
+        "prename": "Stefanie"
+    }]
+}
