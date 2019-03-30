@@ -40,7 +40,7 @@
     </td>
     <ng-template #referee>
       <div *ngIf="game.live == true">
-        <a href="{{game.tickerUrl}}" target="_blank" class="Ticker">
+        <a [routerLink]="[ '/ticker/', game.gToken] " class="Ticker">
           <fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon>
           Liveticker
         </a>

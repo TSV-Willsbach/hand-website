@@ -12,6 +12,7 @@ export class Game {
     sGID: string;
     gNo: string;
     live: Boolean;
+    gToken: string;
     gDate: string;
     gTime: string;
     gGymnasiumID: string;

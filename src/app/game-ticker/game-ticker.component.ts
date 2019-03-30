@@ -46,6 +46,8 @@ export class GameTickerComponent implements OnInit {
 
         this.gameDetail.forEach(element => {
           if (element.message.includes('Spielzeit') || element.message.includes('Spielstand')) {
+          } else if (element.message.includes('Mannschafts-Auszeit')) {
+
           } else if (element.message.includes('Gastmannschaft')) {
             if (this.teams.guest === undefined) {
               this.teams.guest = new Array<PlayerInfo>();
@@ -87,6 +89,7 @@ export class GameTickerComponent implements OnInit {
       if (element.message.includes('Erfolgreicher')) {
         this.addValue(team, 'penalties', 'done', 1, number);
         this.addValue(team, 'penalties', 'goals', 1, number);
+        this.addValue(team, 'goals', '', 1, number);
       } else {
         this.addValue(team, 'penalties', 'done', 1, number);
       }
