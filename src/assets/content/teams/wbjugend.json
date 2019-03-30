@@ -15,5 +15,71 @@
             "name": "König",
             "prename": "Fabian"
         }
+    ],
+    "players": [{
+            "name": "Ahlborn",
+            "prename": "Emily",
+            "number": 3
+        },
+        {
+            "name": "Frank",
+            "prename": "Anna",
+            "number": 1
+        },
+        {
+            "name": "Hoffmann",
+            "prename": "Sofia",
+            "number": 0
+        },
+        {
+            "name": "Jaspers",
+            "prename": "Mara",
+            "number": 7
+        },
+        {
+            "name": "Juhasz",
+            "prename": "Yvonne",
+            "number": 0
+        },
+        {
+            "name": "Karlin",
+            "prename": "Sofie",
+            "number": 11
+        },
+        {
+            "name": "Müller",
+            "prename": "Marina",
+            "number": 2
+        },
+        {
+            "name": "Opitz",
+            "prename": "Fabienne",
+            "number": 13
+        },
+        {
+            "name": "Ott",
+            "prename": "Mia",
+            "number": 10
+        },
+        {
+            "name": "Schestag",
+            "prename": "Lisa",
+            "number": 0
+        },
+        {
+            "name": "Schwarzer",
+            "prename": "Antonia",
+            "number": 12
+        },
+        {
+            "name": "Sommer",
+            "prename": "Rosa",
+            "number": 4
+        },
+        {
+            "name": "Waldmann",
+            "prename": "Johanna",
+            "number": 0
+        }
     ]
 }
