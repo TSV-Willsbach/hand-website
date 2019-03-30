@@ -33,7 +33,7 @@ export class GameTickerComponent implements OnInit {
     );
   }
 
-  private getData() {
+  public getData() {
     this.initData();
 
     this.http.get<GameTickerInfo>(`${this.url}getGameInfo`)
