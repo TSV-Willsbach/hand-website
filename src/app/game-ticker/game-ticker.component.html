@@ -1,0 +1,130 @@
+<h2 class="heading">Live Ticker</h2>
+
+<p>
+  Live-Ticker beim HVW öffnen:
+  <a href="http://spo.handball4all.de/service/ticker.html?appid=&token={{tokenId}}" target="_blank">HVW Ticker</a>
+</p>
+
+<button type="button" class="btn btn-link btn-lg btn-block" (click)="getData()">
+  <i class="fa fa-refresh" aria-hidden="true"></i> Aktualisieren</button>
+<br />
+
+<h3>Spiel Informationen</h3>
+<br />
+
+<h4>{{gameInfo.class_lname}}</h4>
+<div>
+  {{gameInfo.datetime | date:'dd.MM.yyyy HH:mm' }}
+  <br />
+  {{gameInfo.home_lname}} vs. {{gameInfo.guest_lname}}
+  <br />
+  Spielzeit: {{gameTime * 1000 | date:'mm:ss'}}
+  <br />
+  Stand: {{gameScore}}
+</div>
+<br />
+
+<h3>Mannschaftsinformationen</h3>
+<br />
+<h4>{{gameInfo.home_lname}}</h4>
+<table id="{{gameInfo.home_lname}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+  <tr>
+    <th>Nummer</th>
+    <th>Tore</th>
+    <th>7m</th>
+    <th>Gelbe Karte</th>
+    <th colspan="3">2 min</th>
+  </tr>
+  <tr *ngFor="let player of this.teams.home">
+    <td>{{player.number}}</td>
+    <td>
+      <div *ngIf="player.goals != 0">
+        {{player.goals}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.penalties.done != 0">
+        {{player.penalties.done}} / {{player.penalties.goals}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.yellow_card != 0">
+        {{player.yellow_card * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.one != 0">
+        {{player.two_minute.one * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.two != 0">
+        {{player.two_minute.two * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.three != 0">
+        {{player.two_minute.three * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+  </tr>
+</table>
+<br />
+<h4>{{gameInfo.guest_lname}}</h4>
+<table id="{{gameInfo.guest_lname}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+  <tr>
+    <th>Nummer</th>
+    <th>Tore</th>
+    <th>7m</th>
+    <th>Gelbe Karte</th>
+    <th colspan="3">2 min</th>
+  </tr>
+  <tr *ngFor="let player of this.teams.guest">
+    <td>{{player.number}}</td>
+    <td>
+      <div *ngIf="player.goals != 0">
+        {{player.goals}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.penalties.done != 0">
+        {{player.penalties.done}} / {{player.penalties.goals}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.yellow_card != 0">
+        {{player.yellow_card * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.one != 0">
+        {{player.two_minute.one * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.two != 0">
+        {{player.two_minute.two * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.three != 0">
+        {{player.two_minute.three * 1000 | date:'mm:ss'}}
+      </div>
+    </td>
+  </tr>
+</table>
+
+<br />
+<h4>Verlauf</h4>
+<table id="{{gameInfo.class_lname}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+  <tr>
+    <th>Spielzeit</th>
+    <th>Spielstand</th>
+    <th>Info</th>
+  </tr>
+  <tr *ngFor="let detail of gameDetail">
+    <td>{{detail.game_time * 1000 | date:'mm:ss'}}</td>
+    <td>{{detail.home_score}} : {{detail.guest_score}}</td>
+    <td>{{detail.message}}</td>
+  </tr>
+</table>

@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './core/auth.guard';
 import { EditComponent } from './edit/edit.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { GameTickerComponent } from './game-ticker/game-ticker.component';
 
 
 const routes: Routes = [
@@ -91,6 +92,10 @@ const routes: Routes = [
   {
     path: 'team/:id/players/:name',
     component: PlayerDetailComponent
+  },
+  {
+    path: 'ticker/:gToken',
+    component: GameTickerComponent,
   },
   {
     path: 'login',
