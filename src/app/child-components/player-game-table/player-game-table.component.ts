@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Pipe, PipeTransform } from '@angular/core';
 import { GameTickerTeams, GameTickerInfo, PlayerInfo } from '@wh-objects/hvw';
 
 @Component({
@@ -15,5 +15,11 @@ export class PlayerGameTableComponent implements OnInit {
 
   ngOnInit() {
   }
+}
 
+@Pipe({ name: 'convertTime' })
+export class ConvertTimePipe implements PipeTransform {
+  transform(value: number): number {
+    return Math.floor(value);
+  }
 }

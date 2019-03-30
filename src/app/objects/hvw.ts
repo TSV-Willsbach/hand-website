@@ -198,6 +198,12 @@ export class GameTickerInfo {
     };
     status: number;
     status_description: string;
+    constructor() {
+        this.report = {
+            refereeA: new Referee(),
+            refereeB: new Referee()
+        };
+    }
 }
 
 export class GameTickerDetail {
@@ -223,6 +229,20 @@ export class PlayerInfo {
         two: number,
         three: number
     };
+    red_card: number;
+    blue_card: number;
+
+    constructor() {
+        this.penalties = {
+            done: 0,
+            goals: 0
+        };
+        this.two_minute = {
+            one: 0,
+            two: 0,
+            three: 0
+        };
+    }
 }
 
 export class GameTickerTeams {

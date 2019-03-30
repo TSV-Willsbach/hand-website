@@ -18,7 +18,7 @@
   <br />
   {{gameInfo.home_lname}} vs. {{gameInfo.guest_lname}}
   <br />
-  Spielzeit: {{gameTime /60 | number:'2.0-0'}}:{{gameTime % 60 | number:'2.0-0'}}
+  Spielzeit: {{gameTime | convert2GameTime}}
   <br />
   Stand: {{gameScore}}
   <br />
@@ -42,7 +42,7 @@
     <th>Info</th>
   </tr>
   <tr *ngFor="let detail of gameDetail">
-    <td>{{detail.game_time /60 | number:'2.0-0'}}:{{detail.game_time % 60 | number:'2.0-0'}}</td>
+    <td>{{detail.game_time | convert2GameTime}}</td>
     <td>{{detail.home_score}} : {{detail.guest_score}}</td>
     <td>{{detail.message}}</td>
   </tr>

@@ -1,3 +1,4 @@
+import { ConvertGameTimePipe } from './core/gameTimePipe';
 import { GeneralDataService } from './shared/general-data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -115,7 +116,8 @@ library.add(fas, far, fab);
     DataProtectionComponent,
     OutfitterFooterComponent,
     GameTickerComponent,
-    PlayerGameTableComponent
+    PlayerGameTableComponent,
+    ConvertGameTimePipe
   ],
   imports: [
     BrowserModule,

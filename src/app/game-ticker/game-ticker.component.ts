@@ -98,7 +98,8 @@ export class GameTickerComponent implements OnInit {
     } else if (element.message.includes('2-min')) {
       this.addValue(team, 'two_minute', '', element.game_time, number);
     } else if (element.message.includes('Disqualifikation')) {
-
+      this.addValue(team, 'red_card', '', element.game_time, number);
+      console.log(element.game_time);
     }
   }
 
@@ -118,7 +119,9 @@ export class GameTickerComponent implements OnInit {
           one: 0,
           two: 0,
           three: 0
-        }
+        },
+        red_card: 0,
+        blue_card: 0
       });
       playerIndex--;
     } else {
