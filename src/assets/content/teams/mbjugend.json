@@ -2,6 +2,7 @@
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche B Jugend",
     "ligaID": "36475",
+    "qualID": "39451",
     "wpCat": "18",
     "wpID": "mB",
     "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/mB.jpg",

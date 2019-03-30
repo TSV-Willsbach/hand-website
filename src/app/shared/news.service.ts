@@ -1,6 +1,5 @@
 import { Globals } from './../objects/globals';
 
-import { TeamService } from '@wh-share/team.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -12,15 +11,6 @@ const apiReports = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categor
 const apiPost = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts/';
 const embed = '_embed';
 const cat = '&categories=';
-const catHerren = '&categories=10';
-const catDamen = '&categories=5';
-const catmA = '&categories=17';
-const catmB = '&categories=18';
-const catmC = '&categories=19';
-const catwC = '&categories=40';
-const catmD = '&categories=20';
-const catmE = '&categories=21';
-const catMinis = '&categories=22';
 const maxPosts = '&per_page=6';
 
 @Injectable()
@@ -54,61 +44,16 @@ export class NewsService {
       );
   }
 
-  fetchReports(id: string, page: number): Observable<Post[]> {
+  fetchReports(wpCat: string, page: number): Observable<Post[]> {
     let link: string;
     this.page = page;
 
-    switch (id) {
-      case 'herren': {
-        link = apiReports + catHerren + '&' + embed;
-        break;
-      }
-
-      case 'damen': {
-        link = apiReports + catDamen + '&' + embed;
-        break;
-      }
-
-      case 'majugend': {
-        link = apiReports + catmA + '&' + embed;
-        break;
-      }
-
-      case 'mbjugend': {
-        link = apiReports + catmB + '&' + embed;
-        break;
-      }
-
-      case 'wcjugend': {
-        link = apiReports + catwC + '&' + embed;
-        break;
-      }
-
-      case 'mcjugend': {
-        link = apiReports + catmC + '&' + embed;
-        break;
-      }
-
-      case 'mdjugend': {
-        link = apiReports + catmD + '&' + embed;
-        break;
-      }
-
-      case 'mejugend': {
-        link = apiReports + catmE + '&' + embed;
-        break;
-      }
-
-      case 'minis': {
-        link = apiReports + catMinis + '&' + embed;
-        break;
-      }
-
-      default: {
-        link = apiReports + '&' + embed;
-      }
-
+    if (wpCat !== '') {
+      link = apiReports + cat + wpCat + '&' + embed;
+    } else {
+      link = apiReports + '&' + embed;
     }
+
     return this.http.get<Post[]>(this.getLink(link), { observe: 'response' })
       .pipe(
         map(posts => {

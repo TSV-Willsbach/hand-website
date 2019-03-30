@@ -28,13 +28,13 @@ export class TeamDetailComponent implements OnInit {
           team => this.team = team,
           error => { console.log(error); },
           () => {
+            teamService.getTeamReports(this.team.wpCat, 1).subscribe(posts => this.posts = posts);
             this.seo.generateTags({
               title: this.team.title,
               description: this.team.title,
               image: this.team.picture
             });
           });
-        teamService.getTeamReports(id, 1).subscribe(posts => this.posts = posts);
       },
       error => { console.log(error); },
       () => { });

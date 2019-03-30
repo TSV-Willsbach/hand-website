@@ -1,3 +1,4 @@
+import { ConvertGameTimePipe } from './core/gameTimePipe';
 import { GeneralDataService } from './shared/general-data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -59,6 +60,8 @@ import { GameTableComponent } from './child-components/game-table/game-table.com
 import { ContactComponent } from './contact/contact.component';
 import { DataProtectionComponent } from './core/data-protection/data-protection.component';
 import { OutfitterFooterComponent } from '@wh-outfitter/outfitter-footer/outfitter-footer.component';
+import { GameTickerComponent } from './game-ticker/game-ticker.component';
+import { PlayerGameTableComponent } from './child-components/player-game-table/player-game-table.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -111,7 +114,10 @@ library.add(fas, far, fab);
     GameTableComponent,
     ContactComponent,
     DataProtectionComponent,
-    OutfitterFooterComponent
+    OutfitterFooterComponent,
+    GameTickerComponent,
+    PlayerGameTableComponent,
+    ConvertGameTimePipe
   ],
   imports: [
     BrowserModule,

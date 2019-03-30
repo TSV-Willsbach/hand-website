@@ -76,8 +76,8 @@ export class TeamService {
     return `./assets/content/teams/${teamId}.json`;
   }
 
-  getTeamReports(teamId: string, page: number): Observable<Post[]> {
-    return this.news.fetchReports(teamId, page);
+  getTeamReports(catID: string, page: number): Observable<Post[]> {
+    return this.news.fetchReports(catID, page);
   }
 
   getMaxPages(): number {

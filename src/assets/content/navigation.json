@@ -38,6 +38,11 @@
                     "tooltip": ""
                 },
                 {
+                    "router": "wbjugend",
+                    "title": "B Jugend (w)",
+                    "tooltip": ""
+                },
+                {
                     "router": "wcjugend",
                     "title": "C Jugend (w)",
                     "tooltip": ""
@@ -53,7 +58,7 @@
                     "tooltip": ""
                 },
                 {
-                    "router": "mejugend",
+                    "router": "gejugend",
                     "title": "E/F Jugend (m/w)",
                     "tooltip": ""
                 },
