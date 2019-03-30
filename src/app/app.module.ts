@@ -59,6 +59,7 @@ import { GameTableComponent } from './child-components/game-table/game-table.com
 import { ContactComponent } from './contact/contact.component';
 import { DataProtectionComponent } from './core/data-protection/data-protection.component';
 import { OutfitterFooterComponent } from '@wh-outfitter/outfitter-footer/outfitter-footer.component';
+import { GameTickerComponent } from './game-ticker/game-ticker.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -111,7 +112,8 @@ library.add(fas, far, fab);
     GameTableComponent,
     ContactComponent,
     DataProtectionComponent,
-    OutfitterFooterComponent
+    OutfitterFooterComponent,
+    GameTickerComponent
   ],
   imports: [
     BrowserModule,

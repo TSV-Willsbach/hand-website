@@ -12,6 +12,7 @@ export class Game {
     sGID: string;
     gNo: string;
     live: Boolean;
+    gToken: string;
     gDate: string;
     gTime: string;
     gGymnasiumID: string;
@@ -177,4 +178,54 @@ export class Ligue {
         this.content = new Content();
         this.statistik = new Statistik();
     }
+}
+
+export class Referee {
+    name: string;
+    prename: string;
+}
+
+export class GameTickerInfo {
+    class_lname: string;
+    guest_lname: string;
+    home_lname: string;
+    datetime: Date;
+    gym_name: string;
+    gym_town: string;
+    report: {
+        refereeA: Referee;
+        refereeB: Referee;
+    };
+    status: number;
+    status_description: string;
+}
+
+export class GameTickerDetail {
+    game_time: number;
+    home_score: string;
+    guest_score: string;
+    message: string;
+    stops_time: boolean;
+    status: number;
+    status_description: string;
+}
+
+export class PlayerInfo {
+    number: string;
+    goals: number;
+    penalties: {
+        done: number;
+        goals: number;
+    };
+    yellow_card: number;
+    two_minute: {
+        one: number,
+        two: number,
+        three: number
+    };
+}
+
+export class GameTickerTeams {
+    home: PlayerInfo[];
+    guest: PlayerInfo[];
 }
