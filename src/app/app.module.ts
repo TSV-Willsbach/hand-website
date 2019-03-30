@@ -60,6 +60,7 @@ import { ContactComponent } from './contact/contact.component';
 import { DataProtectionComponent } from './core/data-protection/data-protection.component';
 import { OutfitterFooterComponent } from '@wh-outfitter/outfitter-footer/outfitter-footer.component';
 import { GameTickerComponent } from './game-ticker/game-ticker.component';
+import { PlayerGameTableComponent } from './child-components/player-game-table/player-game-table.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -113,7 +114,8 @@ library.add(fas, far, fab);
     ContactComponent,
     DataProtectionComponent,
     OutfitterFooterComponent,
-    GameTickerComponent
+    GameTickerComponent,
+    PlayerGameTableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+<h4>{{teamName}}</h4>
+<table id="{{teamName}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+  <tr>
+    <th>Nummer</th>
+    <th>Tore</th>
+    <th>7m</th>
+    <th>Gelbe Karte</th>
+    <th colspan="3">2 min</th>
+  </tr>
+  <tr *ngFor="let player of this.team">
+    <td>{{player.number}}</td>
+    <td>
+      <div *ngIf="player.goals != 0">
+        {{player.goals}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.penalties.done != 0">
+        {{player.penalties.done}} / {{player.penalties.goals}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.yellow_card != 0">
+        {{player.yellow_card /60 | number:'2.0-0'}}:{{player.yellow_card % 60 | number:'2.0-0'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.one != 0">
+        {{player.two_minute.one /60 | number:'2.0-0'}}:{{player.two_minute.one % 60 | number:'2.0-0'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.two != 0">
+        {{player.two_minute.two /60 | number:'2.0-0'}}:{{player.two_minute.two % 60 | number:'2.0-0'}}
+      </div>
+    </td>
+    <td>
+      <div *ngIf="player.two_minute.three != 0">
+        {{player.two_minute.three /60 | number:'2.0-0'}}:{{player.two_minute.three % 60 | number:'2.0-0'}}
+      </div>
+    </td>
+  </tr>
+</table>
+<br />
