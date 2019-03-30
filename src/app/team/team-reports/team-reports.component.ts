@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TeamService } from '@wh-share/team.service';
 import { SeoService } from '@wh-share/seo.service';
 import { Paginator } from '@wh-objects/pagination';
+import { Team } from '@wh-objects/team';
 
 @Component({
   selector: 'app-team-reports',
@@ -13,6 +14,7 @@ import { Paginator } from '@wh-objects/pagination';
 export class TeamReportsComponent implements OnInit {
   posts: Post[];
   teamID: any;
+  team: Team;
   public maxPages: number;
   page = 1;
   pages: Paginator[];
@@ -29,6 +31,10 @@ export class TeamReportsComponent implements OnInit {
   private callApi() {
     this.myData = this.route.params.subscribe(params => {
       this.teamID = params['id'];
+      this.teamService.getTeam(this.teamID).subscribe(
+        team => this.team = team,
+        error => { console.log(error); },
+        () => { });
       this.teamService.getTeamReports(this.teamID, this.page)
         .subscribe(posts => this.posts = posts,
           error => console.log('Error: ', error),
