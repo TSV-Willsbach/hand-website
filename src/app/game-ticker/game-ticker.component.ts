@@ -86,12 +86,11 @@ export class GameTickerComponent implements OnInit {
     if (element.message.includes('Tor')) {
       this.addValue(team, 'goals', '', 1, number);
     } else if (element.message.includes('7m-Wurf')) {
+      this.addValue(team, 'penalties', 'done', 1, number);
+
       if (element.message.includes('Erfolgreicher')) {
-        this.addValue(team, 'penalties', 'done', 1, number);
         this.addValue(team, 'penalties', 'goals', 1, number);
         this.addValue(team, 'goals', '', 1, number);
-      } else {
-        this.addValue(team, 'penalties', 'done', 1, number);
       }
     } else if (element.message.includes('Verwarnung')) {
       this.addValue(team, 'yellow_card', '', element.game_time, number);
@@ -99,6 +98,9 @@ export class GameTickerComponent implements OnInit {
       this.addValue(team, 'two_minute', '', element.game_time, number);
     } else if (element.message.includes('Disqualifikation')) {
       this.addValue(team, 'red_card', '', element.game_time, number);
+      if (element.message.includes('mit Bericht')) {
+        this.addValue(team, 'blue_card', '', element.game_time, number);
+      }
       console.log(element.game_time);
     }
   }
