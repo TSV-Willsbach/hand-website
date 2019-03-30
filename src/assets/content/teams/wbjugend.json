@@ -5,7 +5,15 @@
     "wpCat": "48",
     "wpID": "wB",
     "trainer": [{
-        "name": "Vonthien",
-        "prename": "Stefanie"
-    }]
+            "name": "Vonthien",
+            "prename": "Stefanie"
+        }, {
+            "name": "Jaspers",
+            "prename": "Frieso"
+        },
+        {
+            "name": "König",
+            "prename": "Fabian"
+        }
+    ]
 }
