@@ -18,9 +18,12 @@
   <br />
   {{gameInfo.home_lname}} vs. {{gameInfo.guest_lname}}
   <br />
-  Spielzeit: {{gameTime * 1000 | date:'mm:ss'}}
+  Spielzeit: {{gameTime /60 | number:'2.0-0'}}:{{gameTime % 60 | number:'2.0-0'}}
   <br />
   Stand: {{gameScore}}
+  <br />
+  Schiedsrichter: {{gameInfo.report.refereeA.prename}} {{gameInfo.report.refereeA.name}},
+  {{gameInfo.report.refereeB.prename}} {{gameInfo.report.refereeB.name}}
 </div>
 <br />
 
@@ -49,22 +52,22 @@
     </td>
     <td>
       <div *ngIf="player.yellow_card != 0">
-        {{player.yellow_card * 1000 | date:'mm:ss'}}
+        {{player.yellow_card /60 | number:'2.0-0'}}:{{player.yellow_card % 60 | number:'2.0-0'}}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.one != 0">
-        {{player.two_minute.one * 1000 | date:'mm:ss'}}
+        {{player.two_minute.one /60 | number:'2.0-0'}}:{{player.two_minute.one % 60 | number:'2.0-0'}}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.two != 0">
-        {{player.two_minute.two * 1000 | date:'mm:ss'}}
+        {{player.two_minute.two /60 | number:'2.0-0'}}:{{player.two_minute.two % 60 | number:'2.0-0'}}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.three != 0">
-        {{player.two_minute.three * 1000 | date:'mm:ss'}}
+        {{player.two_minute.three /60 | number:'2.0-0'}}:{{player.two_minute.three % 60 | number:'2.0-0'}}
       </div>
     </td>
   </tr>
@@ -93,22 +96,22 @@
     </td>
     <td>
       <div *ngIf="player.yellow_card != 0">
-        {{player.yellow_card * 1000 | date:'mm:ss'}}
+        {{player.yellow_card /60 | number:'2.0-0'}}:{{player.yellow_card % 60 | number:'2.0-0'}}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.one != 0">
-        {{player.two_minute.one * 1000 | date:'mm:ss'}}
+        {{player.two_minute.one /60 | number:'2.0-0'}}:{{player.two_minute.one % 60 | number:'2.0-0'}}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.two != 0">
-        {{player.two_minute.two * 1000 | date:'mm:ss'}}
+        {{player.two_minute.two /60 | number:'2.0-0'}}:{{player.two_minute.two % 60 | number:'2.0-0'}}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.three != 0">
-        {{player.two_minute.three * 1000 | date:'mm:ss'}}
+        {{player.two_minute.three /60 | number:'2.0-0'}}:{{player.two_minute.three % 60 | number:'2.0-0'}}
       </div>
     </td>
   </tr>
@@ -123,7 +126,7 @@
     <th>Info</th>
   </tr>
   <tr *ngFor="let detail of gameDetail">
-    <td>{{detail.game_time * 1000 | date:'mm:ss'}}</td>
+    <td>{{detail.game_time /60 | number:'2.0-0'}}:{{detail.game_time % 60 | number:'2.0-0'}}</td>
     <td>{{detail.home_score}} : {{detail.guest_score}}</td>
     <td>{{detail.message}}</td>
   </tr>

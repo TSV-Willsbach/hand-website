@@ -97,6 +97,8 @@ export class GameTickerComponent implements OnInit {
       this.addValue(team, 'yellow_card', '', element.game_time, number);
     } else if (element.message.includes('2-min')) {
       this.addValue(team, 'two_minute', '', element.game_time, number);
+    } else if (element.message.includes('Disqualifikation')) {
+
     }
   }
 
