@@ -1,13 +1,34 @@
 <h2 class="heading">
   <div [innerHTML]="post.title.rendered"></div>
 </h2>
+<div class="d-flex flex-wrap">
+  <div class="p-2" *ngFor="let category of post._embedded['wp:term'][0]">
+    <span class="badge badge-pill pink">
+      <fa-icon [icon]="['fas', 'folder']"></fa-icon>
+      {{category.name}}
+    </span>
+  </div>
+</div>
+<br />
 <div class="postImage">
   <img src="{{post.picture.url}}" class="img-fluid" alt="{{post.slug}}">
 </div>
 <br />
 <br />
 
+
 <div [innerHTML]="post.content.rendered"></div>
+<br />
+<div>
+  <div class="d-flex flex-wrap">
+    <div *ngFor="let category of post._embedded['wp:term'][1]" class="p-2">
+      <span class="badge badge-pill pink">
+        <fa-icon [icon]="['fas', 'tag']"></fa-icon>
+        {{category.name}}
+      </span>
+    </div>
+  </div>
+</div>
 <br />
 <div class="postEnd">
   <small class="mb-2 text-muted">
@@ -23,7 +44,8 @@
 </div>
 
 <div class="SocialShare">
-  <share-buttons [show]="4" [showText]="true" [showCount]="true" [size]="2" [autoSetMeta]="true" [url]="href" [image]="post.picture.url"></share-buttons>
+  <share-buttons [show]="4" [showText]="true" [showCount]="true" [size]="2" [autoSetMeta]="true" [url]="href"
+    [image]="post.picture.url"></share-buttons>
   <!-- <share-buttons [include]="['facebook','whatsapp','copy','email','twitter','google','print']" [showText]="true" [showCount]="true"
     [size]="4" [show]="3" [title]="post.title.rendered" [description]="href" [image]="post.thumbnail" [tags]="'tsvWillsbachHandball'"></share-buttons> -->
   <!-- <share-button [button]="'facebook'" [showCount]="true" [title]="post.title.rendered" [image]="post.picture.url"></share-button>
