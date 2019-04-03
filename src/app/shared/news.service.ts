@@ -1,12 +1,12 @@
 import { Globals } from './../objects/globals';
 
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Post, Picture } from '@wh-objects/post';
 import { map } from 'rxjs/operators';
 
-const apiPosts = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed';
+const apiPosts = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?_embed&_embed&sticky=';
 const apiReports = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts?categories=6';
 const apiPost = 'https://wp.willsbach-handball.de/wp-json/wp/v2/posts/';
 const embed = '_embed';
@@ -28,9 +28,10 @@ export class NewsService {
     return this.totalPages;
   }
 
-  fetchNews(page: number): Observable<Post[]> {
+  fetchNews(page: number, sticky: boolean): Observable<Post[]> {
     this.page = page;
-    return this.http.get<Post[]>(this.getLink(apiPosts), { observe: 'response' })
+
+    return this.http.get<Post[]>(this.getLink(`${apiPosts}${sticky}`), { observe: 'response' })
       .pipe(
         map(posts => {
           this.totalPages = +posts.headers.get('X-WP-TotalPages');

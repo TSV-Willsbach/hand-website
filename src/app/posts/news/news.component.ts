@@ -12,17 +12,23 @@ export class NewsComponent implements OnInit {
 
   public maxPages: number;
   posts: Post[];
+  stickyPosts: Post[];
   page = 1;
   pages: Paginator[];
   paginator: Paginator;
   myData: any;
+  stickyData: any;
 
   constructor(private news: NewsService) {
     this.callApi();
   }
 
   public callApi() {
-    this.myData = this.news.fetchNews(this.page)
+    this.stickyData = this.news.fetchNews(this.page, true)
+      .subscribe(posts => this.stickyPosts = posts, error => console.log('Error: ', error),
+        () => { });
+
+    this.myData = this.news.fetchNews(this.page, false)
       .subscribe(posts => this.posts = posts, error => console.log('Error: ', error),
         () => {
           this.maxPages = this.news.getMaxPages();

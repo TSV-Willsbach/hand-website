@@ -1,4 +1,7 @@
 <h2 class="heading" id="Cards">Aktuelles</h2>
 
-<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages" (callParentMethods)="callMethod($event)"
+<app-report-cards [posts]="stickyPosts" [myData]="stickyData" (callParentMethods)="callMethod($event)"
   (pagesEvent)="setPages($event)"></app-report-cards>
+
+<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages"
+  (callParentMethods)="callMethod($event)" (pagesEvent)="setPages($event)"></app-report-cards>

@@ -25,6 +25,7 @@ export class Post {
     excerpt: {
         rendered: string;
     };
+    sticky: boolean;
 
     constructor() {
         // Default values
