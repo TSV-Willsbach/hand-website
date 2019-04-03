@@ -22,7 +22,7 @@ export class ReportCardsComponent implements OnInit, OnChanges {
   page = 1;
   private fragment: string;
 
-  constructor(private route: ActivatedRoute) { this.nextPrevAvailability(); }
+  constructor(private route: ActivatedRoute) { this.nextPrevAvailability(); console.log(this.maxPages); }
 
   callApi() {
     this.callParentMethods.next('callApi');
