@@ -21,6 +21,7 @@ import { AuthGuard } from './core/auth.guard';
 import { EditComponent } from './edit/edit.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { GameTickerComponent } from './game-ticker/game-ticker.component';
+import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component';
 
 
 const routes: Routes = [
@@ -84,6 +85,10 @@ const routes: Routes = [
   {
     path: 'team/:id/reports',
     component: TeamReportsComponent
+  },
+  {
+    path: 'team/:id/gallery',
+    component: TeamGalleryComponent
   },
   {
     path: 'team/:id/players',

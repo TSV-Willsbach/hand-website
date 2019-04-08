@@ -1,3 +1,5 @@
+import { MediaDetails, Embedded, MediaACF } from './wordPress';
+
 export class Sponsors {
     id: number;
     date: Date;
@@ -5,19 +7,13 @@ export class Sponsors {
     guid: Object;
     title: Object;
     content: Object;
-    media_details: {
-        width: number;
-        height: number;
-    };
-    _embedded: Object;
+    media_details: MediaDetails;
+    _embedded: Embedded;
     source_url: string;
     alt_text: string;
     caption: {
         rendered: string;
     };
-    acf: {
-        sponsorUrl: string;
-        archive: Boolean;
-    };
+    acf: MediaACF;
     thumbnail: string;
 }

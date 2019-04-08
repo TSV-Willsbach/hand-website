@@ -6,9 +6,11 @@ import { Team, Player } from '@wh-objects/team';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, publishReplay, refCount } from 'rxjs/operators';
+import { TeamWP, WPPicture } from '@wh-objects/wordPress';
 
 const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png';
+const apiTeams = 'https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&search=teams';
 
 @Injectable()
 export class TeamService {
@@ -69,6 +71,22 @@ export class TeamService {
           this.wpCategory = team.wpCat;
           return team;
         })
+      );
+  }
+
+  getTeamPictures(teamName: string): Observable<WPPicture[]> {
+    return this.http.get<WPPicture[]>(apiTeams)
+      .pipe(
+        map(team => {
+          console.log('Name', teamName);
+          console.log('Team', team);
+          team = team.filter(e => e.acf.team === teamName);
+          return team.map(cTeam => {
+            return cTeam;
+          });
+        }),
+        publishReplay(1),
+        refCount()
       );
   }
 
