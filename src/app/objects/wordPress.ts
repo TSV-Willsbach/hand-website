@@ -1,3 +1,20 @@
+export class Author {
+    id: number;
+    name: string;
+    url: string;
+    description: string;
+    link: string;
+    slug: string;
+}
+
+export class WPTerm {
+    id: number;
+    link: string;
+    name: string;
+    slug: string;
+    taxonomy: string;
+}
+
 export class TeamWP {
     id: number;
     date: Date;

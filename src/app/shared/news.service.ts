@@ -90,6 +90,8 @@ export class NewsService {
 
     post.content.rendered = this.responsiveImgs(post.content.rendered);
     post.picture = new Picture();
+    post._embedded.term = post._embedded['wp:term'];
+    post._embedded.author = post._embedded['author'];
 
     try {
       post.picture.url = post._embedded['wp:featuredmedia'][0].media_details.sizes.medium_large.source_url;
