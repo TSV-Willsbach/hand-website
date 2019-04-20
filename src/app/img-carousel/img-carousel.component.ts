@@ -13,7 +13,7 @@ export class ImgCarouselComponent implements OnInit {
 
   constructor(private transitionService: CarouselService) {
 
-    this.transitionService.fetchTeams().subscribe(team => this.teams = team);
+    this.transitionService.fetchTeams(false).subscribe(team => this.teams = team);
   }
 
   ngOnInit() {
