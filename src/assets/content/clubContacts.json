@@ -7,8 +7,8 @@
             "position": "Abteilungsleiter"
         },
         {
-            "name": "Vollert",
-            "prename": "Claudia",
+            "name": "Hohl",
+            "prename": "Markus",
             "position": "Stellvertretende Abteilungsleiterin",
             "email": "abteilungsleiter.2@willsbach-handball.de"
         },
@@ -31,8 +31,8 @@
             "email": "spielleiter@willsbach-handball.de"
         },
         {
-            "name": "Riedel",
-            "prename": "Julia",
+            "name": "Thier",
+            "prename": "Marcel",
             "position": "Kasse",
             "email": "kasse@willsbach-handball.de"
         },
@@ -46,7 +46,8 @@
             "name": "Festausschuss",
             "prename": "",
             "position": "Festausschuss",
-            "email": "festausschuss@willsbach-handball.de"
+            "email": "festausschuss@willsbach-handball.de",
+            "picture": "https://wp.willsbach-handball.de/wp-content/uploads/2018/06/WhatsApp-Image-2018-06-13-at-12.43.13-1.jpeg"
         }
     ]
 }

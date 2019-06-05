@@ -2,7 +2,7 @@
 <div class="row">
   <div class="column" *ngFor="let contact of contacts.contacts">
     <div class="card">
-      <img src="./assets/images/handball_logo.png" alt="{{contact.prename}} {{contact.name}}" style="width:100%">
+      <img src="{{contact.picture}}" alt="{{contact.prename}} {{contact.name}}" class="img-fluid img-thumbnail">
       <div class="container">
         <h2>{{contact.prename}} {{contact.name}}</h2>
         <p class="title">{{contact.position}}</p>

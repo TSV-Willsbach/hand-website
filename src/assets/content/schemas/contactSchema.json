@@ -19,6 +19,10 @@
                     "email": {
                         "type": "string",
                         "format": "email"
+                    },
+                    "picture": {
+                        "type": "string",
+                        "format": "uri"
                     }
                 },
                 "required": [
