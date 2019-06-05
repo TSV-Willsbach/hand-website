@@ -3,12 +3,14 @@ export class Contact {
     prename: string;
     email: string;
     position: string;
+    picture: string;
 
     constructor() {
         this.name = 'Mustermann';
         this.prename = 'Max';
         this.position = 'Test User';
         this.email = 'max.mustermann@willsbach-handball.de';
+        this.picture = './assets/images/handball_logo.png';
     }
 }
 

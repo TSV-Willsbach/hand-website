@@ -62,6 +62,7 @@ import { DataProtectionComponent } from './core/data-protection/data-protection.
 import { OutfitterFooterComponent } from '@wh-outfitter/outfitter-footer/outfitter-footer.component';
 import { GameTickerComponent } from './game-ticker/game-ticker.component';
 import { PlayerGameTableComponent } from './child-components/player-game-table/player-game-table.component';
+import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -117,7 +118,8 @@ library.add(fas, far, fab);
     OutfitterFooterComponent,
     GameTickerComponent,
     PlayerGameTableComponent,
-    ConvertGameTimePipe
+    ConvertGameTimePipe,
+    TeamGalleryComponent
   ],
   imports: [
     BrowserModule,

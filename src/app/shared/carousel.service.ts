@@ -29,12 +29,12 @@ export class CarouselService {
       );
   }
 
-  fetchTeams(): Observable<TeamWP[]> {
+  fetchTeams(archived: boolean): Observable<TeamWP[]> {
     if (!this.teams) {
       this.teams = this.http.get<TeamWP[]>(apiTeams)
         .pipe(
           map(team => {
-            team = team.filter(e => e.acf.archive !== true);
+            team = team.filter(e => e.acf.archive === archived);
             return team.map(cTeam => {
               return cTeam;
             });
@@ -47,7 +47,7 @@ export class CarouselService {
   }
 
   getTeam(teamName: string): Observable<TeamWP[]> {
-    const myTeams = this.fetchTeams().pipe(
+    const myTeams = this.fetchTeams(false).pipe(
       map(teams => teams.filter(team => team.acf.team === teamName))
     );
     return myTeams;

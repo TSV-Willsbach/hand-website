@@ -1,3 +1,5 @@
+import { Author, WPTerm } from './wordPress';
+
 export class Picture {
     width: number;
     height: number;
@@ -18,7 +20,10 @@ export class Post {
         rendered: string;
     };
     media_details: Object;
-    _embedded: Object;
+    _embedded: {
+        author: Author[];
+        term: WPTerm[];
+    };
     picture: Picture;
     author: string;
     slug: string;
@@ -36,5 +41,6 @@ export class Post {
         this.excerpt = { rendered: '' };
         this.isNew = false;
         this.picture = { url: '', height: 0, width: 0, mime_type: '' };
+        this._embedded = { author: new Array<Author>(), term: new Array() };
     }
 }
