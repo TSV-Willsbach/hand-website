@@ -53,6 +53,7 @@ export class FileServiceService {
         }
       case 'application/vnd.ms-powerpoint':
       case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+      case 'application/vnd.openxmlformats-officedocument.presentationml.template':
         {
           attachment.iconColor = 'orange';
           attachment.fileType = 'Power Point';
