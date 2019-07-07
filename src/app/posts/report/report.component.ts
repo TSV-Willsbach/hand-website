@@ -16,6 +16,7 @@ export class ReportComponent implements OnInit {
   pages: Paginator[];
   paginator: Paginator;
   myData: any;
+  showSpinner = true;
 
   constructor(private news: NewsService) {
 
@@ -25,6 +26,7 @@ export class ReportComponent implements OnInit {
   private callApi() {
     this.myData = this.news.fetchReports('', this.page)
       .subscribe(posts => this.posts = posts, error => console.log('Error ', error), () => {
+        this.showSpinner = false;
         this.maxPages = this.news.getMaxPages();
         this.pages = new Array();
         for (let i = 1; i <= this.maxPages; i++) {

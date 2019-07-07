@@ -18,6 +18,7 @@ export class GameTickerComponent implements OnInit {
   teams: GameTickerTeams;
   gameTime: number;
   gameScore: string;
+  showSpinner = true;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.initData();

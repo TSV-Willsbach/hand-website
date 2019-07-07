@@ -10,10 +10,16 @@ import { TeamWP } from '@wh-objects/wordPress';
 
 export class ImgCarouselComponent implements OnInit {
   teams: TeamWP[];
+  showSpinner = true;
 
   constructor(private transitionService: CarouselService) {
 
-    this.transitionService.fetchTeams(false).subscribe(team => this.teams = team);
+    this.transitionService.fetchTeams(false).subscribe(
+      team => this.teams = team,
+      error => console.log('Error: ', error),
+      () => {
+        this.showSpinner = false;
+      });
   }
 
   ngOnInit() {
