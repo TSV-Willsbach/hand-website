@@ -1,3 +1,4 @@
+import { WordpressService } from './../../shared/wordpress.service';
 import { Component, OnInit } from '@angular/core';
 import { Post } from '@wh-objects/post';
 import { NewsService } from '@wh-share/news.service';
@@ -18,26 +19,39 @@ export class ReportComponent implements OnInit {
   myData: any;
   showSpinner = true;
 
-  constructor(private news: NewsService) {
-
+  constructor(private news: NewsService, private wordpress: WordpressService) {
     this.callApi();
   }
 
   private callApi() {
-    this.myData = this.news.fetchReports('', this.page)
-      .subscribe(posts => this.posts = posts, error => console.log('Error ', error), () => {
-        this.showSpinner = false;
-        this.maxPages = this.news.getMaxPages();
-        this.pages = new Array();
-        for (let i = 1; i <= this.maxPages; i++) {
-          if (i === this.page) {
-            this.paginator = { id: i, active: 'active' };
-          } else {
-            this.paginator = { id: i, active: '' };
-          }
-          this.pages.push(this.paginator);
-        }
-      });
+    this.myData = this.wordpress.fetchReports('', this.page)
+      .subscribe(posts => this.posts = posts,
+        error => console.log(error),
+        () => {
+          console.log('Posts', this.posts);
+          this.showSpinner = false;
+          this.maxPages = 2;
+          this.pages = new Array();
+          this.pages.push({ id: 1, active: 'active' });
+          console.log(this.myData);
+        });
+
+    // this.myData = this.news.fetchReports('', this.page)
+    //   .subscribe(posts => this.posts = posts,
+    //     error => console.log('Error ', error),
+    //     () => {
+    //       this.showSpinner = false;
+    //       this.maxPages = this.news.getMaxPages();
+    //       this.pages = new Array();
+    //       for (let i = 1; i <= this.maxPages; i++) {
+    //         if (i === this.page) {
+    //           this.paginator = { id: i, active: 'active' };
+    //         } else {
+    //           this.paginator = { id: i, active: '' };
+    //         }
+    //         this.pages.push(this.paginator);
+    //       }
+    //     });
   }
 
   ngOnInit() {

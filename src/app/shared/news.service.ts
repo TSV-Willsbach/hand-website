@@ -21,7 +21,6 @@ export class NewsService {
   page: number;
 
   constructor(private http: HttpClient, private global: Globals) {
-
   }
 
   getMaxPages(): number {
