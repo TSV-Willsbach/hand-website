@@ -87,7 +87,7 @@ export class NewsService {
 
   private mapFields(post: Post) {
 
-    post.content.rendered = this.responsiveImgs(post.content.rendered);
+    // post.content.rendered = this.responsiveImgs(post.content.rendered);
     post.picture = new Picture();
     post._embedded.term = post._embedded['wp:term'];
     post._embedded.author = post._embedded['author'];

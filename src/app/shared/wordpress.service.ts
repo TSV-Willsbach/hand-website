@@ -16,7 +16,8 @@ export class WordpressService extends WillsbachApiService {
     this.url = this.url + 'wp/';
   }
 
-  fetchReports(wpCat?: number, page?: number, sticky: boolean = false): Observable<Post[]> {
+  fetchReports(wpCat?: number, page?: number, sticky?: boolean): Observable<Post[]> {
+    this.initUrlParams();
     this.addUrlParam('page', page);
     this.addUrlParam('category', wpCat);
     this.addUrlParam('sticky', sticky);

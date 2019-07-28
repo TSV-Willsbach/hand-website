@@ -41,8 +41,8 @@ export class PostDetailComponent implements OnInit, OnDestroy {
         () => {
           this.showSpinner = false;
           this.seo.generateTags({
-            title: this.post.title.rendered,
-            description: this.post.excerpt.rendered,
+            title: this.post.title,
+            description: this.post.excerpt,
             image: this.post.picture.url,
             height: this.post.picture.height,
             width: this.post.picture.width,

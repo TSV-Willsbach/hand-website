@@ -11,7 +11,7 @@ export class WillsbachApiService {
   protected urlParams: HttpParams;
 
   constructor() {
-    this.urlParams = new HttpParams();
+    this.initUrlParams();
   }
 
   protected addUrlParam(paramName: string, value: any) {
@@ -19,5 +19,9 @@ export class WillsbachApiService {
       return;
     }
     this.urlParams = this.urlParams.set(paramName, String(value));
+  }
+
+  protected initUrlParams() {
+    this.urlParams = new HttpParams();
   }
 }

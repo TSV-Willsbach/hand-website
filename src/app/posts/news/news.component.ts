@@ -39,24 +39,17 @@ export class NewsComponent implements OnInit {
         error => console.log('Error: ', error),
         () => {
           this.showSpinner = false;
+          this.maxPages = this.wp.totalPages;
           this.pages = new Array();
+          for (let i = 1; i <= this.maxPages; i++) {
+            if (i === this.page) {
+              this.paginator = { id: i, active: 'active' };
+            } else {
+              this.paginator = { id: i, active: '' };
+            }
+            this.pages.push(this.paginator);
+          }
         });
-
-    // this.news.fetchNews(this.page, false)
-    //   .subscribe(posts => this.posts = posts, error => console.log('Error: ', error),
-    //     () => {
-    //       this.showSpinner = false;
-    //       this.maxPages = this.news.getMaxPages();
-    //       this.pages = new Array();
-    //       for (let i = 1; i <= this.maxPages; i++) {
-    //         if (i === this.page) {
-    //           this.paginator = { id: i, active: 'active' };
-    //         } else {
-    //           this.paginator = { id: i, active: '' };
-    //         }
-    //         this.pages.push(this.paginator);
-    //       }
-    //     });
   }
 
   ngOnInit() {
