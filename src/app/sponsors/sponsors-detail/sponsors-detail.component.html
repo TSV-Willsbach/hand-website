@@ -3,8 +3,8 @@
   <div class="row">
     <div class="col">
       <h3>SPORTBEDARF.DE</h3>
-      <a href="https://www.sportbedarf.de/Vereinskollektionen--TSV-Willsbach/" target="_blank" alt="Vereinskollektion TSV Willsbach"
-        rel="noopener">www.sportbedarf.de</a>
+      <a href="https://www.sportbedarf.de/Vereinskollektionen--TSV-Willsbach/" target="_blank"
+        alt="Vereinskollektion TSV Willsbach" rel="noopener">www.sportbedarf.de</a>
     </div>
   </div>
   <div class="row"><br /> <br /></div>
@@ -23,19 +23,23 @@
 <div class="container-fluid" *ngFor="let sponsor of sponsors">
   <div class="row">
     <div class="col">
+      <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">
+        <img src="{{sponsor.source_url}}" alt="{{sponsor.alt_text}}" class="img-fluid logo">
+      </a>
+    </div>
+    <div class="col">
       <h3>{{sponsor.caption.rendered}}</h3>
       <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">{{sponsor.acf.sponsorUrl}}</a>
     </div>
   </div>
   <div class="row"><br /> <br /></div>
-  <div class="row">
-    <div class="col centered">
-      <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">
-        <img src="{{sponsor.source_url}}" alt="{{sponsor.alt_text}}" class="img-fluid">
-      </a>
-    </div>
-
-  </div>
   <br /><br />
   <br /><br />
+</div>
+<br />
+<h2 class="heading">Spender</h2>
+<div class="centered">
+  <ul class="cloud">
+    <li>Miguel Gebhardt </li>
+  </ul>
 </div>

@@ -7,15 +7,18 @@
 
 <h2 class="heading">Mannschaftsfotos</h2>
 
-<div *ngFor="let pic of pictures" class="d-flex flex-wrap">
-  <div class="p-2">
-    <a href="{{pic.source_url}}" target="_blank" class="d-block mb-4 h-100">
-      <img class="img-fluid img-thumbnail" src="{{pic.source_url}}" alt="{{pic.alt_text}}">
-    </a>
-  </div>
-  <!-- <div class="p-2 text-center">
-    <h3>{{pic.title.rendered}}</h3>
-    <div [innerHTML]="pic.description.rendered"></div>
-  </div> -->
+<app-spinner *ngIf="showSpinner"></app-spinner>
 
+<div *ngFor="let pic of pictures" class="d-flex flex-wrap">
+  <div>
+    <div class="p-2">
+      <a href="{{pic.source_url}}" target="_blank" class="d-block mb-4 h-100">
+        <img class="img-fluid img-thumbnail" src="{{pic.source_url}}" alt="{{pic.alt_text}}">
+      </a>
+    </div>
+    <div class="p-2 text-center">
+      <h3>{{pic.caption.rendered}}</h3>
+      <!-- <div [innerHTML]="pic.description.rendered"></div> -->
+    </div>
+  </div>
 </div>

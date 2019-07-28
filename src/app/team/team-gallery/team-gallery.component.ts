@@ -17,6 +17,7 @@ export class TeamGalleryComponent implements OnInit {
   private sub: any;
   team: Team;
   pictures: WPPicture[];
+  showSpinner = true;
 
   constructor(private route: ActivatedRoute, private teams: TeamService, private seo: SeoService) {
     this.team = new Team();
@@ -31,6 +32,7 @@ export class TeamGalleryComponent implements OnInit {
           this.teams.getTeamPictures(this.team.wpID).subscribe(pic => this.pictures = pic,
             error => { console.log(error); },
             () => {
+              this.showSpinner = false;
             });
         });
     });
