@@ -22,6 +22,7 @@ export class TeamResultComponent implements OnInit {
   team: Team;
   myHVW: any;
   buttonActive: Boolean = false;
+  showSpinner = false;
 
   constructor(private route: ActivatedRoute, private hvw: HvwService,
     teams: TeamService, private seo: SeoService, private global: Globals) {
@@ -55,6 +56,7 @@ export class TeamResultComponent implements OnInit {
       ligue.content.actualGames.games = futClubGames;
       return this.ligue;
     }, error => { console.log(error); }, () => {
+      this.showSpinner = false;
       this.seo.generateTags({
         title: this.ligue.head.name,
         description: this.ligue.head.headline2,
@@ -65,6 +67,7 @@ export class TeamResultComponent implements OnInit {
   private changeLigueParams() {
     let id;
     let text;
+    this.showSpinner = true;
 
     if (this.secondLigueText === undefined) {
       // init data
