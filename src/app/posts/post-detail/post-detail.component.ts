@@ -15,6 +15,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   id: number;
   post: Post;
   private sub: any;
+  showSpinner = true;
 
   constructor(private route: ActivatedRoute, private news: NewsService, private seo: SeoService, private router: Router) {
     this.post = new Post();
@@ -38,6 +39,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
           console.log(error);
         },
         () => {
+          this.showSpinner = false;
           this.seo.generateTags({
             title: this.post.title.rendered,
             description: this.post.excerpt.rendered,

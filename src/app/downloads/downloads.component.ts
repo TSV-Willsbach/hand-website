@@ -10,11 +10,16 @@ import { Attachment } from '@wh-objects/attachment';
 export class DownloadsComponent implements OnInit {
 
   attachments: Attachment[];
+  showSpinner = true;
 
   constructor(private file: FileServiceService) {
 
     this.file.fetchFiles()
-      .subscribe(attachment => this.attachments = attachment);
+      .subscribe(attachment => this.attachments = attachment,
+        error => console.log('Error: ', error),
+        () => {
+          this.showSpinner = false;
+        });
 
   }
 

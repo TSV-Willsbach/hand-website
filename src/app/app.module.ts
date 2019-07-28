@@ -63,6 +63,7 @@ import { OutfitterFooterComponent } from '@wh-outfitter/outfitter-footer/outfitt
 import { GameTickerComponent } from './game-ticker/game-ticker.component';
 import { PlayerGameTableComponent } from './child-components/player-game-table/player-game-table.component';
 import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component';
+import { SpinnerComponent } from './core/spinner/spinner.component';
 
 export const firebaseConfig = environment.firebase;
 
@@ -119,7 +120,8 @@ library.add(fas, far, fab);
     GameTickerComponent,
     PlayerGameTableComponent,
     ConvertGameTimePipe,
-    TeamGalleryComponent
+    TeamGalleryComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

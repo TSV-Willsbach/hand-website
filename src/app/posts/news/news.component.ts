@@ -18,6 +18,7 @@ export class NewsComponent implements OnInit {
   paginator: Paginator;
   myData: any;
   stickyData: any;
+  showSpinner = true;
 
   constructor(private news: NewsService) {
     this.callApi();
@@ -31,6 +32,7 @@ export class NewsComponent implements OnInit {
     this.myData = this.news.fetchNews(this.page, false)
       .subscribe(posts => this.posts = posts, error => console.log('Error: ', error),
         () => {
+          this.showSpinner = false;
           this.maxPages = this.news.getMaxPages();
           this.pages = new Array();
           for (let i = 1; i <= this.maxPages; i++) {

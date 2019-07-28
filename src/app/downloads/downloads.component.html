@@ -1,6 +1,6 @@
 <h2 class="heading">Downloads</h2>
 
-
+<app-spinner *ngIf="showSpinner"></app-spinner>
 <div>
   <table style="width:100%" id="fileTable" class="table table-responsive table-striped table-bordered">
     <tr>
@@ -19,8 +19,8 @@
       </td>
       <td>{{attachment.title.rendered}}</td>
       <td>
-        <a href="{{attachment.source_url}}" target="_blank" title="{{attachment.title.rendered}}" type="{{attachment.mime_type}}"
-          download>
+        <a href="{{attachment.source_url}}" target="_blank" title="{{attachment.title.rendered}}"
+          type="{{attachment.mime_type}}" download>
           <i class="fa fa-download fa-2x"></i>
         </a>
       </td>
