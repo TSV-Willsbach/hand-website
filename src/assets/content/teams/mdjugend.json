@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche D Jugend",
-    "ligaID": "37686",
+    "ligaID": "49471",
     "wpCat": "20",
     "wpID": "mD",
     "trainer": [{
