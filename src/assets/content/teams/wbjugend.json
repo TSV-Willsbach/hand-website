@@ -2,6 +2,7 @@
     "$schema": "../schemas/teamSchema.json",
     "title": "Weibliche B Jugend",
     "qualID": "39479",
+    "ligaID": "49516",
     "wpCat": "48",
     "wpID": "wB",
     "trainer": [{

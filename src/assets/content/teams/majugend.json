@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche A Jugend",
-    "ligaID": "36802",
+    "ligaID": "49421",
     "qualID": "39435",
     "wpCat": "17",
     "wpID": "mA",

@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Damen",
-    "ligaID": "36004",
+    "ligaID": "49406",
     "wpCat": "5",
     "wpID": "damen",
     "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/damen.jpg",
