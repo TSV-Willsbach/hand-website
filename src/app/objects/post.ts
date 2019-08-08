@@ -25,14 +25,14 @@ export class Post {
     slug: string;
     excerpt: string;
     sticky: boolean;
-    categories: {
+    categories: [{
         id: number,
         name: string
-    };
-    tags: {
+    }];
+    tags: [{
         id: number,
         name: string
-    }
+    }];
 
     constructor() {
         // Default values

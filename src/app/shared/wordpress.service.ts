@@ -22,12 +22,7 @@ export class WordpressService extends WillsbachApiService {
   }
 
   getPost(id: number): Observable<Post> {
-    return this.http.get<any>(this.url + 'posts/' + id)
-      .pipe(
-        map(posts => {
-          this.totalPages = posts.maxPages;
-          return posts.posts;
-        }));
+    return this.http.get<any>(this.url + 'posts/' + id);
   }
 
   fetchReports(wpCat?: number, page?: number, sticky?: boolean): Observable<Post[]> {
