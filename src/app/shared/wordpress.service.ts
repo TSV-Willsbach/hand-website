@@ -36,14 +36,24 @@ export class WordpressService extends WillsbachApiService {
     this.addUrlParam('category', wpCat);
     this.addUrlParam('sticky', sticky);
 
-    console.log(page);
-
     return this.http.get<any>(this.url + 'posts', { params: this.urlParams })
       .pipe(
         map(posts => {
           this.totalPages = posts.maxPages;
           return posts.posts;
         }));
+  }
+
+  getTeamPictures(archived?: boolean, teamId?: string) {
+    this.initUrlParams();
+    this.addUrlParam('archived', archived);
+    this.addUrlParam('teamId', teamId);
+
+    return this.http.get<any>(this.url + 'media/teams', { params: this.urlParams });
+  }
+
+  getTeamPicture(id) {
+    return this.getTeamPictures(false, id);
   }
 
 }
