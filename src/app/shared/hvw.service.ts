@@ -30,7 +30,7 @@ export class HvwService {
     this._allGames = allGames;
   }
 
-  private _period: String = '68'; // '58';
+  private _period: String = '83'; // '68'; // '58';
   get period(): String {
     return this._period;
   }

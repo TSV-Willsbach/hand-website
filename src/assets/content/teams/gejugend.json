@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Gemischte E/F Jugend",
-    "ligaID": "37713",
+    "ligaID": "51598",
     "wpCat": "21",
     "wpID": "gE"
 }
