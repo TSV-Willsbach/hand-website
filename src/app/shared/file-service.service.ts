@@ -24,17 +24,6 @@ export class FileServiceService {
           });
         })
       );
-
-    return this.http.get<Attachment[]>(apiFiles)
-      .pipe(
-        map(attachments => {
-          attachments = attachments.filter(e => e.acf.archive !== true);
-
-          return attachments.map(attachment => {
-            return this.getIconForType(attachment);
-          });
-        })
-      );
   }
 
   private getIconForType(attachment: Attachment): Attachment {
