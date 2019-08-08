@@ -52,6 +52,14 @@ export class WordpressService extends WillsbachApiService {
     return this.http.get<any>(this.url + 'media/teams', { params: this.urlParams });
   }
 
+  getDownloads(archived?: boolean) {
+    this.initUrlParams();
+    this.addUrlParam('archived', archived);
+    this.addUrlParam('search', 'downloads');
+
+    return this.http.get<any>(this.url + 'media/all', { params: this.urlParams });
+  }
+
   getTeamPicture(id) {
     return this.getTeamPictures(false, id);
   }

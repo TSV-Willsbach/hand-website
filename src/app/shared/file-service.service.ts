@@ -1,3 +1,4 @@
+import { WordpressService } from '@wh-share/wordpress.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Attachment } from '@wh-objects/attachment';
@@ -9,9 +10,21 @@ const apiFiles = 'https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&se
 @Injectable()
 export class FileServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private wp: WordpressService) { }
 
   fetchFiles(): Observable<Attachment[]> {
+
+    return this.wp.getDownloads(false)
+      .pipe(
+        map(attachments => {
+          console.log(attachments);
+
+          return attachments.map(attachment => {
+            return this.getIconForType(attachment);
+          });
+        })
+      );
+
     return this.http.get<Attachment[]>(apiFiles)
       .pipe(
         map(attachments => {

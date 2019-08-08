@@ -17,14 +17,14 @@
           <small>{{attachment.fileType | uppercase}}</small>
         </div>
       </td>
-      <td>{{attachment.title.rendered}}</td>
+      <td>{{attachment.title}}</td>
       <td>
-        <a href="{{attachment.source_url}}" target="_blank" title="{{attachment.title.rendered}}"
-          type="{{attachment.mime_type}}" download>
+        <a href="{{attachment.url}}" target="_blank" title="{{attachment.title}}" type="{{attachment.mime_type}}"
+          download>
           <i class="fa fa-download fa-2x"></i>
         </a>
       </td>
-      <td>{{attachment.caption.rendered}}</td>
+      <td>{{attachment.caption}}</td>
     </tr>
   </table>
 </div>
