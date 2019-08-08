@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class WordpressService extends WillsbachApiService {
 
-  totalPages: number;
+  private totalPages: number;
 
   constructor(private http: HttpClient) {
     super();
@@ -35,6 +35,8 @@ export class WordpressService extends WillsbachApiService {
     this.addUrlParam('page', page);
     this.addUrlParam('category', wpCat);
     this.addUrlParam('sticky', sticky);
+
+    console.log(page);
 
     return this.http.get<any>(this.url + 'posts', { params: this.urlParams })
       .pipe(

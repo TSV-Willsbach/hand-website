@@ -32,13 +32,14 @@ export class NewsComponent implements OnInit {
         () => {
         });
 
-    this.myData = this.wp.fetchReports()
+    this.myData = this.wp.fetchReports(undefined, this.page)
       .subscribe(
         posts => this.posts = posts,
         error => console.log('Error: ', error),
         () => {
           this.showSpinner = false;
-          this.maxPages = this.wp.totalPages;
+          this.maxPages = this.wp.getMaxPages();
+
           this.pages = new Array();
           for (let i = 1; i <= this.maxPages; i++) {
             if (i === this.page) {
