@@ -19,20 +19,20 @@
 
       <div class="card-body">
         <h5 class="card-title">
-          <div [innerHTML]="post.title.rendered"></div>
+          <div [innerHTML]="post.title"></div>
         </h5>
         <small class="card-subtitle mb-2 text-muted">
-          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date_gmt | date: 'dd.MM.yyyy'}}
+          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon> {{post.date | date: 'dd.MM.yyyy'}}
         </small>
         <small class="card-subtitle mb-2 text-muted">
           <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon> {{post.author}}
         </small>
 
         <br />
-        <p class="card-text" [innerHTML]="post.excerpt.rendered">
+        <p class="card-text" [innerHTML]="post.excerpt">
         </p>
         <div class="d-flex flex-wrap">
-          <div class="p-2" *ngFor="let category of post._embedded.term[0]">
+          <div class="p-2" *ngFor="let category of post.categories">
             <span class="badge badge-pill club-background">
               <fa-icon [icon]="['fas', 'folder']"></fa-icon>
               {{category.name}}
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="d-flex flex-wrap">
-          <div *ngFor="let category of post._embedded.term[1]" class="p-2">
+          <div *ngFor="let category of post.tags" class="p-2">
             <span class="badge badge-pill club-background">
               <fa-icon [icon]="['fas', 'tag']"></fa-icon>
               {{category.name}}

@@ -1,7 +1,7 @@
 import { ConvertGameTimePipe } from './core/gameTimePipe';
 import { GeneralDataService } from './shared/general-data.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareButtonsModule } from '@ngx-share/buttons';
@@ -34,8 +34,6 @@ import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-det
 import { NavigationService } from './navigation/navigation.service';
 import { DocumentService } from './documents/document.service';
 import { LocationService } from '@wh-share/location.service';
-import { NewsService } from '@wh-share/news.service';
-import { CarouselService } from '@wh-share/carousel.service';
 import { SponsorsService } from '@wh-share/sponsors.service';
 import { SeoService } from '@wh-share/seo.service';
 import { environment } from '@wh-enviroments/environment';
@@ -138,11 +136,10 @@ library.add(fas, far, fab);
     MDBBootstrapModule.forRoot()
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'de' },
     NavigationService,
     DocumentService,
     LocationService,
-    CarouselService,
-    NewsService,
     SponsorsService,
     SeoService,
     FileServiceService,

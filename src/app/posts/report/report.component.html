@@ -1,5 +1,6 @@
 <h2 class="heading" id="Cards">Spielberichte</h2>
 
 <app-spinner *ngIf="showSpinner"></app-spinner>
+
 <app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages"
   (callParentMethods)="callMethod($event)" (pagesEvent)="setPages($event)"></app-report-cards>

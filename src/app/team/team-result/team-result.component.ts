@@ -1,3 +1,4 @@
+import { Statistik } from './../../objects/hvw';
 import { Component, OnInit } from '@angular/core';
 import { HvwService } from '@wh-share/hvw.service';
 import { Ligue } from '@wh-objects/hvw';
@@ -16,6 +17,7 @@ import { Observable } from 'rxjs';
 export class TeamResultComponent implements OnInit {
 
   teamID: any;
+  stats: Statistik;
   private sub: any;
   ligue: Ligue;
   secondLigueText: string;
@@ -46,22 +48,27 @@ export class TeamResultComponent implements OnInit {
   }
 
   private getApiData() {
-    this.myHVW = this.hvw.getLigueData().subscribe(ligue => {
-      this.ligue = ligue;
-      let games = ligue.content.actualGames.games;
-      games = ligue.content.futureGames.games;
-      const futClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam)
-        || this.global.isOwnClub(element.gHomeTeam) === true);
-
-      ligue.content.actualGames.games = futClubGames;
-      return this.ligue;
-    }, error => { console.log(error); }, () => {
-      this.showSpinner = false;
-      this.seo.generateTags({
-        title: this.ligue.head.name,
-        description: this.ligue.head.headline2,
+    this.myHVW = this.hvw.getLigueData().subscribe(
+      ligue => this.ligue = ligue,
+      error => { console.log(error); },
+      () => {
+        this.showSpinner = false;
+        if (this.ligue.games !== undefined) {
+          this.ligue.games = this.ligue.games.filter((x) => this.isClub(x.team.home) || this.isClub(x.team.guest));
+        }
+        if (this.ligue.scores !== undefined) {
+          const myTeam = this.ligue.scores.filter((f) => {
+            if (this.isClub(f.name)) {
+              return f;
+            }
+          });
+          this.stats = myTeam[0].statistics;
+        }
+        this.seo.generateTags({
+          title: this.ligue.name,
+          description: this.ligue.headline2,
+        });
       });
-    });
   }
 
   private changeLigueParams() {

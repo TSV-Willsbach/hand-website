@@ -1,5 +1,5 @@
+import { WordpressService } from './../../shared/wordpress.service';
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '@wh-share/news.service';
 import { Post } from '@wh-objects/post';
 import { Paginator } from '@wh-objects/pagination';
 
@@ -20,20 +20,26 @@ export class NewsComponent implements OnInit {
   stickyData: any;
   showSpinner = true;
 
-  constructor(private news: NewsService) {
+  constructor(private wp: WordpressService) {
     this.callApi();
   }
 
   public callApi() {
-    this.stickyData = this.news.fetchNews(this.page, true)
-      .subscribe(posts => this.stickyPosts = posts, error => console.log('Error: ', error),
-        () => { });
+    this.stickyData = this.wp.fetchReports(undefined, undefined, true)
+      .subscribe(
+        posts => this.stickyPosts = posts,
+        error => console.log('Error: ', error),
+        () => {
+        });
 
-    this.myData = this.news.fetchNews(this.page, false)
-      .subscribe(posts => this.posts = posts, error => console.log('Error: ', error),
+    this.myData = this.wp.fetchReports(undefined, this.page)
+      .subscribe(
+        posts => this.posts = posts,
+        error => console.log('Error: ', error),
         () => {
           this.showSpinner = false;
-          this.maxPages = this.news.getMaxPages();
+          this.maxPages = this.wp.getMaxPages();
+
           this.pages = new Array();
           for (let i = 1; i <= this.maxPages; i++) {
             if (i === this.page) {

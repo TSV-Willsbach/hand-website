@@ -1,20 +1,18 @@
 export class Attachment {
     id: number;
-    title: {
-        rendered: string;
-    };
-    caption: {
-        rendered: string;
-    };
+    title: string;
+    caption: string;
     alt_text: string;
     mime_type: string;
-    source_url: string;
+    url: string;
     icon: string;
     iconColor: string;
     fileType: string;
-    acf: {
-        archive: Boolean;
-        sponsorUrl: string;
-        team: string;
+    archived: Boolean;
+    sponsor: {
+        url: string;
+        type: string;
     };
+    team: string;
+    desciption: string;
 }

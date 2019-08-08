@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Team } from '@wh-objects/team';
 import { TeamService } from '@wh-share/team.service';
 import { SeoService } from '@wh-share/seo.service';
-import { CarouselService } from '@wh-share/carousel.service';
 import { WPPicture } from '@wh-objects/wordPress';
 
 @Component({

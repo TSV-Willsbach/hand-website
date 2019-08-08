@@ -1,8 +1,8 @@
+import { WillsbachApiService } from './willsbach-api.service';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Ligue, Club } from '@wh-objects/hvw';
-import { TeamStatistics } from '@wh-objects/team-statistics';
 import { Globals } from '@wh-objects/globals';
 import { Team } from '@wh-objects/team';
 import { map } from 'rxjs/operators';
@@ -12,7 +12,7 @@ const tickerUrl = 'http://spo.handball4all.de/service/ticker.html?appid=&token='
 const reportUrl = 'http://spo.handball4all.de/misc/sboPublicReports.php?sGID=';
 
 @Injectable()
-export class HvwService {
+export class HvwService extends WillsbachApiService {
 
   private _liga: String = '';
   get liga(): String {
@@ -38,41 +38,16 @@ export class HvwService {
     this._period = period;
   }
 
-  constructor(private http: HttpClient, private global: Globals) { }
-
-  getLigueData(): Observable<Ligue> {
-    const url = this.buildUrlWithParam();
-
-    return this.http.get<Ligue>(url).pipe(
-      map(ligue => {
-        const data = ligue[0];
-        const scores = data.content.score;
-        scores.forEach(element => {
-          element.difference = element.numGoalsShot - element.numGoalsGot;
-        });
-        const games = data.content.futureGames.games;
-
-        if (games !== undefined) {
-          games.forEach(element => {
-            this.liveAndPDF(element);
-          });
-        }
-
-
-        const stats = new TeamStatistics(this.global);
-        stats.calcStatistic(data);
-        return data;
-      })
-    );
+  constructor(private http: HttpClient, private global: Globals) {
+    super();
+    this.url = this.url + 'hvw/';
   }
 
-  private liveAndPDF(element: any) {
-    if (element.live === true) {
-      element.tickerUrl = tickerUrl + element.gToken;
-    }
-    if (element.sGID !== undefined) {
-      element.pdfDL = reportUrl + element.sGID;
-    }
+  getLigueData(): Observable<Ligue> {
+    this.initUrlParams();
+    this.addUrlParam('id', this.liga);
+
+    return this.http.get<any>(this.url + 'ligue', { params: this.urlParams });
   }
 
   getNextGames(): Observable<Ligue> {
@@ -83,24 +58,7 @@ export class HvwService {
   }
 
   getClubData(): Observable<Club> {
-    const clubUrl = baseUrl + '?c=60&cmd=pcu&og=3&p=' + this._period;
-    return this.http.get<Club>(clubUrl).pipe(
-      map(club => {
-        const data = club[0];
-        const classes = data.content.classes;
-
-        classes.forEach(element => {
-          element.games.forEach(child => {
-            if (child.gGuestGoals === ' ') { child.gGuestGoals = '0'; }
-            if (child.gHomeGoals === ' ') { child.gHomeGoals = '0'; }
-            if (child.gGuestGoals_1 === ' ') { child.gGuestGoals_1 = '0'; }
-            if (child.gHomeGoals_1 === ' ') { child.gHomeGoals_1 = '0'; }
-            this.liveAndPDF(child);
-          });
-        });
-        return data;
-      })
-    );
+    return this.http.get<any>(this.url + 'club/' + this.period);
   }
 
   private buildUrlWithParam(): string {
@@ -113,7 +71,6 @@ export class HvwService {
     this.getNextGames().subscribe(
       ligue => {
         ligue = this.getOnlyOurGames(ligue);
-        mGames.content = ligue.content;
         return ligue;
       },
       error => { console.log(error); },
@@ -123,7 +80,6 @@ export class HvwService {
           this.getNextGames().subscribe(
             ligue => {
               ligue = this.getOnlyOurGames(ligue);
-              mGames.content.actualGames.games = mGames.content.actualGames.games.concat(ligue.content.actualGames.games);
               return ligue;
             },
             error => { console.log(error); },
@@ -134,7 +90,6 @@ export class HvwService {
           this.getNextGames().subscribe(
             ligue => {
               ligue = this.getOnlyOurGames(ligue);
-              mGames.content.actualGames.games = mGames.content.actualGames.games.concat(ligue.content.actualGames.games);
               return ligue;
             },
             error => { console.log(error); },
@@ -146,13 +101,7 @@ export class HvwService {
 
 
   private getOnlyOurGames(ligue: Ligue): Ligue {
-    let games = ligue.content.actualGames.games;
-    const actClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
-      || this.global.isOwnClub(element.gHomeTeam) === true);
-    games = ligue.content.futureGames.games;
-    const futClubGames = games.filter(element => this.global.isOwnClub(element.gGuestTeam) === true
-      || this.global.isOwnClub(element.gHomeTeam) === true);
-    ligue.content.actualGames.games = actClubGames.concat(futClubGames);
+    ligue.games = ligue.games.filter((f) => this.global.isOwnClub(f.team.home) || this.global.isOwnClub(f.team.guest));
     return ligue;
   }
 }
