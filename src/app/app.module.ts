@@ -1,7 +1,7 @@
 import { ConvertGameTimePipe } from './core/gameTimePipe';
 import { GeneralDataService } from './shared/general-data.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareButtonsModule } from '@ngx-share/buttons';
@@ -136,6 +136,7 @@ library.add(fas, far, fab);
     MDBBootstrapModule.forRoot()
   ],
   providers: [
+    { provide: LOCALE_ID, useValue: 'de' },
     NavigationService,
     DocumentService,
     LocationService,
