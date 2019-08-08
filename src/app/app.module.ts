@@ -34,7 +34,6 @@ import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-det
 import { NavigationService } from './navigation/navigation.service';
 import { DocumentService } from './documents/document.service';
 import { LocationService } from '@wh-share/location.service';
-import { NewsService } from '@wh-share/news.service';
 import { CarouselService } from '@wh-share/carousel.service';
 import { SponsorsService } from '@wh-share/sponsors.service';
 import { SeoService } from '@wh-share/seo.service';
@@ -142,7 +141,6 @@ library.add(fas, far, fab);
     DocumentService,
     LocationService,
     CarouselService,
-    NewsService,
     SponsorsService,
     SeoService,
     FileServiceService,

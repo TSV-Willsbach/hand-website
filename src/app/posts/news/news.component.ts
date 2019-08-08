@@ -1,6 +1,5 @@
 import { WordpressService } from './../../shared/wordpress.service';
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '@wh-share/news.service';
 import { Post } from '@wh-objects/post';
 import { Paginator } from '@wh-objects/pagination';
 

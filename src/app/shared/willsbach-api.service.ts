@@ -6,8 +6,8 @@ import { HttpParams } from '@angular/common/http';
 })
 export class WillsbachApiService {
 
-  protected url = 'https://api.willsbach-handball.de/';
-  // protected url = 'http://localhost:4000/';
+  // protected url = 'https://api.willsbach-handball.de/';
+  protected url = 'http://localhost:4000/';
   protected urlParams: HttpParams;
 
   constructor() {

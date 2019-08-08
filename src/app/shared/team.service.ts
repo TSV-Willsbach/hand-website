@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Team, Player } from '@wh-objects/team';
 import { Post } from '@wh-objects/post';
-import { NewsService } from '@wh-share/news.service';
 import { Observable } from 'rxjs';
 import { map, publishReplay, refCount } from 'rxjs/operators';
 import { TeamWP, WPPicture } from '@wh-objects/wordPress';
+import { WordpressService } from './wordpress.service';
 
 const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png';
 const apiTeams = 'https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&search=teams';
@@ -19,7 +19,7 @@ export class TeamService {
   posts: Post[];
   wpCategory: string;
 
-  constructor(private http: HttpClient, private news: NewsService, private carousel: CarouselService) { }
+  constructor(private http: HttpClient, private wp: WordpressService, private carousel: CarouselService) { }
 
 
   getPlayer(teamId: string, playerName: string): Observable<Player> {
@@ -95,11 +95,11 @@ export class TeamService {
   }
 
   getTeamReports(catID: string, page: number): Observable<Post[]> {
-    return this.news.fetchReports(catID, page);
+    return this.wp.fetchReports(+catID, page);
   }
 
   getMaxPages(): number {
-    return this.news.getMaxPages();
+    return this.wp.getMaxPages();
   }
 
 }
