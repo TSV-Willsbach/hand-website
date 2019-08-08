@@ -19,7 +19,7 @@ export class GameTableComponent implements OnInit {
   }
 
   buildGymnUrl(game: Game) {
-    const url = `${this.glob.gMapsSearch}${game.gGymnasiumName},${game.gGymnasiumStreet},${game.gGymnasiumPostal}+${game.gGymnasiumTown}`;
+    const url = `${this.glob.gMapsSearch}${game.gymnasium.name},${game.gymnasium.street},${game.gymnasium.postal}+${game.gymnasium.city}`;
     return url;
   }
 

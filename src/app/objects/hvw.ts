@@ -1,60 +1,62 @@
-export class Head {
-    name: string;
-    sname: string;
-    headline2: string;
-    actualized: string;
-
-    constructor() { }
-}
-
 export class Game {
-    gID: string;
-    sGID: string;
-    gNo: string;
-    live: Boolean;
-    gToken: string;
-    gDate: string;
-    gTime: string;
-    gGymnasiumID: string;
-    gGymnasiumNo: string;
-    gGymnasiumName: string;
-    gGymnasiumPostal: string;
-    gGymnasiumTown: string;
-    gGymnasiumStreet: string;
-    gHomeTeam: string;
-    gGuestTeam: string;
-    gHomeGoals: string;
-    gGuestGoals: string;
-    gHomeGoals_1: string;
-    gGuestGoals_1: string;
-    gHomePoints: string;
-    gGuestPoints: string;
-    gComment: string;
-    gReferee: string;
-    tickerUrl: string;
-    pdfDL: string;
-
-    constructor() {
-        this.gGuestGoals = this.gGuestGoals_1 = '0';
-        this.gHomeGoals = this.gHomeGoals_1 = '0';
-    }
+    id: string;
+    date: string;
+    live: boolean;
+    team: {
+        home: string;
+        guest: string;
+    };
+    goals: {
+        end: {
+            home: number;
+            guest: number;
+        };
+        halfTime: {
+            home: number;
+            guest: number;
+        };
+    };
+    points: {
+        home: number;
+        guest: number;
+    };
+    gymnasium: {
+        id: string;
+        number: string;
+        name: string;
+        street: string;
+        postal: string;
+        city: string;
+    };
+    referees: string;
+    comment: string;
+    sortText: string;
+    appId: string;
+    token: string;
+    report: string;
 }
 
 export class Score {
-    tabScore: string;
-    tabTeamID: string;
-    tabTeamname: string;
-    numPlayedGames: number;
-    numWonGames: number;
-    numEqualGames: number;
-    numLostGames: number;
-    numGoalsShot: number;
-    numGoalsGot: number;
-    difference: number;
-    pointsPlus: number;
-    pointsMinus: number;
-
-    constructor() { }
+    id: string;
+    rank: number;
+    live: boolean;
+    name: string;
+    games: {
+        played: number;
+        won: number;
+        equal: number;
+        lost: number;
+    };
+    goals: {
+        shot: number;
+        got: number;
+        difference: number;
+    };
+    points: {
+        plus: number;
+        minus: number;
+    };
+    statistics: Statistik;
 }
 
 export class StatGame {
@@ -67,61 +69,16 @@ export class StatGame {
 
 }
 
-export class StatWins {
-    wins: number;
-    procentualWins: number;
-    gameAmount: number;
-
-    constructor() {
-        this.wins = this.gameAmount = 0;
-        this.procentualWins = 0;
-    }
-}
-export class StatGoals {
-    totalGoals: number;
-    avarageGoals: number;
-    gameAmount: number;
-
-    constructor() {
-        this.totalGoals = this.avarageGoals = this.gameAmount = 0;
-    }
-
-}
-
-export class Content {
-    actualGames: {
-        games: Game[]
-    };
-    score: Score[];
-    scoreComments: string[];
-    futureGames: {
-        games: Game[];
-    };
-
-    constructor() {
-        this.actualGames = { games: new Array<Game>() };
-        this.futureGames = { games: new Array<Game>() };
-    }
-}
-
 export class Club {
-    head: Head;
-    content: {
-        classes: Classes[];
-    };
-    constructor() {
-        this.head = new Head;
-        this.content = { classes: new Array<Classes>() };
-    }
+    id: string;
+    name: string;
+    shortName: string;
+    headline1: string;
+    headline2: string;
+    actualized: string;
+    ligues: Ligue[];
 }
 
-
-export class Classes {
-    gClassId: string;
-    gClassSname: string;
-    games: Game[];
-    constructor() { }
-}
 
 export class GameHistory {
     date: Date;
@@ -130,54 +87,71 @@ export class GameHistory {
 }
 
 export class Statistik {
-    homeWins: StatWins;
-    homeGoalsShot: StatGoals;
-    homeGoalsGot: StatGoals;
-    homeHighestWin: StatGame;
-    homeHighestWinDiff: number;
-    homeHighestLose: StatGame;
-    homeHighestLoseDiff: number;
-    awayWins: StatWins;
-    awayGoalsShot: StatGoals;
-    awayGoalsGot: StatGoals;
-    awayHighestWin: StatGame;
-    awayHighestWinDiff: number;
-    awayHighestLose: StatGame;
-    awayHighestLoseDiff: number;
-    GameHistory: GameHistory[];
-    constructor() {
-
-        this.homeGoalsShot = new StatGoals();
-        this.homeGoalsGot = new StatGoals();
-        this.homeHighestWin = new StatGame();
-        this.homeHighestLose = new StatGame();
-        this.homeWins = new StatWins();
-        this.homeHighestWinDiff = this.homeHighestLoseDiff = 0;
-
-        this.awayGoalsShot = new StatGoals();
-        this.awayGoalsGot = new StatGoals();
-        this.awayHighestWin = new StatGame();
-        this.awayHighestLose = new StatGame();
-        this.awayWins = new StatWins();
-        this.awayHighestWinDiff = this.awayHighestLoseDiff = 0;
-
-        this.GameHistory = new Array<GameHistory>();
-
-
-    }
+    gameWon: {
+        home: {
+            amount: number;
+            games: number;
+            percentage: number;
+        };
+        away: {
+            amount: number;
+            games: number;
+            percentage: number;
+        };
+    };
+    goalsShot: {
+        home: {
+            goals: number;
+            average: number;
+        },
+        away: {
+            goals: number;
+            average: number;
+        };
+    };
+    goalsGot: {
+        home: {
+            goals: number;
+            average: number;
+        };
+        away: {
+            goals: number;
+            average: number;
+        };
+    };
+    highestWin: {
+        home: {
+            name: string;
+            result: string;
+        };
+        away: {
+            name: string;
+            result: string;
+        };
+    };
+    highestLose: {
+        home: {
+            name: string;
+            result: string;
+        };
+        away: {
+            name: string;
+            result: string;
+        };
+    };
 }
 
 
 export class Ligue {
-    head: Head;
-    content: Content;
-    statistik: Statistik;
-
-    constructor() {
-        this.head = new Head();
-        this.content = new Content();
-        this.statistik = new Statistik();
-    }
+    id: string;
+    name: string;
+    shortName: string;
+    headline1: string;
+    headline2: string;
+    actualized: string;
+    comment: string;
+    scores: Score[];
+    games: Game[];
 }
 
 export class Referee {
