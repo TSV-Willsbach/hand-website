@@ -59,7 +59,7 @@ export class WordpressService extends WillsbachApiService {
     return this.getTeamPictures(false, id);
   }
 
-  getSponsors(archived) {
+  getSponsors(archived: boolean, banner: boolean) {
     this.initUrlParams();
     this.addUrlParam('archived', archived);
     return this.http.get<any>(this.url + 'media/sponsors', { params: this.urlParams });

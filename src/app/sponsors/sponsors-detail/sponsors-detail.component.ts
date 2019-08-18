@@ -12,7 +12,7 @@ export class SponsorsDetailComponent implements OnInit {
   sponsors: any[];
 
   constructor(private wp: WordpressService) {
-    this.wp.getSponsors(false).subscribe(
+    this.wp.getSponsors(false, false).subscribe(
       sponsors => this.sponsors = sponsors,
       error => { console.log('Sponsors', error); },
       () => {

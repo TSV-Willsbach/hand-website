@@ -13,7 +13,7 @@ export class SponsorsComponent implements OnInit {
 
   constructor(private wp: WordpressService) {
     // this.sponsorsS.fetchSponsors().subscribe(sponsors => this.sponsors = sponsors);
-    this.wp.getSponsors(false).subscribe(
+    this.wp.getSponsors(false, true).subscribe(
       sponsors => this.sponsors = sponsors,
       error => { console.log('Sponsors', error); },
       () => {
