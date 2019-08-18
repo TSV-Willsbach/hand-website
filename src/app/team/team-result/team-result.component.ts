@@ -28,7 +28,6 @@ export class TeamResultComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private hvw: HvwService,
     teams: TeamService, private seo: SeoService, private global: Globals) {
-    this.ligue = new Ligue();
     this.team = new Team();
     this.teamID = '';
 
