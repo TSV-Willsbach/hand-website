@@ -20,22 +20,26 @@
 </div>
 
 <h2 class="heading">Sponsoren</h2>
-<div class="container-fluid" *ngFor="let sponsor of sponsors">
-  <div class="row">
-    <div class="col">
-      <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">
-        <img src="{{sponsor.source_url}}" alt="{{sponsor.alt_text}}" class="img-fluid logo">
-      </a>
+<app-spinner *ngIf="showSpinner"></app-spinner>
+<div *ngIf="sponsors !== undefined">
+  <div class="container-fluid" *ngFor="let sponsor of sponsors">
+    <div class="row">
+      <div class="col">
+        <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">
+          <img src="{{sponsor.url}}" alt="{{sponsor.alt_text}}" class="img-fluid logo">
+        </a>
+      </div>
+      <div class="col">
+        <h3>{{sponsor.caption}}</h3>
+        <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">{{sponsor.sponsor.url}}</a>
+      </div>
     </div>
-    <div class="col">
-      <h3>{{sponsor.caption.rendered}}</h3>
-      <a href="{{sponsor.acf.sponsorUrl}}" target="_blank" rel="noopener">{{sponsor.acf.sponsorUrl}}</a>
-    </div>
+    <div class="row"><br /> <br /></div>
+    <br /><br />
+    <br /><br />
   </div>
-  <div class="row"><br /> <br /></div>
-  <br /><br />
-  <br /><br />
 </div>
+
 <br />
 <h2 class="heading">Spender</h2>
 <div class="centered">
