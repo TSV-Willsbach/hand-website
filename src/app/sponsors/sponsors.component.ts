@@ -1,6 +1,6 @@
+import { WordpressService } from './../shared/wordpress.service';
 import { Component, OnInit } from '@angular/core';
 import { SponsorsService } from '@wh-share/sponsors.service';
-import { Sponsors } from '@wh-objects/sponsors';
 
 @Component({
   selector: 'app-sponsors',
@@ -9,11 +9,18 @@ import { Sponsors } from '@wh-objects/sponsors';
 })
 export class SponsorsComponent implements OnInit {
 
+  showSpinner = true;
+  sponsors: any[];
 
-  sponsors: Sponsors[];
-
-  constructor(private sponsorsS: SponsorsService) {
-    this.sponsorsS.fetchSponsors().subscribe(sponsors => this.sponsors = sponsors);
+  constructor(private sponsorsS: SponsorsService, private wp: WordpressService) {
+    // this.sponsorsS.fetchSponsors().subscribe(sponsors => this.sponsors = sponsors);
+    this.wp.getSponsors(false).subscribe(
+      sponsors => this.sponsors = sponsors,
+      error => { console.log('Sponsors', error); },
+      () => {
+        this.showSpinner = false;
+      }
+    );
   }
 
   ngOnInit() {

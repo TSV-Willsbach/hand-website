@@ -1,6 +1,5 @@
 import { Globals } from '@wh-objects/globals';
 import { Game } from './../../objects/hvw';
-import { Ligue } from '@wh-objects/hvw';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
