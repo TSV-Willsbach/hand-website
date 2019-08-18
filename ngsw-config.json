@@ -1,5 +1,5 @@
 {
-    "configVersion": 5,
+    "configVersion": 7,
     "index": "/index.html",
     "assetGroups": [{
         "name": "app",
