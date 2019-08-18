@@ -7,9 +7,9 @@
 
 <h2 class="heading">Nächste Spiele</h2>
 
-<div *ngIf="ligue.content.actualGames.games?.length > 0; else noGames">
-  <small>{{ligue.head.actualized}}</small>
-  <app-game-table [ligaName]="ligue.head.sname" [games]="ligue.content.actualGames.games"></app-game-table>
+<div *ngIf="ligue.games?.length > 0; else noGames">
+  <small>{{ligue.actualized}}</small>
+  <app-game-table [ligaName]="ligue.shortName" [games]="ligue.games"></app-game-table>
 </div>
 <ng-template #noGames>
   <p>Es gibt keine weitere Spiele</p>

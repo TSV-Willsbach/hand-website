@@ -1,5 +1,5 @@
 {
-    "configVersion": 4,
+    "configVersion": 5,
     "index": "/index.html",
     "assetGroups": [{
         "name": "app",
@@ -31,8 +31,7 @@
                 "/postDetail",
                 "/sponsors",
                 "/reports",
-                "/team/*",
-                "https://wp.willsbach-handball.de/wp-json/wp/v2/media*"
+                "/team/*"
             ],
             "cacheConfig": {
                 "maxSize": 100,
@@ -43,7 +42,7 @@
         {
             "name": "api-freshness",
             "urls": [
-                "https://wp.willsbach-handball.de/wp-json/wp/v2/posts*"
+                "https://api.willsbach-handball.de/*"
             ],
             "cacheConfig": {
                 "maxSize": 100,

@@ -3,17 +3,17 @@
 <app-spinner *ngIf="showSpinner"></app-spinner>
 
 <div *ngFor="let club of clubs">
-  <div *ngIf="club.head.actualized.indexOf('00.00.0000') === -1; else noData">
-    <h3>{{club.head.headline2}}</h3>
-    <small>{{club.head.actualized}}</small>
+  <div *ngIf="club.actualized.indexOf('00.00.0000') === -1; else noData">
+    <h3>{{club.headline2}}</h3>
+    <small>{{club.actualized}}</small>
     <br />
     <br />
 
-    <div *ngFor="let class of club.content.classes">
+    <div *ngFor="let class of club.ligues">
       <div *ngIf="class.games?.length > 0">
-        <h5>{{class.gClassSname}}</h5>
+        <h5>{{class.shortName}}</h5>
 
-        <app-game-table [ligaName]="class.gClassSname" [games]="class.games"></app-game-table>
+        <app-game-table [ligaName]="class.shortName" [games]="class.games"></app-game-table>
       </div>
     </div>
     <br /><br />

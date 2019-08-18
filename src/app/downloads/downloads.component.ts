@@ -18,6 +18,7 @@ export class DownloadsComponent implements OnInit {
       .subscribe(attachment => this.attachments = attachment,
         error => console.log('Error: ', error),
         () => {
+          console.log(this.attachments);
           this.showSpinner = false;
         });
 

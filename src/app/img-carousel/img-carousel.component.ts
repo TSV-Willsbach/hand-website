@@ -1,6 +1,5 @@
+import { WordpressService } from './../shared/wordpress.service';
 import { Component, OnInit } from '@angular/core';
-import { CarouselService } from '@wh-share/carousel.service';
-import { TeamWP } from '@wh-objects/wordPress';
 
 @Component({
   selector: 'app-img-carousel',
@@ -9,12 +8,12 @@ import { TeamWP } from '@wh-objects/wordPress';
 })
 
 export class ImgCarouselComponent implements OnInit {
-  teams: TeamWP[];
+  teams: any[];
   showSpinner = true;
 
-  constructor(private transitionService: CarouselService) {
+  constructor(private wp: WordpressService) {
 
-    this.transitionService.fetchTeams(false).subscribe(
+    this.wp.getTeamPictures(false).subscribe(
       team => this.teams = team,
       error => console.log('Error: ', error),
       () => {
