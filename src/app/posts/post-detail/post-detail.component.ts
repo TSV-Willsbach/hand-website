@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { SeoService } from '@wh-share/seo.service';
 import { WordpressService } from '@wh-share/wordpress.service';
 
@@ -16,7 +16,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
   private sub: any;
   showSpinner = true;
 
-  constructor(private route: ActivatedRoute, private wp: WordpressService, private seo: SeoService, private router: Router) {
+  constructor(private route: ActivatedRoute, private wp: WordpressService, private seo: SeoService) {
     // this.post = new Post();
     this.getPostData();
     this.href = window.location.href;
