@@ -41,7 +41,7 @@ export class DocumentService {
     );
   }
 
-  public getDocument(url: string) {
+  public getDocument(url: string): Observable<any> {
     const id = url || 'index';
     //   this.logger.log('getting document', id);
     if (!this.cache.has(id)) {
