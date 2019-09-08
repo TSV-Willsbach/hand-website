@@ -9,9 +9,8 @@
             "files": [
                 "/favicon.ico",
                 "/index.html",
-                "/*.bundle.css",
-                "/*.bundle.js",
-                "/*.chunk.js"
+                "/*.css",
+                "/*.js"
             ]
         }
     }, {
@@ -28,7 +27,7 @@
             "name": "api-performance",
             "urls": [
                 "/",
-                "/postDetail",
+                "/postDetail/*",
                 "/sponsors",
                 "/reports",
                 "/team/*"
