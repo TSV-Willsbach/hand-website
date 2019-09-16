@@ -21,7 +21,7 @@ export class WordpressService extends WillsbachApiService {
     return this.totalPages;
   }
 
-  getPost(id: number): Observable<Post> {
+  getPost(id: number): Observable<any> {
     return this.http.get<any>(this.url + 'posts/' + id);
   }
 

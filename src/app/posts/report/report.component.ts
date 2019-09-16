@@ -27,7 +27,6 @@ export class ReportComponent implements OnInit {
       .subscribe(posts => this.posts = posts,
         error => console.log(error),
         () => {
-          console.log('Posts', this.posts);
           this.showSpinner = false;
           this.maxPages = 2;
           this.pages = new Array();
