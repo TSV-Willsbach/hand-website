@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     private navigationService: NavigationService,
     private locationService: LocationService,
     private documentService: DocumentService,
-    private router: Router,
+    private router: Router
   ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -52,6 +52,7 @@ export class AppComponent implements OnInit {
     this.documentService.currentDocument.subscribe(doc => {
       this.currentDocument = doc;
     });
+
 
     // Generally, we want to delay updating the host classes for the new document, until after the
     // leaving document has been removed (to avoid having the styles for the new document applied
