@@ -25,7 +25,6 @@ export class ImgCarouselComponent implements OnInit {
           } else if (element.sizes.medium !== null) {
             element.url = element.sizes.medium.url;
           }
-
         });
       });
   }

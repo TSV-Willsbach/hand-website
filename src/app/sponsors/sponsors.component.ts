@@ -17,6 +17,13 @@ export class SponsorsComponent implements OnInit {
       error => { console.log('Sponsors', error); },
       () => {
         this.showSpinner = false;
+        this.sponsors.forEach(element => {
+          if (element.sizes.large !== null) {
+            element.url = element.sizes.large.url;
+          } else if (element.sizes.medium !== null) {
+            element.url = element.sizes.medium.url;
+          }
+        });
       }
     );
   }
