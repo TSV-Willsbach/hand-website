@@ -39,6 +39,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
         },
         () => {
           this.showSpinner = false;
+
           this.seo.generateTags({
             title: this.post.title,
             description: this.post.excerpt,
