@@ -126,7 +126,7 @@ library.add(fas, far, fab);
     SpinnerComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
     FontAwesomeModule,
