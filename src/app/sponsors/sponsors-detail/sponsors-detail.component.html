@@ -19,10 +19,45 @@
   <br />
 </div>
 
-<h2 class="heading">Sponsoren</h2>
-<app-spinner *ngIf="showSpinner"></app-spinner>
-<div *ngIf="sponsors !== undefined">
-  <div class="container-fluid" *ngFor="let sponsor of sponsors">
+<!-- <h2 class="heading">Sponsoren</h2> -->
+
+<h3 class="heading">Gold Sponsoren</h3>
+<div *ngIf="goldSponsors !== undefined else noSponsor">
+  <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:goldSponsors}">
+  </ng-container>
+</div>
+
+<h3 class="heading">Silber Sponsoren</h3>
+<div *ngIf="silverSponsors !== undefined else noSponsor">
+  <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:silverSponsors}">
+  </ng-container>
+</div>
+
+<h3 class="heading">Bronze Sponsoren</h3>
+<div *ngIf="bronzeSponsors !== undefined else noSponsor">
+  <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:bronzeSponsors}">
+  </ng-container>
+</div>
+
+<br />
+<h2 class="heading">Spender</h2>
+<div class="centered">
+  <ul class="cloud">
+    <li>Miguel Gebhardt </li>
+  </ul>
+</div>
+
+<ng-template #noSponsor>
+  <p>Keine Sponsoren vorhanden.</p>
+  <p>Hier könnte Ihre Logo stehen.<br />
+    Nehmen Sie doch Kontakt zu uns auf unter:<br />
+    <a href="mailto:sponsoring@willsbach-handball.de">sponsoring@willsbach-handball.de</a>
+  </p>
+</ng-template>
+
+<ng-template #sponsor let-sponsorType="mySponsorType">
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+  <div class="container-fluid" *ngFor="let sponsor of sponsorType">
     <div class="row">
       <div class="col">
         <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">
@@ -38,12 +73,4 @@
     <br /><br />
     <br /><br />
   </div>
-</div>
-
-<br />
-<h2 class="heading">Spender</h2>
-<div class="centered">
-  <ul class="cloud">
-    <li>Miguel Gebhardt </li>
-  </ul>
-</div>
+</ng-template>
