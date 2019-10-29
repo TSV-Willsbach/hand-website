@@ -22,19 +22,22 @@
 <!-- <h2 class="heading">Sponsoren</h2> -->
 
 <h3 class="heading">Gold Sponsoren</h3>
-<div *ngIf="goldSponsors !== undefined else noSponsor">
+<app-spinner *ngIf="showGoldSpinner"></app-spinner>
+<div *ngIf="goldSponsors.length > 0 else noSponsor">
   <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:goldSponsors}">
   </ng-container>
 </div>
 
 <h3 class="heading">Silber Sponsoren</h3>
-<div *ngIf="silverSponsors !== undefined else noSponsor">
+<app-spinner *ngIf="showSilverSpinner"></app-spinner>
+<div *ngIf="silverSponsors.length > 0 else noSponsor">
   <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:silverSponsors}">
   </ng-container>
 </div>
 
 <h3 class="heading">Bronze Sponsoren</h3>
-<div *ngIf="bronzeSponsors !== undefined else noSponsor">
+<app-spinner *ngIf="showBronzeSpinner"></app-spinner>
+<div *ngIf="bronzeSponsors.length > 0 else noSponsor">
   <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:bronzeSponsors}">
   </ng-container>
 </div>
@@ -49,14 +52,14 @@
 
 <ng-template #noSponsor>
   <p>Keine Sponsoren vorhanden.</p>
-  <p>Hier könnte Ihre Logo stehen.<br />
-    Nehmen Sie doch Kontakt zu uns auf unter:<br />
-    <a href="mailto:sponsoring@willsbach-handball.de">sponsoring@willsbach-handball.de</a>
+  <p>Hier könnte aber Ihr Logo stehen.<br />
+    Sie können unter:<br />
+    <a href="mailto:sponsoring@willsbach-handball.de">sponsoring@willsbach-handball.de</a><br />
+    Kontakt mit uns aufnehmen.
   </p>
 </ng-template>
 
 <ng-template #sponsor let-sponsorType="mySponsorType">
-  <app-spinner *ngIf="showSpinner"></app-spinner>
   <div class="container-fluid" *ngFor="let sponsor of sponsorType">
     <div class="row">
       <div class="col">

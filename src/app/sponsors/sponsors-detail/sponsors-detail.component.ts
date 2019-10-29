@@ -8,20 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorsDetailComponent implements OnInit {
 
-  showSpinner = true;
-  sponsors: any[];
+  showGoldSpinner = true;
+  showSilverSpinner = true;
+  showBronzeSpinner = true;
   goldSponsors: any[];
   silverSponsors: any[];
   bronzeSponsors: any[];
 
   constructor(private wp: WordpressService) {
-    this.wp.getSponsors(false).subscribe(
-      sponsors => this.sponsors = sponsors,
-      error => { console.log('Sponsors', error); },
-      () => {
-        this.showSpinner = false;
-      }
-    );
     this.loadSponsors();
   }
 
@@ -33,21 +27,21 @@ export class SponsorsDetailComponent implements OnInit {
       sponsors => this.goldSponsors = sponsors,
       error => { console.log('Gold Sponsors', error); },
       () => {
-        // this.showSpinner = false;
+        this.showGoldSpinner = false;
       }
     );
     this.wp.getSponsors(false, 'silver').subscribe(
       sponsors => this.silverSponsors = sponsors,
       error => { console.log('Silver Sponsors', error); },
       () => {
-        // this.showSpinner = false;
+        this.showSilverSpinner = false;
       }
     );
     this.wp.getSponsors(false, 'bronze').subscribe(
       sponsors => this.bronzeSponsors = sponsors,
       error => { console.log('Bronze Sponsors', error); },
       () => {
-        // this.showSpinner = false;
+        this.showBronzeSpinner = false;
       }
     );
   }
