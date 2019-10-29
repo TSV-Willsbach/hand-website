@@ -25,11 +25,7 @@
     "pwa": "ng build --prod && sw-precache --root=dist --config=precache-config.js",
     "doc:build": "compodoc -p src/tsconfig.app.json",
     "doc:serve": "compodoc -s",
-    "doc:buildandserve": "compodoc -p src/tsconfig.app.json -s",
-    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "serve:ssr": "node dist/server",
-    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --prod && ng run homepage:server:production --bundleDependencies all"
+    "doc:buildandserve": "compodoc -p src/tsconfig.app.json -s"
   },
   "private": true,
   "dependencies": {
