@@ -42,6 +42,11 @@ export class SponsorsDetailComponent implements OnInit {
       error => { console.log('Bronze Sponsors', error); },
       () => {
         this.showBronzeSpinner = false;
+
+        this.bronzeSponsors.forEach(element => {
+          element.url = null;
+          element.alt_text = null;
+        });
       }
     );
   }

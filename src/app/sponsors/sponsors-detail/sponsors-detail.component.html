@@ -23,24 +23,31 @@
 
 <h3 class="heading">Gold Sponsoren</h3>
 <app-spinner *ngIf="showGoldSpinner"></app-spinner>
-<div *ngIf="goldSponsors.length > 0 else noSponsor">
-  <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:goldSponsors}">
-  </ng-container>
+<div *ngIf="goldSponsors !== undefined">
+  <div *ngIf="goldSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:goldSponsors}">
+    </ng-container>
+  </div>
 </div>
 
 <h3 class="heading">Silber Sponsoren</h3>
 <app-spinner *ngIf="showSilverSpinner"></app-spinner>
-<div *ngIf="silverSponsors.length > 0 else noSponsor">
-  <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:silverSponsors}">
-  </ng-container>
+<div *ngIf="silverSponsors !== undefined">
+  <div *ngIf="silverSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:silverSponsors}">
+    </ng-container>
+  </div>
 </div>
 
 <h3 class="heading">Bronze Sponsoren</h3>
 <app-spinner *ngIf="showBronzeSpinner"></app-spinner>
-<div *ngIf="bronzeSponsors.length > 0 else noSponsor">
-  <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:bronzeSponsors}">
-  </ng-container>
+<div *ngIf="bronzeSponsors !== undefined">
+  <div *ngIf="bronzeSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:bronzeSponsors}">
+    </ng-container>
+  </div>
 </div>
+
 
 <br />
 <h2 class="heading">Spender</h2>
@@ -62,7 +69,7 @@
 <ng-template #sponsor let-sponsorType="mySponsorType">
   <div class="container-fluid" *ngFor="let sponsor of sponsorType">
     <div class="row">
-      <div class="col">
+      <div class="col" *ngIf="sponsor.url !== null">
         <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">
           <img src="{{sponsor.url}}" alt="{{sponsor.alt_text}}" class="img-fluid logo">
         </a>
