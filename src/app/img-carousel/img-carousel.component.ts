@@ -18,6 +18,14 @@ export class ImgCarouselComponent implements OnInit {
       error => console.log('Error: ', error),
       () => {
         this.showSpinner = false;
+
+        this.teams.forEach(element => {
+          if (element.sizes.large !== null) {
+            element.url = element.sizes.large.url;
+          } else if (element.sizes.medium !== null) {
+            element.url = element.sizes.medium.url;
+          }
+        });
       });
   }
 

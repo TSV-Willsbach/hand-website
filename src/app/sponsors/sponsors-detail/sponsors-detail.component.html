@@ -19,12 +19,58 @@
   <br />
 </div>
 
-<h2 class="heading">Sponsoren</h2>
-<app-spinner *ngIf="showSpinner"></app-spinner>
-<div *ngIf="sponsors !== undefined">
-  <div class="container-fluid" *ngFor="let sponsor of sponsors">
+<!-- <h2 class="heading">Sponsoren</h2> -->
+
+<h3 class="heading">Gold Sponsoren</h3>
+<app-spinner *ngIf="showGoldSpinner"></app-spinner>
+<div *ngIf="goldSponsors !== undefined">
+  <div *ngIf="goldSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:goldSponsors}">
+    </ng-container>
+  </div>
+</div>
+
+<h3 class="heading">Silber Sponsoren</h3>
+<app-spinner *ngIf="showSilverSpinner"></app-spinner>
+<div *ngIf="silverSponsors !== undefined">
+  <div *ngIf="silverSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:silverSponsors}">
+    </ng-container>
+  </div>
+</div>
+
+<h3 class="heading">Bronze Sponsoren</h3>
+<app-spinner *ngIf="showBronzeSpinner"></app-spinner>
+<div *ngIf="bronzeSponsors !== undefined">
+  <div *ngIf="bronzeSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:bronzeSponsors}">
+    </ng-container>
+  </div>
+</div>
+
+
+<br />
+<h2 class="heading">Spender</h2>
+<div class="centered">
+  <ul class="cloud">
+    <li>Miguel Gebhardt </li>
+  </ul>
+</div>
+
+<ng-template #noSponsor>
+  <p>Keine Sponsoren vorhanden.</p>
+  <p>Hier könnte aber Ihr Logo stehen.<br />
+    Sie können unter:<br />
+    <a href="mailto:sponsoring@willsbach-handball.de">sponsoring@willsbach-handball.de</a><br />
+    Kontakt mit uns aufnehmen.
+  </p>
+  <br />
+</ng-template>
+
+<ng-template #sponsor let-sponsorType="mySponsorType">
+  <div class="container-fluid" *ngFor="let sponsor of sponsorType">
     <div class="row">
-      <div class="col">
+      <div class="col" *ngIf="sponsor.url !== null">
         <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">
           <img src="{{sponsor.url}}" alt="{{sponsor.alt_text}}" class="img-fluid logo">
         </a>
@@ -38,12 +84,4 @@
     <br /><br />
     <br /><br />
   </div>
-</div>
-
-<br />
-<h2 class="heading">Spender</h2>
-<div class="centered">
-  <ul class="cloud">
-    <li>Miguel Gebhardt </li>
-  </ul>
-</div>
+</ng-template>

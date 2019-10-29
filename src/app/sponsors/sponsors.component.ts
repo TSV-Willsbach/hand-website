@@ -12,11 +12,18 @@ export class SponsorsComponent implements OnInit {
   sponsors: any[];
 
   constructor(private wp: WordpressService) {
-    this.wp.getSponsors(false, true).subscribe(
+    this.wp.getSponsors(false, 'gold').subscribe(
       sponsors => this.sponsors = sponsors,
       error => { console.log('Sponsors', error); },
       () => {
         this.showSpinner = false;
+        this.sponsors.forEach(element => {
+          if (element.sizes.medium !== null) {
+            element.url = element.sizes.medium.url;
+          } else if (element.sizes.large !== null) {
+            element.url = element.sizes.large.url;
+          }
+        });
       }
     );
   }

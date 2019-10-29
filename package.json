@@ -39,6 +39,7 @@
     "@angular/http": "^7.2.15",
     "@angular/platform-browser": "^8.1.1",
     "@angular/platform-browser-dynamic": "^8.1.1",
+    "@angular/platform-server": "^8.1.1",
     "@angular/pwa": "^0.801.1",
     "@angular/router": "^8.1.1",
     "@angular/service-worker": "^8.1.1",
@@ -48,6 +49,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/free-regular-svg-icons": "^5.9.0",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@nguniversal/express-engine": "^8.1.1",
+    "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "@ngx-share/button": "^7.1.2",
     "@ngx-share/buttons": "^7.1.2",
     "@ngx-share/core": "^7.1.2",
@@ -88,9 +91,11 @@
     "mongodb-stitch": "^3.2.24",
     "protractor": "^5.4.2",
     "sw-precache-webpack-plugin": "^0.11.5",
+    "ts-loader": "^5.2.0",
     "ts-node": "^8.3.0",
     "tslint": "~5.18.0",
     "typescript": "^3.4.5",
-    "webpack": "^4.35.3"
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.9"
   }
 }
