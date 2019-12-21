@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavigationNode, VersionInfo } from '../navigation/navigation.service';
-
+// import * as npm from '../../../package.json';
+const npm = require('../../../package.json');
 
 @Component({
   selector: 'app-footer',
@@ -8,12 +9,15 @@ import { NavigationNode, VersionInfo } from '../navigation/navigation.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  public appVersion;
 
   constructor() { }
 
   @Input() nodes: NavigationNode[];
   @Input() versionInfo: VersionInfo;
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.appVersion = npm.version;
+  }
 
 }

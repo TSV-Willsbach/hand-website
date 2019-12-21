@@ -59,6 +59,21 @@
 
   <h2 class="heading">Statistik</h2>
 
+  <div *ngIf="ligue.scores?.length > 0">
+    <div class="btn-group" mdbDropdown>
+      <button mdbDropdownToggle type="button" mdbBtn class="dropdown-toggle waves-light club" mdbWavesEffect>
+        {{statTeam}}
+      </button>
+
+      <div class="dropdown-menu dropdown-primary">
+        <div *ngFor="let team of ligue.scores">
+          <a class="dropdown-item" (click)="changeTeam(team.id)">{{team.name}}</a>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+  </div>
+
   <table style="width:100%" class="table table-responsive table-bordered">
     <tr>
       <td rowspan="2">Siege</td>
