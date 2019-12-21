@@ -17,6 +17,7 @@ import { Observable } from 'rxjs';
 export class TeamResultComponent implements OnInit {
 
   teamID: any;
+  statTeam: string;
   stats: Statistik;
   private sub: any;
   ligue: Ligue;
@@ -62,6 +63,7 @@ export class TeamResultComponent implements OnInit {
             }
           });
           this.stats = myTeam[0].statistics;
+          this.statTeam = myTeam[0].name;
         }
         this.seo.generateTags({
           title: this.ligue.name,
@@ -94,6 +96,12 @@ export class TeamResultComponent implements OnInit {
 
     this.hvw.liga = id;
     this.secondLigueText = text + ' wechseln';
+  }
+
+  changeTeam(id: string) {
+    const selectedTeam = this.ligue.scores.find(element => element.id === id);
+    this.stats = selectedTeam.statistics;
+    this.statTeam = selectedTeam.name;
   }
 
   hasLink(id: number): Boolean {
