@@ -54,12 +54,10 @@
                         "type": "object",
                         "properties": {
                             "facebook": {
-                                "type": "string",
-                                "format": "uri"
+                                "type": "string"
                             },
                             "instagram": {
-                                "type": "string",
-                                "format": "uri"
+                                "type": "string"
                             }
                         }
                     },
