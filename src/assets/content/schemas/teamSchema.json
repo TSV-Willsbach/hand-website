@@ -61,6 +61,21 @@
                             }
                         }
                     },
+                    "sponsor": {
+                        "type": "object",
+                        "properties": {
+                            "picture": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    },
                     "number": {
                         "type": "number",
                         "default": 0,

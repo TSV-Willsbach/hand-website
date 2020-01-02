@@ -1,5 +1,13 @@
 <h2 class="heading">{{player.name}}, {{player.prename}}</h2>
 
+<div *ngIf="player.sponsor !== undefined">
+  <div class="playerSponsor">
+    <h4>wird präsentiert von {{player.sponsor.name}}:</h4>
+    <img src="{{player.sponsor.picture}}" class="w-50 img-fluid img-thumbnail mx-auto d-block" alt="Playersponsor">
+  </div>
+  <br />
+</div>
+
 <img src="{{player.picture}}" class="w-50 img-fluid img-thumbnail mx-auto d-block"
   alt="{{player.name}}, {{player.prename}}">
 <br />

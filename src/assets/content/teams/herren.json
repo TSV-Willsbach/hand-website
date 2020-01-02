@@ -16,6 +16,11 @@
             "name": "Gebhardt",
             "prename": "Miguel",
             "birthday": "1992-09-10",
+            "sponsor": {
+                "name": "Testsponsor",
+                "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png",
+                "url": "https://google.de"
+            },
             "picture": "https://wp.willsbach-handball.de/wp-content/uploads/players/herren/fb_Miguel_Gebhardt_min.jpg",
             "joinedClub": "2017",
             "lastClubs": ["CVJM Untertürkheim", "TV Obertürkheim", "HSG Oberer Neckar", "TSB Horkheim"],
