@@ -76,7 +76,7 @@
         </a>
       </div>
       <div class="col">
-        <h3>{{sponsor.caption}}</h3>
+        <h3 [innerHTML]="sponsor.caption">{{sponsor.caption}}</h3>
         <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">{{sponsor.sponsor.url}}</a>
       </div>
     </div>
