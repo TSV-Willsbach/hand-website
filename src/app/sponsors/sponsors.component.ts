@@ -27,7 +27,7 @@ export class SponsorsComponent implements OnInit {
               this.sponsors = sponsors;
             }
           },
-          error => { console.log('P. Sponsors footer', error); },
+          error => { console.log('Gold Sponsors footer', error); },
           () => {
             this.showSpinner = false;
             this.sponsors.forEach(element => {
