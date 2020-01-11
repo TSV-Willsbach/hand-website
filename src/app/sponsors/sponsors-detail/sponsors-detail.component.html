@@ -21,6 +21,15 @@
 
 <!-- <h2 class="heading">Sponsoren</h2> -->
 
+<h3 class="heading">Premium Sponsoren</h3>
+<app-spinner *ngIf="showPremiumSpinner"></app-spinner>
+<div *ngIf="premiumSponsors !== undefined">
+  <div *ngIf="premiumSponsors.length > 0 else noSponsor">
+    <ng-container *ngTemplateOutlet="sponsor;context:{mySponsorType:premiumSponsors}">
+    </ng-container>
+  </div>
+</div>
+
 <h3 class="heading">Gold Sponsoren</h3>
 <app-spinner *ngIf="showGoldSpinner"></app-spinner>
 <div *ngIf="goldSponsors !== undefined">
