@@ -32,7 +32,16 @@ export class TeamGamesComponent implements OnInit {
         error => { console.log(error); },
         () => {
           this.hvw.allGames = '0'; // all games = false
-          this.hvw.getAllGamesForTeam(this.team).subscribe(ligue => this.ligue = ligue);
+          this.hvw.liga = this.team.ligaID;
+          this.hvw.getLigueData().subscribe(
+            ligue => this.ligue = ligue,
+            error => { console.log(error); },
+            () => {
+              if (this.ligue.games !== undefined) {
+                this.ligue.games = this.ligue.games.filter((x) => this.isClub(x.team.home) || this.isClub(x.team.guest));
+                this.ligue.games = this.ligue.games.filter((x) => x.points.home === 0 && x.points.guest === 0);
+              }
+            });
         });
     });
   }
@@ -46,6 +55,10 @@ export class TeamGamesComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  isClub(value): Boolean {
+    return this.global.isOwnClub(value);
   }
 
 }
