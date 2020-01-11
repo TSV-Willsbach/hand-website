@@ -54,10 +54,23 @@
                         "type": "object",
                         "properties": {
                             "facebook": {
-                                "type": "string",
-                                "format": "uri"
+                                "type": "string"
                             },
                             "instagram": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "sponsor": {
+                        "type": "object",
+                        "properties": {
+                            "picture": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "url": {
                                 "type": "string",
                                 "format": "uri"
                             }

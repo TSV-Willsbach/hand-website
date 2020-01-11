@@ -35,6 +35,10 @@ export class Player {
         facebook: string;
         twitter: string;
     };
+    sponsor: {
+        picture: string;
+        name: string;
+    };
 
     constructor() { }
 }

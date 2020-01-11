@@ -62,7 +62,7 @@ import { GameTickerComponent } from './game-ticker/game-ticker.component';
 import { PlayerGameTableComponent } from './child-components/player-game-table/player-game-table.component';
 import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component';
 import { SpinnerComponent } from './core/spinner/spinner.component';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, CommonModule } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 
 export const firebaseConfig = environment.firebase;
@@ -126,6 +126,7 @@ library.add(fas, far, fab);
     SpinnerComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,

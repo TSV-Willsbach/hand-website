@@ -12,18 +12,34 @@ export class SponsorsComponent implements OnInit {
   sponsors: any[];
 
   constructor(private wp: WordpressService) {
-    this.wp.getSponsors(false, 'gold').subscribe(
+    this.wp.getSponsors(false, 'premium').subscribe(
       sponsors => this.sponsors = sponsors,
-      error => { console.log('Sponsors', error); },
+      error => { console.log('Sponsors footer', error); },
       () => {
-        this.showSpinner = false;
-        this.sponsors.forEach(element => {
-          if (element.sizes.medium !== null) {
-            element.url = element.sizes.medium.url;
-          } else if (element.sizes.large !== null) {
-            element.url = element.sizes.large.url;
+        this.wp.getSponsors(false, 'gold').subscribe(
+          sponsors => {
+            if (this.sponsors !== undefined) {
+              sponsors.forEach(element => {
+                this.sponsors.push(element);
+              });
+
+            } else {
+              this.sponsors = sponsors;
+            }
+          },
+          error => { console.log('Gold Sponsors footer', error); },
+          () => {
+            this.showSpinner = false;
+            this.sponsors.forEach(element => {
+              if (element.sizes.medium !== null) {
+                element.url = element.sizes.medium.url;
+              } else if (element.sizes.large !== null) {
+                element.url = element.sizes.large.url;
+              }
+            });
           }
-        });
+        );
+
       }
     );
   }

@@ -17,7 +17,9 @@
       </a>
     </div>
     <div class="p-2 text-center">
-      <h3>{{pic.caption.rendered}}</h3>
+      <h3>
+        <div [innerHTML]="pic.caption.rendered"></div>
+      </h3>
       <!-- <div [innerHTML]="pic.description.rendered"></div> -->
     </div>
   </div>

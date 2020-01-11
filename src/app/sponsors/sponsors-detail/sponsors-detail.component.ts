@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorsDetailComponent implements OnInit {
 
+  showPremiumSpinner = true;
   showGoldSpinner = true;
   showSilverSpinner = true;
   showBronzeSpinner = true;
+  premiumSponsors: any[];
   goldSponsors: any[];
   silverSponsors: any[];
   bronzeSponsors: any[];
@@ -23,6 +25,14 @@ export class SponsorsDetailComponent implements OnInit {
   }
 
   loadSponsors() {
+    this.wp.getSponsors(false, 'premium').subscribe(
+      sponsors => this.premiumSponsors = sponsors,
+      error => { console.log('Premium Sponsors', error); },
+      () => {
+        this.showPremiumSpinner = false;
+      }
+    );
+
     this.wp.getSponsors(false, 'gold').subscribe(
       sponsors => this.goldSponsors = sponsors,
       error => { console.log('Gold Sponsors', error); },

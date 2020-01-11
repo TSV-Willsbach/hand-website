@@ -1,5 +1,8 @@
-.gray {
-    background-color: #e5e6e7;
+@import '../../variables';
+
+.sponsor {
+    border-top: 0.25rem solid $color-club;
+    background-color: $color-background;
 }
 
 .centered {

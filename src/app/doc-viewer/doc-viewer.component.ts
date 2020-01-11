@@ -3,8 +3,7 @@ import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
 import { Observable, of, timer } from 'rxjs';
 import { DocumentService, DocumentContents } from '../documents/document.service';
-import { tap, switchMap } from 'rxjs/operators';
-import { filter } from 'rxjs/operators';
+import { tap, switchMap ,  filter } from 'rxjs/operators';
 
 // Coding from: https://github.com/ReactiveX/rxjs/blob/master/docs_app/src/app/layout/doc-viewer/doc-viewer.component.ts
 
