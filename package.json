@@ -88,7 +88,7 @@
     "karma-jasmine": "^2.0.1",
     "karma-jasmine-html-reporter": "^1.5.1",
     "karma-phantomjs-launcher": "^1.0.4",
-    "mongodb-stitch": "^3.7.0",
+    "mongodb-stitch-browser-sdk": "^4.8.0",
     "protractor": "^5.4.2",
     "sw-precache-webpack-plugin": "^0.11.5",
     "ts-loader": "^5.2.0",
