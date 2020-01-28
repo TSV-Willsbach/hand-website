@@ -73,6 +73,11 @@
             "title": "Ergebnisse",
             "router": "/results",
             "children": []
+        },
+        {
+            "title": "Sponsoren",
+            "router": "/sponsors",
+            "children": []
         }
     ],
     "Footer": [{
