@@ -5,6 +5,10 @@
     "pokalID": "50541",
     "wpCat": "41",
     "wpID": "herren2",
+    "trainer": [{
+        "name": "Klappenecker",
+        "prename": "Markus"
+    }],
     "players": [{
             "position": ["RA"],
             "number": 2,

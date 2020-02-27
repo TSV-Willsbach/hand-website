@@ -7,8 +7,11 @@
     "wpCat": "10",
     "wpID": "herren",
     "trainer": [{
-        "name": "Wacker",
-        "prename": "Torsten"
+        "name": "Kohler",
+        "prename": "Marco"
+    },{
+        "name": "Schenk",
+        "prename": "Alexander"
     }],
     "players": [{
             "position": ["TW"],
@@ -126,13 +129,6 @@
             "name": "Greinig",
             "prename": "Götz",
             "position": ["RA"]
-        },
-        {
-            "number": 20,
-            "name": "Schenk",
-            "prename": "Alexander",
-            "joinedClub": "2018",
-            "position": ["TW"]
         }
 
     ]
