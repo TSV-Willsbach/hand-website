@@ -31,7 +31,6 @@ export class TeamGamesComponent implements OnInit {
         team => this.team = team,
         error => { console.log(error); },
         () => {
-          this.hvw.allGames = '0'; // all games = false
           this.hvw.liga = this.team.ligaID;
           this.hvw.getLigueData().subscribe(
             ligue => this.ligue = ligue,

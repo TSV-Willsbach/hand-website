@@ -40,7 +40,6 @@ export class TeamResultComponent implements OnInit {
         error => { console.log(error); },
         () => {
           this.hvw.liga = this.team.ligaID;
-          this.hvw.allGames = '1'; // all games = true
           this.getApiData();
           this.changeLigueParams();
         });

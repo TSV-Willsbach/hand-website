@@ -16,14 +16,6 @@ export class HvwService extends WillsbachApiService {
     this._liga = liga;
   }
 
-  private _allGames = '1';
-  get allGames(): string {
-    return this._allGames;
-  }
-  set allGames(allGames: string) {
-    this._allGames = allGames;
-  }
-
   private _period: String = '83'; // '68'; // '58';
   get period(): String {
     return this._period;
