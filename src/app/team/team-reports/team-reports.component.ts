@@ -38,7 +38,7 @@ export class TeamReportsComponent implements OnInit {
         team => this.team = team,
         error => { console.log(error); },
         () => {
-          this.teamService.getTeamReports(this.team.wpCat, this.page)
+          this.teamService.getTeamReports(this.team.wp.cat, this.page)
             .subscribe(posts => this.posts = posts,
               error => console.log('Error: ', error),
               () => {

@@ -43,8 +43,8 @@ export class TeamPlayersComponent implements OnInit {
             error => { console.log(error); },
             () => {
               this.seo.generateTags({
-                title: this.team.title,
-                description: this.team.title,
+                title: this.team.name,
+                description: this.team.name,
                 image: this.team.picture
               });
             });

@@ -1,11 +1,15 @@
 export class Team {
-    title: string;
-    ligaID: string;
-    pokalID: string;
-    qualID: string;
+    name: string;
     picture: string;
-    wpCat: string;
-    wpID: string;
+    wp: {
+        id: string;
+        cat: string;
+    };
+    hvw: {
+        liga: string;
+        pokal?: string;
+        quali?: string;
+    };
     trainer: Coach[];
     players: Player[];
 
@@ -21,6 +25,7 @@ export class Coach {
 }
 
 export class Player {
+    _id: string;
     position: string[];
     number: number;
     name: string;

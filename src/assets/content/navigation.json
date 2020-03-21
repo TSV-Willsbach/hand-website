@@ -15,7 +15,7 @@
             "children": [{
                     "router": "herren",
                     "title": "Herren",
-                    "tooltip": ""
+                    "tooltip": "Herren Mannschaft"
                 },
                 {
                     "router": "herren2",

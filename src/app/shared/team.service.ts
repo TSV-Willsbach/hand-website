@@ -1,3 +1,4 @@
+import { WillsbachApiService } from './willsbach-api.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Team, Player } from '@wh-objects/team';
@@ -11,25 +12,21 @@ const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/
 const apiTeams = 'https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&search=teams';
 
 @Injectable()
-export class TeamService {
+export class TeamService extends WillsbachApiService {
 
   team: Team;
   posts: Post[];
   wpCategory: string;
 
-  constructor(private http: HttpClient, private wp: WordpressService) { }
+  constructor(private http: HttpClient, private wp: WordpressService) {
+    super();
+  }
 
 
-  getPlayer(teamId: string, playerName: string): Observable<Player> {
-    return this.http.get<Team>(this.getTeamUrl(teamId))
+  getPlayer(playerId: string): Observable<Player> {
+    return this.http.get<any>(`${this.url}players/${playerId}`)
       .pipe(
-        map(team => {
-          const playerNames = playerName.split('_');
-
-          const player = team.players.find(item =>
-            item.name === playerNames[1] &&
-            item.prename === playerNames[0]
-          );
+        map(player => {
           if (player.picture === '' || player.picture === undefined) {
             // Default Picture if no picture is set
             player.picture = defaultImg;
@@ -43,7 +40,6 @@ export class TeamService {
     return this.http.get<Team>(this.getTeamUrl(teamId))
       .pipe(
         map(team => {
-
           if (team.players !== undefined) {
             team.players.sort(function (a, b) {
               if (a.prename < b.prename) { return -1; }
@@ -52,7 +48,7 @@ export class TeamService {
             });
           }
           let picture;
-          this.wp.getTeamPictures(false, team.wpID).subscribe(pic => picture = pic,
+          this.wp.getTeamPictures(false, team.wp.id).subscribe(pic => picture = pic,
             error => { console.log(error); },
             () => {
               team.picture = picture[0].url;
@@ -65,18 +61,17 @@ export class TeamService {
               }
             });
           }
-          this.wpCategory = team.wpCat;
+          this.wpCategory = team.wp.cat;
           return team;
         })
       );
   }
 
   getTeamPictures(teamName: string): Observable<WPPicture[]> {
+    console.log('TT', teamName);
     return this.http.get<WPPicture[]>(apiTeams)
       .pipe(
         map(team => {
-          console.log('Name', teamName);
-          console.log('Team', team);
           team = team.filter(e => e.acf.team === teamName);
           return team.map(cTeam => {
             return cTeam;
@@ -88,7 +83,8 @@ export class TeamService {
   }
 
   private getTeamUrl(teamId: string): string {
-    return `./assets/content/teams/${teamId}.json`;
+    return this.url + 'teams/' + this.mapTeamId(teamId);
+    // return `./assets/content/teams/${teamId}.json`;
   }
 
   getTeamReports(catID: string, page: number): Observable<Post[]> {
@@ -97,6 +93,15 @@ export class TeamService {
 
   getMaxPages(): number {
     return this.wp.getMaxPages();
+  }
+
+  private mapTeamId(teamID): string {
+    switch (teamID) {
+      case 'herren':
+        return '5cbdc5831c9d4400001c5ce0';
+      default:
+        return null;
+    }
   }
 
 }

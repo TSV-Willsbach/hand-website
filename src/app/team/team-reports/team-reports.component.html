@@ -1,12 +1,12 @@
 <ol class="breadcrumb">
   <li>
-    <a href="#" [routerLink]="[ '/team', teamID ]">{{team.title}}</a>
+    <a href="#" [routerLink]="[ '/team', teamID ]">{{team.name}}</a>
   </li>
   <li class="active">Berichte</li>
 </ol>
 
 <h3 class="heading" id="Cards">Berichte</h3>
 
-<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages" (callParentMethods)="callMethod($event)"
-  (pagesEvent)="setPages($event)"></app-report-cards>
+<app-report-cards [pages]="pages" [posts]="posts" [myData]="myData" [maxPages]="maxPages"
+  (callParentMethods)="callMethod($event)" (pagesEvent)="setPages($event)"></app-report-cards>
 <br />

@@ -28,7 +28,8 @@ export class TeamGalleryComponent implements OnInit {
         team => this.team = team,
         error => { console.log(error); },
         () => {
-          this.teams.getTeamPictures(this.team.wpID).subscribe(pic => this.pictures = pic,
+          console.log('FoundT', this.team);
+          this.teams.getTeamPictures(this.team.wp.id).subscribe(pic => this.pictures = pic,
             error => { console.log(error); },
             () => {
               this.showSpinner = false;

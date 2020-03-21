@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
   <li>
-    <a href="#" [routerLink]="[ '/team', teamID ]">{{team.title}}</a>
+    <a href="#" [routerLink]="[ '/team', teamID ]">{{team.name}}</a>
   </li>
   <li class="active">Trainer & Spieler</li>
 </ol>
@@ -12,7 +12,8 @@
     <br />
     <div class="row ">
       <div class="column ">
-        <img src="{{trainer.picture}} " class="w-50 img-fluid img-thumbnail mx-auto d-block " alt="{{trainer.name}}, {{trainer.prename}} ">
+        <img src="{{trainer.picture}} " class="w-50 img-fluid img-thumbnail mx-auto d-block "
+          alt="{{trainer.name}}, {{trainer.prename}} ">
       </div>
       <div class="column " style="margin-left: 10%; ">
         <h5>{{trainer.prename}} {{trainer.name}}</h5>
@@ -67,7 +68,7 @@
       <td>{{player.birthday | date: 'dd.MM.yyyy' }}</td>
       <td>{{player.joinedClub}}</td>
       <td>
-        <a [routerLink]="[ './', player.prename + '_' + player.name] ">
+        <a [routerLink]="[ './', player._id ] ">
           Details
         </a>
       </td>
