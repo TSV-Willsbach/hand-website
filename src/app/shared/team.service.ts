@@ -54,9 +54,10 @@ export class TeamService extends WillsbachApiService {
               team.picture = picture[0].url;
             });
 
-          if (team.trainer !== undefined) {
-            team.trainer.forEach(function (part, index, coach) {
-              if (coach[index].picture === undefined || coach[index].picture === '') {
+          if (team.coaches !== undefined) {
+            console.log('coach', team.coaches);
+            team.coaches.forEach(function (part, index, coach) {
+              if (coach[index].picture === undefined || coach[index].picture === '' || coach[index].picture === null) {
                 coach[index].picture = defaultImg;
               }
             });

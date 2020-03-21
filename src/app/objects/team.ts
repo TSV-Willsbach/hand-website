@@ -10,18 +10,11 @@ export class Team {
         pokal?: string;
         quali?: string;
     };
-    trainer: Coach[];
+    coaches: Player[];
     players: Player[];
 
     constructor() {
     }
-}
-export class Coach {
-    name: string;
-    prename: string;
-    picture: string;
-
-    constructor() { }
 }
 
 export class Player {
