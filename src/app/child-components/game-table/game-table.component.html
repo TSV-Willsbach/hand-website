@@ -6,7 +6,7 @@
     <th>Gästeteam</th>
     <th>Endstand</th>
     <th>Halbzeitstand</th>
-    <th></th>
+    <th colspan="2"></th>
     <!-- <th>Live?</th> -->
   </tr>
   <tr *ngFor="let game of games">
@@ -25,15 +25,17 @@
       {{game.goals.halfTime.home}} : {{game.goals.halfTime.guest}}
     </td>
     <td>
-      <div *ngIf="game.comment !== ' '">
-        <fa-icon [icon]="['fas', 'comment']" size="l"></fa-icon>
-        {{game.comment}}
-      </div>
       <div *ngIf="game.report != undefined;else referee">
         <a href="{{game.report}}" target="_blank">
           <fa-icon [icon]="['fas', 'file-pdf']" size="lg" class="pdf"></fa-icon>
           Presseinfo
         </a>
+      </div>
+    </td>
+    <td>
+      <div *ngIf="game.comment !== ' '">
+        <fa-icon [icon]="['fas', 'comment']" size="l"></fa-icon>
+        {{game.comment}}
       </div>
     </td>
     <ng-template #referee>
