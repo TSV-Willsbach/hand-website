@@ -100,6 +100,10 @@ export class TeamService extends WillsbachApiService {
     switch (teamID) {
       case 'herren':
         return '5cbdc5831c9d4400001c5ce0';
+      case 'herren2':
+        return '5e7661701c9d4400007d0e51';
+      case 'damen':
+        return '5e7662311c9d4400007d0e52';
       default:
         return null;
     }
