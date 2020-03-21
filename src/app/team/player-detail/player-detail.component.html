@@ -46,7 +46,9 @@
     <td>Vorherige Vereine:</td>
     <td>
       <div *ngFor="let club of player.lastClubs">
-        {{club}}
+        <a href="{{club.url}}" target="_blank" rel="noopener">
+          {{club.name}}
+        </a>
       </div>
     </td>
   </tr>

@@ -27,7 +27,11 @@ export class Player {
     birthday: Date;
     picture: string;
     joinedClub: string;
-    lastClubs: string[];
+    lastClubs: [{
+        id: string;
+        name: string;
+        url: string;
+    }];
     socialMedia: {
         instagram: string;
         facebook: string;
