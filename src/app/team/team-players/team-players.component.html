@@ -56,7 +56,7 @@
     <tr *ngFor="let player of team.players">
       <td>{{player.number}}</td>
       <td class="playerName ">
-        <a [routerLink]="[ './', player.prename + '_' + player.name] ">
+        <a [routerLink]="[ './', player._id ] ">
           {{player.prename}} {{player.name}}
         </a>
       </td>
