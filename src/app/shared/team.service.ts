@@ -27,7 +27,7 @@ export class TeamService extends WillsbachApiService {
     return this.http.get<any>(`${this.url}players/${playerId}`)
       .pipe(
         map(player => {
-          if (player.picture === '' || player.picture === undefined) {
+          if (player.picture === '' || player.picture === undefined || player.picture === null) {
             // Default Picture if no picture is set
             player.picture = defaultImg;
           }
