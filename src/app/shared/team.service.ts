@@ -106,6 +106,8 @@ export class TeamService extends WillsbachApiService {
         return '5e7662311c9d4400007d0e52';
       case 'majugend':
         return '5e7b75d91c9d4400000be526';
+      case 'wbjugend':
+        return '5e8234841c9d440000f5c551';
       default:
         return null;
     }
