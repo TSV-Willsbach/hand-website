@@ -17,10 +17,11 @@ export class PlayerDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, teams: TeamService, private seo: SeoService) {
     this.player = new Player();
     this.sub = this.route.params.subscribe(params => {
-      teams.getPlayer(params['id'], params['name']).subscribe(
+      teams.getPlayer(params['playerId']).subscribe(
         player => this.player = player,
         error => { console.log(error); },
         () => {
+          console.log('player', this.player);
           this.seo.generateTags({
             title: this.player.name + ', ' + this.player.prename,
             description: this.player.prename + ' ' + this.player.name,

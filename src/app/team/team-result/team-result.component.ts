@@ -39,8 +39,7 @@ export class TeamResultComponent implements OnInit {
         team => this.team = team,
         error => { console.log(error); },
         () => {
-          this.hvw.liga = this.team.ligaID;
-          this.hvw.allGames = '1'; // all games = true
+          this.hvw.liga = this.team.hvw.liga;
           this.getApiData();
           this.changeLigueParams();
         });
@@ -83,8 +82,8 @@ export class TeamResultComponent implements OnInit {
       text = data.init;
       id = this.hvw.liga;
     } else {
-      if (this.hvw.liga !== this.team.ligaID) {
-        id = this.team.ligaID;
+      if (this.hvw.liga !== this.team.hvw.liga) {
+        id = this.team.hvw.liga;
         const data = this.pokalOrQual();
         text = data.init;
       } else {
@@ -115,11 +114,11 @@ export class TeamResultComponent implements OnInit {
   pokalOrQual(): any {
     let id;
     let init;
-    if (this.team.qualID != null) {
-      id = this.team.qualID;
+    if (this.team.hvw.quali != null) {
+      id = this.team.hvw.quali;
       init = 'Zur Qualifikation';
-    } else if (this.team.pokalID != null) {
-      id = this.team.pokalID;
+    } else if (this.team.hvw.pokal != null) {
+      id = this.team.hvw.pokal;
       init = 'Zum Pokal';
     } else {
       init = '';

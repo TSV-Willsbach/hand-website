@@ -46,7 +46,9 @@
     <td>Vorherige Vereine:</td>
     <td>
       <div *ngFor="let club of player.lastClubs">
-        {{club}}
+        <a href="{{club.url}}" target="_blank" rel="noopener">
+          {{club.name}}
+        </a>
       </div>
     </td>
   </tr>
@@ -55,21 +57,21 @@
 <div *ngIf="player.socialMedia != undefined">
   <h3>Folge {{player.prename}} auf folgenden sozialen Netzwerken:</h3>
   <div>
-    <div *ngIf="player.socialMedia.facebook != undefined">
+    <div *ngIf="player.socialMedia.facebook != '' && player.socialMedia.facebook != null">
       <a href="https://facebook.com/{{player.socialMedia.facebook}}" target="_blank" rel="noopener">
         <span class="sr-only">Facebook</span>
         <!-- <i aria-hidden="true" class="fa fa-facebook-square gray fa-3x"></i> -->
         <fa-icon class="social facebook" [icon]="['fab', 'facebook']" size="3x"></fa-icon>
       </a>
     </div>
-    <div *ngIf="player.socialMedia.instagram != undefined">
+    <div *ngIf="player.socialMedia.instagram != '' && player.socialMedia.instagram != null">
       <a href="https://instagram.com/{{player.socialMedia.instagram}}" target="_blank" rel="noopener">
         <span class="sr-only">Instagram</span>
         <!-- <i aria-hidden="true" class="fa fa-instagram gray fa-3x"></i> -->
         <fa-icon class="social instagram" [icon]="['fab', 'instagram']" size="3x"></fa-icon>
       </a>
     </div>
-    <div *ngIf="player.socialMedia.twitter != undefined">
+    <div *ngIf="player.socialMedia.twitter !== '' && player.socialMedia.twitter !== null">
       <a href="https://twitter.com/{{player.socialMedia.twitter}}" target="_blank" rel="noopener">
         <span class="sr-only">Twitter</span>
         <!-- <i aria-hidden="true" class="fa fa-twitter gray fa-3x"></i> -->

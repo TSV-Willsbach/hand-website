@@ -17,7 +17,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ImgCarouselComponent } from './img-carousel/img-carousel.component';
@@ -34,7 +33,6 @@ import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-det
 import { NavigationService } from './navigation/navigation.service';
 import { DocumentService } from './documents/document.service';
 import { LocationService } from '@wh-share/location.service';
-import { SponsorsService } from '@wh-share/sponsors.service';
 import { SeoService } from '@wh-share/seo.service';
 import { environment } from '@wh-enviroments/environment';
 import { TeamDetailComponent } from './team/team-detail/team-detail.component';
@@ -145,7 +143,6 @@ library.add(fas, far, fab);
     NavigationService,
     DocumentService,
     LocationService,
-    SponsorsService,
     SeoService,
     FileServiceService,
     TeamService,

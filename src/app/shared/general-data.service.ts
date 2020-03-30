@@ -13,7 +13,6 @@ export class GeneralDataService {
     return this.http.get<Contacts>('./assets/content/clubContacts.json')
       .pipe(
         map(contacts => {
-          console.log(contacts.contacts);
           contacts.contacts.forEach(element => {
             if (element.picture === undefined) {
               element.picture = './assets/images/handball_logo.png';

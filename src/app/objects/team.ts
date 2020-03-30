@@ -1,26 +1,24 @@
 export class Team {
-    title: string;
-    ligaID: string;
-    pokalID: string;
-    qualID: string;
+    name: string;
     picture: string;
-    wpCat: string;
-    wpID: string;
-    trainer: Coach[];
+    wp: {
+        id: string;
+        cat: string;
+    };
+    hvw: {
+        liga: string;
+        pokal?: string;
+        quali?: string;
+    };
+    coaches: Player[];
     players: Player[];
 
     constructor() {
     }
 }
-export class Coach {
-    name: string;
-    prename: string;
-    picture: string;
-
-    constructor() { }
-}
 
 export class Player {
+    _id: string;
     position: string[];
     number: number;
     name: string;
@@ -29,7 +27,11 @@ export class Player {
     birthday: Date;
     picture: string;
     joinedClub: string;
-    lastClubs: string[];
+    lastClubs: [{
+        id: string;
+        name: string;
+        url: string;
+    }];
     socialMedia: {
         instagram: string;
         facebook: string;

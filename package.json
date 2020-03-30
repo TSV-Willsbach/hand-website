@@ -1,6 +1,6 @@
 {
   "name": "willsbach-handball",
-  "version": "1.0.111",
+  "version": "1.0.112",
   "license": "MIT",
   "description": "Hompage der Handballabteilung des TSV Willsbach",
   "author": "Miguel Gebhardt <miguel@willsbach-handball.de>",
@@ -54,7 +54,7 @@
     "@ngx-share/button": "^7.1.4",
     "@ngx-share/buttons": "^7.1.4",
     "@ngx-share/core": "^7.1.4",
-    "acorn": "^6.2.0",
+    "acorn": "^6.4.1",
     "angular-bootstrap-md": "^8.8.1",
     "angular-font-awesome": "^3.1.2",
     "body-parser": "~1.19.0",
@@ -70,7 +70,7 @@
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.21",
+    "@angular-devkit/build-angular": "^0.803.25",
     "@angular/cli": "^8.3.21",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
