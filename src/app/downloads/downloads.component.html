@@ -24,7 +24,9 @@
           <i class="fa fa-download fa-2x"></i>
         </a>
       </td>
-      <td>{{attachment.caption}}</td>
+      <td>
+        <div [innerHTML]="attachment.caption"></div>
+      </td>
     </tr>
   </table>
 </div>
