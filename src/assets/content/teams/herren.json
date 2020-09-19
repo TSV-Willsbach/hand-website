@@ -2,7 +2,7 @@
     "$schema": "../schemas/teamSchema.json",
     "title": "Herren",
     "picture": "https://wp.willsbach-handball.de/wp-content/uploads/teams/herren-768x513.jpg",
-    "ligaID": "657036",
+    "ligaID": "60396",
     "pokalID": "50541",
     "wpCat": "10",
     "wpID": "herren",
