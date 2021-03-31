@@ -1,5 +1,5 @@
 import { Component, ComponentRef, DoCheck, ElementRef, EventEmitter, OnDestroy } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser'; 
 import { Router, NavigationEnd } from '@angular/router';
 import { Observable, of, timer } from 'rxjs';
 import { DocumentService, DocumentContents } from '../documents/document.service';
@@ -157,18 +157,18 @@ export class DocViewerComponent implements DoCheck, OnDestroy {
           return this.void$;
         }
         elem.style.transition = '';
-        return animationsDisabled
-          ? this.void$.pipe(tap(() => elem.style[prop] = to))
-          : this.void$.pipe(
-            // In order to ensure that the `from` value will be applied immediately (i.e.
-            // without transition) and that the `to` value will be affected by the
-            // `transition` style, we need to ensure an animation frame has passed between
-            // setting each style.
-            switchMap(() => raf$), tap(() => elem.style[prop] = from),
-            switchMap(() => raf$), tap(() => elem.style.transition = `all ${duration}ms ease-in-out`),
-            switchMap(() => raf$), tap(() => (elem.style as any)[prop] = to),
-            switchMap(() => timer(getActualDuration(elem))), switchMap(() => this.void$),
-          );
+        // return animationsDisabled
+        //   ? this.void$.pipe(tap(() => elem.style[prop] = to))
+        //   : this.void$.pipe(
+        //     // In order to ensure that the `from` value will be applied immediately (i.e.
+        //     // without transition) and that the `to` value will be affected by the
+        //     // `transition` style, we need to ensure an animation frame has passed between
+        //     // setting each style.
+        //     switchMap(() => raf$), tap(() => elem.style[prop] = from),
+        //     switchMap(() => raf$), tap(() => elem.style.transition = `all ${duration}ms ease-in-out`),
+        //     switchMap(() => raf$), tap(() => (elem.style as any)[prop] = to),
+        //     switchMap(() => timer(getActualDuration(elem))), switchMap(() => this.void$),
+        //   );
       };
 
     const animateLeave = (elem: HTMLElement) => animateProp(elem, 'opacity', '1', '0.1');

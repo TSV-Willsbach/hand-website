@@ -3,14 +3,23 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "module": "es2015",
-    "types": ["node"]
+    "types": ["node"],
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "allowEmptyCodegenFiles": true
   },
   "files": [
+    "main.ts",
+    "polyfills.ts",
     "app/app.module.ts"
   ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
+  ]
+,
+  "include": [
+    "src/**/*.d.ts"
   ]
 }

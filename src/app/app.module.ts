@@ -4,17 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { ShareButtonsModule } from '@ngx-share/buttons';
-import { ShareButtonsConfig } from '@ngx-share/core';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShareButtonsConfig } from 'ngx-sharebuttons';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
@@ -62,6 +58,9 @@ import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component
 import { SpinnerComponent } from './core/spinner/spinner.component';
 import { registerLocaleData, CommonModule } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 export const firebaseConfig = environment.firebase;
 
@@ -127,14 +126,14 @@ library.add(fas, far, fab);
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule,
+    // AngularFontAwesomeModule,
     FontAwesomeModule,
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ],
@@ -154,4 +153,8 @@ library.add(fas, far, fab);
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far, fab);
+  }
+}
