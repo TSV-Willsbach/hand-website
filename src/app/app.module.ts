@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ShareButtonsConfig } from 'ngx-sharebuttons';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -127,12 +126,12 @@ library.add(fas, far, fab);
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule,
+    // AngularFontAwesomeModule,
     FontAwesomeModule,
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    // AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     ReactiveFormsModule,

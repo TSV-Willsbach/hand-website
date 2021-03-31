@@ -6,16 +6,19 @@
     "types": ["node"],
   },
   "angularCompilerOptions": {
-    "enableIvy": false,
+    "enableIvy": true,
     "allowEmptyCodegenFiles": true
   },
   "files": [
+    "main.ts",
+    "polyfills.ts",
     "app/app.module.ts"
   ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
-  ],
+  ]
+,
   "include": [
     "src/**/*.d.ts"
   ]
