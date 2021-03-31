@@ -41,5 +41,10 @@
         "app/sponsors/outfitter/*"
       ]
     }
-  }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": true,
+    "strictTemplates": true,
+  },
 }
