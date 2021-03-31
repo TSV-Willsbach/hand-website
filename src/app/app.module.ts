@@ -12,9 +12,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
@@ -62,6 +59,9 @@ import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component
 import { SpinnerComponent } from './core/spinner/spinner.component';
 import { registerLocaleData, CommonModule } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 export const firebaseConfig = environment.firebase;
 
@@ -132,9 +132,9 @@ library.add(fas, far, fab);
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
+    // AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ],
