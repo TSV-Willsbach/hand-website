@@ -57,7 +57,7 @@
     "method-override": "~3.0.0",
     "ngx-sharebuttons": "^8.0.5",
     "rxjs": "^6.5.2",
-    "tslib": "^2.1.0",
+    "tslib": "^1.14.1",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
