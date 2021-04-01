@@ -9,7 +9,7 @@ import { WPPicture } from '@wh-objects/wordPress';
 import { WordpressService } from './wordpress.service';
 
 const defaultImg = 'https://wp.willsbach-handball.de/wp-content/uploads/players/avatar_1522109382.png';
-const apiTeams = 'https://wp.willsbach-handball.de/wp-json/wp/v2/media?_embed&search=teams';
+const apiTeams = 'https://api.willsbach-handball.de/wp/media/teams'; 
 
 @Injectable()
 export class TeamService extends WillsbachApiService {
@@ -70,10 +70,10 @@ export class TeamService extends WillsbachApiService {
 
   getTeamPictures(teamName: string): Observable<WPPicture[]> {
     console.log('TT', teamName);
-    return this.http.get<WPPicture[]>(apiTeams)
+    return this.http.get<WPPicture[]>(`${apiTeams}?teamId=${teamName}`)
       .pipe(
         map(team => {
-          team = team.filter(e => e.acf.team === teamName);
+          // team = team.filter(e => e.acf.team === teamName);
           return team.map(cTeam => {
             return cTeam;
           });

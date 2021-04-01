@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Renderer, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2 } from '@angular/core';
 import { NavigationNode } from '../navigation/navigation.service';
 import { AuthService } from '@wh-share/auth.service';
 

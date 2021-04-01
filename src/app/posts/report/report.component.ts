@@ -58,8 +58,8 @@ export class ReportComponent implements OnInit {
     this[method]();
   }
 
-  setPages(value: string) {
-    this.page = +value;
+  setPages(value: number) {
+    this.page = value;
   }
 
 }

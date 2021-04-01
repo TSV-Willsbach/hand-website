@@ -4,6 +4,7 @@ import { Team } from '@wh-objects/team';
 import { TeamService } from '@wh-share/team.service';
 import { SeoService } from '@wh-share/seo.service';
 import { WPPicture } from '@wh-objects/wordPress';
+import { WordpressService } from '@wh-share/wordpress.service';
 
 @Component({
   selector: 'app-team-gallery',
@@ -15,10 +16,10 @@ export class TeamGalleryComponent implements OnInit {
   teamID: any;
   private sub: any;
   team: Team;
-  pictures: WPPicture[];
+  pictures: any[];
   showSpinner = true;
 
-  constructor(private route: ActivatedRoute, private teams: TeamService, private seo: SeoService) {
+  constructor(private route: ActivatedRoute, private teams: TeamService, private seo: SeoService, private wp: WordpressService) {
     this.team = new Team();
 
 
@@ -29,7 +30,7 @@ export class TeamGalleryComponent implements OnInit {
         error => { console.log(error); },
         () => {
           console.log('FoundT', this.team);
-          this.teams.getTeamPictures(this.team.wp.id).subscribe(pic => this.pictures = pic,
+          this.wp.getTeamPictures( undefined, this.team.wp.id).subscribe(pic => this.pictures = pic,
             error => { console.log(error); },
             () => {
               this.showSpinner = false;

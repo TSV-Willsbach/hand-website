@@ -5,6 +5,7 @@
     "src/**/*.ts"
   ],
   "compilerOptions": {
+    "module": "es2020",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -40,5 +41,10 @@
         "app/sponsors/outfitter/*"
       ]
     }
-  }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": true,
+    "strictTemplates": true,
+  },
 }
