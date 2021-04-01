@@ -1,10 +1,8 @@
 <app-spinner *ngIf="showSpinner"></app-spinner>
  
 <mdb-carousel [isControls]="true" class="carousel slide carousel-slide" [animation]="'slide'">
-
-  <div *ngFor="let team of teams; let i = index">
-    <mdb-slide>
-      <div class="view">
+    <mdb-carousel-item *ngFor="let team of teams; let i = index">
+      <div class="view w-100">
         <img class="d-block w-100" src="{{team.url}}" alt="{{team.alt_text}}">
         <div class="mask rgba-black-slight waves-dark" mdbWavesEffect></div>
       </div>
@@ -12,6 +10,5 @@
         <h3 class="h3-responsive">{{team.alt_text}}</h3>
         <div [innerHTML]="team.caption"></div>
       </div>
-    </mdb-slide>
-  </div>
+    </mdb-carousel-item>
 </mdb-carousel>
