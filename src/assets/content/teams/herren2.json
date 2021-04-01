@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Herren 2",
-    "ligaID": "49316",
+    "ligaID": "60411",
     "pokalID": "50541",
     "wpCat": "41",
     "wpID": "herren2",

@@ -16,7 +16,7 @@ export class HvwService extends WillsbachApiService {
     this._liga = liga;
   }
 
-  private _period: String = '83'; // '68'; // '58';
+  private _period: String = '91'; // '83'; // '68'; // '58';
   get period(): String {
     return this._period;
   }

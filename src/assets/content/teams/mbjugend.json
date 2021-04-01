@@ -1,7 +1,7 @@
 {
     "$schema": "../schemas/teamSchema.json",
     "title": "Männliche B Jugend",
-    "ligaID": "36475",
+    "ligaID": "61021",
     "qualID": "39451",
     "wpCat": "18",
     "wpID": "mB",
