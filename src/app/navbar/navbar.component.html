@@ -1,11 +1,17 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light white fixed-top scrolling-navbar">
+<mdb-navbar
+  SideClass="navbar navbar-expand-lg navbar-light white fixed-top scrolling-navbar"
+>
   <mdb-navbar-brand>
     <a class="navbar-brand" href="#">
-      <img src="assets/images/handball_logo.png" class="logo" alt="Willsbach Logo" />
+      <img
+        src="assets/images/handball_logo.png"
+        class="logo"
+        alt="Willsbach Logo"
+      />
     </a>
   </mdb-navbar-brand>
   <links>
-    <ul class="navbar-nav mr-auto nav-flex-icons" *ngFor="let node of nodes">
+    <!-- <ul class="navbar-nav mr-auto nav-flex-icons" *ngFor="let node of nodes">
       <div *ngIf="node.children.length == 0">
         <li class="nav-item">
           <a [routerLink]="[node.router]" class="nav-link waves-dark" href="#" mdbWavesEffect
@@ -28,7 +34,7 @@
           </div>
         </div>
       </li>
-    </ul>
+    </ul> -->
     <span class="navbar-text black-text">
       <!-- <a href="#" [routerLink]="['/login']" class="nav-link waves-effect waves-dark">
           <div *ngIf="auth.user | async as user; else guest">
@@ -41,13 +47,23 @@
 </mdb-navbar>
 
 <ng-template #authenticated>
-  <a href="#" id="navbar-static-login" (click)="logout()" class="nav-link waves-effect waves-dark">
+  <a
+    href="#"
+    id="navbar-static-login"
+    (click)="logout()"
+    class="nav-link waves-effect waves-dark"
+  >
     <fa-icon icon="sign-out-alt"></fa-icon>
     <span class="clearfix d-none d-sm-inline-block">Log Out</span>
   </a>
 </ng-template>
 <ng-template #guest>
-  <a href="#" id="navbar-static-login" [routerLink]="['/login']" class="nav-link waves-effect waves-dark">
+  <a
+    href="#"
+    id="navbar-static-login"
+    [routerLink]="['/login']"
+    class="nav-link waves-effect waves-dark"
+  >
     <fa-icon icon="sign-in-alt"></fa-icon>
     <span class="clearfix d-none d-sm-inline-block">Log In</span>
   </a>
