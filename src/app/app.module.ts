@@ -14,9 +14,7 @@ import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ImgCarouselComponent } from "./img-carousel/img-carousel.component";
 import { FooterComponent } from "./footer/footer.component";
-import { HomeComponent } from "./home/home.component";
 import { DownloadsComponent } from "./downloads/downloads.component";
-import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
 import { DocumentService } from "./documents/document.service";
 import { LocationService } from "app/services/location.service";
 import { SeoService } from "app/services/seo.service";
@@ -25,14 +23,11 @@ import { FileServiceService } from "app/services/file-service.service";
 import { TeamService } from "app/services/team.service";
 import { HvwService } from "app/services/hvw.service";
 import { Globals } from "@wh-objects/globals";
-import { LoginComponent } from "./login/login.component";
 import { EditComponent } from "./edit/edit.component";
 import { AuthService } from "app/services/auth.service";
 import { AuthGuard } from "./core/auth.guard";
 import { ReactiveFormsModule } from "@angular/forms";
-import { PageNotFoundComponent } from "./core/page-not-found/page-not-found.component";
 import { ContactComponent } from "./contact/contact.component";
-import { DataProtectionComponent } from "./core/data-protection/data-protection.component";
 import { GameTickerComponent } from "./game-ticker/game-ticker.component";
 import { registerLocaleData, CommonModule } from "@angular/common";
 import localeDe from "@angular/common/locales/de";
@@ -54,14 +49,9 @@ library.add(fas, far, fab);
     NavbarComponent,
     ImgCarouselComponent,
     FooterComponent,
-    HomeComponent,
     DownloadsComponent,
-    DocViewerComponent,
-    LoginComponent,
     EditComponent,
-    PageNotFoundComponent,
     ContactComponent,
-    DataProtectionComponent,
     GameTickerComponent,
   ],
   imports: [

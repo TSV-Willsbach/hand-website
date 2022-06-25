@@ -1,25 +1,15 @@
-import { DataProtectionComponent } from "./core/data-protection/data-protection.component";
 import { ContactComponent } from "./contact/contact.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-
 import { DownloadsComponent } from "./downloads/downloads.component";
-import { HomeComponent } from "./home/home.component";
-import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
-import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from "./core/auth.guard";
 import { EditComponent } from "./edit/edit.component";
-import { PageNotFoundComponent } from "./core/page-not-found/page-not-found.component";
 import { GameTickerComponent } from "./game-ticker/game-ticker.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent,
-  },
-  {
-    path: "home",
-    component: HomeComponent,
+    loadChildren: () => import("./core/core.module").then((m) => m.CoreModule),
   },
   {
     path: "posts",
@@ -35,50 +25,33 @@ const routes: Routes = [
     loadChildren: () =>
       import("./results/results.module").then((m) => m.ResultsModule),
   },
-  {
-    path: "chronicle",
-    component: DocViewerComponent,
-  },
+
   {
     path: "sponsors",
     loadChildren: () =>
       import("./sponsors/sponsors.module").then((m) => m.SponsorsModule),
   },
   {
-    path: "referee",
-    component: DocViewerComponent,
-  },
-  {
-    path: "imprint",
-    component: DocViewerComponent,
-  },
-  {
-    path: "training",
-    component: DocViewerComponent,
-  },
-  {
     path: "contact",
     component: ContactComponent,
   },
-  {
-    path: "dataprotection",
-    component: DataProtectionComponent,
-  },
-  {
-    path: "aidAssociation",
-    component: DocViewerComponent,
-  },
+
   {
     path: "team",
     loadChildren: () => import("./team/team.module").then((m) => m.TeamModule),
   },
   {
-    path: "ticker/:gToken",
-    component: GameTickerComponent,
+    path: "user",
+    loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
   },
   {
-    path: "login",
-    component: LoginComponent,
+    path: "gen",
+    loadChildren: () =>
+      import("./generated/generated.module").then((m) => m.GeneratedModule),
+  },
+  {
+    path: "ticker/:gToken",
+    component: GameTickerComponent,
   },
   {
     path: "edit",
@@ -87,7 +60,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    component: PageNotFoundComponent,
+    loadChildren: () => import("./core/core.module").then((m) => m.CoreModule),
   },
 ];
 
