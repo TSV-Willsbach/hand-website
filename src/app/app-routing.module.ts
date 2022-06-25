@@ -5,10 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { DownloadsComponent } from "./downloads/downloads.component";
 import { HomeComponent } from "./home/home.component";
-import { ReportComponent } from "./posts/report/report.component";
-import { ResultsComponent } from "./results/results.component";
 import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
-import { PostDetailComponent } from "./posts/post-detail/post-detail.component";
 import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from "./core/auth.guard";
 import { EditComponent } from "./edit/edit.component";
@@ -25,8 +22,9 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: "reports",
-    component: ReportComponent,
+    path: "posts",
+    loadChildren: () =>
+      import("./posts/posts.module").then((m) => m.PostsModule),
   },
   {
     path: "downloads",
@@ -34,7 +32,8 @@ const routes: Routes = [
   },
   {
     path: "results",
-    component: ResultsComponent,
+    loadChildren: () =>
+      import("./results/results.module").then((m) => m.ResultsModule),
   },
   {
     path: "chronicle",
@@ -68,10 +67,6 @@ const routes: Routes = [
   {
     path: "aidAssociation",
     component: DocViewerComponent,
-  },
-  {
-    path: "postDetail/:id",
-    component: PostDetailComponent,
   },
   {
     path: "team",

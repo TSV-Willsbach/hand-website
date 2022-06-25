@@ -16,7 +16,6 @@ import { ImgCarouselComponent } from "./img-carousel/img-carousel.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HomeComponent } from "./home/home.component";
 import { DownloadsComponent } from "./downloads/downloads.component";
-import { ResultsComponent } from "./results/results.component";
 import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
 import { DocumentService } from "./documents/document.service";
 import { LocationService } from "app/services/location.service";
@@ -57,7 +56,6 @@ library.add(fas, far, fab);
     FooterComponent,
     HomeComponent,
     DownloadsComponent,
-    ResultsComponent,
     DocViewerComponent,
     LoginComponent,
     EditComponent,
