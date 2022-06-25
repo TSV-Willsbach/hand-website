@@ -140,6 +140,12 @@ library.add(fas, far, fab);
     AngularFirestoreModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "de" },

@@ -21,7 +21,8 @@
               "src/content",
               "src/generated",
               "src/favicon.ico",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
@@ -29,7 +30,9 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "aot": true
+            "aot": true,
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -93,7 +96,8 @@
               "src/content",
               "src/generated",
               "src/favicon.ico",
-              "src/manifest.json"
+              "src/manifest.json",
+              "src/manifest.webmanifest"
             ]
           }
         },
