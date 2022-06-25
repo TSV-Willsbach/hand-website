@@ -1,12 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
-import { Paginator } from '@wh-objects/pagination';
-import { Post } from '@wh-objects/post';
-import { ActivatedRoute } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+} from "@angular/core";
+import { Paginator } from "@wh-objects/pagination";
+import { Post } from "@wh-objects/post";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-report-cards',
-  templateUrl: './report-cards.component.html',
-  styleUrls: ['./report-cards.component.scss']
+  selector: "app-report-cards",
+  templateUrl: "./report-cards.component.html",
+  styleUrls: ["./report-cards.component.scss"],
 })
 export class ReportCardsComponent implements OnInit, OnChanges {
   @Input() pages: Paginator[];
@@ -22,29 +29,33 @@ export class ReportCardsComponent implements OnInit, OnChanges {
   page = 1;
   private fragment: string;
 
-  constructor(private route: ActivatedRoute) { this.nextPrevAvailability(); }
+  constructor(private route: ActivatedRoute) {
+    this.nextPrevAvailability();
+  }
 
   callApi() {
-    this.callParentMethods.next('callApi');
+    this.callParentMethods.next("callApi");
   }
 
   nextPrevAvailability() {
-    if (this.page === 1 && this.maxPages === this.page || this.maxPages === undefined) {
-      this.nextDisabled = this.prevDisabled = 'disabled';
+    if (
+      (this.page === 1 && this.maxPages === this.page) ||
+      this.maxPages === undefined
+    ) {
+      this.nextDisabled = this.prevDisabled = "disabled";
     } else if (this.page === 1) {
-      this.prevDisabled = 'disabled';
-      this.nextDisabled = '';
+      this.prevDisabled = "disabled";
+      this.nextDisabled = "";
     } else if (this.page === this.maxPages) {
-      this.nextDisabled = 'disabled';
-      this.prevDisabled = '';
+      this.nextDisabled = "disabled";
+      this.prevDisabled = "";
     } else {
-      this.prevDisabled = '';
-      this.nextDisabled = '';
+      this.prevDisabled = "";
+      this.nextDisabled = "";
     }
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnChanges() {
     this.nextPrevAvailability();
@@ -67,9 +78,6 @@ export class ReportCardsComponent implements OnInit, OnChanges {
 
     this.myData.unsubscribe();
     this.callApi();
-    document.querySelector('#Cards').scrollIntoView();
+    document.querySelector("#Cards").scrollIntoView();
   }
-
-
-
 }

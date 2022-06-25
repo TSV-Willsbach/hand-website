@@ -1,29 +1,29 @@
-@import '../../../variables';
+@import "../../../../variables";
 
 a {
-    color: $color-club;
+  color: $color-club;
 }
 
 .url {
-    color: $color-club;
+  color: $color-club;
 }
 
 td a .fa {
-    color: red;
+  color: red;
 }
 
 .pdf {
-    color: red;
+  color: red;
 }
 
 .referee {
-    color: black;
+  color: black;
 }
 
-.table>tbody>tr>td {
-    vertical-align: middle;
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
 
 .Ticker {
-    color: $color-club-light;
+  color: $color-club-light;
 }

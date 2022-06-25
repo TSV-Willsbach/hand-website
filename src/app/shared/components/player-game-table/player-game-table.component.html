@@ -1,5 +1,9 @@
-<h4>{{teamName}}</h4>
-<table id="{{teamName}}" style="width:100%" class="table table-responsive table-striped table-bordered">
+<h4>{{ teamName }}</h4>
+<table
+  id="{{ teamName }}"
+  style="width: 100%"
+  class="table table-responsive table-striped table-bordered"
+>
   <tr>
     <th>Nummer</th>
     <th>Tore</th>
@@ -10,45 +14,45 @@
     <th>Blaue Karte</th>
   </tr>
   <tr *ngFor="let player of this.team">
-    <td>{{player.number}}</td>
+    <td>{{ player.number }}</td>
     <td>
       <div *ngIf="player.goals != 0">
-        {{player.goals}}
+        {{ player.goals }}
       </div>
     </td>
     <td>
       <div *ngIf="player.penalties.done != 0">
-        {{player.penalties.done}} / {{player.penalties.goals}}
+        {{ player.penalties.done }} / {{ player.penalties.goals }}
       </div>
     </td>
     <td>
       <div *ngIf="player.yellow_card != 0">
-        {{player.yellow_card | convert2GameTime}}
+        {{ player.yellow_card | convert2GameTime }}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.one != 0">
-        {{player.two_minute.one | convert2GameTime}}
+        {{ player.two_minute.one | convert2GameTime }}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.two != 0">
-        {{player.two_minute.two | convert2GameTime}}
+        {{ player.two_minute.two | convert2GameTime }}
       </div>
     </td>
     <td>
       <div *ngIf="player.two_minute.three != 0">
-        {{player.two_minute.three | convert2GameTime}}
+        {{ player.two_minute.three | convert2GameTime }}
       </div>
     </td>
     <td>
       <div *ngIf="player.red_card != 0">
-        {{player.red_card | convert2GameTime}}
+        {{ player.red_card | convert2GameTime }}
       </div>
     </td>
     <td>
       <div *ngIf="player.blue_card != 0">
-        {{player.blue_card | convert2GameTime}}
+        {{ player.blue_card | convert2GameTime }}
       </div>
     </td>
   </tr>
