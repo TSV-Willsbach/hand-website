@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { HvwService } from "app/services/hvw.service";
-import { Club } from "@wh-objects/hvw";
+import { HvwService } from "@wh-share/services/hvw.service";
+import { Club } from "@wh-share/objects/hvw";
 
 @Component({
   selector: "app-results",

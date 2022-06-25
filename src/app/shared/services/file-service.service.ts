@@ -1,7 +1,7 @@
-import { WordpressService } from "app/services/wordpress.service";
+import { WordpressService } from "@wh-share/services/wordpress.service";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Attachment } from "@wh-objects/attachment";
+import { Attachment } from "@wh-share/objects/attachment";
 import { map } from "rxjs/operators";
 
 const apiFiles =

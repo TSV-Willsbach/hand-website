@@ -6,8 +6,8 @@ import {
   EventEmitter,
   OnChanges,
 } from "@angular/core";
-import { Paginator } from "@wh-objects/pagination";
-import { Post } from "@wh-objects/post";
+import { Paginator } from "@wh-share/objects/pagination";
+import { Post } from "@wh-share/objects/post";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { SeoService } from "app/services/seo.service";
-import { WordpressService } from "app/services/wordpress.service";
+import { SeoService } from "@wh-share/services/seo.service";
+import { WordpressService } from "@wh-share/services/wordpress.service";
 
 @Component({
   selector: "app-post-detail",

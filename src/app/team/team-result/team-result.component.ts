@@ -1,12 +1,12 @@
-import { Statistik } from "./../../objects/hvw";
+import { Statistik } from "../../shared/objects/hvw";
 import { Component, OnInit } from "@angular/core";
-import { HvwService } from "app/services/hvw.service";
-import { Ligue } from "@wh-objects/hvw";
+import { HvwService } from "@wh-share/services/hvw.service";
+import { Ligue } from "@wh-share/objects/hvw";
 import { ActivatedRoute } from "@angular/router";
-import { SeoService } from "app/services/seo.service";
-import { TeamService } from "app/services/team.service";
-import { Team } from "@wh-objects/team";
-import { Globals } from "@wh-objects/globals";
+import { SeoService } from "@wh-share/services/seo.service";
+import { TeamService } from "@wh-share/services/team.service";
+import { Team } from "@wh-share/objects/team";
+import { Globals } from "@wh-share/objects/globals";
 import { Observable } from "rxjs";
 
 @Component({

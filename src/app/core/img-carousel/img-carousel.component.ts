@@ -1,4 +1,4 @@
-import { WordpressService } from "../services/wordpress.service";
+import { WordpressService } from "../../shared/services/wordpress.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({

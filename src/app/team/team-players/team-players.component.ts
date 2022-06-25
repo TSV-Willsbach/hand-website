@@ -1,10 +1,10 @@
-import { SeoService } from "app/services/seo.service";
+import { SeoService } from "@wh-share/services/seo.service";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Team } from "@wh-objects/team";
+import { Team } from "@wh-share/objects/team";
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { Observable } from "@firebase/util";
-import { TeamService } from "app/services/team.service";
+import { TeamService } from "@wh-share/services/team.service";
 
 @Component({
   selector: "app-team-players",

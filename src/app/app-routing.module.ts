@@ -1,10 +1,5 @@
-import { ContactComponent } from "./contact/contact.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { DownloadsComponent } from "./downloads/downloads.component";
-import { AuthGuard } from "./core/auth.guard";
-import { EditComponent } from "./edit/edit.component";
-import { GameTickerComponent } from "./game-ticker/game-ticker.component";
 
 const routes: Routes = [
   {
@@ -16,10 +11,7 @@ const routes: Routes = [
     loadChildren: () =>
       import("./posts/posts.module").then((m) => m.PostsModule),
   },
-  {
-    path: "downloads",
-    component: DownloadsComponent,
-  },
+
   {
     path: "results",
     loadChildren: () =>
@@ -30,10 +22,6 @@ const routes: Routes = [
     path: "sponsors",
     loadChildren: () =>
       import("./sponsors/sponsors.module").then((m) => m.SponsorsModule),
-  },
-  {
-    path: "contact",
-    component: ContactComponent,
   },
 
   {
@@ -48,15 +36,6 @@ const routes: Routes = [
     path: "gen",
     loadChildren: () =>
       import("./generated/generated.module").then((m) => m.GeneratedModule),
-  },
-  {
-    path: "ticker/:gToken",
-    component: GameTickerComponent,
-  },
-  {
-    path: "edit",
-    component: EditComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: "**",

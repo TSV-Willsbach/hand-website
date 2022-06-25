@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { LocationService } from "./services/location.service";
+import { LocationService } from "./shared/services/location.service";
 import {
   DocumentService,
   DocumentContents,

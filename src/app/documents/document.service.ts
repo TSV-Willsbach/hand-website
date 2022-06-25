@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Observable, AsyncSubject, of } from "rxjs";
 import { DocumentContents } from "./document-contents";
-import { LocationService } from "app/services/location.service";
+import { LocationService } from "@wh-share/services/location.service";
 import { tap, catchError, switchMap } from "rxjs/operators";
 export { DocumentContents } from "./document-contents";
 export const FILE_NOT_FOUND_ID = "file-not-found";

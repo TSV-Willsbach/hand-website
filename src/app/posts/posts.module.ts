@@ -35,5 +35,6 @@ const customConfig: ShareButtonsConfig = {
     PostsRoutingModule,
     ShareButtonsModule.withConfig(customConfig),
   ],
+  exports: [NewsComponent],
 })
 export class PostsModule {}

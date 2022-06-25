@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Team } from "@wh-objects/team";
-import { TeamService } from "app/services/team.service";
-import { SeoService } from "app/services/seo.service";
-import { WPPicture } from "@wh-objects/wordPress";
-import { WordpressService } from "app/services/wordpress.service";
+import { Team } from "@wh-share/objects/team";
+import { TeamService } from "@wh-share/services/team.service";
+import { SeoService } from "@wh-share/services/seo.service";
+import { WPPicture } from "@wh-share/objects/wordPress";
+import { WordpressService } from "@wh-share/services/wordpress.service";
 
 @Component({
   selector: "app-team-gallery",

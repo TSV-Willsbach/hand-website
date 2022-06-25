@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { TeamService } from "app/services/team.service";
-import { Player } from "@wh-objects/team";
-import { SeoService } from "app/services/seo.service";
+import { TeamService } from "@wh-share/services/team.service";
+import { Player } from "@wh-share/objects/team";
+import { SeoService } from "@wh-share/services/seo.service";
 
 @Component({
   selector: "app-player-detail",

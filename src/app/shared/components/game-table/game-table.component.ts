@@ -1,5 +1,5 @@
-import { Globals } from "@wh-objects/globals";
-import { Game } from "../../../objects/hvw";
+import { Globals } from "@wh-share/objects/globals";
+import { Game } from "../../objects/hvw";
 import { Component, OnInit, Input } from "@angular/core";
 
 @Component({

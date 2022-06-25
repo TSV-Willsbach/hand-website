@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Post } from "@wh-objects/post";
+import { Post } from "@wh-share/objects/post";
 import { ActivatedRoute } from "@angular/router";
-import { TeamService } from "app/services/team.service";
-import { SeoService } from "app/services/seo.service";
-import { Paginator } from "@wh-objects/pagination";
-import { Team } from "@wh-objects/team";
+import { TeamService } from "@wh-share/services/team.service";
+import { SeoService } from "@wh-share/services/seo.service";
+import { Paginator } from "@wh-share/objects/pagination";
+import { Team } from "@wh-share/objects/team";
 
 @Component({
   selector: "app-team-reports",

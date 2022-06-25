@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Post } from "@wh-objects/post";
-import { Team } from "@wh-objects/team";
-import { TeamService } from "app/services/team.service";
-import { SeoService } from "app/services/seo.service";
+import { Post } from "@wh-share/objects/post";
+import { Team } from "@wh-share/objects/team";
+import { TeamService } from "@wh-share/services/team.service";
+import { SeoService } from "@wh-share/services/seo.service";
 
 @Component({
   selector: "app-team-detail",

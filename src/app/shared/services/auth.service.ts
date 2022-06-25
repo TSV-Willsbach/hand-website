@@ -6,7 +6,7 @@ import {
   AngularFirestoreDocument,
 } from "@angular/fire/compat/firestore";
 import { Observable, of } from "rxjs";
-import { User } from "@wh-objects/auth";
+import { User } from "@wh-share/objects/auth";
 import { switchMap } from "rxjs/operators";
 
 @Injectable()

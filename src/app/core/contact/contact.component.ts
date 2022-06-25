@@ -1,5 +1,5 @@
-import { GeneralDataService } from "../services/general-data.service";
-import { Contacts } from "./../objects/generalData";
+import { GeneralDataService } from "../../shared/services/general-data.service";
+import { Contacts } from "../../shared/objects/generalData";
 import { Component, OnInit } from "@angular/core";
 
 @Component({

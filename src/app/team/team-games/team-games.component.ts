@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Team } from "@wh-objects/team";
-import { Ligue } from "@wh-objects/hvw";
-import { HvwService } from "app/services/hvw.service";
-import { TeamService } from "app/services/team.service";
-import { SeoService } from "app/services/seo.service";
-import { Globals } from "@wh-objects/globals";
+import { Team } from "@wh-share/objects/team";
+import { Ligue } from "@wh-share/objects/hvw";
+import { HvwService } from "@wh-share/services/hvw.service";
+import { TeamService } from "@wh-share/services/team.service";
+import { SeoService } from "@wh-share/services/seo.service";
+import { Globals } from "@wh-share/objects/globals";
 
 @Component({
   selector: "app-team-games",

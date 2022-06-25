@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FileServiceService } from "app/services/file-service.service";
-import { Attachment } from "@wh-objects/attachment";
+import { FileServiceService } from "@wh-share/services/file-service.service";
+import { Attachment } from "@wh-share/objects/attachment";
 
 @Component({
   selector: "app-downloads",

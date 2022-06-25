@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, FormControl } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+  selector: "app-edit",
+  templateUrl: "./edit.component.html",
+  styleUrls: ["./edit.component.scss"],
 })
 export class EditComponent implements OnInit {
-
   playerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-
     this.playerForm = this.fb.group({
       Name: new FormControl(),
       Prename: new FormControl(),
@@ -23,9 +21,7 @@ export class EditComponent implements OnInit {
       Number: new FormControl(),
       Picture: new FormControl(),
       JoinedClub: new FormControl(),
-      LastClubs: new FormControl()
-
+      LastClubs: new FormControl(),
     });
   }
-
 }

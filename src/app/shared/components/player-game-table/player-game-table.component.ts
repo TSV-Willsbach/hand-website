@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { PlayerInfo } from "@wh-objects/hvw";
+import { PlayerInfo } from "@wh-share/objects/hvw";
 
 @Component({
   selector: "app-player-game-table",

@@ -1,4 +1,4 @@
-import { SeoService } from "../../services/seo.service";
+import { SeoService } from "../../shared/services/seo.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({

@@ -1,7 +1,7 @@
-import { WordpressService } from "../../services/wordpress.service";
+import { WordpressService } from "../../shared/services/wordpress.service";
 import { Component, OnInit } from "@angular/core";
-import { Post } from "@wh-objects/post";
-import { Paginator } from "@wh-objects/pagination";
+import { Post } from "@wh-share/objects/post";
+import { Paginator } from "@wh-share/objects/pagination";
 
 @Component({
   selector: "app-news",
