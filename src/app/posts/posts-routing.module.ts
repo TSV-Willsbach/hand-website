@@ -9,7 +9,7 @@ const routes: Routes = [
     component: ReportComponent,
   },
   {
-    path: ":id/detail",
+    path: "detail/:id",
     component: PostDetailComponent,
   },
 ];
