@@ -14,5 +14,6 @@ import { OutfitterFooterComponent } from "@wh-outfitter/outfitter-footer/outfitt
     OutfitterFooterComponent,
   ],
   imports: [CommonModule, SharedModule, SponsorsRoutingModule],
+  exports: [SponsorsComponent],
 })
 export class SponsorsModule {}

@@ -1,3 +1,4 @@
+import { SponsorsModule } from "./sponsors/sponsors.module";
 import { GeneralDataService } from "./services/general-data.service";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, LOCALE_ID } from "@angular/core";
@@ -95,7 +96,7 @@ library.add(fas, far, fab);
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    // AngularFontAwesomeModule,
+    SponsorsModule,
 
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),

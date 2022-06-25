@@ -9,7 +9,6 @@ import { ReportComponent } from "./posts/report/report.component";
 import { ResultsComponent } from "./results/results.component";
 import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
 import { PostDetailComponent } from "./posts/post-detail/post-detail.component";
-import { SponsorsDetailComponent } from "./sponsors/sponsors-detail/sponsors-detail.component";
 import { LoginComponent } from "./login/login.component";
 import { AuthGuard } from "./core/auth.guard";
 import { EditComponent } from "./edit/edit.component";
