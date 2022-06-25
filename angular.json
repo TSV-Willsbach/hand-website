@@ -32,6 +32,8 @@
             "scripts": [],
             "aot": true,
             "serviceWorker": true,
+            "buildOptimizer": true,
+            "optimization": true,
             "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
