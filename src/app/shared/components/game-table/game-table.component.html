@@ -1,0 +1,57 @@
+<table
+  id="{{ ligaName }}"
+  style="width: 100%"
+  class="table table-responsive table-striped table-bordered"
+>
+  <tr>
+    <th>Datum & Zeit</th>
+    <th>Halle</th>
+    <th>Heimteam</th>
+    <th>Gästeteam</th>
+    <th>Endstand</th>
+    <th>Halbzeitstand</th>
+    <th colspan="2"></th>
+    <!-- <th>Live?</th> -->
+  </tr>
+  <tr *ngFor="let game of games">
+    <td>{{ game.date | date: "EE, dd.MM.yyyy HH:mm" }}</td>
+    <td>
+      <a href="{{ buildGymnUrl(game) }}" target="_blank" class="url">
+        {{ game.gymnasium.name }}, {{ game.gymnasium.city }}
+      </a>
+    </td>
+    <td>{{ game.team.home }}</td>
+    <td>{{ game.team.guest }}</td>
+    <td>{{ game.goals.end.home }} : {{ game.goals.end.guest }}</td>
+    <td>{{ game.goals.halfTime.home }} : {{ game.goals.halfTime.guest }}</td>
+    <td>
+      <div *ngIf="game.report != undefined; else referee">
+        <a href="{{ game.report }}" target="_blank">
+          <fa-icon [icon]="['fas', 'file-pdf']" size="lg" class="pdf"></fa-icon>
+          Presseinfo
+        </a>
+      </div>
+    </td>
+    <td>
+      <div *ngIf="game.comment !== ' '">
+        <fa-icon [icon]="['fas', 'comment']"></fa-icon>
+        {{ game.comment }}
+      </div>
+    </td>
+    <ng-template #referee>
+      <div *ngIf="game.live == true">
+        <a [routerLink]="['/ticker/', game.token]" class="Ticker">
+          <fa-icon [icon]="['fas', 'bell']" size="lg"></fa-icon>
+          Liveticker
+        </a>
+        <br />
+        <br />
+      </div>
+      <div *ngIf="game.referees != ' '">
+        <!-- <img src="https://h4allapp.it4sport.de/dist/assets/images/icon-whistle.png"> -->
+        <fa-icon [icon]="['fas', 'user']" size="lg" class="referee"></fa-icon>
+        {{ game.referees }}
+      </div>
+    </ng-template>
+  </tr>
+</table>

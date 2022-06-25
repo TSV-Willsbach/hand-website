@@ -1,41 +1,48 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { SeoService } from '@wh-share/seo.service';
-import { WordpressService } from '@wh-share/wordpress.service';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { SeoService } from "@wh-share/services/seo.service";
+import { WordpressService } from "@wh-share/services/wordpress.service";
 
 @Component({
-  selector: 'app-post-detail',
-  templateUrl: './post-detail.component.html',
-  styleUrls: ['./post-detail.component.scss']
+  selector: "app-post-detail",
+  templateUrl: "./post-detail.component.html",
+  styleUrls: ["./post-detail.component.scss"],
 })
 export class PostDetailComponent implements OnInit, OnDestroy {
-
-  public href = '';
+  public href = "";
   id: number;
   post: any;
   private sub: any;
   showSpinner = true;
 
-  constructor(private route: ActivatedRoute, private wp: WordpressService, private seo: SeoService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private wp: WordpressService,
+    private seo: SeoService
+  ) {
     // this.post = new Post();
     this.getPostData();
     this.href = window.location.href;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
   private getPostData() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number
+    this.sub = this.route.params.subscribe((params) => {
+      this.id = +params["id"]; // (+) converts string 'id' to a number
       // In a real app: dispatch action to load the details here.
-      this.wp.getPost(this.id).subscribe(post => this.post = post,
-        error => {
-          console.log(error);
+      this.wp.getPost(this.id).subscribe(
+        (post) => (this.post = post),
+        (error) => {
+          if (error.status === 404) {
+            console.log("Error", error);
+            this.router.navigate(["/home/404"], { skipLocationChange: true });
+          }
         },
         () => {
           this.showSpinner = false;
@@ -47,10 +54,11 @@ export class PostDetailComponent implements OnInit, OnDestroy {
             height: this.post.picture.height,
             width: this.post.picture.width,
             mime_type: this.post.picture.mime_type,
-            type: 'article'
+            type: "article",
           });
           this.seo.articleTags(this.post.author);
-        });
+        }
+      );
     });
   }
 }

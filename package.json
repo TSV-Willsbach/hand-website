@@ -3,17 +3,28 @@
   "version": "1.0.113",
   "license": "MIT",
   "description": "Hompage der Handballabteilung des TSV Willsbach",
-  "author": "Miguel Gebhardt <miguel@willsbach-handball.de>",
+  "author": {
+    "name": "Miguel Gebhardt",
+    "email": "miguel@mgm12.de",
+    "url": "https://mgm12.dev"
+  },
   "contributors": [
-    "Markus Braunbeck"
+    {
+      "name": "Markus Braunbeck"
+    }
   ],
   "bugs": {
-    "url": "https://bitbucket.org/tsvwillsbachhandball/website/issues"
+    "url": "https://github.com/TSV-Willsbach/hand-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TSV-Willsbach/hand-website/"
   },
   "keywords": [
     "willsbach",
     "handball",
-    "TSV Willsbach"
+    "TSV Willsbach",
+    "willsbacher"
   ],
   "scripts": {
     "ng": "ng",
@@ -29,63 +40,47 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^11.2.7",
-    "@angular/cdk": "^11.2.6",
-    "@angular/common": "^11.2.7",
-    "@angular/compiler": "^11.2.7",
-    "@angular/core": "^11.2.7",
-    "@angular/fire": "^6.1.4",
-    "@angular/forms": "^11.2.7",
-    "@angular/material": "^11.0.0",
-    "@angular/platform-browser": "^11.2.7",
-    "@angular/platform-browser-dynamic": "^11.2.7",
-    "@angular/router": "^11.2.7",
-    "@angular/service-worker": "^11.2.7",
-    "@fortawesome/angular-fontawesome": "^0.8.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-regular-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@schematics/angular": "^11.2.6",
-    "angular-bootstrap-md": "^11.0.0",
-    "body-parser": "~1.19.0",
-    "core-js": "^3.6.3",
-    "crawler-user-agents": "git+https://github.com/monperrus/crawler-user-agents.git",
-    "express": "~4.17.1",
-    "firebase": "^8.3.1",
-    "font-awesome": "^4.7.0",
-    "hammerjs": "^2.0.8",
+    "@angular/animations": "^13.3.8",
+    "@angular/cdk": "^13.3.8",
+    "@angular/common": "^13.3.8",
+    "@angular/compiler": "^13.3.8",
+    "@angular/core": "^13.3.8",
+    "@angular/fire": "^7.4.1",
+    "@angular/forms": "^13.3.8",
+    "@angular/platform-browser": "^13.3.8",
+    "@angular/platform-browser-dynamic": "^13.3.8",
+    "@angular/router": "^13.3.8",
+    "@angular/service-worker": "^13.3.8",
+    "@fortawesome/angular-fontawesome": "^0.10.2",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "angular-bootstrap-md": "^13.0.0",
+    "body-parser": "~1.20.0",
+    "core-js": "^3.23.1",
+    "express": "~4.18.1",
+    "firebase": "^9.8.3",
     "method-override": "~3.0.0",
-    "ngx-sharebuttons": "^8.0.5",
-    "rxjs": "^6.5.2",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "ngx-sharebuttons": "^10.0.0",
+    "rxjs": "^7.5.5",
+    "zone.js": "~0.11.6"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
-    "@angular-devkit/build-angular": "~0.1102.6",
-    "@angular/cli": "^11.2.6",
-    "@angular/compiler-cli": "^11.2.7",
-    "codelyzer": "^6.0.0",
-    "fuzzy": "^0.1.3",
-    "html-webpack-plugin": "^5.3.1",
-    "inquirer": "^6.2.2",
-    "inquirer-autocomplete-prompt": "^1.0.1",
-    "jasmine-core": "~3.6.0",
-    "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~5.0.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
+    "@angular-devkit/build-angular": "~13.3.8",
+    "@angular/cli": "^13.3.8",
+    "@angular/compiler-cli": "^13.3.8",
+    "jasmine-core": "~4.2.0",
+    "jasmine-spec-reporter": "~7.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.1",
+    "karma-coverage-istanbul-reporter": "~3.0.3",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "^2.0.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "protractor": "~7.0.0",
-    "ts-node": "^8.5.4",
+    "ts-node": "^10.8.1",
     "tslint": "~6.1.0",
-    "typescript": "^4.1.5",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-middleware": "^4.1.0",
-    "webpack-dev-server": "^3.11.2"
+    "typescript": "^4.4.2"
   }
 }

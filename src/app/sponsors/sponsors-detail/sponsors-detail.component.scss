@@ -1,45 +1,44 @@
 .column {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 /* Clear floats after the columns */
 
 .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .centered {
-    align-self: center;
-    margin: auto;
-    width: 50%;
+  align-self: center;
+  margin: auto;
+  width: 50%;
 }
 
 .logo {
-    width: auto;
+  width: auto;
 }
 
 .cloud {
+  display: inline;
+  list-style-type: none;
+
+  .li {
+    list-style: none;
     display: inline;
-    list-style-type: none;
-
-    .li {
-        list-style: none;
-        display: inline;
-    }
+  }
 }
-
 
 .cloud li:nth-of-type(3n + 1) {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
-.cloud li:nth-of-type(4n+3) {
-    font-size: 1.5em;
+.cloud li:nth-of-type(4n + 3) {
+  font-size: 1.5em;
 }
 
 .cloud li:nth-of-type(5n - 3) {
-    font-size: 1em;
+  font-size: 1em;
 }

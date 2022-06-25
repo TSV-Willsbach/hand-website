@@ -1,0 +1,17 @@
+@import "../../../variables";
+
+.sponsor {
+  border-top: 0.25rem solid $color-club;
+  background-color: $color-background;
+}
+
+.centered {
+  align-self: center;
+}
+
+.sponsorLogo {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}

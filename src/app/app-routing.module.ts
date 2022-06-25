@@ -1,125 +1,61 @@
-import { DataProtectionComponent } from './core/data-protection/data-protection.component';
-import { ContactComponent } from './contact/contact.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { DownloadsComponent } from './downloads/downloads.component';
-import { HomeComponent } from './home/home.component';
-import { ReportComponent } from './posts/report/report.component';
-import { ResultsComponent } from './results/results.component';
-import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
-import { PostDetailComponent } from './posts/post-detail/post-detail.component';
-import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-detail.component';
-import { TeamDetailComponent } from './team/team-detail/team-detail.component';
-import { PlayerDetailComponent } from './team/player-detail/player-detail.component';
-import { TeamResultComponent } from './team/team-result/team-result.component';
-import { TeamPlayersComponent } from './team/team-players/team-players.component';
-import { TeamReportsComponent } from './team/team-reports/team-reports.component';
-import { TeamGamesComponent } from './team/team-games/team-games.component';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './core/auth.guard';
-import { EditComponent } from './edit/edit.component';
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { GameTickerComponent } from './game-ticker/game-ticker.component';
-import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component';
-
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
-  }, {
-    path: 'home',
-    component: HomeComponent
-  }, {
-    path: 'reports',
-    component: ReportComponent
-  }, {
-    path: 'downloads',
-    component: DownloadsComponent
-  }, {
-    path: 'results',
-    component: ResultsComponent
-  }, {
-    path: 'chronicle',
-    component: DocViewerComponent
-  }, {
-    path: 'sponsors',
-    component: SponsorsDetailComponent
-  }, {
-    path: 'referee',
-    component: DocViewerComponent
-  }, {
-    path: 'imprint',
-    component: DocViewerComponent
-  }, {
-    path: 'training',
-    component: DocViewerComponent
-  }, {
-    path: 'contact',
-    component: ContactComponent
-  }, {
-    path: 'dataprotection',
-    component: DataProtectionComponent
-  }, {
-    path: 'aidAssociation',
-    component: DocViewerComponent
+    path: "home",
+    loadChildren: () => import("./core/core.module").then((m) => m.CoreModule),
   },
   {
-    path: 'postDetail/:id',
-    component: PostDetailComponent
+    path: "posts",
+    loadChildren: () =>
+      import("./posts/posts.module").then((m) => m.PostsModule),
   },
-  {
-    path: 'team/:id',
-    component: TeamDetailComponent,
 
+  {
+    path: "results",
+    loadChildren: () =>
+      import("./results/results.module").then((m) => m.ResultsModule),
+  },
+
+  {
+    path: "sponsors",
+    loadChildren: () =>
+      import("./sponsors/sponsors.module").then((m) => m.SponsorsModule),
+  },
+
+  {
+    path: "team",
+    loadChildren: () => import("./team/team.module").then((m) => m.TeamModule),
   },
   {
-    path: 'team/:id/results',
-    component: TeamResultComponent
+    path: "user",
+    loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
   },
   {
-    path: 'team/:id/games',
-    component: TeamGamesComponent
+    path: "gen",
+    loadChildren: () =>
+      import("./generated/generated.module").then((m) => m.GeneratedModule),
   },
   {
-    path: 'team/:id/reports',
-    component: TeamReportsComponent
+    path: "",
+    redirectTo: "/home",
+    pathMatch: "full",
   },
   {
-    path: 'team/:id/gallery',
-    component: TeamGalleryComponent
+    path: "**",
+    redirectTo: "/home",
+    pathMatch: "full",
   },
-  {
-    path: 'team/:id/players',
-    component: TeamPlayersComponent
-  },
-  {
-    path: 'team/:id/players/:playerId',
-    component: PlayerDetailComponent
-  },
-  {
-    path: 'ticker/:gToken',
-    component: GameTickerComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'edit',
-    component: EditComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent
-  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: "enabled",
+      relativeLinkResolution: "legacy",
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

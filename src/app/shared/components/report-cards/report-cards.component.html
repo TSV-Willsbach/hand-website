@@ -1,0 +1,96 @@
+<div class="row mb-2">
+  <div class="col-md-4 mb-3" *ngFor="let post of posts">
+    <div class="card h-100" [routerLink]="['/posts/detail', post.id]">
+      <div class="imageContainer">
+        <img
+          class="card-img-top"
+          src="{{ post.picture.url }}"
+          alt="Card image cap"
+        />
+        <div class="top-left" *ngIf="post.sticky === true">
+          <h4>
+            <span class="badge pink">
+              <fa-icon [icon]="['fas', 'thumbtack']"></fa-icon>
+            </span>
+          </h4>
+        </div>
+        <div class="top-right" *ngIf="post.isNew === true">
+          <h4>
+            <span class="badge pink">Neu</span>
+          </h4>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">
+          <div [innerHTML]="post.title"></div>
+        </h5>
+        <small class="card-subtitle mb-2 text-muted">
+          <fa-icon [icon]="['fas', 'calendar']" class="icons"></fa-icon>
+          {{ post.date | date: "dd.MM.yyyy" }}
+        </small>
+        <small class="card-subtitle mb-2 text-muted">
+          <fa-icon [icon]="['fas', 'user']" class="icons"></fa-icon>
+          {{ post.author }}
+        </small>
+
+        <br />
+        <p class="card-text" [innerHTML]="post.excerpt"></p>
+        <div class="d-flex flex-wrap">
+          <div class="p-2" *ngFor="let category of post.categories">
+            <span class="badge badge-pill club-background">
+              <fa-icon [icon]="['fas', 'folder']"></fa-icon>
+              {{ category.name }}
+            </span>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap">
+          <div *ngFor="let category of post.tags" class="p-2">
+            <span class="badge badge-pill club-background">
+              <fa-icon [icon]="['fas', 'tag']"></fa-icon>
+              {{ category.name }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="maxPages !== undefined">
+  <div class="pageinatorContainer">
+    <nav aria-label="Page navigation">
+      <ul class="pagination pagination-circle mb-0 justify-content-center">
+        <li class="page-item {{ prevDisabled }}">
+          <a
+            class="page-link"
+            aria-label="Previous"
+            (click)="prevPage()"
+            mdbWavesEffect
+          >
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Vorherige</span>
+          </a>
+        </li>
+        <div *ngFor="let item of pages | slice: 0:5; let i = index">
+          <li class="page-item {{ item.active }}">
+            <a class="page-link" (click)="jumpToPage(item.id)" mdbWavesEffect>{{
+              item.id
+            }}</a>
+          </li>
+        </div>
+        <li class="page-item {{ nextDisabled }}">
+          <a
+            class="page-link"
+            aria-label="Next"
+            (click)="nextPage()"
+            mdbWavesEffect
+          >
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Nächste</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

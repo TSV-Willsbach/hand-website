@@ -1,15 +1,14 @@
-import { WordpressService } from './../../shared/wordpress.service';
-import { Component, OnInit } from '@angular/core';
-import { Post } from '@wh-objects/post';
-import { Paginator } from '@wh-objects/pagination';
+import { WordpressService } from "../../shared/services/wordpress.service";
+import { Component, OnInit } from "@angular/core";
+import { Post } from "@wh-share/objects/post";
+import { Paginator } from "@wh-share/objects/pagination";
 
 @Component({
-  selector: 'app-report',
-  templateUrl: './report.component.html',
-  styleUrls: ['./report.component.scss']
+  selector: "app-report",
+  templateUrl: "./report.component.html",
+  styleUrls: ["./report.component.scss"],
 })
 export class ReportComponent implements OnInit {
-
   posts: Post[];
   public maxPages: number;
   page = 1;
@@ -23,15 +22,16 @@ export class ReportComponent implements OnInit {
   }
 
   private callApi() {
-    this.myData = this.wordpress.fetchReports(6, this.page)
-      .subscribe(posts => this.posts = posts,
-        error => console.log(error),
-        () => {
-          this.showSpinner = false;
-          this.maxPages = 2;
-          this.pages = new Array();
-          this.pages.push({ id: 1, active: 'active' });
-        });
+    this.myData = this.wordpress.fetchReports(6, this.page).subscribe(
+      (posts) => (this.posts = posts),
+      (error) => console.log(error),
+      () => {
+        this.showSpinner = false;
+        this.maxPages = 2;
+        this.pages = new Array();
+        this.pages.push({ id: 1, active: "active" });
+      }
+    );
 
     // this.myData = this.news.fetchReports('', this.page)
     //   .subscribe(posts => this.posts = posts,
@@ -51,8 +51,7 @@ export class ReportComponent implements OnInit {
     //     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   callMethod(method: string) {
     this[method]();
@@ -61,5 +60,4 @@ export class ReportComponent implements OnInit {
   setPages(value: number) {
     this.page = value;
   }
-
 }

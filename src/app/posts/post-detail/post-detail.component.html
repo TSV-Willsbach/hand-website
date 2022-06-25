@@ -7,17 +7,20 @@
     <div class="p-2" *ngFor="let category of post.categories">
       <span class="badge badge-pill club-background">
         <fa-icon [icon]="['fas', 'folder']"></fa-icon>
-        {{category.name}}
+        {{ category.name }}
       </span>
     </div>
   </div>
   <br />
   <div class="postImage">
-    <img src="{{post.picture.url}}" class="img-fluid" alt="{{post.title}}">
+    <img
+      src="{{ post.picture.url }}"
+      class="img-fluid"
+      alt="{{ post.title }}"
+    />
   </div>
   <br />
   <br />
-
 
   <div [innerHTML]="post.content"></div>
   <br />
@@ -26,7 +29,7 @@
       <div *ngFor="let category of post.tags" class="p-2">
         <span class="badge badge-pill club-background">
           <fa-icon [icon]="['fas', 'tag']"></fa-icon>
-          {{category.name}}
+          {{ category.name }}
         </span>
       </div>
     </div>
@@ -36,17 +39,22 @@
     <small class="mb-2 text-muted">
       <ul class="icons">
         <li>
-          <fa-icon [icon]="['fas', 'calendar']"></fa-icon> {{post.date | date: 'EE, dd.MM.yyyy HH:mm'}}
+          <fa-icon [icon]="['fas', 'calendar']"></fa-icon>
+          {{ post.date | date: "EE, dd.MM.yyyy HH:mm" }}
         </li>
-        <li>
-          <fa-icon [icon]="['fas', 'user']"></fa-icon> {{post.author}}
-        </li>
+        <li><fa-icon [icon]="['fas', 'user']"></fa-icon> {{ post.author }}</li>
       </ul>
     </small>
   </div>
 
   <div class="SocialShare">
-    <share-buttons [show]="4" [showText]="true" [size]="2" [autoSetMeta]="true" [url]="href" [image]="post.picture.url">
+    <share-buttons
+      [show]="4"
+      [showText]="true"
+      [autoSetMeta]="true"
+      [url]="href"
+      [image]="post.picture.url"
+    >
     </share-buttons>
     <!-- <share-buttons [include]="['facebook','whatsapp','copy','email','twitter','google','print']" [showText]="true" [showCount]="true"
       [size]="4" [show]="3" [title]="post.title.rendered" [description]="href" [image]="post.thumbnail" [tags]="'tsvWillsbachHandball'"></share-buttons> -->
