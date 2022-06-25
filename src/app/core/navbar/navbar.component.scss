@@ -1,14 +1,14 @@
-@import '../../variables';
+@import "../../../variables";
 
 .logo {
-    max-height: 3rem;
+  max-height: 3rem;
 }
 
 a:hover {
-    color: $color-club !important;
-    text-decoration: none !important;
+  color: $color-club !important;
+  text-decoration: none !important;
 }
 
 .dropdown-menu {
-    border-top: 0.25rem solid $color-club;
+  border-top: 0.25rem solid $color-club;
 }
