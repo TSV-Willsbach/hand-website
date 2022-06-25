@@ -16,6 +16,10 @@
   "bugs": {
     "url": "https://github.com/TSV-Willsbach/hand-website/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TSV-Willsbach/hand-website/"
+  },
   "keywords": [
     "willsbach",
     "handball",
