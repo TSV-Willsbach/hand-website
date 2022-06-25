@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { SeoService } from '@wh-share/seo.service';
+import { Component, OnInit } from "@angular/core";
+import { SeoService } from "app/services/seo.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private seo: SeoService) { }
+  constructor(private seo: SeoService) {}
 
   ngOnInit() {
     this.seo.generateTags({});
   }
-
 }

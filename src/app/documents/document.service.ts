@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, AsyncSubject, of } from 'rxjs';
-import { DocumentContents } from './document-contents';
-import { LocationService } from '@wh-share/location.service';
-import { tap, catchError, switchMap } from 'rxjs/operators';
-export { DocumentContents } from './document-contents';
-export const FILE_NOT_FOUND_ID = 'file-not-found';
-export const FETCHING_ERROR_ID = 'fetching-error';
-export const CONTENT_URL_PREFIX = 'assets/generated/';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { Observable, AsyncSubject, of } from "rxjs";
+import { DocumentContents } from "./document-contents";
+import { LocationService } from "app/services/location.service";
+import { tap, catchError, switchMap } from "rxjs/operators";
+export { DocumentContents } from "./document-contents";
+export const FILE_NOT_FOUND_ID = "file-not-found";
+export const FETCHING_ERROR_ID = "fetching-error";
+export const CONTENT_URL_PREFIX = "assets/generated/";
 export const DOC_CONTENT_URL_PREFIX = CONTENT_URL_PREFIX; // + 'docs/';
 
 const FETCHING_ERROR_CONTENTS = `
@@ -25,7 +25,6 @@ const FETCHING_ERROR_CONTENTS = `
 
 @Injectable()
 export class DocumentService {
-
   private cache = new Map<string, Observable<DocumentContents>>();
 
   currentDocument: Observable<DocumentContents>;
@@ -37,12 +36,12 @@ export class DocumentService {
   ) {
     // Whenever the URL changes we try to get the appropriate doc
     this.currentDocument = location.currentPath.pipe(
-      switchMap(path => this.getDocument(path))
+      switchMap((path) => this.getDocument(path))
     );
   }
 
   public getDocument(url: string): Observable<any> {
-    const id = url || 'index';
+    const id = url || "index";
     //   this.logger.log('getting document', id);
     if (!this.cache.has(id)) {
       this.cache.set(id, this.fetchDocument(id));
@@ -56,18 +55,19 @@ export class DocumentService {
     const subject = new AsyncSubject<DocumentContents>();
 
     this.http
-      .get<DocumentContents>(requestPath, { responseType: 'json' })
+      .get<DocumentContents>(requestPath, { responseType: "json" })
       .pipe(
-        tap(data => {
-          if (!data || typeof data !== 'object') {
+        tap((data) => {
+          if (!data || typeof data !== "object") {
             //  this.logger.log('received invalid data:', data);
-            throw Error('Invalid data');
+            throw Error("Invalid data");
           }
         }),
         catchError((error: HttpErrorResponse) => {
           return error.status === 404 ? this.getFileNotFoundDoc(id) : null; // this.getErrorDoc(id, error);
         })
-      ).subscribe(subject);
+      )
+      .subscribe(subject);
 
     return subject.asObservable();
   }
@@ -80,7 +80,7 @@ export class DocumentService {
     } else {
       return of({
         id: FILE_NOT_FOUND_ID,
-        contents: 'Document not found'
+        contents: "Document not found",
       });
     }
   }

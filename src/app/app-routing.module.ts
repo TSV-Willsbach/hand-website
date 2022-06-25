@@ -1,125 +1,108 @@
-import { DataProtectionComponent } from './core/data-protection/data-protection.component';
-import { ContactComponent } from './contact/contact.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { DataProtectionComponent } from "./core/data-protection/data-protection.component";
+import { ContactComponent } from "./contact/contact.component";
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import { DownloadsComponent } from './downloads/downloads.component';
-import { HomeComponent } from './home/home.component';
-import { ReportComponent } from './posts/report/report.component';
-import { ResultsComponent } from './results/results.component';
-import { DocViewerComponent } from './doc-viewer/doc-viewer.component';
-import { PostDetailComponent } from './posts/post-detail/post-detail.component';
-import { SponsorsDetailComponent } from './sponsors/sponsors-detail/sponsors-detail.component';
-import { TeamDetailComponent } from './team/team-detail/team-detail.component';
-import { PlayerDetailComponent } from './team/player-detail/player-detail.component';
-import { TeamResultComponent } from './team/team-result/team-result.component';
-import { TeamPlayersComponent } from './team/team-players/team-players.component';
-import { TeamReportsComponent } from './team/team-reports/team-reports.component';
-import { TeamGamesComponent } from './team/team-games/team-games.component';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './core/auth.guard';
-import { EditComponent } from './edit/edit.component';
-import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { GameTickerComponent } from './game-ticker/game-ticker.component';
-import { TeamGalleryComponent } from './team/team-gallery/team-gallery.component';
-
+import { DownloadsComponent } from "./downloads/downloads.component";
+import { HomeComponent } from "./home/home.component";
+import { ReportComponent } from "./posts/report/report.component";
+import { ResultsComponent } from "./results/results.component";
+import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
+import { PostDetailComponent } from "./posts/post-detail/post-detail.component";
+import { SponsorsDetailComponent } from "./sponsors/sponsors-detail/sponsors-detail.component";
+import { LoginComponent } from "./login/login.component";
+import { AuthGuard } from "./core/auth.guard";
+import { EditComponent } from "./edit/edit.component";
+import { PageNotFoundComponent } from "./core/page-not-found/page-not-found.component";
+import { GameTickerComponent } from "./game-ticker/game-ticker.component";
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
-  }, {
-    path: 'home',
-    component: HomeComponent
-  }, {
-    path: 'reports',
-    component: ReportComponent
-  }, {
-    path: 'downloads',
-    component: DownloadsComponent
-  }, {
-    path: 'results',
-    component: ResultsComponent
-  }, {
-    path: 'chronicle',
-    component: DocViewerComponent
-  }, {
-    path: 'sponsors',
-    component: SponsorsDetailComponent
-  }, {
-    path: 'referee',
-    component: DocViewerComponent
-  }, {
-    path: 'imprint',
-    component: DocViewerComponent
-  }, {
-    path: 'training',
-    component: DocViewerComponent
-  }, {
-    path: 'contact',
-    component: ContactComponent
-  }, {
-    path: 'dataprotection',
-    component: DataProtectionComponent
-  }, {
-    path: 'aidAssociation',
-    component: DocViewerComponent
+    path: "",
+    component: HomeComponent,
   },
   {
-    path: 'postDetail/:id',
-    component: PostDetailComponent
+    path: "home",
+    component: HomeComponent,
   },
   {
-    path: 'team/:id',
-    component: TeamDetailComponent,
-
+    path: "reports",
+    component: ReportComponent,
   },
   {
-    path: 'team/:id/results',
-    component: TeamResultComponent
+    path: "downloads",
+    component: DownloadsComponent,
   },
   {
-    path: 'team/:id/games',
-    component: TeamGamesComponent
+    path: "results",
+    component: ResultsComponent,
   },
   {
-    path: 'team/:id/reports',
-    component: TeamReportsComponent
+    path: "chronicle",
+    component: DocViewerComponent,
   },
   {
-    path: 'team/:id/gallery',
-    component: TeamGalleryComponent
+    path: "sponsors",
+    component: SponsorsDetailComponent,
   },
   {
-    path: 'team/:id/players',
-    component: TeamPlayersComponent
+    path: "referee",
+    component: DocViewerComponent,
   },
   {
-    path: 'team/:id/players/:playerId',
-    component: PlayerDetailComponent
+    path: "imprint",
+    component: DocViewerComponent,
   },
   {
-    path: 'ticker/:gToken',
+    path: "training",
+    component: DocViewerComponent,
+  },
+  {
+    path: "contact",
+    component: ContactComponent,
+  },
+  {
+    path: "dataprotection",
+    component: DataProtectionComponent,
+  },
+  {
+    path: "aidAssociation",
+    component: DocViewerComponent,
+  },
+  {
+    path: "postDetail/:id",
+    component: PostDetailComponent,
+  },
+  {
+    path: "team",
+    loadChildren: () => import("./team/team.module").then((m) => m.TeamModule),
+  },
+  {
+    path: "ticker/:gToken",
     component: GameTickerComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: "login",
+    component: LoginComponent,
   },
   {
-    path: 'edit',
+    path: "edit",
     component: EditComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path: '**',
-    component: PageNotFoundComponent
-  }
+    path: "**",
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', relativeLinkResolution: 'legacy' })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: "enabled",
+      relativeLinkResolution: "legacy",
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
