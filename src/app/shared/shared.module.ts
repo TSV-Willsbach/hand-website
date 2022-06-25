@@ -5,15 +5,20 @@ import { GameTableComponent } from "./components/game-table/game-table.component
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ConvertGameTimePipe } from "./pipes/gameTimePipe";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+
+const components = [
+  GameTableComponent,
+  PlayerGameTableComponent,
+  ReportCardsComponent,
+  ConvertGameTimePipe,
+  SpinnerComponent,
+];
+const modules = [CommonModule, FontAwesomeModule];
 
 @NgModule({
-  declarations: [
-    GameTableComponent,
-    PlayerGameTableComponent,
-    ReportCardsComponent,
-    ConvertGameTimePipe,
-    SpinnerComponent,
-  ],
-  imports: [CommonModule],
+  declarations: [...components],
+  imports: [...modules],
+  exports: [...components, ...modules],
 })
 export class SharedModule {}

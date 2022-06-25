@@ -5,10 +5,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { ShareButtonsConfig } from "ngx-sharebuttons";
 import { ShareButtonsModule } from "ngx-sharebuttons/buttons";
-import {
-  FaIconLibrary,
-  FontAwesomeModule,
-} from "@fortawesome/angular-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -51,6 +47,7 @@ import localeDe from "@angular/common/locales/de";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { FaIconLibrary } from "@fortawesome/angular-fontawesome";
 
 export const firebaseConfig = environment.firebase;
 
@@ -105,7 +102,7 @@ library.add(fas, far, fab);
     BrowserModule,
     AppRoutingModule,
     // AngularFontAwesomeModule,
-    FontAwesomeModule,
+
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),
     AngularFireModule.initializeApp(firebaseConfig),

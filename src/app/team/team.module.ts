@@ -21,6 +21,6 @@ import { TeamRoutingModule } from "./team-routing.module";
     TeamReportsComponent,
     TeamResultComponent,
   ],
-  imports: [CommonModule, TeamRoutingModule, SharedModule],
+  imports: [CommonModule, SharedModule, TeamRoutingModule],
 })
 export class TeamModule {}
