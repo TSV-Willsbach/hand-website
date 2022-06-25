@@ -40,7 +40,7 @@
     "@angular/platform-browser-dynamic": "^13.3.8",
     "@angular/router": "^13.3.8",
     "@angular/service-worker": "^13.3.8",
-    "@fortawesome/angular-fontawesome": "^0.11.1",
+    "@fortawesome/angular-fontawesome": "^0.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
@@ -52,7 +52,7 @@
     "express": "~4.18.1",
     "firebase": "^9.8.3",
     "method-override": "~3.0.0",
-    "ngx-sharebuttons": "^11.0.0",
+    "ngx-sharebuttons": "^10.0.0",
     "rxjs": "^7.5.5",
     "zone.js": "~0.11.6"
   },
