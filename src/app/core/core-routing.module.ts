@@ -24,6 +24,10 @@ const routes: Routes = [
     component: DownloadsComponent,
   },
   {
+    path: "404",
+    component: PageNotFoundComponent,
+  },
+  {
     path: "**",
     component: PageNotFoundComponent,
   },

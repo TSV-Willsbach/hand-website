@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { SeoService } from "@wh-share/services/seo.service";
 import { WordpressService } from "@wh-share/services/wordpress.service";
 
@@ -17,6 +17,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private wp: WordpressService,
     private seo: SeoService
   ) {
@@ -38,7 +39,10 @@ export class PostDetailComponent implements OnInit, OnDestroy {
       this.wp.getPost(this.id).subscribe(
         (post) => (this.post = post),
         (error) => {
-          console.log(error);
+          if (error.status === 404) {
+            console.log("Error", error);
+            this.router.navigate(["/home/404"], { skipLocationChange: true });
+          }
         },
         () => {
           this.showSpinner = false;
