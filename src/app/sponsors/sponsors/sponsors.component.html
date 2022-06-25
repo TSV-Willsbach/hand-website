@@ -4,11 +4,19 @@
 
   <app-spinner *ngIf="showSpinner"></app-spinner>
 
-  <div class="container" *ngIf="sponsors !==  undefined">
+  <div class="container" *ngIf="sponsors !== undefined">
     <div class="row justify-content-center">
-      <div class="col-md-4 mb-3 mt-3 centered" *ngFor="let sponsor of sponsors" align="center">
-        <a href="{{sponsor.sponsor.url}}" target="_blank" rel="noopener">
-          <img src="{{sponsor.url}}" alt="{{sponsor.alt_text}}" class="img-fluid sponsorLogo">
+      <div
+        class="col-md-4 mb-3 mt-3 centered"
+        *ngFor="let sponsor of sponsors"
+        align="center"
+      >
+        <a href="{{ sponsor.sponsor.url }}" target="_blank" rel="noopener">
+          <img
+            src="{{ sponsor.url }}"
+            alt="{{ sponsor.alt_text }}"
+            class="img-fluid sponsorLogo"
+          />
         </a>
       </div>
     </div>
