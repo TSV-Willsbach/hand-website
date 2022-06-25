@@ -1,3 +1,4 @@
+import { RouterModule } from "@angular/router";
 import { SpinnerComponent } from "./components/spinner/spinner.component";
 import { ReportCardsComponent } from "./components/report-cards/report-cards.component";
 import { PlayerGameTableComponent } from "./components/player-game-table/player-game-table.component";
@@ -14,7 +15,7 @@ const components = [
   ConvertGameTimePipe,
   SpinnerComponent,
 ];
-const modules = [CommonModule, FontAwesomeModule];
+const modules = [CommonModule, FontAwesomeModule, RouterModule];
 
 @NgModule({
   declarations: [...components],
