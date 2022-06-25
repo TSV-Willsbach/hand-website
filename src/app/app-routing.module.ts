@@ -43,7 +43,8 @@ const routes: Routes = [
   },
   {
     path: "sponsors",
-    component: SponsorsDetailComponent,
+    loadChildren: () =>
+      import("./sponsors/sponsors.module").then((m) => m.SponsorsModule),
   },
   {
     path: "referee",
