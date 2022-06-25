@@ -97,7 +97,6 @@ library.add(fas, far, fab);
     BrowserModule,
     AppRoutingModule,
     SponsorsModule,
-
     HttpClientModule,
     ShareButtonsModule.withConfig(customConfig),
     AngularFireModule.initializeApp(firebaseConfig),
