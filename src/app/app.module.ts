@@ -16,14 +16,12 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { ImgCarouselComponent } from "./img-carousel/img-carousel.component";
 import { NewsComponent } from "./posts/news/news.component";
 import { FooterComponent } from "./footer/footer.component";
-import { SponsorsComponent } from "./sponsors/sponsors.component";
 import { HomeComponent } from "./home/home.component";
 import { ReportComponent } from "./posts/report/report.component";
 import { DownloadsComponent } from "./downloads/downloads.component";
 import { ResultsComponent } from "./results/results.component";
 import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
 import { PostDetailComponent } from "./posts/post-detail/post-detail.component";
-import { SponsorsDetailComponent } from "./sponsors/sponsors-detail/sponsors-detail.component";
 import { DocumentService } from "./documents/document.service";
 import { LocationService } from "app/services/location.service";
 import { SeoService } from "app/services/seo.service";
@@ -40,7 +38,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { PageNotFoundComponent } from "./core/page-not-found/page-not-found.component";
 import { ContactComponent } from "./contact/contact.component";
 import { DataProtectionComponent } from "./core/data-protection/data-protection.component";
-import { OutfitterFooterComponent } from "@wh-outfitter/outfitter-footer/outfitter-footer.component";
 import { GameTickerComponent } from "./game-ticker/game-ticker.component";
 import { registerLocaleData, CommonModule } from "@angular/common";
 import localeDe from "@angular/common/locales/de";
@@ -81,20 +78,17 @@ library.add(fas, far, fab);
     ImgCarouselComponent,
     NewsComponent,
     FooterComponent,
-    SponsorsComponent,
     HomeComponent,
     ReportComponent,
     DownloadsComponent,
     ResultsComponent,
     DocViewerComponent,
     PostDetailComponent,
-    SponsorsDetailComponent,
     LoginComponent,
     EditComponent,
     PageNotFoundComponent,
     ContactComponent,
     DataProtectionComponent,
-    OutfitterFooterComponent,
     GameTickerComponent,
   ],
   imports: [
