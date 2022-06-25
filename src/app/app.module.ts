@@ -4,8 +4,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, LOCALE_ID } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { ServiceWorkerModule } from "@angular/service-worker";
-import { ShareButtonsConfig } from "ngx-sharebuttons";
-import { ShareButtonsModule } from "ngx-sharebuttons/buttons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
@@ -15,14 +13,11 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ImgCarouselComponent } from "./img-carousel/img-carousel.component";
-import { NewsComponent } from "./posts/news/news.component";
 import { FooterComponent } from "./footer/footer.component";
 import { HomeComponent } from "./home/home.component";
-import { ReportComponent } from "./posts/report/report.component";
 import { DownloadsComponent } from "./downloads/downloads.component";
 import { ResultsComponent } from "./results/results.component";
 import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
-import { PostDetailComponent } from "./posts/post-detail/post-detail.component";
 import { DocumentService } from "./documents/document.service";
 import { LocationService } from "app/services/location.service";
 import { SeoService } from "app/services/seo.service";
@@ -51,24 +46,6 @@ export const firebaseConfig = environment.firebase;
 
 registerLocaleData(localeDe);
 
-const customConfig: ShareButtonsConfig = {
-  include: ["facebook", "whatsapp", "copy", "twitter", "email", "print", "sms"],
-  tags: "tsvWillsbach",
-  theme: "default",
-  gaTracking: true,
-  autoSetMeta: true,
-  twitterAccount: "willsbach_hndbl",
-  prop: {
-    copy: {
-      text: "Link kopieren",
-    },
-    print: {
-      text: "Drucken",
-    },
-    // and so on...
-  },
-};
-
 // Add an icon to the library for convenient access in other components
 library.add(fas, far, fab);
 
@@ -77,14 +54,11 @@ library.add(fas, far, fab);
     AppComponent,
     NavbarComponent,
     ImgCarouselComponent,
-    NewsComponent,
     FooterComponent,
     HomeComponent,
-    ReportComponent,
     DownloadsComponent,
     ResultsComponent,
     DocViewerComponent,
-    PostDetailComponent,
     LoginComponent,
     EditComponent,
     PageNotFoundComponent,
@@ -98,7 +72,6 @@ library.add(fas, far, fab);
     AppRoutingModule,
     SponsorsModule,
     HttpClientModule,
-    ShareButtonsModule.withConfig(customConfig),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
