@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 // import * as npm from '../../../package.json';
-const npm = require("../../../package.json");
+const npm = require("../../../../package.json");
 
 @Component({
   selector: "app-footer",

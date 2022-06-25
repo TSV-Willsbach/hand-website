@@ -25,5 +25,6 @@ import { CoreRoutingModule } from "./core-routing.module";
     NavbarComponent,
   ],
   imports: [CommonModule, SharedModule, PostsModule, CoreRoutingModule],
+  exports: [NavbarComponent, FooterComponent],
 })
 export class CoreModule {}

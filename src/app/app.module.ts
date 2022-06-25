@@ -1,3 +1,4 @@
+import { CoreModule } from "./core/core.module";
 import { SponsorsModule } from "./sponsors/sponsors.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, LOCALE_ID } from "@angular/core";
@@ -31,6 +32,7 @@ library.add(fas, far, fab);
     BrowserModule,
     AppRoutingModule,
     SponsorsModule,
+    CoreModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
