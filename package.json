@@ -3,17 +3,24 @@
   "version": "1.0.113",
   "license": "MIT",
   "description": "Hompage der Handballabteilung des TSV Willsbach",
-  "author": "Miguel Gebhardt <miguel@willsbach-handball.de>",
+  "author": {
+    "name": "Miguel Gebhardt",
+    "email": "miguel@mgm12.de",
+    "url": "https://mgm12.dev"
+  },
   "contributors": [
-    "Markus Braunbeck"
+    {
+      "name": "Markus Braunbeck"
+    }
   ],
   "bugs": {
-    "url": "https://bitbucket.org/tsvwillsbachhandball/website/issues"
+    "url": "https://github.com/TSV-Willsbach/hand-website/issues"
   },
   "keywords": [
     "willsbach",
     "handball",
-    "TSV Willsbach"
+    "TSV Willsbach",
+    "willsbacher"
   ],
   "scripts": {
     "ng": "ng",
